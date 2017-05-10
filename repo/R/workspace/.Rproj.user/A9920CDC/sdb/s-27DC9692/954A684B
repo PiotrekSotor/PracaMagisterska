@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "my_gaMonitor <- function(object, digits = getOption(\"digits\"), ...){\n  iterationsSoFar <<- iterationsSoFar+1\n  progress <- as.double(iterationsSoFar/allIterationNumber)\n  endTime<-proc.time()\n  elapsed<-toString(  round( x = ((endTime-startTime)[\"elapsed\"]) , digits = 1)  )\n  \n  fitness <- na.exclude(object@fitness)\n  cat(numberOfRun,elapsed)\n  cat(resultsInTime[numberOfRun,elapsed,\"bestSolution\"])\n  resultsInTime[numberOfRun,elapsed,\"bestSolution\"] <<- max(fitness)\n  resultsInTime[numberOfRun,elapsed,\"meanSolution\"] <<- mean(fitness)\n  \n  \n  sumryStat <- c(mean(fitness), max(fitness))\n  sumryStat <- format(sumryStat, digits = digits)\n  replicate(5, clearConsoleLine())\n  cat(paste(\"\\rGA | iter =\", object@iter, \"\\n\"))\n  cat(paste(\"Mean =\", sumryStat[1], \"| Best =\", sumryStat[2], \"\\nProgress =\" , progress, \"| Numbers: \", iterationsSoFar,\"/\",allIterationNumber,\"\\nElapsed: \", elapsed,\"\\n\"))\n  flush.console()\n}\n\n\ntestWithTimeMeasurment <- function (memetic=TRUE, fun, numOfRuns = 10, iters=100, popSize=100, poptim=0.05, pressel=.5, optimiseForMinimal = TRUE){\n  iterationsSoFar<<-0\n  allIterationNumber<<-iters*numOfRuns\n  \n  possibleTimes <- seq(0,20, by=0.1)\n  numberOfRun <- seq(1,numOfRuns, by=1)\n  collectedValues<-c(\"bestSolution\", \"meanSolution\")\n  \n  \n  resultsInTime<<- array(dimnames = list(numberOfRun = numberOfRun, time=possibleTimes, values=collectedValues),\n                        dim = c(length(numberOfRun),length(possibleTimes), length(collectedValues))\n                        )\n  avrInTime<- array(dimnames = list(time=possibleTimes, values=collectedValues),\n                        dim = c(length(possibleTimes), length(collectedValues))\n  )\n  \n  \n  for (i in 1:numOfRuns){\n    numberOfRun<<-i\n    startTime<<-proc.time()\n    \n    ga(type = \"real-valued\", \n                   fitness = fun, \n                   min = c(-5,-5), max=c(5,5),\n                   monitor = my_gaMonitor, \n                   maxiter = iters,\n       popSize = popSize,\n                   optimArgs = list(method=\"L-BFGS-B\",\n                                    poptim=poptim,\n                                    pressel = pressel,\n                                    control=list(fnscale=ifelse(isTRUE(optimiseForMinimal),-1,1))\n                                    ),\n                   optim = memetic\n       )\n  }\n  \n  for (timestamp in 1:length(possibleTimes)){\n    for (value in 1:length(collectedValues)){\n      avrInTime[timestamp,value] <- mean(resultsInTime[,timestamp,value], na.rm = TRUE)\n    }\n  }\n  \n  rm(\"numberOfRun\", envir = globalenv())\n  rm(\"allIterationNumber\", envir = globalenv())\n  rm(\"resultsInTime\", envir = globalenv())\n  rm(\"iterationsSoFar\", envir = globalenv())\n  rm(\"startTime\", envir = globalenv())\n  \n  return (avrInTime)\n}",
+    "created" : 1494423545310.000,
+    "dirty" : false,
+    "encoding" : "CP1250",
+    "folds" : "",
+    "hash" : "1284184460",
+    "id" : "954A684B",
+    "lastKnownWriteTime" : 1494426830,
+    "last_content_update" : 1494426830814,
+    "path" : "P:/PWr_projects/PracaMagisterska/repo/R/workspace/ga_test.R",
+    "project_path" : "ga_test.R",
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : true,
+    "source_window" : "",
+    "type" : "r_source"
+}
