@@ -2,4 +2,28 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="java.nio.file.Paths"/>
 <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+<fullyQualifiedTypeName name="org.rosuda.JRI.RMainLoopCallbacks"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+<fullyQualifiedTypeName name="interfaces.REngineService"/>
+<fullyQualifiedTypeName name="org.junit.internal.runners.ErrorReportingRunner"/>
+<fullyQualifiedTypeName name="main.Second"/>
+<fullyQualifiedTypeName name="interfaces.REngineServiceImpl"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+<fullyQualifiedTypeName name="interfaces.RMainLoopCallbacks"/>
+<fullyQualifiedTypeName name="java.awt.List"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="javax.swing.JComboBox"/>
+<fullyQualifiedTypeName name="main.Context"/>
+<fullyQualifiedTypeName name="main.ApplicableAlgotithmParameter"/>
+<fullyQualifiedTypeName name="main.DecimalAlgorithmParameter"/>
+<fullyQualifiedTypeName name="java.lang.Object"/>
+<fullyQualifiedTypeName name="main.ObjectType"/>
+<fullyQualifiedTypeName name="params.AlgorithmParameters"/>
+<fullyQualifiedTypeName name="params.MemeticPartParameters"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
+<fullyQualifiedTypeName name="guiInterface.ExecutionConditionPanel.FunctionSelectionListener"/>
+<fullyQualifiedTypeName name="main.ApplicableFunction"/>
 </qualifiedTypeNameHistroy>

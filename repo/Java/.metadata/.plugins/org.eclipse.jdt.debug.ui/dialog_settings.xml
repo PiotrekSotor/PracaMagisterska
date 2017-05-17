@@ -6,4 +6,10 @@
 		<item value="(i==31)==true" key="conditionHistoryEntry_1"/>
 		<item value="i==31" key="conditionHistoryEntry_2"/>
 	</section>
+	<section name="org.eclipse.jdt.internal.debug.ui.ExpressionInformationControlCreator$ExpressionInformationControl">
+		<item value="200" key="SashWeightTree"/>
+		<item value="200" key="SashWeightDetails"/>
+		<item value="614" key="WIDTH"/>
+		<item value="194" key="HEIGHT"/>
+	</section>
 </section>

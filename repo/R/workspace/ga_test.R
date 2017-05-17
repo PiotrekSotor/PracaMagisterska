@@ -20,14 +20,11 @@ my_gaMonitor <- function(object, digits = getOption("digits"), ...){
 }
 
 
-testWithTimeMeasurment <- function (memetic=TRUE, fun, numOfRuns = 10, iters=100, popSize=100, poptim=0.05, pressel=.5, optimiseForMinimal = TRUE){
+testWithTimeMeasurment <- function (memetic=TRUE, fun, numOfRuns = 10, iters=100, popSize=100, poptim=0.05, pressel=.5, optimiseForMinimal = TRUE, lowerBounds, upperBounds, optimMethod="L-BFGS-B"){
   iterationsSoFar<<-0
   allIterationNumber<<-iters*numOfRuns
   
-  possibleTimes <- seq(0,20, by=0.1)
   numberOfRun <- seq(1,numOfRuns, by=1)
-  collectedValues<-c("bestSolution", "meanSolution")
-  
   
   resultsInTime<<- array(dimnames = list(numberOfRun = numberOfRun, time=possibleTimes, values=collectedValues),
                         dim = c(length(numberOfRun),length(possibleTimes), length(collectedValues))
@@ -43,11 +40,11 @@ testWithTimeMeasurment <- function (memetic=TRUE, fun, numOfRuns = 10, iters=100
     
     ga(type = "real-valued", 
                    fitness = fun, 
-                   min = c(-5,-5), max=c(5,5),
+                   min = lowerBounds, max=upperBounds,
                    monitor = my_gaMonitor, 
                    maxiter = iters,
        popSize = popSize,
-                   optimArgs = list(method="L-BFGS-B",
+                   optimArgs = list(method=optimMethod,
                                     poptim=poptim,
                                     pressel = pressel,
                                     control=list(fnscale=ifelse(isTRUE(optimiseForMinimal),-1,1))

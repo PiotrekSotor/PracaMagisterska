@@ -32,3 +32,6 @@ if (!require("globalOptTests")){
   install.packages("globalOptTests")
   library("globalOptTests")
 }
+
+source("./methods.R")
+source("./ga_test.R")
