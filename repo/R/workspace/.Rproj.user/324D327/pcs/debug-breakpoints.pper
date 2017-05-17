@@ -1,6 +1,51 @@
 {
     "debugBreakpointsState" : {
         "breakpoints" : [
+            {
+                "editor_line_number" : 2,
+                "editor_state" : 1,
+                "function_name" : "plotBy2Dimmentions",
+                "function_steps" : "2",
+                "id" : 3,
+                "is_package_breakpoint" : false,
+                "is_pending_debug_completion" : false,
+                "line_number" : 2,
+                "needs_updated_steps" : false,
+                "package_name" : "",
+                "path" : "P:/Pwr_projects/PracaMagisterska/PracaMagisterska/repo/R/workspace/plotForMethods.R",
+                "state" : 1,
+                "type" : 0
+            },
+            {
+                "editor_line_number" : 23,
+                "editor_state" : 1,
+                "function_name" : "testForOptimMethodsInTimeAllFunctions",
+                "function_steps" : "5,4,2",
+                "id" : 5,
+                "is_package_breakpoint" : false,
+                "is_pending_debug_completion" : false,
+                "line_number" : 23,
+                "needs_updated_steps" : false,
+                "package_name" : "",
+                "path" : "P:/Pwr_projects/PracaMagisterska/PracaMagisterska/repo/R/workspace/testForOptimMethodsInTime.R",
+                "state" : 1,
+                "type" : 0
+            },
+            {
+                "editor_line_number" : 10,
+                "editor_state" : 1,
+                "function_name" : "testForOptimMethodsInTime",
+                "function_steps" : "4,4,3",
+                "id" : 6,
+                "is_package_breakpoint" : false,
+                "is_pending_debug_completion" : false,
+                "line_number" : 10,
+                "needs_updated_steps" : false,
+                "package_name" : "",
+                "path" : "P:/Pwr_projects/PracaMagisterska/PracaMagisterska/repo/R/workspace/testForOptimMethodsInTime.R",
+                "state" : 1,
+                "type" : 0
+            }
         ]
     }
 }

@@ -33,5 +33,5 @@ if (!require("globalOptTests")){
   library("globalOptTests")
 }
 
-source("./methods.R")
-source("./ga_test.R")
+
+# source("../ga_test.R")

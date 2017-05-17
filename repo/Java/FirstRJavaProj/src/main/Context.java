@@ -42,4 +42,9 @@ public class Context{
 	public List<ApplicableFunction> getApplicableFunctions() {
 		return applicableFunctions;
 	}
+
+	public String getRScriptsPath() {
+		return "P:/Pwr_projects/PracaMagisterska/PracaMagisterska/repo/R/workspace/javaEntryPoints";
+	
+	}
 }

@@ -1,0 +1,11 @@
+getDefaultBounds        Get the default box constraints for the
+                        objective function.
+getGlobalOpt            Return the global optimum of a given objective
+                        function.
+getProblemDimen         Get the length of the parameter vector expected
+                        by a given objective function.
+globalOptTests-package
+                        Objective functions for benchmarking the
+                        performance of continuous global optimization
+                        algorithms
+goTest                  Call an objective function

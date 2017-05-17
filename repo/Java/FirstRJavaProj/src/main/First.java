@@ -6,27 +6,27 @@ import org.junit.internal.runners.ErrorReportingRunner;
 import org.rosuda.JRI.Rengine;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import interfaces.AbstractJavaInvoker;
+import interfaces.Java_plotFunction3DInvoker;
 import interfaces.REngineService;
 import interfaces.RMainLoopCallbacks;
 
 public class First {
 	
-	
-
 	public static void main (String a[]){
-		Rengine engine = new Rengine(new String[] {"--no-save"}, false, new RMainLoopCallbacks());
-		
-		String cwd = Paths.get(".").toAbsolutePath().normalize().toString();
-		print(cwd);
-		StringBuilder sb = new StringBuilder();
-		sb.append(cwd);
-		sb.append("\\..\\..\\R\\FirstPackage\\R");
-		engine.eval("setwd("+sb.toString()+")");
-		engine.eval("source(hello.R)");
-		print(engine.eval("hello()").toString());
-		
-		
 
+
+		REngineService service = new REngineService();
+		
+		Java_plotFunction3DInvoker plot = new Java_plotFunction3DInvoker();
+		plot.withApplicableFunction(ApplicableFunction.CEC2013_9)
+			.withDestinationPath("D:/plot.png")
+			.withXRange(-10f, 5f, 0.1f)
+			.withYRange(-5f, 4f, 1.5f);
+		print(plot.getRCommand());
+		service.invokeOnStaticInstance(plot);
+		
+		service.shutDownR();
 
 	}
 	

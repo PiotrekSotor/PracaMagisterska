@@ -43,7 +43,7 @@ public abstract class AbstractRMainLoopCallbacks implements RMainLoopCallbacks {
 
 	@Override
 	public void rShowMessage(Rengine arg0, String arg1) {
-		// TODO Auto-generated method stub
+		System.out.println("rShowMessage: "+arg1);
 
 	}
 
