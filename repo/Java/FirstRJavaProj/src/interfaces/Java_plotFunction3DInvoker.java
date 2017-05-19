@@ -10,6 +10,10 @@ public class Java_plotFunction3DInvoker extends AbstractJavaInvoker {
 	String yRange;
 	
 	
+	public String getDestinationPath() {
+		return destinationPath;
+	}
+
 	public Java_plotFunction3DInvoker withXRange(float from, float to, float by){
 		xRange = createSequence(from, to, by);
 		return this;

@@ -53,8 +53,18 @@ public class REngineService {
 		ownInstanceOfR=null;
 	}
 
-	public void invokeOnStaticInstance(AbstractJavaInvoker invoker){
-		staticInstanceOfR.eval(invoker.getRCommand());
+	public void invokeOnStaticInstance(AbstractJavaInvoker invoker, OnRCommandEndCallback callback){
+		Runnable runnable = new Runnable() {
+			
+			@Override
+			public void run() {
+				staticInstanceOfR.eval(invoker.getRCommand());
+				if (callback != null){
+					callback.onEnd(invoker);
+				}
+			}
+		};
+		runnable.run();
 	}
 	
 	public void invokeOnOwnInstance(AbstractJavaInvoker invoker){

@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
 <typeInfo handle="=FirstRJavaProj/C:\/Users\/Piotrek\/Documents\/R\/win-library\/3.3\/rJava\/jri\/JRI.jar&lt;org.rosuda.JRI(RMainLoopCallbacks.class[RMainLoopCallbacks" modifiers="1537" timestamp="1490220293039"/>
-<typeInfo handle="=FirstRJavaProj/src&lt;interfaces{AbstractRMainLoopCallbacks.java[AbstractRMainLoopCallbacks" modifiers="1025" timestamp="1494874103510"/>
+<typeInfo handle="=FirstRJavaProj/src&lt;interfaces{AbstractRMainLoopCallbacks.java[AbstractRMainLoopCallbacks" modifiers="1025" timestamp="1495064668594"/>
 <typeInfo handle="=FirstRJavaProj/C:\/Program Files\/Java\/jdk1.8.0_111\/jre\/lib\/rt.jar&lt;javax.swing(JPanel.class[JPanel" modifiers="33" timestamp="1481835333878"/>
 <typeInfo handle="=FirstRJavaProj/C:\/Program Files\/Java\/jdk1.8.0_111\/jre\/lib\/rt.jar&lt;javax.swing(JFrame.class[JFrame" modifiers="33" timestamp="1481835333878"/>
 <typeInfo handle="=FirstRJavaProj/C:\/Program Files\/Java\/jdk1.8.0_111\/jre\/lib\/rt.jar&lt;java.awt.event(ActionListener.class[ActionListener" modifiers="1537" timestamp="1481835333878"/>
+<typeInfo handle="=FirstRJavaProj/C:\/Program Files\/Java\/jdk1.8.0_111\/jre\/lib\/rt.jar&lt;java.lang(RuntimeException.class[RuntimeException" modifiers="33" timestamp="1481835333878"/>
+<typeInfo handle="=FirstRJavaProj/C:\/Program Files\/Java\/jdk1.8.0_111\/jre\/lib\/rt.jar&lt;com.sun.org.apache.xalan.internal.xsltc.compiler(ConcatCall.class[ConcatCall" modifiers="48" timestamp="1481835333878"/>
+<typeInfo handle="=FirstRJavaProj/src&lt;main{Context.java[Context" modifiers="1" timestamp="1495146508131"/>
 </typeInfoHistroy>

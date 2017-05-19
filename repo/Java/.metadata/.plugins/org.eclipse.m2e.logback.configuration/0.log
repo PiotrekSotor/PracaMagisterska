@@ -853,3 +853,592 @@
 2017-05-18 01:49:18,331 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
 2017-05-18 01:49:18,331 [Worker-49] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
 2017-05-18 01:49:18,332 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-18 23:13:13,409 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:13:13,435 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-18 23:13:13,439 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:13:13,440 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-18 23:13:16,690 [Worker-14] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2017-05-18 23:19:33,023 [Worker-18] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:19:33,024 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-18 23:19:33,026 [Worker-18] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:19:33,027 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-18 23:21:20,445 [Worker-18] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:21:20,446 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-18 23:21:20,448 [Worker-18] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:21:20,449 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-18 23:22:30,073 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:22:30,075 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-18 23:22:30,076 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:22:30,077 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-18 23:22:49,400 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:22:49,401 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-18 23:22:49,403 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:22:49,404 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-18 23:24:12,379 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:24:12,380 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-18 23:24:12,381 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:24:12,382 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-18 23:25:40,108 [Worker-18] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:25:40,109 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-18 23:25:40,110 [Worker-18] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:25:40,111 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-18 23:26:28,266 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:26:28,267 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-18 23:26:28,270 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:26:28,271 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-18 23:32:06,933 [Worker-19] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:32:06,934 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-18 23:32:06,935 [Worker-19] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:32:06,935 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-18 23:32:08,170 [Worker-23] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:32:08,171 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-18 23:32:08,172 [Worker-23] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:32:08,173 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-18 23:37:05,266 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:37:05,267 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-18 23:37:05,268 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:37:05,268 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-18 23:37:06,340 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:37:06,341 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-18 23:37:06,342 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:37:06,342 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-18 23:37:34,145 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:37:34,145 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-18 23:37:34,146 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:37:34,147 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-18 23:38:34,347 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:38:34,347 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-18 23:38:34,348 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:38:34,349 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-18 23:41:16,284 [Worker-18] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:41:16,284 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-18 23:41:16,286 [Worker-18] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:41:16,286 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-18 23:41:17,969 [Worker-23] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:41:17,969 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-18 23:41:17,971 [Worker-23] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:41:17,972 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-18 23:41:45,733 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:41:45,734 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-18 23:41:45,735 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:41:45,735 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-18 23:41:48,349 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:41:48,350 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-18 23:41:48,351 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:41:48,351 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-18 23:42:26,919 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:42:26,920 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-18 23:42:26,921 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:42:26,922 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-18 23:42:39,932 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:42:39,933 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-18 23:42:39,934 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:42:39,934 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-18 23:42:50,804 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:42:50,805 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-18 23:42:50,806 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:42:50,806 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-18 23:42:57,416 [Worker-19] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:42:57,417 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-18 23:42:57,418 [Worker-19] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:42:57,419 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-18 23:43:05,467 [Worker-18] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:43:05,468 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-18 23:43:05,469 [Worker-18] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:43:05,470 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-18 23:43:14,770 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:43:14,771 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-18 23:43:14,772 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:43:14,772 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-18 23:45:54,985 [Worker-19] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:45:54,987 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-18 23:45:54,988 [Worker-19] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:45:54,988 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-18 23:46:30,128 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:46:30,129 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-18 23:46:30,130 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:46:30,130 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-18 23:46:53,641 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:46:53,642 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-18 23:46:53,643 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:46:53,644 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-18 23:48:32,647 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:48:32,648 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-18 23:48:32,648 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:48:32,649 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-18 23:49:18,735 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:49:18,736 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-18 23:49:18,737 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:49:18,737 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-18 23:49:28,445 [Worker-18] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:49:28,446 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-18 23:49:28,447 [Worker-18] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:49:28,448 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-18 23:50:09,622 [Worker-25] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:50:09,623 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-18 23:50:09,623 [Worker-25] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:50:09,624 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-18 23:50:33,629 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:50:33,629 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-18 23:50:33,630 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:50:33,631 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-18 23:53:03,518 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:53:03,519 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-18 23:53:03,520 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:53:03,520 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-18 23:53:29,698 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:53:29,699 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-18 23:53:29,700 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:53:29,701 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-18 23:53:50,307 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:53:50,307 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-18 23:53:50,308 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:53:50,309 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-18 23:56:39,099 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:56:39,100 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-18 23:56:39,101 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-18 23:56:39,101 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:01:50,133 [Worker-32] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:01:50,134 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:01:50,136 [Worker-32] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:01:50,137 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:02:02,430 [Worker-32] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:02:02,431 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:02:02,432 [Worker-32] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:02:02,432 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:03:52,405 [Worker-29] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:03:52,406 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:03:52,407 [Worker-29] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:03:52,407 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:04:02,796 [Worker-29] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:04:02,797 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:04:02,812 [Worker-29] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:04:02,812 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:06:09,374 [Worker-30] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:06:09,375 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:06:09,376 [Worker-30] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:06:09,377 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:10:16,662 [Worker-34] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:10:16,663 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:10:16,665 [Worker-34] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:10:16,666 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:10:55,296 [Worker-36] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:10:55,297 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:10:55,298 [Worker-36] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:10:55,298 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:10:57,389 [Worker-34] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:10:57,390 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:10:57,391 [Worker-34] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:10:57,391 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:11:23,163 [Worker-36] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:11:23,164 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:11:23,165 [Worker-36] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:11:23,165 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:11:27,573 [Worker-35] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:11:27,574 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:11:27,574 [Worker-35] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:11:27,575 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:14:02,560 [Worker-31] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:14:02,561 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:14:02,563 [Worker-31] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:14:02,564 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:14:37,477 [Worker-37] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:14:37,478 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:14:37,479 [Worker-37] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:14:37,480 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:15:25,449 [Worker-31] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:15:25,450 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:15:25,451 [Worker-31] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:15:25,451 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:15:31,092 [Worker-31] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:15:31,092 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:15:31,093 [Worker-31] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:15:31,093 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:15:33,763 [Worker-37] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:15:33,764 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:15:33,765 [Worker-37] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:15:33,765 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:18:47,694 [Worker-35] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:18:47,694 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:18:47,696 [Worker-35] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:18:47,697 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:21:33,936 [Worker-31] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:21:33,937 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:21:33,938 [Worker-31] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:21:33,939 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:27:40,463 [Worker-41] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:27:40,464 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:27:40,464 [Worker-41] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:27:40,465 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:28:28,341 [Worker-41] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:28:28,342 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:28:28,343 [Worker-41] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:28:28,344 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:28:49,941 [Worker-36] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:28:49,942 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:28:49,943 [Worker-36] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:28:49,943 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:30:41,271 [Worker-41] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:30:41,272 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:30:41,273 [Worker-41] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:30:41,273 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:30:50,413 [Worker-36] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:30:50,413 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:30:50,414 [Worker-36] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:30:50,414 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:30:51,435 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:30:51,436 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:30:51,437 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:30:51,438 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:31:14,099 [Worker-36] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:31:14,100 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:31:14,100 [Worker-36] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:31:14,101 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:35:34,774 [Worker-36] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:35:34,775 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:35:34,776 [Worker-36] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:35:34,777 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:35:41,104 [Worker-41] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:35:41,105 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:35:41,106 [Worker-41] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:35:41,106 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:39:20,558 [Worker-36] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:39:20,559 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:39:20,560 [Worker-36] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:39:20,561 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:39:30,751 [Worker-36] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:39:30,751 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:39:30,753 [Worker-36] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:39:30,753 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:41:00,763 [Worker-36] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:41:00,764 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:41:00,765 [Worker-36] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:41:00,765 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:41:04,943 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:41:04,944 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:41:04,944 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:41:04,945 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:43:19,929 [Worker-36] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:43:19,930 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:43:19,930 [Worker-36] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:43:19,931 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:43:22,160 [Worker-45] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:43:22,160 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:43:22,161 [Worker-45] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:43:22,162 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:43:38,334 [Worker-44] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:43:38,334 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:43:38,335 [Worker-44] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:43:38,335 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:43:48,755 [Worker-44] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:43:48,756 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:43:48,757 [Worker-44] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:43:48,757 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:45:33,272 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:45:33,273 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:45:33,274 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:45:33,275 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:46:40,023 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:46:40,023 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:46:40,024 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:46:40,025 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:51:22,824 [Worker-45] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:51:22,825 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:51:22,826 [Worker-45] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:51:22,826 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:55:27,037 [Worker-48] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:55:27,038 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:55:27,038 [Worker-48] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:55:27,039 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:55:38,725 [Worker-50] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:55:38,726 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:55:38,726 [Worker-50] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:55:38,727 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:55:41,791 [Worker-49] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:55:41,792 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:55:41,793 [Worker-49] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:55:41,793 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:55:50,288 [Worker-49] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:55:50,289 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:55:50,289 [Worker-49] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:55:50,290 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:57:40,087 [Worker-47] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:57:40,088 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:57:40,089 [Worker-47] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:57:40,089 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:58:00,504 [Worker-49] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:58:00,504 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:58:00,505 [Worker-49] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:58:00,506 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:58:04,408 [Worker-49] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:58:04,409 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:58:04,409 [Worker-49] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:58:04,410 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 00:58:22,751 [Worker-50] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:58:22,751 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 00:58:22,752 [Worker-50] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 00:58:22,753 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 01:04:11,902 [Worker-54] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:04:11,902 [Worker-54] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 01:04:11,903 [Worker-54] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:04:11,903 [Worker-54] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 01:05:37,316 [Worker-49] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:05:37,317 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 01:05:37,318 [Worker-49] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:05:37,318 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 01:05:47,347 [Worker-55] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:05:47,347 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 01:05:47,348 [Worker-55] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:05:47,349 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 01:07:31,680 [Worker-53] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:07:31,680 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 01:07:31,681 [Worker-53] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:07:31,681 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 01:08:16,872 [Worker-49] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:08:16,872 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 01:08:16,873 [Worker-49] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:08:16,874 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 01:10:53,335 [Worker-49] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:10:53,335 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 01:10:53,336 [Worker-49] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:10:53,337 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 01:16:09,076 [Worker-49] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:16:09,077 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 01:16:09,078 [Worker-49] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:16:09,079 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 01:19:07,563 [Worker-59] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:19:07,563 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 01:19:07,564 [Worker-59] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:19:07,565 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 01:19:28,069 [Worker-56] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:19:28,070 [Worker-56] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 01:19:28,071 [Worker-56] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:19:28,071 [Worker-56] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 01:19:59,151 [Worker-49] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:19:59,151 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 01:19:59,152 [Worker-49] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:19:59,153 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 01:24:03,782 [Worker-49] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:24:03,782 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 01:24:03,783 [Worker-49] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:24:03,783 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 01:31:49,875 [Worker-57] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:31:49,875 [Worker-57] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 01:31:49,876 [Worker-57] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:31:49,876 [Worker-57] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 01:39:53,345 [Worker-61] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:39:53,345 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 01:39:53,346 [Worker-61] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:39:53,346 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 01:41:39,539 [Worker-65] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:41:39,540 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 01:41:39,541 [Worker-65] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:41:39,541 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 01:44:03,086 [Worker-66] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:44:03,087 [Worker-66] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 01:44:03,088 [Worker-66] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:44:03,089 [Worker-66] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 01:44:54,441 [Worker-64] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:44:54,441 [Worker-64] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 01:44:54,442 [Worker-64] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:44:54,442 [Worker-64] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 01:45:12,154 [Worker-64] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:45:12,155 [Worker-64] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 01:45:12,155 [Worker-64] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:45:12,156 [Worker-64] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 01:45:37,951 [Worker-65] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:45:37,952 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 01:45:37,952 [Worker-65] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:45:37,953 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 01:45:59,767 [Worker-64] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:45:59,768 [Worker-64] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 01:45:59,769 [Worker-64] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:45:59,769 [Worker-64] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 01:46:53,340 [Worker-67] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:46:53,341 [Worker-67] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 01:46:53,342 [Worker-67] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:46:53,342 [Worker-67] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 01:47:58,317 [Worker-67] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:47:58,318 [Worker-67] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 01:47:58,318 [Worker-67] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:47:58,319 [Worker-67] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 01:48:14,300 [Worker-67] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:48:14,301 [Worker-67] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 01:48:14,302 [Worker-67] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:48:14,302 [Worker-67] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 01:48:48,766 [Worker-65] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:48:48,767 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 01:48:48,768 [Worker-65] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:48:48,768 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 01:48:50,225 [Worker-60] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:48:50,226 [Worker-60] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 01:48:50,227 [Worker-60] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:48:50,227 [Worker-60] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 01:49:35,361 [Worker-65] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:49:35,362 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 01:49:35,363 [Worker-65] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:49:35,363 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 01:49:41,214 [Worker-64] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:49:41,214 [Worker-64] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 01:49:41,216 [Worker-64] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:49:41,216 [Worker-64] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 01:51:01,825 [Worker-71] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:51:01,826 [Worker-71] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 01:51:01,827 [Worker-71] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:51:01,827 [Worker-71] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 01:51:23,185 [Worker-63] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:51:23,186 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 01:51:23,187 [Worker-63] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 01:51:23,187 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 02:00:34,528 [Worker-74] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:00:34,529 [Worker-74] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 02:00:34,530 [Worker-74] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:00:34,530 [Worker-74] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 02:05:59,892 [Worker-74] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:05:59,892 [Worker-74] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 02:05:59,893 [Worker-74] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:05:59,894 [Worker-74] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 02:07:10,727 [Worker-80] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:07:10,728 [Worker-80] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 02:07:10,729 [Worker-80] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:07:10,729 [Worker-80] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 02:08:30,255 [Worker-88] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:08:30,256 [Worker-88] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 02:08:30,257 [Worker-88] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:08:30,258 [Worker-88] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 02:09:03,000 [Worker-81] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:09:03,001 [Worker-81] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 02:09:03,001 [Worker-81] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:09:03,002 [Worker-81] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 02:11:27,735 [Worker-83] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:11:27,736 [Worker-83] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 02:11:27,736 [Worker-83] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:11:27,737 [Worker-83] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 02:12:08,809 [Worker-84] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:12:08,810 [Worker-84] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 02:12:08,811 [Worker-84] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:12:08,811 [Worker-84] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 02:12:31,820 [Worker-78] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:12:31,821 [Worker-78] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 02:12:31,822 [Worker-78] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:12:31,822 [Worker-78] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 02:13:58,241 [Worker-80] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:13:58,242 [Worker-80] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 02:13:58,243 [Worker-80] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:13:58,243 [Worker-80] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 02:14:04,186 [Worker-70] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:14:04,186 [Worker-70] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 02:14:04,187 [Worker-70] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:14:04,187 [Worker-70] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 02:15:36,133 [Worker-88] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:15:36,133 [Worker-88] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 02:15:36,134 [Worker-88] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:15:36,134 [Worker-88] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 02:17:33,224 [Worker-88] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:17:33,225 [Worker-88] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 02:17:33,226 [Worker-88] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:17:33,226 [Worker-88] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 02:17:38,848 [Worker-83] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:17:38,849 [Worker-83] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 02:17:38,849 [Worker-83] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:17:38,850 [Worker-83] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 02:19:19,341 [Worker-83] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:19:19,342 [Worker-83] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 02:19:19,343 [Worker-83] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:19:19,343 [Worker-83] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 02:20:35,334 [Worker-81] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:20:35,335 [Worker-81] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 02:20:35,335 [Worker-81] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:20:35,336 [Worker-81] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 02:21:09,404 [Worker-83] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:21:09,404 [Worker-83] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 02:21:09,405 [Worker-83] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:21:09,405 [Worker-83] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 02:24:36,063 [Worker-89] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:24:36,063 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 02:24:36,064 [Worker-89] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:24:36,064 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 02:24:59,866 [Worker-88] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:24:59,867 [Worker-88] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 02:24:59,868 [Worker-88] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:24:59,868 [Worker-88] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 02:26:19,316 [Worker-86] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:26:19,317 [Worker-86] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 02:26:19,318 [Worker-86] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:26:19,319 [Worker-86] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 02:28:15,556 [Worker-88] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:28:15,557 [Worker-88] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 02:28:15,558 [Worker-88] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:28:15,558 [Worker-88] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 02:28:20,858 [Worker-70] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:28:20,859 [Worker-70] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 02:28:20,860 [Worker-70] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:28:20,861 [Worker-70] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 02:28:31,911 [Worker-86] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:28:31,911 [Worker-86] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 02:28:31,912 [Worker-86] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:28:31,913 [Worker-86] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 02:28:44,618 [Worker-89] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:28:44,619 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 02:28:44,620 [Worker-89] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:28:44,621 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 02:29:10,576 [Worker-92] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:29:10,577 [Worker-92] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 02:29:10,577 [Worker-92] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:29:10,578 [Worker-92] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 02:29:15,671 [Worker-88] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:29:15,672 [Worker-88] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 02:29:15,673 [Worker-88] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:29:15,673 [Worker-88] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 02:29:43,976 [Worker-93] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:29:43,977 [Worker-93] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 02:29:43,977 [Worker-93] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:29:43,978 [Worker-93] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 02:30:36,705 [Worker-70] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:30:36,706 [Worker-70] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 02:30:36,707 [Worker-70] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:30:36,707 [Worker-70] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 02:30:47,358 [Worker-83] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:30:47,359 [Worker-83] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 02:30:47,360 [Worker-83] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:30:47,360 [Worker-83] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 02:32:14,026 [Worker-74] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:32:14,026 [Worker-74] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 02:32:14,027 [Worker-74] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:32:14,027 [Worker-74] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 02:32:17,620 [Worker-81] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:32:17,621 [Worker-81] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 02:32:17,621 [Worker-81] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:32:17,621 [Worker-81] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 02:32:34,861 [Worker-74] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:32:34,862 [Worker-74] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 02:32:34,863 [Worker-74] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:32:34,863 [Worker-74] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 02:34:12,166 [Worker-74] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:34:12,167 [Worker-74] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 02:34:12,168 [Worker-74] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:34:12,168 [Worker-74] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 02:36:06,173 [Worker-89] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:36:06,174 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 02:36:06,174 [Worker-89] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:36:06,175 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 02:36:10,820 [Worker-97] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:36:10,821 [Worker-97] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 02:36:10,822 [Worker-97] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:36:10,823 [Worker-97] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 02:37:27,718 [Worker-91] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:37:27,719 [Worker-91] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 02:37:27,719 [Worker-91] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:37:27,720 [Worker-91] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 02:50:45,486 [Worker-110] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:50:45,486 [Worker-110] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 02:50:45,487 [Worker-110] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:50:45,487 [Worker-110] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 02:57:12,407 [Worker-118] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:57:12,408 [Worker-118] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 02:57:12,409 [Worker-118] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 02:57:12,409 [Worker-118] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources
+2017-05-19 03:00:21,467 [Worker-80] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 03:00:21,468 [Worker-80] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\main\resources
+2017-05-19 03:00:21,468 [Worker-80] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1250 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-19 03:00:21,469 [Worker-80] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory P:\Pwr_projects\PracaMagisterska\PracaMagisterska\repo\Java\FirstRJavaProj\src\test\resources

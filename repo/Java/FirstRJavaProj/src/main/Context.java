@@ -23,10 +23,23 @@ public class Context{
 	List<ApplicableFunction> applicableFunctions;
 	AlgorithmParameters algorithmParameters;
 	MemeticPartParameters memeticPartParameters;
-	int selectedFunction;
+	ApplicableFunction selectedFunction;
+	PlotFunctionParameters plotFunctionParameters;
 	
 	
 	
+	public PlotFunctionParameters getPlotFunctionParameters() {
+		return plotFunctionParameters;
+	}
+
+	public ApplicableFunction getSelectedFunction() {
+		return selectedFunction;
+	}
+
+	public void setSelectedFunction(ApplicableFunction selectedFunction) {
+		this.selectedFunction = selectedFunction;
+	}
+
 	public static Context getInstance(){
 		if (instance == null){
 			instance = new Context();
