@@ -2,6 +2,8 @@ package guiInterface;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import SystemMessages.SystemMessageException;
 import interfaces.AbstractJavaInvoker;
@@ -11,72 +13,105 @@ import interfaces.REngineService;
 import main.Context;
 import main.PlotFunctionParameters;
 
-public class Controller  implements ViewInteraction {
-	
-	private Integer plotInitialCounter;
-	private PlotPanel plotPanel;
+public class Controller implements ViewInteraction {
 
-	
-	
-	@Override
-	public void invokePlotFunction3D() {
-		String path = generateDestinationPath();
-		Java_plotFunction3DInvoker invoker = new Java_plotFunction3DInvoker();
-		PlotFunctionParameters params = Context.getInstance().getPlotFunctionParameters();
-		invoker.withApplicableFunction(Context.getInstance().getSelectedFunction())
-			.withXRange(params.getxMin(), params.getxMax(), params.getxResolution())
-			.withYRange(params.getyMin(), params.getyMax(), params.getyResolution())
-			.withApplicableFunction(Context.getInstance().getSelectedFunction())
-			.withDestinationPath(path);
-		
-		REngineService engine = new REngineService();
-		engine.invokeOnStaticInstance(invoker, new OnRCommandEndCallback() {
-			
-			@Override
-			public void onEnd(AbstractJavaInvoker invoker) {
-				if (invoker instanceof Java_plotFunction3DInvoker)
-				{
-					Java_plotFunction3DInvoker plotInvoker = (Java_plotFunction3DInvoker) invoker;
-					try{
-						plotPanel.paintWithImage(plotInvoker.getDestinationPath());
-					}catch(SystemMessageException sme){
-						sme.createPopup(plotPanel);
-					}
-				}
-			}
-		});
-	}
+    private PlotPanel plotPanel;
 
+    private List<String> images;
 
+    private int currentImageIndex;
 
+    public Controller() {
+        images = new ArrayList<>();
+    }
 
-	private String generateDestinationPath() {
-		String path;
-		try {
-			File temp = File.createTempFile(Context.getInstance().getSelectedFunction().getrName(), Long.toString(System.nanoTime()));
-			path = temp.getAbsolutePath() + ".png";
-			path = path.replace('\\', '/');
+    @Override
+    public void invokePlotFunction3D() {
+        String path = generateDestinationPath(Context.getInstance().getSelectedFunction().getrName());
+        Java_plotFunction3DInvoker invoker = new Java_plotFunction3DInvoker();
+        PlotFunctionParameters params = Context.getInstance().getPlotFunctionParameters();
+        invoker.withApplicableFunction(Context.getInstance().getSelectedFunction())
+                .withXRange(params.getxMin(), params.getxMax(), params.getxResolution())
+                .withYRange(params.getyMin(), params.getyMax(), params.getyResolution())
+                .withApplicableFunction(Context.getInstance().getSelectedFunction()).withDestinationPath(path)
+                .withDimensions(params.getHeight(), params.getWidth());
 
-			temp.delete();
-		} catch (IOException e) {
-			path = Context.getInstance().getSelectedFunction().getrName() + Long.toString(System.nanoTime()) + ".png";
-		}
-		System.out.println("plot file path: " + path);
-		return path;
-	}
+        REngineService engine = new REngineService();
+        engine.invokeOnStaticInstance(invoker, new OnRCommandEndCallback() {
 
+            @Override
+            public void onEnd(AbstractJavaInvoker invoker) {
+                if (invoker instanceof Java_plotFunction3DInvoker) {
+                    Java_plotFunction3DInvoker plotInvoker = (Java_plotFunction3DInvoker) invoker;
+                    try {
+                        plotNew(plotInvoker);
+                    } catch (SystemMessageException sme) {
+                        sme.createPopup(plotPanel);
+                    }
+                }
+                RConsoleLogPanel.appendLog("finished: " + invoker.getRCommand());
+            }
+        });
+    }
 
+    private String generateDestinationPath(String filename) {
+        String path;
+        try {
+            File temp = File.createTempFile(filename,
+                    Long.toString(System.nanoTime()));
+            path = temp.getAbsolutePath() + ".png";
+            path = path.replace('\\', '/');
 
+            temp.delete();
+        } catch (IOException e) {
+            path = Context.getInstance().getSelectedFunction().getrName() + Long.toString(System.nanoTime()) + ".png";
+        }
+        System.out.println("plot file path: " + path);
+        return path;
+    }
 
-	public PlotPanel getPlotPanel() {
-		return plotPanel;
-	}
+    @Override
+    public Object runAlgorithm() {
+        // TODO Auto-generated method stub
+        return null;
+    }
 
+    public PlotPanel getPlotPanel() {
+        return plotPanel;
+    }
 
+    public void setPlotPanel(PlotPanel plotPanel) {
+        this.plotPanel = plotPanel;
+    }
 
+    @Override
+    public void printPrevious() {
+        currentImageIndex = currentImageIndex - 1;
+        plotPanel.paintWithImage(images.get(currentImageIndex));
+    }
 
-	public void setPlotPanel(PlotPanel plotPanel) {
-		this.plotPanel = plotPanel;
-	}
-	
+    @Override
+    public void printNext() {
+        currentImageIndex = currentImageIndex + 1;
+        plotPanel.paintWithImage(images.get(currentImageIndex));
+
+    }
+
+    private void plotNew(Java_plotFunction3DInvoker plotInvoker) {
+        images.add(plotInvoker.getDestinationPath());
+        currentImageIndex = images.size() - 1;
+        plotPanel.paintWithImage(plotInvoker.getDestinationPath());
+
+    }
+
+    @Override
+    public boolean hasPrev() {
+        return currentImageIndex > 0;
+    }
+
+    @Override
+    public boolean hasNext() {
+        return (currentImageIndex + 1) < images.size();
+    }
+
 }

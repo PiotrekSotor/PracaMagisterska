@@ -1,63 +1,81 @@
 package main;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import params.AlgorithmParameters;
 import params.MemeticPartParameters;
 
-public class Context{
+public class Context {
 
-	private static Context instance;
-	private Context(){
-		applicableFunctions=new ArrayList<>();
-		applicableFunctions.add(ApplicableFunction.CEC2013_9);
-		applicableFunctions.add(ApplicableFunction.SCHAFFER);
-				
-	}
-	
-	List<ApplicableFunction> applicableFunctions;
-	AlgorithmParameters algorithmParameters;
-	MemeticPartParameters memeticPartParameters;
-	ApplicableFunction selectedFunction;
-	PlotFunctionParameters plotFunctionParameters;
-	
-	
-	
-	public PlotFunctionParameters getPlotFunctionParameters() {
-		return plotFunctionParameters;
-	}
+    private static Context instance;
 
-	public ApplicableFunction getSelectedFunction() {
-		return selectedFunction;
-	}
+    List<ApplicableFunction> applicableFunctions;
+    AlgorithmParameters algorithmParameters;
+    MemeticPartParameters memeticPartParameters;
+    ApplicableFunction selectedFunction;
+    PlotFunctionParameters plotFunctionParameters;
 
-	public void setSelectedFunction(ApplicableFunction selectedFunction) {
-		this.selectedFunction = selectedFunction;
-	}
+    private Context() {
+        applicableFunctions = new ArrayList<>();
+        applicableFunctions.add(ApplicableFunction.CEC2013_9);
+        applicableFunctions.add(ApplicableFunction.SCHAFFER);
 
-	public static Context getInstance(){
-		if (instance == null){
-			instance = new Context();
-		}
-		return instance;
-	}
-	
-	public void clearParameters(){
-		algorithmParameters = null;
-		memeticPartParameters =null;
-	}
+        selectedFunction = ApplicableFunction.SCHAFFER;
 
-	public List<ApplicableFunction> getApplicableFunctions() {
-		return applicableFunctions;
-	}
+        algorithmParameters = new AlgorithmParameters();
+        algorithmParameters.withMaxIter(100)
+                .withPCrossover(0.1)
+                .withPMutation(0.1)
+                .withPopSize(100)
+                .withLowerBoundConstraint(createListOfBound(-5.0))
+                .withUpperBoundConstraint(createListOfBound(5.0));
 
-	public String getRScriptsPath() {
-		return "P:/Pwr_projects/PracaMagisterska/PracaMagisterska/repo/R/workspace/javaEntryPoints";
-	
-	}
+        memeticPartParameters = new MemeticPartParameters();
+
+        plotFunctionParameters = new PlotFunctionParameters();
+        // memeticPartParameters
+
+    }
+
+    private List<Double> createListOfBound(double d) {
+        List<Double> constraints = new ArrayList<>();
+        for (int i = 0; i < selectedFunction.getNumOfParams(); ++i) {
+            constraints.add(d);
+        }
+        return constraints;
+    }
+
+    public PlotFunctionParameters getPlotFunctionParameters() {
+        return plotFunctionParameters;
+    }
+
+    public ApplicableFunction getSelectedFunction() {
+        return selectedFunction;
+    }
+
+    public void setSelectedFunction(ApplicableFunction selectedFunction) {
+        this.selectedFunction = selectedFunction;
+    }
+
+    public static Context getInstance() {
+        if (instance == null) {
+            instance = new Context();
+        }
+        return instance;
+    }
+
+    public void clearParameters() {
+        algorithmParameters = null;
+        memeticPartParameters = null;
+    }
+
+    public List<ApplicableFunction> getApplicableFunctions() {
+        return applicableFunctions;
+    }
+
+    public String getRScriptsPath() {
+        return "P:/PWr_projects/PracaMagisterska_2/PracaMagisterska/repo/R/workspace/javaEntryPoints";
+
+    }
 }
