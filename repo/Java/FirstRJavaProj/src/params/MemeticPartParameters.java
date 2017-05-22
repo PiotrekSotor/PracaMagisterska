@@ -69,5 +69,14 @@ public class MemeticPartParameters {
     public void setActive(boolean isActive) {
         this.isActive = isActive;
     }
+    //
+    // public void setParameter(PlotParameterEnum parameterEnum, float value) {
+    //
+    // }
+    //
+    // public void setParameter(PlotParameterEnum parameterEnum, float value) {
+    // // TODO Auto-generated method stub
+    //
+    // }
 
 }

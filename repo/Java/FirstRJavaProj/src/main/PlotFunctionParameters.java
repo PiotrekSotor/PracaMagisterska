@@ -7,8 +7,7 @@ public class PlotFunctionParameters {
     Float yMin;
     Float xMax;
     Float yMax;
-    Float xResolution;
-    Float yResolution;
+    Float resolution;
 
     Integer height;
     Integer width;
@@ -18,8 +17,7 @@ public class PlotFunctionParameters {
         xMax = 5f;
         yMin = -5f;
         yMax = 5f;
-        xResolution = 0.1f;
-        yResolution = 0.1f;
+        resolution = 0.1f;
     }
 
     public Float getxMin() {
@@ -54,20 +52,12 @@ public class PlotFunctionParameters {
         this.yMax = yMax;
     }
 
-    public Float getxResolution() {
-        return xResolution;
+    public Float getResolution() {
+        return resolution;
     }
 
-    public void setxResolution(Float xResolution) {
-        this.xResolution = xResolution;
-    }
-
-    public Float getyResolution() {
-        return yResolution;
-    }
-
-    public void setyResolution(Float yResolution) {
-        this.yResolution = yResolution;
+    public void setResolution(Float xResolution) {
+        this.resolution = xResolution;
     }
 
     public void setDimensions(Dimension dim) {
@@ -83,7 +73,7 @@ public class PlotFunctionParameters {
         return width;
     }
 
-    public void setParameter(ParameterEnum parameter, Float value) {
+    public void setParameter(PlotParameterEnum parameter, Float value) {
         switch (parameter) {
         case XMIN:
             setxMin(value);
@@ -97,18 +87,15 @@ public class PlotFunctionParameters {
         case YMAX:
             setyMax(value);
             break;
-        case XRESOLUTION:
-            setxResolution(value);
-            break;
-        case YRESOLUTION:
-            setyResolution(value);
+        case RESOLUTION:
+            setResolution(value);
             break;
         default:
             break;
         }
     }
 
-    public float getParameter(ParameterEnum parameter) {
+    public float getParameter(PlotParameterEnum parameter) {
         switch (parameter) {
         case XMIN:
             return getxMin();
@@ -118,11 +105,8 @@ public class PlotFunctionParameters {
             return getxMax();
         case YMAX:
             return getyMax();
-        case XRESOLUTION:
-            return getxResolution();
-        case YRESOLUTION:
-            return getyResolution();
         case RESOLUTION:
+            return getResolution();
         default:
             return 0;
         }

@@ -31,8 +31,8 @@ public class Controller implements ViewInteraction {
         Java_plotFunction3DInvoker invoker = new Java_plotFunction3DInvoker();
         PlotFunctionParameters params = Context.getInstance().getPlotFunctionParameters();
         invoker.withApplicableFunction(Context.getInstance().getSelectedFunction())
-                .withXRange(params.getxMin(), params.getxMax(), params.getxResolution())
-                .withYRange(params.getyMin(), params.getyMax(), params.getyResolution())
+                .withXRange(params.getxMin(), params.getxMax(), params.getResolution())
+                .withYRange(params.getyMin(), params.getyMax(), params.getResolution())
                 .withApplicableFunction(Context.getInstance().getSelectedFunction()).withDestinationPath(path)
                 .withDimensions(params.getHeight(), params.getWidth());
 
