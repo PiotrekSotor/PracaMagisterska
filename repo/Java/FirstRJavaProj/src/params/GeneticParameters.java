@@ -3,13 +3,47 @@ package params;
 import java.util.ArrayList;
 import java.util.List;
 
-import main.ApplicableFunction;
-import main.PlotParameterEnum;
+import enums.ApplicableFunction;
+import enums.ParameterEnum;
 
-public class GeneticParameters {
+public class GeneticParameters implements PanelParameters {
 
     Integer popSize;
     Integer maxIter;
+    Integer numOfRuns;
+
+    public Integer getNumOfRuns() {
+        return numOfRuns;
+    }
+
+    public void setNumOfRuns(Integer numOfRuns) {
+        this.numOfRuns = numOfRuns;
+    }
+
+    public void setPopSize(Integer popSize) {
+        this.popSize = popSize;
+    }
+
+    public void setMaxIter(Integer maxIter) {
+        this.maxIter = maxIter;
+    }
+
+    public void setpCrossover(Double pCrossover) {
+        this.pCrossover = pCrossover;
+    }
+
+    public void setpMutation(Double pMutation) {
+        this.pMutation = pMutation;
+    }
+
+    public void setLowerBoundConstraint(List<Double> lowerBoundConstraint) {
+        this.lowerBoundConstraint = lowerBoundConstraint;
+    }
+
+    public void setUpperBoundConstraint(List<Double> upperBoundConstraint) {
+        this.upperBoundConstraint = upperBoundConstraint;
+    }
+
     Double pCrossover;
     Double pMutation;
     List<Double> lowerBoundConstraint;
@@ -17,6 +51,7 @@ public class GeneticParameters {
 
     public GeneticParameters(ApplicableFunction selectedFunction) {
         this.withMaxIter(100)
+                .withNumOfRuns(5)
                 .withPCrossover(0.1)
                 .withPMutation(0.1)
                 .withPopSize(100)
@@ -32,13 +67,18 @@ public class GeneticParameters {
         return constraints;
     }
 
+    public GeneticParameters withNumOfRuns(Integer numOfRuns) {
+        this.numOfRuns = numOfRuns;
+        return this;
+    }
+
     public GeneticParameters withPopSize(Integer size) {
         this.popSize = size;
         return this;
     }
 
     public GeneticParameters withMaxIter(Integer iters) {
-        this.popSize = iters;
+        this.maxIter = iters;
         return this;
     }
 
@@ -86,9 +126,65 @@ public class GeneticParameters {
         return pMutation;
     }
 
-    public void setParameter(PlotParameterEnum parameterEnum, float value) {
-        // TODO Auto-generated method stub
+    @Override
+    public void setParameter(ParameterEnum parameterEnum, Object value, Integer index) {
+        Integer paramInt;
+        Double paramDouble;
+        switch (parameterEnum) {
+        case POPSIZE:
+            paramInt = (Integer) value;
+            setPopSize(paramInt);
+            break;
+        case MAXITER:
+            paramInt = (Integer) value;
+            setMaxIter(paramInt);
+            break;
+        case NUM_OF_RUNS:
+            paramInt = (Integer) value;
+            setNumOfRuns(paramInt);
+            break;
+        case PCROSSOVER:
+            paramDouble = (Double) value;
+            setpCrossover(paramDouble);
+            break;
+        case PMUTATION:
+            paramDouble = (Double) value;
+            setpMutation(paramDouble);
+            break;
+        case LOWER_BOUND:
+            paramDouble = (Double) value;
+            getLowerBoundConstraint().set(index, paramDouble);
+            break;
+        case UPPER_BOUND:
+            paramDouble = (Double) value;
+            getUpperBoundConstraint().set(index, paramDouble);
+            break;
+        default:
+            break;
+        }
+    }
 
+    @Override
+    public Object getParameter(ParameterEnum parameterEnum, Integer index) {
+        switch (parameterEnum) {
+        case POPSIZE:
+            return getPopSize();
+        case MAXITER:
+            return getMaxIter();
+        case NUM_OF_RUNS:
+            return getNumOfRuns();
+        case PCROSSOVER:
+            return getpCrossover();
+        case PMUTATION:
+            return getpMutation();
+        case LOWER_BOUND:
+            return getLowerBoundConstraint().get(index);
+        case UPPER_BOUND:
+            return getUpperBoundConstraint().get(index);
+        default:
+            break;
+        }
+        return 0;
     }
 
 }

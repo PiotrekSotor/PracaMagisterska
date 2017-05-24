@@ -1,4 +1,4 @@
-package params;
+package enums;
 
 public enum ObjectType {
 	TEXT,

@@ -1,9 +1,11 @@
-package guiInterface;
+package panels;
 
 import java.awt.Dimension;
 import java.awt.GridLayout;
 
 import javax.swing.JButton;
+
+import guiInterface.ViewInteraction;
 
 public class ButtonsPanel extends MainPanel {
 

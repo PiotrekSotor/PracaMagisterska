@@ -1,6 +1,6 @@
 package interfaces;
 
-import main.ApplicableFunction;
+import enums.ApplicableFunction;
 
 public class Java_plotFunction3DInvoker extends AbstractJavaInvoker {
 
@@ -21,12 +21,12 @@ public class Java_plotFunction3DInvoker extends AbstractJavaInvoker {
         return destinationPath;
     }
 
-    public Java_plotFunction3DInvoker withXRange(float from, float to, float by) {
+    public Java_plotFunction3DInvoker withXRange(Double from, Double to, Double by) {
         xRange = createSequence(from, to, by);
         return this;
     }
 
-    public Java_plotFunction3DInvoker withYRange(float from, float to, float by) {
+    public Java_plotFunction3DInvoker withYRange(Double from, Double to, Double by) {
         yRange = createSequence(from, to, by);
         return this;
     }

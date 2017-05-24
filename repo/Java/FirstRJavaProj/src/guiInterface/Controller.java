@@ -11,11 +11,15 @@ import interfaces.Java_plotFunction3DInvoker;
 import interfaces.OnRCommandEndCallback;
 import interfaces.REngineService;
 import main.Context;
-import main.PlotFunctionParameters;
+import panels.ExecutionConditionPanel;
+import panels.PlotPanel;
+import panels.RConsoleLogPanel;
+import params.PlotFunctionParameters;
 
 public class Controller implements ViewInteraction {
 
     private PlotPanel plotPanel;
+    private ExecutionConditionPanel ecp;
 
     private List<String> images;
 
@@ -112,6 +116,22 @@ public class Controller implements ViewInteraction {
     @Override
     public boolean hasNext() {
         return (currentImageIndex + 1) < images.size();
+    }
+
+    @Override
+    public void enablePlot3DButton(Integer numOfParams) {
+        ecp.enablePlot3DButton(numOfParams);
+    }
+
+    @Override
+    public void resetConstraintBounds(Integer numOfParams) {
+        ecp.resetConstraintBounds(numOfParams);
+
+    }
+
+    public void setExecutionConditionPanel(ExecutionConditionPanel ecp) {
+        this.ecp = ecp;
+
     }
 
 }

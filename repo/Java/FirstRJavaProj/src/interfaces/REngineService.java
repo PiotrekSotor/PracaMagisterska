@@ -3,8 +3,8 @@ package interfaces;
 import org.rosuda.JRI.Rengine;
 import org.springframework.stereotype.Component;
 
-import guiInterface.RConsoleLogPanel;
 import main.Context;
+import panels.RConsoleLogPanel;
 
 @Component
 public class REngineService {

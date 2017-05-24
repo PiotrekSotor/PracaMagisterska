@@ -14,4 +14,8 @@ public interface ViewInteraction {
 
     boolean hasNext();
 
+    void enablePlot3DButton(Integer numOfParams);
+
+    void resetConstraintBounds(Integer numOfParams);
+
 }

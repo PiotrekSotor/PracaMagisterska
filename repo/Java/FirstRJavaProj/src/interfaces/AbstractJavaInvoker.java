@@ -4,14 +4,14 @@ public abstract class AbstractJavaInvoker {
 
     public abstract String getRCommand();
 
-    protected String createSequence(float from, float to, float by) {
+    protected String createSequence(Double from, Double to, Double by) {
         StringBuilder sb = new StringBuilder();
         sb.append("seq(");
-        sb.append(Float.toString(from));
+        sb.append(from.toString());
         sb.append(", ");
-        sb.append(Float.toString(to));
+        sb.append(to.toString());
         sb.append(", by=");
-        sb.append(Float.toString(by));
+        sb.append(by.toString());
         sb.append(")");
         return sb.toString();
     }

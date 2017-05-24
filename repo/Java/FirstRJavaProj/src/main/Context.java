@@ -3,8 +3,12 @@ package main;
 import java.util.ArrayList;
 import java.util.List;
 
+import enums.ApplicableFunction;
+import enums.PanelIdentifierEnum;
 import params.GeneticParameters;
-import params.MemeticPartParameters;
+import params.MemeticParameters;
+import params.PanelParameters;
+import params.PlotFunctionParameters;
 
 public class Context {
 
@@ -12,7 +16,7 @@ public class Context {
 
     List<ApplicableFunction> applicableFunctions;
     GeneticParameters geneticParameters;
-    MemeticPartParameters memeticPartParameters;
+    MemeticParameters memeticParameters;
     ApplicableFunction selectedFunction;
     PlotFunctionParameters plotFunctionParameters;
 
@@ -24,7 +28,7 @@ public class Context {
         selectedFunction = ApplicableFunction.SCHAFFER;
 
         geneticParameters = new GeneticParameters(selectedFunction);
-        memeticPartParameters = new MemeticPartParameters();
+        memeticParameters = new MemeticParameters();
         plotFunctionParameters = new PlotFunctionParameters();
 
     }
@@ -50,7 +54,7 @@ public class Context {
 
     public void clearParameters() {
         geneticParameters = null;
-        memeticPartParameters = null;
+        memeticParameters = null;
     }
 
     public List<ApplicableFunction> getApplicableFunctions() {
@@ -58,15 +62,27 @@ public class Context {
     }
 
     public String getRScriptsPath() {
-        return "P:/PWr_projects/PracaMagisterska_2/PracaMagisterska/repo/R/workspace/javaEntryPoints";
+        return "P:/PWr_projects/PracaMagisterska/PracaMagisterska/repo/R/workspace/javaEntryPoints";
 
     }
 
-    public MemeticPartParameters getMemeticParameters() {
-        return memeticPartParameters;
+    public MemeticParameters getMemeticParameters() {
+        return memeticParameters;
     }
 
     public GeneticParameters getGeneticParameters() {
         return geneticParameters;
+    }
+
+    public PanelParameters getParametersForPanel(PanelIdentifierEnum panelEnum) {
+        switch (panelEnum) {
+        case MEMETIC_PARAMS_PANEL:
+            return memeticParameters;
+        case GENETIC_PARAMS_PANEL:
+            return geneticParameters;
+        case PLOT_PARAMS_PANEL:
+            return plotFunctionParameters;
+        }
+        return null;
     }
 }
