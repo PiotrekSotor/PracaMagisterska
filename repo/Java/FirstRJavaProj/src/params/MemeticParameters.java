@@ -3,15 +3,27 @@ package params;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MemeticPartParameters {
+import enums.ApplicableLocalOptimalization;
+import enums.ParameterEnum;
+
+public class MemeticParameters implements PanelParameters {
 
     Double poptim;
     Double pressel;
+
+    public void setPoptim(Double poptim) {
+        this.poptim = poptim;
+    }
+
+    public void setPressel(Double pressel) {
+        this.pressel = pressel;
+    }
+
     List<ApplicableLocalOptimalization> applicableLocalOptimalizations;
     ApplicableLocalOptimalization selectedOptimalization;
     boolean isActive;
 
-    public MemeticPartParameters() {
+    public MemeticParameters() {
         isActive = false;
 
         poptim = 0.1;
@@ -27,17 +39,17 @@ public class MemeticPartParameters {
         selectedOptimalization = ApplicableLocalOptimalization.BFGS;
     }
 
-    public MemeticPartParameters withPoptim(Double val) {
+    public MemeticParameters withPoptim(Double val) {
         poptim = val;
         return this;
     }
 
-    public MemeticPartParameters withPressel(Double val) {
+    public MemeticParameters withPressel(Double val) {
         pressel = val;
         return this;
     }
 
-    public MemeticPartParameters withApplicableLocalOptimalizations(List<ApplicableLocalOptimalization> val) {
+    public MemeticParameters withApplicableLocalOptimalizations(List<ApplicableLocalOptimalization> val) {
         applicableLocalOptimalizations = val;
         return this;
     }
@@ -69,14 +81,42 @@ public class MemeticPartParameters {
     public void setActive(boolean isActive) {
         this.isActive = isActive;
     }
-    //
-    // public void setParameter(PlotParameterEnum parameterEnum, float value) {
-    //
-    // }
-    //
-    // public void setParameter(PlotParameterEnum parameterEnum, float value) {
-    // // TODO Auto-generated method stub
-    //
-    // }
+
+    @Override
+    public void setParameter(ParameterEnum parameterEnum, Object value, Integer index) {
+        Boolean paramboolean;
+        Double paramDouble;
+        switch (parameterEnum) {
+        case IS_ACTIVE:
+            paramboolean = (Boolean) value;
+            setActive(paramboolean);
+            break;
+        case POPTIM:
+            paramDouble = (Double) value;
+            setPoptim(paramDouble);
+            break;
+        case PRESSEL:
+            paramDouble = (Double) value;
+            setPressel(paramDouble);
+            break;
+        default:
+            break;
+        }
+    }
+
+    @Override
+    public Object getParameter(ParameterEnum parameterEnum, Integer index) {
+        switch (parameterEnum) {
+        case IS_ACTIVE:
+            return isActive();
+        case POPTIM:
+            return getPoptim();
+        case PRESSEL:
+            return getPressel();
+        default:
+            break;
+        }
+        return null;
+    }
 
 }

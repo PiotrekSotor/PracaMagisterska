@@ -5,18 +5,28 @@ import java.awt.event.FocusListener;
 
 import javax.swing.JTextField;
 
+import enums.PanelIdentifierEnum;
+import enums.ParameterEnum;
 import main.Context;
-import main.PlotParameterEnum;
 
 public class ParameterListener implements FocusListener {
     JTextField field;
-    PlotParameterEnum parameterEnum;
+    ParameterEnum parameterEnum;
     PanelIdentifierEnum panelIdentifierEnum;
+    Integer index;
 
-    public ParameterListener(JTextField textField, PlotParameterEnum parameter, PanelIdentifierEnum panelEnum) {
+    public ParameterListener(JTextField textField, ParameterEnum parameter, PanelIdentifierEnum panelEnum) {
         field = textField;
         parameterEnum = parameter;
         panelIdentifierEnum = panelEnum;
+    }
+
+    public ParameterListener(JTextField textField, ParameterEnum parameter, PanelIdentifierEnum panelEnum,
+            Integer index) {
+        field = textField;
+        parameterEnum = parameter;
+        panelIdentifierEnum = panelEnum;
+        this.index = index;
     }
 
     @Override
@@ -32,18 +42,8 @@ public class ParameterListener implements FocusListener {
             field.setText("0");
             value = 0;
         }
-        switch (panelIdentifierEnum) {
-        case PLOT_PARAMS_PANEL:
-            Context.getInstance().getPlotFunctionParameters().setParameter(parameterEnum, value);
-            break;
-        // case MEMETIC_PARAMS_PANEL:
-        // Context.getInstance().getMemeticParameters().setParameter(parameterEnum,
-        // value);
-        // break;
-        case GENETIC_PARAMS_PANEL:
-            Context.getInstance().getGeneticParameters().setParameter(parameterEnum, value);
-            break;
-        }
+
+        Context.getInstance().getParametersForPanel(panelIdentifierEnum).setParameter(parameterEnum, value, index);
     }
 
 }

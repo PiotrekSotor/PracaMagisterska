@@ -1,4 +1,4 @@
-package guiInterface;
+package enums;
 
 public enum PanelIdentifierEnum {
     PLOT_PARAMS_PANEL,

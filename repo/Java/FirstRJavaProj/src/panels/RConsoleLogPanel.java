@@ -1,4 +1,4 @@
-package guiInterface;
+package panels;
 
 import java.awt.Dimension;
 import java.awt.GridLayout;

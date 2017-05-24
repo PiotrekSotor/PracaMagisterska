@@ -1,4 +1,4 @@
-package guiInterface;
+package panels;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -15,8 +15,9 @@ import javax.imageio.ImageIO;
 import javax.swing.JButton;
 
 import SystemMessages.ErrorSystemMessage;
+import guiInterface.ViewInteraction;
 import main.Context;
-import main.PlotFunctionParameters;
+import params.PlotFunctionParameters;
 
 public class PlotPanel extends MainPanel {
 

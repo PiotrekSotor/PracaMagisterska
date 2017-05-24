@@ -1,4 +1,4 @@
-package main;
+package enums;
 
 public enum ApplicableFunction {
 	SCHAFFER("Schaffer1", 2),

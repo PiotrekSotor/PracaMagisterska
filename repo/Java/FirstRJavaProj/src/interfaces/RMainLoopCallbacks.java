@@ -2,7 +2,7 @@ package interfaces;
 
 import org.rosuda.JRI.Rengine;
 
-import guiInterface.RConsoleLogPanel;
+import panels.RConsoleLogPanel;
 
 public class RMainLoopCallbacks extends AbstractRMainLoopCallbacks {
 

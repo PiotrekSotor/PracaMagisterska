@@ -1,54 +1,34 @@
-package guiInterface;
+package panels;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.NumberFormat;
 import java.util.List;
 
 import javax.swing.JComboBox;
+import javax.swing.JTextField;
 import javax.swing.text.NumberFormatter;
 
-import main.ApplicableFunction;
+import enums.ApplicableFunction;
+import enums.PanelIdentifierEnum;
+import enums.ParameterEnum;
+import guiInterface.ComponentWithLabel;
+import guiInterface.ViewInteraction;
 import main.Context;
 
-public class ExecutionConditionPanel extends MainPanel {
+public class PlotParametersPanel extends MainPanel {
 
     private JComboBox<ApplicableFunction> functionSelector;
-    private ButtonsPanel buttonsPanel;
-    private PlotParametersPanel plotParametersPanel;
+    private JTextField xMin;
+    private JTextField xMax;
+    private JTextField resolution;
+    private JTextField yMin;
+    private JTextField yMax;
 
-    private NumberFormatter fractalFormatter;
-
-    public ExecutionConditionPanel(ViewInteraction vi) {
+    public PlotParametersPanel(ViewInteraction vi, NumberFormatter fractalFormatter) {
         super(vi);
 
-        setupFractalNumberFormatter();
-
-        setLayout(new GridLayout(0, 2));
-        setPreferredSize(new Dimension(800, 200));
-
         addSelectFunction();
-
-        buttonsPanel = new ButtonsPanel(vi);
-        plotParametersPanel = new PlotParametersPanel(vi, fractalFormatter);
-
-        add(new ButtonsPanel(vi));
-
-        setBackground(Color.blue);
-
-    }
-
-    private void setupFractalNumberFormatter() {
-        NumberFormat numberFormat = NumberFormat.getInstance(getLocale());
-        numberFormat.setMaximumFractionDigits(2);
-        numberFormat.setMinimumFractionDigits(2);
-        numberFormat.setMaximumIntegerDigits(3);
-
-        fractalFormatter = new NumberFormatter(numberFormat);
-
+        addTextFields(fractalFormatter);
     }
 
     private void addSelectFunction() {
@@ -67,7 +47,13 @@ public class ExecutionConditionPanel extends MainPanel {
         return array;
     }
 
-    public void resetConstraintBounds(Integer numOfParams) {
+    private void addTextFields(NumberFormatter fractalFormatter) {
+        addTextField(xMin, "xMin", ParameterEnum.XMIN, fractalFormatter, PanelIdentifierEnum.PLOT_PARAMS_PANEL);
+        addTextField(xMax, "xMax", ParameterEnum.XMAX, fractalFormatter, PanelIdentifierEnum.PLOT_PARAMS_PANEL);
+        addTextField(yMin, "yMin", ParameterEnum.YMIN, fractalFormatter, PanelIdentifierEnum.PLOT_PARAMS_PANEL);
+        addTextField(yMax, "yMax", ParameterEnum.YMAX, fractalFormatter, PanelIdentifierEnum.PLOT_PARAMS_PANEL);
+        addTextField(resolution, "resolution", ParameterEnum.RESOLUTION, fractalFormatter,
+                PanelIdentifierEnum.PLOT_PARAMS_PANEL);
 
     }
 
@@ -77,12 +63,13 @@ public class ExecutionConditionPanel extends MainPanel {
         public void actionPerformed(ActionEvent e) {
             ApplicableFunction selectedFunction = (ApplicableFunction) functionSelector.getSelectedItem();
             Integer numOfParams = selectedFunction.getNumOfParams();
-            buttonsPanel.enablePlot3DButton(numOfParams);
-            resetConstraintBounds(numOfParams);
+            viewInteraction.enablePlot3DButton(numOfParams);
+            viewInteraction.resetConstraintBounds(numOfParams);
 
             Context.getInstance().setSelectedFunction(selectedFunction);
 
         }
 
     }
+
 }
