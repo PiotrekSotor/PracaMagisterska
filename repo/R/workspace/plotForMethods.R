@@ -1,4 +1,4 @@
-plotBy2Dimmentions <- function(values, xRange,upperTitle="Tytul", xlab, ylab="Najlepsza wartoœæ funcji", legendTitle="Legenda", pointBest=TRUE){
+plotBy2Dimmentions <- function(values, xRange,upperTitle="Tytul", xlab, ylab="Najlepsza wartoœæ funcji", legendTitle="Legenda", pointBest=TRUE, drawMilestonesFlag=TRUE){
   counter <<- counter +1
   fileName<- paste("porownanieOperatorow_",counter,".png",sep = "")
   fileSize <- 600
@@ -14,15 +14,18 @@ plotBy2Dimmentions <- function(values, xRange,upperTitle="Tytul", xlab, ylab="Na
        main=upperTitle, 
        xlab=xlab, ylab=ylab)
   nLines <- length(yNames) 
+
+  colors<- colorspace::rainbow_hcl(n=nLines+3)
   
-  colors<- colorspace::rainbow_hcl(n=nLines)
-  
-  lineType <- c(1:nLines)
-  plotchar <- seq(18,18+nLines,1)
+  lineType <- c(1:(nLines+3))
+  plotchar <- seq(16,(16+nLines+4),1)
   
   legend("bottomright", "(x,y)", yNames, col=colors, pch=plotchar, lty=lineType, title=legendTitle)
   for (i in 1:nLines){
     lines(as.double(xNames), values[yNames[i],], type="b", lty=lineType[i], col=colors[i], pch=plotchar[i], lwd=2)
+  }
+  if (isTRUE(drawMilestonesFlag)){
+    drawMilestones(xRange, values, nLines, colors)
   }
   if (isTRUE(pointBest)){
     pointBest(values)
@@ -30,12 +33,29 @@ plotBy2Dimmentions <- function(values, xRange,upperTitle="Tytul", xlab, ylab="Na
   dev.off()
 }
 
+drawMilestones <- function(xRange, values, nLines, colors){
+  lineNo<- nLines+1
+  min <- min(values, na.rm=TRUE)
+  max <- max(values, na.rm=TRUE)
+  firstMilestopneValue <- 0.99*(max-min)+min
+  lines(x = xRange, y = c(firstMilestopneValue,firstMilestopneValue), type="b", lty=lineNo, pch=16+lineNo, lwd=1, colors[lineNo])
+  
+  lineNo <- lineNo + 1
+  secondMilestopneValue <- 0.95*(max-min)+min
+  lines(x = xRange, y = c(secondMilestopneValue,secondMilestopneValue), type="b", lty=lineNo, pch=16+lineNo, lwd=1, colors[lineNo])
+  
+  lineNo <- lineNo + 1
+  thirdMilestopneValue <- 0.90*(max-min)+min
+  lines(x = xRange, y = c(thirdMilestopneValue,thirdMilestopneValue), type="b", lty=lineNo, pch=16+lineNo, lwd=1, colors[lineNo])
+}
+
 # oznaczenie gwiazdk¹ wartoœci maksymalnej na wykresie
 pointBest <- function(values){
-  indexOfMax<-which.min(values)-1
+  indexesOfMax <- getIndexesOfOptim(values, TRUE)
+  indexOfMax<-which.max(values)-1
   indexY <- as.integer((indexOfMax)/dim(values)[1])+1
   indexX <- indexOfMax%%dim(values)[1]+1
-  points(as.double(names(values[1,]))[indexY],min(values), pch=8, cex=1.5)
+  points(as.double(names(values[1,]))[indexesOfMax[2]],max(values), pch=8, cex=1.5)
 }
 
 getXRangeBorder <- function(values) {
@@ -47,7 +67,7 @@ getXRangeBorder <- function(values) {
 
 
 
-plotOptimMethodsComparation <- function(results, valueType="bestSolution", title="Porównanie operatorów optymalizacji - Najlepsze znalezione rozwi¹zanie"){
+plotOptimMethodsComparation <- function(results, valueType="bestSolution", title="Porównanie operatorów optymalizacji - najlepsze znalezione rozwi¹zanie"){
   
   xRangeBorder <- getXRangeBorder(results[,,valueType])
   values <-results[,1:xRangeBorder,valueType]
@@ -56,7 +76,7 @@ plotOptimMethodsComparation <- function(results, valueType="bestSolution", title
   plotBy2Dimmentions(values = values, 
                      xRange = xRange, 
                      upperTitle = title, 
-                     xlab ="Prawdopodobieñstwo mutacji",
+                     xlab ="Czas dzia³ania algorytmu",
                      legendTitle = "Operator optymalizacji")
   
 }

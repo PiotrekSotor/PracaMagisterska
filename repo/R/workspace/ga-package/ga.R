@@ -211,36 +211,70 @@ ga <- function(type = c("binary", "real-valued", "permutation"),
         { monitor(object) }
       
       # Local search optimisation
-      if(optim & (type == "real-valued"))
-        if(optimArgs$poptim > runif(1))
-        { # perform local search from random selected solution
-          # with prob proportional to fitness
-          i <- sample(1:popSize, size = 1, 
-                      prob = optimProbsel(Fitness, q = optimArgs$pressel))
-          # run local search
-          opt <- try(suppressWarnings(
-                     optim(fn = fitness, ...,
-                           par = Pop[i,],
-                           method = optimArgs$method,
-                           lower = optimArgs$lower,
-                           upper = optimArgs$upper,
-                           control = optimArgs$control)),
-                     silent = TRUE)
-          if(is.function(monitor))
+      if(optim){
+        if (type == "permutation"){
+          if(optimArgs$poptim > runif(1))
+          { # perform local search from random selected solution
+            # with prob proportional to fitness
+            i <- sample(1:popSize, size = 1, 
+                        prob = optimProbsel(Fitness, q = optimArgs$pressel))
+            # run local search
+            opt <- try(suppressWarnings(
+              optim(fn = fitness, ...,
+                    par = Pop[i,],
+                    method = optimArgs$method,
+                    lower = optimArgs$lower,
+                    upper = optimArgs$upper,
+                    control = optimArgs$control)),
+              silent = TRUE)
+            if(is.function(monitor))
             { if(!inherits(opt, "try-error"))
-                cat("\b | Local search =", 
-                    format(opt$value, digits = getOption("digits")))
+              cat("\b | Local search =", 
+                  format(opt$value, digits = getOption("digits")))
               else cat(" |", opt[1]) 
               cat("\n") }
-          if(!inherits(opt, "try-error"))
+            if(!inherits(opt, "try-error"))
             { Pop[i,] <- opt$par
-              Fitness[i] <- opt$value }
-          # update object
-          object@population <- Pop
-          object@fitness <- Fitness
-          # update iterations summary
-          fitnessSummary[iter,] <- gaSummary(object@fitness)
-          object@summary <- fitnessSummary
+            Fitness[i] <- opt$value }
+            # update object
+            object@population <- Pop
+            object@fitness <- Fitness
+            # update iterations summary
+            fitnessSummary[iter,] <- gaSummary(object@fitness)
+            object@summary <- fitnessSummary
+          }
+        }
+        if (type == "real-valued"){
+          if(optimArgs$poptim > runif(1))
+          { # perform local search from random selected solution
+            # with prob proportional to fitness
+            i <- sample(1:popSize, size = 1, 
+                        prob = optimProbsel(Fitness, q = optimArgs$pressel))
+            # run local search
+            opt <- try(suppressWarnings(
+                       optim(fn = fitness, ...,
+                             par = Pop[i,],
+                             method = optimArgs$method,
+                             lower = optimArgs$lower,
+                             upper = optimArgs$upper,
+                             control = optimArgs$control)),
+                       silent = TRUE)
+            if(is.function(monitor))
+              { if(!inherits(opt, "try-error"))
+                  cat("\b | Local search =", 
+                      format(opt$value, digits = getOption("digits")))
+                else cat(" |", opt[1]) 
+                cat("\n") }
+            if(!inherits(opt, "try-error"))
+              { Pop[i,] <- opt$par
+                Fitness[i] <- opt$value }
+            # update object
+            object@population <- Pop
+            object@fitness <- Fitness
+            # update iterations summary
+            fitnessSummary[iter,] <- gaSummary(object@fitness)
+            object@summary <- fitnessSummary
+          }
       }
       
       if(keepBest) 

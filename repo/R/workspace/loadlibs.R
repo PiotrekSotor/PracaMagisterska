@@ -2,6 +2,11 @@ if (!require("colorspace")){
   install.packages("colorspace")
   library("colorspace")
 }
+if (!require("RJSONIO")){
+  install.packages("RJSONIO")
+  library("RJSONIO")
+}
+
 
 # algorithms
 if (!require("GA")){

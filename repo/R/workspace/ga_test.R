@@ -23,7 +23,8 @@ my_gaMonitor <- function(object, digits = getOption("digits"), ...){
 testWithTimeMeasurment <- function (memetic=TRUE, fun, numOfRuns = 10, iters=100, popSize=100, poptim=0.05, pressel=.5, optimiseForMinimal = TRUE, lowerBounds, upperBounds, optimMethod="L-BFGS-B"){
   iterationsSoFar<<-0
   allIterationNumber<<-iters*numOfRuns
-  
+  if (optimMethod == "NONE")
+    memetic = FALSE
   numberOfRun <- seq(1,numOfRuns, by=1)
   
   resultsInTime<<- array(dimnames = list(numberOfRun = numberOfRun, time=possibleTimes, values=collectedValues),
