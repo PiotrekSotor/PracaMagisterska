@@ -1,11 +1,61 @@
-\newpage
 \chapter{Charakterystyka algorytmów ewolucyjnych}
+%\begin{itemize}
+%\item opierają się na okreslonym zbiorze osobników tworzacych populacje
+%\item powstały przez analogie do obserwowanych w naturze zachowań
+%\item sterowane przez parametry odpowiadające za różne aspekty
+%\item dlaczego wybrano akurat takie algorytmy do porownania (to że genetyczny wykonuje się szybciej, bo mniej obliczeń, ale znajdzie rozwiązanie w większej liczbie iteracji, PSO dla porównania)
+%\item czym różnią się tutaj przedstawione algorytmy od strategi ewolucyjnych - niezmienność parametrów w czasie działania algorytmów
+%\item zaznaczenie że testy oparto o implementacje algorytmów zawarte w pakiecie GA dla języka R
+%\end{itemize}
+\par
+Ludzie od zawsze czerpali z rozwiązań wypracowanych przez tysiące lat w naturze dzięki ewolucji. W rzeczywistym świecie konieczność przystosowania się do zmieniających się warunków życia determinuje ciągłe adaptowanie się populacji gatunków. Większość rozwiązań może okazać się niewystarczająco efektywna. Część lub nawet tylko jedno z nich z pewnością spełni jednak wymagania środowiska - przeciwnym razie gatunek czeka wymarcie. 
+\par
+Takie właśnie podejście zdecydowano się wykorzystać podchodząc do koncepcji znajdowania optymalnych (lub jemu bliskich) rozwiązań problemów różnego typu. Charakterystyczną cechą ogółu algorytmów ewolucyjnych jest oparcie swojego działania o jednoczesne rozpatrywanie wielu możliwych rozwiązań i manipulowaniu nimi w celu polepszenia ich jakości. Definicję jakości określa się dla konkretnego rodzaju problemu. Przez analogię do natury przyjmuje się, że osobniki najlepiej przystosowane, a więc o rozwiązaniu bliższym szukanego optimum, silniej oddziaływują na populację niż te gorsze. 
+\par
+Celem pracy jest zbadanie efektywności algorytmów memetycznych i badanie to zostanie przeprowadzone poprzez porównanie skuteczności jego działa do algorytmów genetycznych i PSO. Dokładne kryteria porównawcze oraz przyjęte miary efektywności zostaną opisane w dalszej części pracy. Praca każdego z algorytmów może być sterowana poprzez charakterystyczną dla niego grupę parametrów określających działanie kluczowych dla algorytmu operacji. 
+\par 
+Rozwinięciem koncepcji algorytmów ewolucyjnych jest pojęcie \emph{strategi ewolucyjnych}. W ogólnym rozumieniu nie różnią się w znacznym stopniu od nich, jednakże wprowadzają dodatkowe mechanizmy umożliwiające poprawę jakości znajdowanych rezultatów lub szybkość ich otrzymywania. Najprostszym modelem strategi ewolucyjnej jest stopniowe zmienianie parametrów algorytmu ewolucyjnego wraz z postępem obliczeń i zachowaniem populacji. Jednym z problemów algorytmów ewolucyjnych jest obserwowana przedwczesna zbieżność populacji wokół nieoptymalnego rozwiązania. Odpowiednio przygotowana strategia ewolucyjna może taką sytuację wykryć i odpowiednio do niej zaadaptować parametry dalszej pracy. Strategie ewolucyjne nie są jednak przedmiotem tego wywodu.
+\par
+W zależności od przyjętej koncepcji założenia działania omawianych algorytmów mogą się nieznacznie różnić. Ta praca została oparta na implementacji algorytmu memetycznego zaproponowanej przez Lucca Scruca w pakiecie dla języka \emph{R ''GA''}\cite{gaPackage}. Podobnie w przypadku algorytmu PSO została wykorzystana implementacja zawarta w pakiecie \emph{''PSO''} autorstwa Clausa Bendtsena\cite{psoPackage}.
+
+
 \section{Algorytm genetyczny}
+\begin{itemize}
+\item rys historyczny, kiedy pierwszy raz wykorzystywane
+\item jak rozumieć materiał genetyczny w kontekście optymalizacji problemu
+\item opierają się na populacji zmieniającej się wraz z następowaniem kolejnych pokoleń osobników
+\item wykorzystuje naturalne mechanizmy tworzenia potomstwa, mutowania osobników
+\item moze być sterowany zarówno przez okreslanie prawdopodobieństw wystąpienia mechanizmów opisanych jak i samą ich mechanikę
+\item mechanizmy muszą dbać o to by osobniki nadal były zgodne z dziedziną problemu
+\item pseudokod
+\item opis krosowania i mutacji wybranego do testowania
+\end{itemize} 
+Prace nad implementacją algorytmu stworzonego na podobieństwo zachowań pomiędzy osobnikami w populacji zaczęły się już w latach 50' \cite{barker1958simulation}. 
 
 \section{Algorytm memetyczny}
+\begin{itemize}
+\item rys historyczny, czym jest mem
+\item wspomnienie o Lamarkianizmie i tym drugim
+\item o tym że jest to rozwinięcie koncepcji algorytmu genetycznego
+\item możliwe warianty memetycznego realizowane w literaturze, różne miejsca wykonywania lokalnego przeszukania
+\item znaczenie parametrów algorytmu
+\item pseudokod czy coś takiego
+\item opis testowanych operatorów lokalnego przeszukiwania
+\end{itemize}
 
 \section{Algorytm optymalizacji rojem cząstek - PSO}
+\begin{itemize}
+\item rys historyczny
+\item symuluje zachowanie stada, roju owadów
+\item pseudokod
+\item opis przyjętych parametrów
+\end{itemize}
 
 \section{Specyfika optymalizacji problemów rzeczywistoliczbowych}
+\begin{itemize}
+\item powszechnie stosowana w wielu różnych zastosowaniach
+\item konieczność spełniania constraintów na parametrach
+\item niejednorodne znaczenie i wpływ poszczególnych parametrów na wartości funkcji celu
+\end{itemize}
 
 \subsection{Przykłady zastosowań}
