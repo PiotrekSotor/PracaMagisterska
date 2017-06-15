@@ -1,0 +1,193 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{a4wide}
+\usepackage[margin=3.0cm]{geometry}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english,polish]{babel}
+%%% fix for \lll
+\let\babellll\lll
+\let\lll\relax
+
+\usepackage{indentfirst}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{newfloat}
+\usepackage{listingsutf8}
+\usepackage{afterpage}
+\DeclareFloatingEnvironment[name={Wykres }]{suppfigure}
+\headsep 5mm
+
+\usepackage{capt-of}
+\usepackage{listingsutf8}
+\usepackage{lscape}
+\usepackage{pdfpages}
+\usepackage{longtable}
+
+\usepackage[maxfloats=250]{morefloats}
+\newcommand{\skalaSchaffer}{0.5}
+\newcommand{\source}[1]{\caption*{\footnotesize{Źródło:~{#1}}} }
+\renewcommand{\lstlistlistingname}{Spis kodów źródłowych}
+
+\usetikzlibrary{matrix,calc}
+\usepackage{color}
+\definecolor{gray}{rgb}{0.4,0.4,0.4}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
+\definecolor{cyan}{rgb}{0.0,0.6,0.6}
+
+\definecolor{pblue}{rgb}{0.13,0.13,1}
+\definecolor{pgreen}{rgb}{0,0.5,0}
+\definecolor{pred}{rgb}{0.9,0,0}
+\definecolor{pgrey}{rgb}{0.3,0.3,0.3}
+\lstset{
+  numbers=left,
+  showtabs=false,
+  breakatwhitespace=true,
+  basicstyle=\ttfamily\small,
+  columns=fullflexible,
+  showstringspaces=false,
+  showspaces=false,
+  xleftmargin=3em,
+  framexleftmargin=2.5em,
+  frame=tb,
+  breaklines=true,
+  framextopmargin=5pt,
+  framexbottommargin=7pt,
+  commentstyle=\color{gray}\upshape
+  inputencoding=utf8x, 
+  extendedchars=\true,
+  literate={ą}{{\k{a}}}1
+             {Ą}{{\k{A}}}1
+             {ę}{{\k{e}}}1
+             {Ę}{{\k{E}}}1
+             {ó}{{\'o}}1
+             {Ó}{{\'O}}1
+             {ś}{{\'s}}1
+             {Ś}{{\'S}}1
+             {ł}{{\l{}}}1
+             {Ł}{{\L{}}}1
+             {ż}{{\.z}}1
+             {Ż}{{\.Z}}1
+             {ź}{{\'z}}1
+             {Ź}{{\'Z}}1
+             {ć}{{\'c}}1
+             {Ć}{{\'C}}1
+             {ń}{{\'n}}1
+             {Ń}{{\'N}}1                            
+}
+
+\linespread{1.15}
+\captionsetup[table]{name=Tabela}
+\newtheorem{definicja}{Definicja}[section]
+
+\begin{document}
+\renewcommand*{\listtablename}{Spis tabel}
+\thispagestyle{empty}
+\noindent
+\hfill Wrocław, dn.\ \today\\
+
+\noindent
+\begin{minipage}[c]{0.4\columnwidth}
+  Piotr Sotor, 200882
+\end{minipage}
+
+\vspace{3cm}
+\begin{center}
+  \begin{LARGE}
+    \emph{Praca magisterska} \\
+  \end{LARGE}
+\end{center}
+
+\begin{center}
+  Rok akad. 2016/2017, kierunek: INF
+\end{center}
+\vspace{0.1ex}
+\begin{flushright}
+\begin{minipage}[t]{0.4\columnwidth}
+\noindent
+PROMOTOR:\\
+Dr hab. inż.~Iwona Karcz-Dulęba
+\end{minipage}
+\end{flushright}
+
+\newpage
+\tableofcontents
+
+\newpage
+\section{Wstęp}
+
+\newpage
+\section{Charakterystyka algorytmów ewolucyjnych}
+
+\subsection{Algorytm genetyczny}
+
+\subsection{Algorytm memetyczny}
+
+\subsection{Algorytm optymalizacji rojem cząstek - PSO}
+
+\subsection{Specyfika optymalizacji problemów rzeczywistoliczbowych}
+
+\subsubsection{Przykłady zastosowań}
+
+
+
+\newpage
+\section{Przyjęty model doboru parametrów algorytmu}
+
+\subsection{Dobór parametrów części genetycznej algorytmu}
+
+\subsection{Dobór parametrów części memetycznej algorytmu}
+
+\subsection{Dobór parametrów algorytmu PSO}
+
+\subsection{Badane scenariusze doboru parametrów algorytmów}
+
+\newpage
+\section{Badania}
+
+\subsection{Specyfikacja funkcji testowych}
+
+\subsection{Opis środowiska testowego}
+
+\subsection{Przyjęte miary efektywności algorytmów}
+
+\subsection{Rezultaty}
+
+\newpage
+\section{Wnioski i podsumowanie}
+
+\newpage
+\section{DODATEK I: Aplikacja - symulator}
+\subsection{Założenia projektowe aplikacji}
+\subsection{Instrukcja instalacyjna}
+\subsection{Opis interfejsu graficznego}
+\cite{lamport94}
+
+\newpage
+\begin{thebibliography}{9}
+\addcontentsline{toc}{section}{Literatura}
+\bibitem{lamport94}
+  Leslie Lamport,
+  \emph{\LaTeX: A Document Preparation System}.
+  Addison Wesley, Massachusetts,
+  2nd Edition,
+  1994.
+
+\end{thebibliography}
+
+\newpage
+\listoffigures
+\addcontentsline{toc}{section}{Spis rysunków}
+\newpage
+\lstlistoflistings
+\addcontentsline{toc}{section}{Spis listingów}
+
+\end{document}

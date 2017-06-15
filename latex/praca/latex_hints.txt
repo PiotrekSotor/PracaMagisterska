@@ -1,0 +1,41 @@
+Lista punktowana
+
+\begin{itemize}
+\item opracowanie implementacji algorytmów ALS, MUE oraz HALS,
+\item wyznaczenie faktorów danej macierzy oraz unormowanego błędu residualnego,
+\item ocenienie jakości estymacji przy pomocy miary MSE.
+\end{itemize}
+
+
+
+Listing
+
+\begin{lstlisting}[caption=Algorytm ALS, mathescape]
+inicjalizuj $A^{0}$, $X^{0}$
+for n = 1 to zbieżność 
+  $X^{n+1} = arg\ min_{x_{jk}>0} D(Y || A^{n}X)$
+  $A^{n+1} = arg\ min_{a_{ij}>0} D(Y || AX^{n+1})$
+end
+\end{lstlisting}
+
+
+
+Rysunek
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.5]{img//HALS_porownanie_wew_iteracji//MSE.png}
+	\caption{Spadek błędu średniokwadratowego algorytmu HALS w zależności od liczby iteracji wewnętrznych, rząd faktoryzacji 10}
+	\label{fig:HALSitermse}
+\end{figure}
+
+
+
+Odwołanie do elementu
+
+\ref{fig:HALSitermse}
+
+
+Cytowanie 
+
+\cite{}
