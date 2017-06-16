@@ -49,8 +49,42 @@
 
 \usepackage{listings} % pakiet do prezentacji kodu. 
 %Wcześniej był problem z polskimi znakami w otoczeniu lstlisting, stąd pozostawiono w komentarzu zastosowane wtedy rozwiązanie: 
-\lstset{literate=%-
-{ą}{{\k{a}}}1 {ć}{{\'c}}1 {ę}{{\k{e}}}1 {ł}{{\l{}}}1 {ń}{{\'n}}1 {ó}{{\'o}}1 {ś}{{\'s}}1 {ż}{{\.z}}1 {ź}{{\'z}}1 {Ą}{{\k{A}}}1 {Ć}{{\'C}}1 {Ę}{{\k{E}}}1 {Ł}{{\L{}}}1 {Ń}{{\'N}}1 {Ó}{{\'O}}1 {Ś}{{\'S}}1 {Ż}{{\.Z}}1 {Ź}{{\'Z}}1 }%{\ \ }{{\ }}1}
+\lstset{
+  numbers=left,
+  showtabs=false,
+  breakatwhitespace=true,
+  basicstyle=\ttfamily\small,
+  columns=fullflexible,
+  showstringspaces=false,
+  showspaces=false,
+  xleftmargin=3em,
+  framexleftmargin=2.5em,
+  frame=tb,
+  breaklines=true,
+  framextopmargin=5pt,
+  framexbottommargin=7pt,
+  commentstyle=\color{gray}\upshape
+%  inputencoding=utf8x, 
+  extendedchars=\true,
+  literate={ą}{{\k{a}}}1
+             {Ą}{{\k{A}}}1
+             {ę}{{\k{e}}}1
+             {Ę}{{\k{E}}}1
+             {ó}{{\'o}}1
+             {Ó}{{\'O}}1
+             {ś}{{\'s}}1
+             {Ś}{{\'S}}1
+             {ł}{{\l{}}}1
+             {Ł}{{\L{}}}1
+             {ż}{{\.z}}1
+             {Ż}{{\.Z}}1
+             {ź}{{\'z}}1
+             {Ź}{{\'Z}}1
+             {ć}{{\'c}}1
+             {Ć}{{\'C}}1
+             {ń}{{\'n}}1
+             {Ń}{{\'N}}1                            
+}
 
 % Choć możliwe jest zastosowanie różnych pakietów formatujących tabele, zaleca się tego nie robić.
 %\usepackage{longtable}
@@ -318,6 +352,12 @@
 
 %\AtBeginDocument{% 
         \addto\captionspolish{% 
+        \renewcommand{\lstlistlistingname}{Spis kodów źródłowych}
+}%}
+
+
+%\AtBeginDocument{% 
+        \addto\captionspolish{% 
 \renewcommand\indexname{Indeks rzeczowy}
 }%}
 
@@ -472,7 +512,7 @@ SPECJALNOŚĆ: & \@specjalnosc\\
 \wydzial{WYDZIAŁ ELEKTRONIKI}
 \kierunek{INFORMATYKA}
 \specjalnosc{INŻYNIERIA SYSTEMÓW INFORMATYCZNYCH}
-\promotor{dr hab. inż, Iwona Karcz-Dulęba, W4/K8}
+\promotor{dr hab. inż. Iwona Karcz-Dulęba, W4/K8}
 \date{WROCŁAW, 2017}
 
 % Ustawienie odstępu od góry w nienumerowanych rozdziałach oraz wykazach:
@@ -516,21 +556,14 @@ SPECJALNOŚĆ: & \@specjalnosc\\
 \mbox{}\pdfbookmark[0]{Spis rysunków}{spisRysunkow.1}
 %\addcontentsline{toc}{chapter}{Spis rysunków}
 \listoffigures*
-\begin{flushleft}
-
-\end{flushleft}
-%{%
-%\let\oldnumberline\numberline%
-%\renewcommand{\numberline}{\figurename~\oldnumberline}%
-%\listoffigures%
-%}
-
 
 \newpage
 \mbox{}\pdfbookmark[0]{Spis tabel}{spisTabel.1}
 %\addcontentsline{toc}{chapter}{Spis tabel}
 \listoftables*
 
+\newpage
+\lstlistoflistings
 
 \chapterstyle{default}
 
