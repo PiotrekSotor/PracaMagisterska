@@ -50,6 +50,8 @@
 \usepackage{listings} % pakiet do prezentacji kodu. 
 %Wcześniej był problem z polskimi znakami w otoczeniu lstlisting, stąd pozostawiono w komentarzu zastosowane wtedy rozwiązanie: 
 \lstset{
+  breaklines=true,
+  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
   numbers=left,
   showtabs=false,
   breakatwhitespace=true,

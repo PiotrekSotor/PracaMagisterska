@@ -66,9 +66,9 @@ O ile wyżej opisane metody selekcji osobników swobodnie można stosować nieza
 \par
 \emph{Mem} jest pojęciem wprowadzonym do użycia w 1976 w książce Richarda Dawkinsa \emph{Samolubny gen} \cite{dawkins2011}. Użył go do nazwania podstawowej jednostki w ewolucji kulturowej, czegoś na podobieństwo genu w ewolucji genetycznej. Opiera się to na obserwacji zachowania populacji, w której spotykające się osobniki wymieniają się ze sobą informacjami, przejmują dobre cechy od sąsiednich przedstawicieli lub same poprawiają się w własnym zakresie. Podstawową różnicą pomiędzy \emph{memem}, a \emph{genem} jest fakt, że \emph{mem} jest bardziej związany z fenotypem osobnika, niż z jego genetycznym niezmiennym stanem. Fenotyp w prawdzie jest w znacznej części determinowany przez genotyp, jednakże dodatkowo warunkowany jest przez środowisko zewnętrzne. W kontekście ewolucji memetycznej ugruntowały się dwa podejścia definiujące trwałość i dziedziczność cech będących skutkiem oddziaływania środowiska na osobniki: Baldwinizm i Lamarkianizm. Pierwsze z nich zakłada, że materiał genetyczny nie może ulec zmianie w trakcie życia osobnika, zatem nabyte cechy nie są przekazywane potomstwu w genetyczny sposób. Informacje o tym, jak jednostka udoskonaliła się w trakcie swojego pokolenia może zostać jednak przekazana w innej postaci, co determinuje osobny sposób kodowania cech przekazywanych \emph{genetycznie} i \emph{memetycznie}. W przeciwnym razie lepsze przystosowanie osobnika będzie widoczne tylko w postaci jego fenotypu i nie zostanie przekazane potomstwu. Drugie podejście wbrew temu co mówi rzeczywista biologia przyjmuje, że ulepszenie jednostki jest trwałe - zapisane w materiale genetycznym propaguje się na potomstwo \cite{whitley1994lamarckian}.
 \par
-\emph{Algorytm memetyczny} najczęściej realizuje podejście zgodne z Lamarkianizmem. Swoją budowę i zasadę działania opiera na \emph{algorytmie genetycznym} dodając do niego charakterystyczne dla siebie mechanizmy. Opisane powyżej zachowanie osobników przyjmujących dobre cechy napotkanych sąsiadów realizuje się poprzez zastosowanie algorytmów przeszukiwania lokalnego na konkretnych, zwykle losowo wybranych jednostkach. W literaturze można znaleźć przykłady implementujące doskonalenie osobników na różnych etapach działania algorytmu genetycznego. Najczęściej stosowanym jest model aplikujący przeszukiwanie lokalne przed selekcją osobników do reprodukcji \textbf{(TO ZRODLO ZACZYNAJACE SIE OD 2 ROZDZIALU: HEURISTIC OPTIMISATION)} lub po wytworzeniu potomków drogą krzyżowania a przed selekcją osobników tworzących nowe pokolenie \cite{sudholt2008computational}. Niekiedy można również stosować przeszukiwanie lokalne na etapie inicjacji populacji. Każdy z losowo wygenerowanych osobników poddaje się lokalnej optymalizacji \cite{elbeltagi2005comparison}.
+\emph{Algorytm memetyczny} najczęściej realizuje podejście zgodne z Lamarkianizmem. Swoją budowę i zasadę działania opiera na \emph{algorytmie genetycznym} dodając do niego charakterystyczne dla siebie mechanizmy. Opisane powyżej zachowanie osobników przyjmujących dobre cechy napotkanych sąsiadów realizuje się poprzez zastosowanie algorytmów przeszukiwania lokalnego na konkretnych, zwykle losowo wybranych jednostkach. W literaturze można znaleźć przykłady implementujące doskonalenie osobników na różnych etapach działania algorytmu genetycznego. Najczęściej stosowanym jest model aplikujący przeszukiwanie lokalne przed selekcją osobników do reprodukcji \cite{maringer2006portfolio} lub po wytworzeniu potomków drogą krzyżowania a przed selekcją osobników tworzących nowe pokolenie \cite{sudholt2008computational}. Niekiedy można również stosować przeszukiwanie lokalne na etapie inicjacji populacji. Każdy z losowo wygenerowanych osobników poddaje się lokalnej optymalizacji \cite{elbeltagi2005comparison}.
 \par
-Przyjęty w czasie badań model algorytmu memetycznego przedstawiono na listingu \ref{lst:memetic_algorithm_pseudocode}. Jest to model zrealizowany przez autora pakieru \emph{GA} dla języka \emph{R}. Na chwilę obecną pakiet ten umożliwia optymalizację przy wykorzystaniu algorytmu memetycznego jedynie problemów rzeczywistoliczbowych. Oferuje ponad to możliwość wyboru spośród 6 operatorów przeszukania lokalnego. Jeden z nich - algorytm Brenta - stosowany może być jedynie w przypadku optymalizacji problemów jednowymiarowych, przez co nie będzie brany pod uwagę w porównaniach. Dokładny opis pozostałych operatorów znajduje się w rodziale \ref{ch:przyjety_model_doboru_parametrow_algorytmu}.  
+Przyjęty w czasie badań model algorytmu memetycznego przedstawiono na listingu \ref{lst:genetic_algorithm_psedocode}. Pogrubieniem zaznaczono element odróżniający procedurę od wcześniej przestawionego na listingu \ref{lst:genetic_algorithm_pseudocode} dla schematu działania algorytmu genetycznego. Jest to model zrealizowany przez autora pakieru \emph{GA} dla języka \emph{R}. Na chwilę obecną pakiet ten umożliwia optymalizację przy wykorzystaniu algorytmu memetycznego jedynie problemów rzeczywistoliczbowych. Oferuje ponad to możliwość wyboru spośród 6 operatorów przeszukania lokalnego. Jeden z nich - algorytm Brenta - stosowany może być jedynie w przypadku optymalizacji problemów jednowymiarowych, przez co nie będzie brany pod uwagę w porównaniach. Dokładny opis pozostałych operatorów znajduje się w rodziale \ref{ch:przyjety_model_doboru_parametrow_algorytmu}.  
 \begin{lstlisting}[caption=Model algorytmu memetycznego stosowany w pakiecie \emph{GA}, label=lst:memetic_algorithm_pseudocode, mathescape]
 Inicjuj populację $\mu$ osobników
 $\textbf{powtarzaj}$
@@ -83,15 +83,36 @@ $\textbf{dopóki}$ warunek stopu
 \par
 W tym momencie należy zauważyć specyfikę takiego, a nie innego przyjętego modelu przez autora pakietu \emph{GA}. Doskonaleniu w czasie trwania populacji może zostać poddany jedynie jeden osobnik z populacji, gdzie w przypadku innych opisywanych publikacji autorzy wykonywali tę operację nawet na całej populacji \cite{elbeltagi2005comparison}\cite{sudholt2008computational}\cite{ong2006classification}.
 
-
-
-
 \section{Algorytm optymalizacji rojem cząstek - PSO}
+\par
+Pierwsze założenia działania algorytmu optymalizacji rojem cząstek opisali Kennedy i Eberhart w 1995 roku \cite{kennedy1995pso}. Początkowo mięli oni na celu utworzenie sztucznej inteligencji mogącej imitować interakcje społeczne \cite{poli2007particle}. Oparli swoje rozwiązanie na obserwacjach zachowania ptaków stadnie poszukujących pożywienia. Przyjmując ilość pożywienia w danym miejscu za funkcję przystosowania położenia ptaka można rozumieć problem znalezienia optymalnego miejsca do żeru stada jako klasyczny problem znalezienia ekstremum globalnego w przestrzeni trójwymiarowej.
+\par
+Odpowiednikiem rzeczywistego stada ptaków jest tytułowy \emph{rój cząstek}. Każda z cząstek opisywana jest przy pomocy trzech \emph{d}-wymiarowych wektorów opisujących obecne położenie cząstki ($\vec{x_i}$), aktualną prędkość ($\vec{v_i}$) oraz najlepszą dotychczasową pozycję ($\vec{p_i}$). Najlepsza uzyskana wartość funkcji dopasowania w pozycji $\vec{p_i}$ oznacza się jako $pbest_i$. Rezultatem działania algorytmu jest najlepsza znaleziona w ten sposób pozycja $\vec{p_i}$ wraz z odpowiadającą jej $pbest_i$.
+\par
+Jednym z wariantów PSO jest określenie parametru \emph{wagi inercji}. Oznacza to skłonność cząstek do ulegania wpływom otaczających ją cząstek lub jej \emph{uparte} podążanie w wybranym przez siebie kierunku. Za wspomniany parametr odpowiada \emph{w} w wzorze \ref{eq:pso_v}. Wysoka wartość wagi inercji zwiększa eksploracyjną zdolność populacji - powiększana jest przeszukana przestrzeń rozwiązań. Z kolei niska wartość parametru przyspiesza zbieżność działania algorytmu. W zależności od rozwiązywanego problemu różne zachowania roju mogą uzyskiwać zadowalające rezultaty.
+\begin{lstlisting}[caption=Schemat algorytmu optymalizacji rojem cząstek - \textbf{PSO}, label=lst:pso_pseudocode, mathescape, breaklines=true]
+Inicjuj populację $\mu$ osobników, ich położenie i prędkość
+$\textbf{powtarzaj}$
+    Dla każdego osobnika wyznacz wartość funkcji przystosowania 
+        przystosowania 
+    Wyznacz nowe wartości $pbest_i$ i $\vec{p_i}$
+    Dla każdego osobnika wyznacz najlepiej przystosowanego osobnika 
+        z otoczenia i przypisz do $\vec{p_g}$
+    Wyznacz nowe prędkości i położenia osobników populacji
+        ze wzorów $\ref{eq:pso_v}$ i $\ref{eq:pso_x}$
+$\textbf{dopóki}$ warunek stopu
+\end{lstlisting}
+
+\begin{equation} \label{eq:pso_v}
+\vec{v_i} \leftarrow \emph{w}\vec{v_i} + \vec{U}(0,\phi_1)\otimes(\vec{p_i}-\vec{x_i}+\vec{U}(0,\phi_2)\otimes(\vec{p_g}-\vec{x_i})
+\end{equation}
+\begin{equation} \label{eq:pso_x}
+\vec{x_i} \leftarrow \vec{x_i} + \vec{v_i}
+\end{equation}
+W wzorach \ref{eq:pso_v} i \ref{eq:pso_x} zastosowano następujące oznaczenia:
 \begin{itemize}
-\item rys historyczny
-\item symuluje zachowanie stada, roju owadów
-\item pseudokod
-\item opis przyjętych parametrów
+\item $\vec{U}(0,\phi_i)$ przedstawia wektor wartości wylosowanych z rozkładem jednostajnym z przedziału $[0, \phi_i]$, losowanie powtarzane jest dla każdej cząstki przy każdej iteracji,
+\item $\otimes$ oznacza mnożenie elementów wektorów przez siebie (\emph{eng. component-wise multiplication}.
 \end{itemize}
 
 \section{Specyfika optymalizacji problemów rzeczywistoliczbowych}
