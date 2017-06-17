@@ -11,13 +11,13 @@
 \par
 Ludzie od zawsze czerpali z rozwiązań wypracowanych przez tysiące lat w naturze dzięki ewolucji. W rzeczywistym świecie konieczność przystosowania się do zmieniających się warunków życia determinuje ciągłe adaptowanie się populacji gatunków. Większość rozwiązań może okazać się niewystarczająco efektywna. Część lub nawet tylko jedno z nich z pewnością spełni jednak wymagania środowiska - przeciwnym razie gatunek czeka wymarcie. 
 \par
-Takie właśnie podejście zdecydowano się wykorzystać podchodząc do koncepcji znajdowania optymalnych (lub jemu bliskich) rozwiązań problemów różnego typu. Charakterystyczną cechą ogółu algorytmów ewolucyjnych jest oparcie swojego działania o jednoczesne rozpatrywanie wielu możliwych rozwiązań i manipulowaniu nimi w celu polepszenia ich jakości. Definicję jakości określa się dla konkretnego rodzaju problemu. Przez analogię do natury przyjmuje się, że osobniki najlepiej przystosowane, a więc o rozwiązaniu bliższym szukanego optimum, silniej oddziaływują na populację niż te gorsze. 
+Takie właśnie podejście zdecydowano się wykorzystać podchodząc do koncepcji znajdowania optymalnych (lub jemu bliskich) rozwiązań problemów różnego typu. Charakterystyczną cechą ogółu algorytmów ewolucyjnych jest oparcie swojego działania o jednoczesne rozpatrywanie wielu możliwych rozwiązań i manipulowaniu nimi w celu polepszenia ich jakości. Definicję jakości określa się dla konkretnego rodzaju problemu. Przez analogię do natury przyjmuje się, że osobniki najlepiej przystosowane, a więc o rozwiązaniu bliższym szukanego optimum, silniej oddziałują na populację niż te gorsze. Kolejne iteracje algorytmów genetycznych i memetycznych należy postrzegać jako następujące po sobie pokolenia osobników, zaś w przypadku optymalizacji rojem cząstek wykonania głównej pętli odpowiadają pojedynczym jednostkom zdyskretyzowanego czasu symulacji zachowania stada. 
 \par
 Celem pracy jest zbadanie efektywności algorytmów memetycznych i badanie to zostanie przeprowadzone poprzez porównanie skuteczności jego działa do algorytmów genetycznych i PSO. Dokładne kryteria porównawcze oraz przyjęte miary efektywności zostaną opisane w dalszej części pracy. Praca każdego z algorytmów może być sterowana poprzez charakterystyczną dla niego grupę parametrów określających działanie kluczowych dla algorytmu operacji. 
 \par 
 Rozwinięciem koncepcji algorytmów ewolucyjnych jest pojęcie \emph{strategi ewolucyjnych}. W ogólnym rozumieniu nie różnią się w znacznym stopniu od nich, jednakże wprowadzają dodatkowe mechanizmy umożliwiające poprawę jakości znajdowanych rezultatów lub szybkość ich otrzymywania. Najprostszym modelem strategi ewolucyjnej jest stopniowe zmienianie parametrów algorytmu ewolucyjnego wraz z postępem obliczeń i zachowaniem populacji. Jednym z problemów algorytmów ewolucyjnych jest obserwowana przedwczesna zbieżność populacji wokół nieoptymalnego rozwiązania. Odpowiednio przygotowana strategia ewolucyjna może taką sytuację wykryć i odpowiednio do niej zaadaptować parametry dalszej pracy. Strategie ewolucyjne nie są jednak przedmiotem tego wywodu.
 \par
-W zależności od przyjętej koncepcji założenia działania omawianych algorytmów mogą się nieznacznie różnić. Ta praca została oparta na implementacji algorytmu memetycznego zaproponowanej przez Lucca Scruca w pakiecie dla języka \emph{R ''GA''}\cite{gaPackage}. Podobnie w przypadku algorytmu PSO została wykorzystana implementacja zawarta w pakiecie \emph{''PSO''} autorstwa Clausa Bendtsena\cite{psoPackage}.
+W zależności od przyjętej koncepcji założenia działania omawianych algorytmów mogą się nieznacznie różnić. Ta praca została oparta na implementacji algorytmu memetycznego zaproponowanej przez Lucca Scruca w pakiecie dla języka \emph{R ''GA''}\cite{gaPackage}. Podobnie w przypadku algorytmu PSO została wykorzystana implementacja zawarta w pakiecie \emph{''PSO''} autorstwa Clausa Bendtsena\cite{psoPackage}. W przypadku wszystkich opisanych w tym rozdziale algorytmów za \emph{warunkiem stopu} można rozumieć wykonanie z góry określonej maksymalnej liczby iteracji pętli lub brak poprawy najlepszego rozwiązania w pewnej liczbie ostatnich przebiegów algorytmu. 
 
 \section{Algorytm genetyczny}
 %\begin{itemize}
@@ -87,7 +87,7 @@ W tym momencie należy zauważyć specyfikę takiego, a nie innego przyjętego m
 \par
 Pierwsze założenia działania algorytmu optymalizacji rojem cząstek opisali Kennedy i Eberhart w 1995 roku \cite{kennedy1995pso}. Początkowo mięli oni na celu utworzenie sztucznej inteligencji mogącej imitować interakcje społeczne \cite{poli2007particle}. Oparli swoje rozwiązanie na obserwacjach zachowania ptaków stadnie poszukujących pożywienia. Przyjmując ilość pożywienia w danym miejscu za funkcję przystosowania położenia ptaka można rozumieć problem znalezienia optymalnego miejsca do żeru stada jako klasyczny problem znalezienia ekstremum globalnego w przestrzeni trójwymiarowej.
 \par
-Odpowiednikiem rzeczywistego stada ptaków jest tytułowy \emph{rój cząstek}. Każda z cząstek opisywana jest przy pomocy trzech \emph{d}-wymiarowych wektorów opisujących obecne położenie cząstki ($\vec{x_i}$), aktualną prędkość ($\vec{v_i}$) oraz najlepszą dotychczasową pozycję ($\vec{p_i}$). Najlepsza uzyskana wartość funkcji dopasowania w pozycji $\vec{p_i}$ oznacza się jako $pbest_i$. Rezultatem działania algorytmu jest najlepsza znaleziona w ten sposób pozycja $\vec{p_i}$ wraz z odpowiadającą jej $pbest_i$.
+Odpowiednikiem rzeczywistego stada ptaków jest tytułowy \emph{rój cząstek}. Każda z nich opisywana jest przy pomocy trzech \emph{d}-wymiarowych wektorów opisujących obecne położenie cząstki ($\vec{x_i}$), aktualną prędkość ($\vec{v_i}$) oraz najlepszą dotychczasową pozycję ($\vec{p_i}$). Najlepsza uzyskana wartość funkcji dopasowania w pozycji $\vec{p_i}$ oznacza się jako $pbest_i$. Rezultatem działania algorytmu jest najlepsza znaleziona w ten sposób pozycja $\vec{p_i}$ wraz z odpowiadającą jej $pbest_i$.
 \par
 Jednym z wariantów PSO jest określenie parametru \emph{wagi inercji}. Oznacza to skłonność cząstek do ulegania wpływom otaczających ją cząstek lub jej \emph{uparte} podążanie w wybranym przez siebie kierunku. Za wspomniany parametr odpowiada \emph{w} w wzorze \ref{eq:pso_v}. Wysoka wartość wagi inercji zwiększa eksploracyjną zdolność populacji - powiększana jest przeszukana przestrzeń rozwiązań. Z kolei niska wartość parametru przyspiesza zbieżność działania algorytmu. W zależności od rozwiązywanego problemu różne zachowania roju mogą uzyskiwać zadowalające rezultaty.
 \begin{lstlisting}[caption=Schemat algorytmu optymalizacji rojem cząstek - \textbf{PSO}, label=lst:pso_pseudocode, mathescape, breaklines=true]
@@ -112,14 +112,31 @@ $\textbf{dopóki}$ warunek stopu
 W wzorach \ref{eq:pso_v} i \ref{eq:pso_x} zastosowano następujące oznaczenia:
 \begin{itemize}
 \item $\vec{U}(0,\phi_i)$ przedstawia wektor wartości wylosowanych z rozkładem jednostajnym z przedziału $[0, \phi_i]$, losowanie powtarzane jest dla każdej cząstki przy każdej iteracji,
-\item $\otimes$ oznacza mnożenie elementów wektorów przez siebie (\emph{eng. component-wise multiplication}.
+\item $\otimes$ oznacza mnożenie elementów wektorów przez siebie (\emph{eng. component-wise multiplication},
+\item $\phi_1$ oraz $\phi_2$ oznaczają \emph{współczynniki przyspieszenia} w kierunku lokalnego i populacyjnego najlepszego znanego rozwiązania,
+\item $w$ oznacza \emph{wagę inercji}
 \end{itemize}
+
 
 \section{Specyfika optymalizacji problemów rzeczywistoliczbowych}
-\begin{itemize}
-\item powszechnie stosowana w wielu różnych zastosowaniach
-\item konieczność spełniania constraintów na parametrach
-\item niejednorodne znaczenie i wpływ poszczególnych parametrów na wartości funkcji celu
-\end{itemize}
+%\begin{itemize}
+%\item konieczność spełniania constraintów na parametrach
+%\item niejednorodne znaczenie i wpływ poszczególnych parametrów na wartości funkcji celu
+%\item potencjalnie nieskończona przestrzeń możliwych rozwiązań
+%\end{itemize}
+\par
+Dziedzina problemów rzeczywistoliczbowych jest bardzo szeroka. Jednak same metody optymalizacji tych zagadnień są w większości przenaszalne bez względu na wymiarowość problemu. Jedyne czego wymagają wyżej opisane algorytmy to jawnie zdefiniowana funkcja pozwalająca w jednoznaczny i powtarzalny sposób określić jakość danego rozwiązania. Wyróżnia to w znacznym stopniu ten rodzaj zagadnień od \emph{kombinatorycznych} i \emph{permutacyjnych} - te wymagają najczęściej również odpowiedniego dopasowania użytych w ich przypadkach operatorów mutacji lub krzyżowania.
+\par
+Liczby rzeczywiste wykorzystywane do określania wartości parametrów optymalizowanej funkcji wymagają jednak jawnego określenia obszaru przeszukiwań - dziedziny każdego z parametrów. Owa dziedzina może przybierać mniej lub bardziej złożone warunki. Podstawowym ograniczeniem nakładanym na argumenty funkcji jest przedział $[minimum, maksimum]$. Zdefiniowanie takiego przedziału choć zawęża krąg poszukiwań, nie zmienia faktu teoretycznego istnienia nieskończonej liczby możliwych wartości do przeszukania. Na szczęście \emph{teoretyczna} nieskończona liczba jest z góry ograniczona przez skończoną dokładność reprezentacji liczb w systemie komputerowym. Oprócz określenia górnych i dolnych krańców przestrzeni rozwiązań możliwe jest zdefiniowanie dodatkowych obostrzeń dotyczących zarówno wartości jednego parametru jak i wzajemnych relacji pomiędzy nimi. Wszystko to musi zostać wyspecyfikowane wedle konkretnego rozwiązywanego problemu.
+\par
+Wraz z dużą liczbą wymiarów analizowanego zagadnienia z pewnością narasta problem związany z niejednorodnym wpływem każdego z parametrów osobnika na wartość funkcji dostosowania. Może zdarzyć się tak, że każda niewielka zmiana wartości jednego z atrybutów jednostki diametralnie zmieni jej jakość, natomiast skrajna zmiana innego nie wpłynie znacząco jej ocenę. Z reguły powyżej opisane algorytmu powinny radzić sobie z takimi sytuacjami, jednakże z pewnością pomocne w takich przypadkach będą dodatkowe metody wstępnej analizy funkcji dopasowania pozwalające na redukcję wymiarowości problemu lub maksymalne zawężenie przyjętych zakresów wartości atrybutów. 
+
 
 \section{Przykłady zastosowań}
+\begin{itemize}
+\item powszechnie stosowana w wielu różnych zastosowaniach
+\item stosowana w metodach złożonych modeli matematycznych, których analiza teoretyczna jest bardzo trudna
+\item stosowana w przypadkach braku modeli matematycznych, operając się na estymacjach i znanych pomiarach
+\item w praktyce zastępuje metodę prób i błędów
+
+\end{itemize}
