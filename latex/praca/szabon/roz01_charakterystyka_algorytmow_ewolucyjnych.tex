@@ -113,10 +113,9 @@ W wzorach \ref{eq:pso_v} i \ref{eq:pso_x} zastosowano następujące oznaczenia:
 \begin{itemize}
 \item $\vec{U}(0,\phi_i)$ przedstawia wektor wartości wylosowanych z rozkładem jednostajnym z przedziału $[0, \phi_i]$, losowanie powtarzane jest dla każdej cząstki przy każdej iteracji,
 \item $\otimes$ oznacza mnożenie elementów wektorów przez siebie (\emph{eng. component-wise multiplication},
-\item $\phi_1$ oraz $\phi_2$ oznaczają \emph{współczynniki przyspieszenia} w kierunku lokalnego i populacyjnego najlepszego znanego rozwiązania,
+\item $\phi_1$ oraz $\phi_2$ opisują \emph{współczynniki przyspieszenia} w kierunku lokalnego i populacyjnego najlepszego znanego rozwiązania,
 \item $w$ oznacza \emph{wagę inercji}
 \end{itemize}
-
 
 \section{Specyfika optymalizacji problemów rzeczywistoliczbowych}
 %\begin{itemize}
@@ -125,11 +124,11 @@ W wzorach \ref{eq:pso_v} i \ref{eq:pso_x} zastosowano następujące oznaczenia:
 %\item potencjalnie nieskończona przestrzeń możliwych rozwiązań
 %\end{itemize}
 \par
-Dziedzina problemów rzeczywistoliczbowych jest bardzo szeroka. Jednak same metody optymalizacji tych zagadnień są w większości przenaszalne bez względu na wymiarowość problemu. Jedyne czego wymagają wyżej opisane algorytmy to jawnie zdefiniowana funkcja pozwalająca w jednoznaczny i powtarzalny sposób określić jakość danego rozwiązania. Wyróżnia to w znacznym stopniu ten rodzaj zagadnień od \emph{kombinatorycznych} i \emph{permutacyjnych} - te wymagają najczęściej również odpowiedniego dopasowania użytych w ich przypadkach operatorów mutacji lub krzyżowania.
+Dziedzina problemów rzeczywistoliczbowych jest bardzo szeroka. Jednak same metody optymalizacji tych zagadnień są w większości przenaszalne bez względu na wymiarowość zagadnienia. Jedyne czego wymagają wyżej opisane algorytmy to jawnie zdefiniowana funkcja pozwalająca w jednoznaczny i powtarzalny sposób określić jakość danego rozwiązania. Wyróżnia to w znacznym stopniu ten rodzaj problemów od \emph{kombinatorycznych} i \emph{permutacyjnych} - te wymagają najczęściej również odpowiedniego dopasowania użytych w ich przypadkach operatorów mutacji lub krzyżowania.
 \par
-Liczby rzeczywiste wykorzystywane do określania wartości parametrów optymalizowanej funkcji wymagają jednak jawnego określenia obszaru przeszukiwań - dziedziny każdego z parametrów. Owa dziedzina może przybierać mniej lub bardziej złożone warunki. Podstawowym ograniczeniem nakładanym na argumenty funkcji jest przedział $[minimum, maksimum]$. Zdefiniowanie takiego przedziału choć zawęża krąg poszukiwań, nie zmienia faktu teoretycznego istnienia nieskończonej liczby możliwych wartości do przeszukania. Na szczęście \emph{teoretyczna} nieskończona liczba jest z góry ograniczona przez skończoną dokładność reprezentacji liczb w systemie komputerowym. Oprócz określenia górnych i dolnych krańców przestrzeni rozwiązań możliwe jest zdefiniowanie dodatkowych obostrzeń dotyczących zarówno wartości jednego parametru jak i wzajemnych relacji pomiędzy nimi. Wszystko to musi zostać wyspecyfikowane wedle konkretnego rozwiązywanego problemu.
+Liczby rzeczywiste wykorzystywane do określania wartości parametrów optymalizowanej funkcji wymagają jawnego określenia obszaru przeszukiwań - dziedziny każdego z parametrów. Owa dziedzina może przybierać mniej lub bardziej złożone warunki. Podstawowym ograniczeniem nakładanym na argumenty funkcji jest przedział $[minimum, maksimum]$. Zdefiniowanie takiego przedziału choć zawęża krąg poszukiwań, nie zmienia faktu teoretycznego istnienia nieskończonej liczby możliwych wartości do przeszukania. Na szczęście \emph{teoretyczna} nieskończona liczba jest z góry ograniczona przez skończoną dokładność reprezentacji liczb w systemie komputerowym. Oprócz określenia górnych i dolnych krańców przestrzeni rozwiązań możliwe jest zdefiniowanie dodatkowych obostrzeń dotyczących zarówno wartości jednego parametru jak i wzajemnych relacji pomiędzy nimi. Wszystko to musi zostać wyspecyfikowane zgodnie z konkretnym rozwiązywanym problemem.
 \par
-Wraz z dużą liczbą wymiarów analizowanego zagadnienia z pewnością narasta problem związany z niejednorodnym wpływem każdego z parametrów osobnika na wartość funkcji dostosowania. Może zdarzyć się tak, że każda niewielka zmiana wartości jednego z atrybutów jednostki diametralnie zmieni jej jakość, natomiast skrajna zmiana innego nie wpłynie znacząco jej ocenę. Z reguły powyżej opisane algorytmu powinny radzić sobie z takimi sytuacjami, jednakże z pewnością pomocne w takich przypadkach będą dodatkowe metody wstępnej analizy funkcji dopasowania pozwalające na redukcję wymiarowości problemu lub maksymalne zawężenie przyjętych zakresów wartości atrybutów. 
+Wraz z dużą liczbą wymiarów analizowanego zagadnienia narasta problem związany z niejednorodnym wpływem każdego z parametrów osobnika na wartość funkcji jego dostosowania. Może zdarzyć się tak, że każda niewielka zmiana wartości jednego z atrybutów jednostki diametralnie zmieni jej jakość, natomiast skrajna zmiana innego nie wpłynie znacząco na jej ocenę. Z reguły powyżej opisane algorytmu powinny radzić sobie z takimi sytuacjami, jednakże z pewnością pomocne w takich przypadkach będą dodatkowe metody wstępnej analizy funkcji dopasowania pozwalające na redukcję wymiarowości problemu lub maksymalne zawężenie przyjętych zakresów wartości atrybutów. Wykorzystane w tej pracy funkcje testowe nie będą wymagały definiowania złożonych warunków odnośnie wartości parametrów. 
 
 
 \section{Przykłady zastosowań}
@@ -138,5 +137,6 @@ Wraz z dużą liczbą wymiarów analizowanego zagadnienia z pewnością narasta 
 \item stosowana w metodach złożonych modeli matematycznych, których analiza teoretyczna jest bardzo trudna
 \item stosowana w przypadkach braku modeli matematycznych, operając się na estymacjach i znanych pomiarach
 \item w praktyce zastępuje metodę prób i błędów
+\item wybrać parę problemów z pdfa dla cec2011
 
 \end{itemize}
