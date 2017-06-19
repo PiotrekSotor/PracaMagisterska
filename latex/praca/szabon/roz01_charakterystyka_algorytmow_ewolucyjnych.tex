@@ -118,6 +118,7 @@ W wzorach \ref{eq:pso_v} i \ref{eq:pso_x} zastosowano następujące oznaczenia:
 \end{itemize}
 
 \section{Specyfika optymalizacji problemów rzeczywistoliczbowych}
+\label{sec:specyfika_optymalizacji_problemów_rzeczywistoliczbowych}
 %\begin{itemize}
 %\item konieczność spełniania constraintów na parametrach
 %\item niejednorodne znaczenie i wpływ poszczególnych parametrów na wartości funkcji celu
@@ -126,17 +127,33 @@ W wzorach \ref{eq:pso_v} i \ref{eq:pso_x} zastosowano następujące oznaczenia:
 \par
 Dziedzina problemów rzeczywistoliczbowych jest bardzo szeroka. Jednak same metody optymalizacji tych zagadnień są w większości przenaszalne bez względu na wymiarowość zagadnienia. Jedyne czego wymagają wyżej opisane algorytmy to jawnie zdefiniowana funkcja pozwalająca w jednoznaczny i powtarzalny sposób określić jakość danego rozwiązania. Wyróżnia to w znacznym stopniu ten rodzaj problemów od \emph{kombinatorycznych} i \emph{permutacyjnych} - te wymagają najczęściej również odpowiedniego dopasowania użytych w ich przypadkach operatorów mutacji lub krzyżowania.
 \par
-Liczby rzeczywiste wykorzystywane do określania wartości parametrów optymalizowanej funkcji wymagają jawnego określenia obszaru przeszukiwań - dziedziny każdego z parametrów. Owa dziedzina może przybierać mniej lub bardziej złożone warunki. Podstawowym ograniczeniem nakładanym na argumenty funkcji jest przedział $[minimum, maksimum]$. Zdefiniowanie takiego przedziału choć zawęża krąg poszukiwań, nie zmienia faktu teoretycznego istnienia nieskończonej liczby możliwych wartości do przeszukania. Na szczęście \emph{teoretyczna} nieskończona liczba jest z góry ograniczona przez skończoną dokładność reprezentacji liczb w systemie komputerowym. Oprócz określenia górnych i dolnych krańców przestrzeni rozwiązań możliwe jest zdefiniowanie dodatkowych obostrzeń dotyczących zarówno wartości jednego parametru jak i wzajemnych relacji pomiędzy nimi. Wszystko to musi zostać wyspecyfikowane zgodnie z konkretnym rozwiązywanym problemem.
+Liczby rzeczywiste wykorzystywane do określania wartości parametrów optymalizowanej funkcji wymagają jawnego określenia obszaru przeszukiwań - dziedziny każdego z parametrów. Owa dziedzina może przybierać mniej lub bardziej złożone warunki. Podstawowym ograniczeniem nakładanym na argumenty funkcji jest przedział $[minimum \quad maksimum]$. Zdefiniowanie takiego przedziału choć zawęża krąg poszukiwań, nie zmienia faktu teoretycznego istnienia nieskończonej liczby możliwych wartości do przeszukania. Na szczęście \emph{teoretyczna} nieskończona liczba jest z góry ograniczona przez skończoną dokładność reprezentacji liczb w systemie komputerowym. Oprócz określenia górnych i dolnych krańców przestrzeni rozwiązań możliwe jest zdefiniowanie dodatkowych obostrzeń dotyczących zarówno wartości jednego parametru jak i wzajemnych relacji pomiędzy nimi. Wszystko to musi zostać wyspecyfikowane zgodnie z konkretnym rozwiązywanym problemem.
 \par
 Wraz z dużą liczbą wymiarów analizowanego zagadnienia narasta problem związany z niejednorodnym wpływem każdego z parametrów osobnika na wartość funkcji jego dostosowania. Może zdarzyć się tak, że każda niewielka zmiana wartości jednego z atrybutów jednostki diametralnie zmieni jej jakość, natomiast skrajna zmiana innego nie wpłynie znacząco na jej ocenę. Z reguły powyżej opisane algorytmu powinny radzić sobie z takimi sytuacjami, jednakże z pewnością pomocne w takich przypadkach będą dodatkowe metody wstępnej analizy funkcji dopasowania pozwalające na redukcję wymiarowości problemu lub maksymalne zawężenie przyjętych zakresów wartości atrybutów. Wykorzystane w tej pracy funkcje testowe nie będą wymagały definiowania złożonych warunków odnośnie wartości parametrów. 
 
 
 \section{Przykłady zastosowań}
-\begin{itemize}
-\item powszechnie stosowana w wielu różnych zastosowaniach
-\item stosowana w metodach złożonych modeli matematycznych, których analiza teoretyczna jest bardzo trudna
-\item stosowana w przypadkach braku modeli matematycznych, operając się na estymacjach i znanych pomiarach
-\item w praktyce zastępuje metodę prób i błędów
-\item wybrać parę problemów z pdfa dla cec2011
-
-\end{itemize}
+%\begin{itemize}
+%\item powszechnie stosowana w wielu różnych zastosowaniach
+%\item stosowana w metodach złożonych modeli matematycznych, których analiza teoretyczna jest bardzo trudna
+%\item stosowana w przypadkach braku modeli matematycznych, operając się na estymacjach i znanych pomiarach
+%\item w praktyce zastępuje metodę prób i błędów
+%\item wybrać parę problemów z pdfa dla cec2011 \cite{cec2011}
+%\end{itemize}
+\par
+Wspomniana w podrozdziale \ref{sec:specyfika_optymalizacji_problemów_rzeczywistoliczbowych} wysoka przenaszalność oraz elastyczność odnośnie zarówno wymiarowości optymalizowanego rozwiązania pozwala na szerokie stosowanie wyżej opisanych metod. Są to metody szczególnie pomocne badaczom w przypadkach rozpatrywania problemów, których skomplikowanie i złożoność modelu matematycznego nie pozwala na znalezienie optymalnego rozwiązania drogą analityczną. Co więcej - nic nie stoi na przeszkodzie takiemu zdefiniowaniu funkcji dopasowania, by jej wartość zależała nie od zadeklarowanego jawnie wzoru matematycznego lecz była określana na podstawie zbioru rzeczywistych pomiarów. 
+\par
+Zastosowanie algorytmicznej optymalizacji pozwala zespołom inżynierskim na szybkie sprawdzanie i doskonalenie koncepcji przez nich rozwiązywanych. Dzięki dokładnemu matematycznemu opisowi analizowanego problemu grupa jest w stanie zdecydowanie zmniejszyć liczbą produkcji kosztownych prototypów testowych dzięki temu, że w wyniku wykorzystania metod optymalizacji wyselekcjonowane zostaną tylko te rozwiązania, których skuteczność jest najbardziej prawdopodobna. Innymi słowy - w pewnym stopniu wykonuje za inżynierów znajdowanie rozwiązania metodą prób i błędów. 
+\par
+Dobrym źródłem przykładów problemów rzeczywistoliczbowych rozwiązywanych poprzez optymalizację są materiały związane z różnymi konkursami algorytmicznymi. Pierwsze z poniżej omówionych zagadnień opisano w ramach \emph{CEC 2011} \cite{cec2011}, zaś drugie pochodzi z publikacji dotyczącej procesu projektowania samolotu o konstrukcji latającego skrzydła \cite{lee2007multi}.
+\par
+\textbf{Problem I:} \emph{estymacja parametrów fali dźwiękowej modulowanej częstotliwościowo} jest zagadnieniem ważnym w nowoczesnych systemach muzycznych. Zadanie sprowadza się do znalezienia wektora 6 parametrów $X = \lbrace\alpha_1, \omega_1, \alpha_2, \omega_2, \alpha_3, \omega_3\rbrace$ dla których minimalny będzie błąd kwadratowy fali uzyskanej wzorem \ref{eq:problem_I_funkcja_przystosowania}, a przebiegiem fali rzeczywistej. Na potrzeby laboratoryjnej realizacji optymalizacji za rzeczywisty dźwięk przyjęto falę opisaną wzorem \ref{eq:problem_I_fala_odniesienia}. Przyjęto, że $\theta = 2\pi/100$, a parametry zawierają się w przedziale~$[-6.4\quad6.35]$.
+\begin{equation} \label{eq:problem_I_funkcja_przystosowania}
+y(t)=\alpha_1*\sin(\omega_1 t\theta + \alpha_2*\sin(\omega_2 t\theta + \alpha_3*\sin(\omega_3 t\theta)))
+\end{equation}
+\begin{equation} \label{eq:problem_I_fala_odniesienia}
+y(t)=(1.0)*\sin((5.0) t\theta + (-1.5)*\sin((4.8) t\theta + (2.0)*\sin((4.9) t\theta)))
+\end{equation}
+\par
+\textbf{Problem II:} \emph{optymalizacja kształtu skrzydeł} konstrukcji samolotu o złączonych skrzydłach. Celem inżynierów była poprawa charakterystyk aerodynamicznych przy jednoczesnym zmniejszeniu ich skutecznej powierzchni \cite{lee2007multi}. Jest to jedno z kluczowych zagadnień związanych z projektowaniem trudno wykrywalnych samolotów. Koncepcja samolotów o złączonych skrzydłach jest rozwijana już od 1919 roku, a najbardziej rozpoznawalnym przykładem takiej konstrukcji jest amerykański bombowiec B-2 Spirit. 
+\par
