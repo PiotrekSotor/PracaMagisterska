@@ -1,14 +1,114 @@
 \newpage
 \chapter{Przyjęty model doboru parametrów algorytmu}
 \label{ch:przyjety_model_doboru_parametrow_algorytmu}
+\section{Opis użytych operatorów części genetycznej}
+%\begin{itemize}
+%\item wspomnieć o interpretacji parametrów proawdopodobieństw mutacji i krzyżowania, że mutowany jest tylko maksymalnie jeden atrybut osobnika,
+%\item takie podejście zmienia wpływ mutacji w zależności od wymiarowości problemu 
+%\item szansa na mutacje nie zależy od funkcji przystosowania
+%\item potomstwo powstale przez krzyzowanie zastepuje rodzicow w populacji
+%\end{itemize}
+\par
+Jednymi z parametrów algorytmu genetycznego, a co za tym idzie i memetycznego, są prawdopodobieństwa zachodzenia krzyżowania i mutacji osobników w populacji. Dokładne zrozumienie zasady działania wykorzystanych operatorów oraz sposobu w jaki są wykorzystywane w implementacji wykorzystanej do badań porównawczych jest kluczowym zagadnieniem pozwalającym lepiej zrozumieć wartości parametrów prawdopodobieństwa z nimi związanych. 
+\par 
+Analiza kodu źródłowego pakietu \emph{GA} \cite{gaPackage} pozwoliła na zauważenie, że jakość osobników populacji wyrażona w poprzez ich dopasowanie nie jest brana pod uwagę w przypadku obu wspomnianych operacji. Drugą cechą specyficzną dla przyjętej implementacji algorytmu jest mutowanie i krzyżowanie \emph{w miejscu}, tj. powstałe w ten sposób osobniki nie tyle dołączają do istniejącej populacji, co zastępują jednostkę oryginalną (przy mutacji) lub rodziców (przy krzyżowaniu). Takie podejście może negatywnie wpływać na jakość uzyskiwanych rezultatów. Nie dość, że tak użyte operatory nie zwiększają różnorodności genetycznej w maksymalnym możliwym stopniu to dodatkowo mogą w ten sposób zostać nadpisane informacje o rozwiązaniach lepszych niż te kodowane przez nowo powstałe osobniki.
+\par
+Proces krzyżowania osobników inicjowany jest przez losowanie ze zwracaniem z populacji par osobników mogących stać się przyszłymi rodzicami potomstwa. Szansa, że tak utworzona para przejdzie przez operację krzyżowania nazywana jest wspomnianym już wcześniej prawdopodobieństwem krosowania. 
+\par
+Analogicznie do wyżej opisanego operatora rozwiązana jest kwestia wyboru osobników do procesu mutacji. Każda z jednostek populacji ma równą szansę równą wartości parametru prawdopodobieństwa mutacji. Warto jednak zauważyć, że ów parametr określa częstość mutacji całego osobnika, a nie pojedynczego atrybutu. W takiej sytuacji wraz ze wzrostem wymiarowości rozwiązywanego problemu - zwiększeniem liczby atrybutów jednostek populacji - może maleć skuteczność operatora tak zdefiniowanego jak na listingu \ref{lst:gen_mutation_operator}. Takie, a nie inne podejście autora implementacji pakietu \emph{GA} można tłumaczyć chęcią obniżenia złożoności obliczeniowej algorytmu. Jednakże nic nie stoi na przeszkodzie, by w przypadkach, w których gęstość mutacji ma duże znaczenie dla jakości rezultatu wykorzystać własny operator mutacji połączony z standardowym \emph{prawdopodobieństwem mutacji} równym 1.
+
+
+\subsection{Operator mutacji}
+%\begin{itemize}
+%\item pseudokod
+%\item słowny opis działania
+%\item przykład na konkrentych osobnikach
+%\end{itemize}
+\par
+Wykorzystany w trakcie badań porównawczych algorytmów operator mutacji jest domyślnym algorytmem realizującym tę operację według implementacji w ramach pakietu \emph{GA}~\cite{gaPackage}. Polega na zmianie losowo wybranego atrybutu osobnika na dowolną wartość zawierającą się w zdefiniowanej dla problemu dziedzinie wymiarów. 
+\begin{lstlisting}[caption=Zastosowany operator mutacji z pakietu \emph{GA} dla języka \emph{R}, label=lst:gen_mutation_operator, mathescape, breaklines=true, language=R]
+gareal_raMutation <- function(object, parent, ...)
+{
+  mutate <- parent <- as.vector(object@population[parent,])
+  n <- length(parent)
+  j <- sample(1:n, size = 1)
+  mutate[j] <- runif(1, object@min[j], object@max[j])
+  return(mutate)
+}
+\end{lstlisting}
+Przykład działania przedstawionego na listingu \ref{lst:gen_mutation_operator} algorytmu można zaprezentować na poniżej przestawionym przykładzie. Zakładając, że osobnik reprezentowany jest przez 5 atrybutów $X=\lbrace-2.0,-1.0,0.0,1.0,2.0\rbrace$, a każdy z nich może przyjmować wartości z przedziału $[-5\quad5]$ rezultat działania może być następujący
+\begin{enumerate}
+\item $X_{przed}=\lbrace-2.0,-1.0,0.0,1.0,2.0\rbrace$
+\item Do mutacji wylosowano atrybut nr 2
+\item Wylosowano wartość z dziedziny atrybutu nr 2 - $x_2=-4.37$
+\item $X_{po}=\lbrace-2.0,-4.37,0.0,1.0,2.0\rbrace$
+\end{enumerate}
+
+
+\subsection{Operator krzyżowania}
+%\begin{itemize}
+%\item pseudokod
+%\item słowny opis działania
+%\item przykład na konkretnych osobnikach
+%\end{itemize}
+\par
+Podobnie jak w przypadku operatora mutacji zdecydowano się na wykorzystanie domyślnej implementacji operatora krzyżowania. Metoda wykorzystana przez autora pakietu \emph{GA}~\cite{gaPackage} wylosowaniu z przedziału $[0\quad1]$ współczynników dla każdego z atrybutów z osobna. Otrzymane w ten sposób wartości określają procentowy wkład jednego z rodziców w wartość poszczególnych atrybutów potomstwa. Wkład drugiego z rodziców stanowi dopełnienie wylosowanej wartości do $1$. Drugi z generowanych potomków obliczany jest analogicznie z zamianą pozycji rodziców. 
+
+\begin{lstlisting}[caption=Zastosowany operator krzyżowania z pakietu \emph{GA} dla języka \emph{R}, label=lst:gen_crossover_operator, mathescape, breaklines=true, language=R]
+gareal_laCrossover <- function(object, parents, ...)
+{
+  parents <- object@population[parents,,drop = FALSE]
+  n <- ncol(parents)
+  children <- matrix(as.double(NA), nrow = 2, ncol = n)
+  a <- runif(n)
+  children[1,] <- a*parents[1,] + (1-a)*parents[2,]
+  children[2,] <- a*parents[2,] + (1-a)*parents[1,]
+  out <- list(children = children, fitness = rep(NA,2))
+  return(out)
+}
+\end{lstlisting}
+Analogicznie do omawianego operatora mutacji proces wytwarzania osobników potomnych poprzez krzyżowanie rodziców zostanie okraszony przykładem. Niech na wejściu algorytmu znajdą się rozwiązania $Parent_1 = \lbrace1.0, 2.0, 3.0\rbrace$ i $Parent_2 = \lbrace-2.0, 0.0, 4.0\rbrace$. Poniżej opisane kroki przedstawiają działanie algorytmu z listingu \ref{lst:gen_crossover_operator}:
+\begin{enumerate}
+\item Wylosuj współczynniki wkładu rodziców $A$
+\item $A=\lbrace0.2, 0.75, 0.3\rbrace$
+\item Wytwórz osobniki potomne
+\begin{itemize}
+\item $Child_1 = \lbrace1.0*0.2+(-2.0)*(1-0.8),\quad 2.0*0.75+0.0*(1-0.75),\quad 3.0*0.3+4.0*(1-0.7)\rbrace$
+\item $Child_2 = \lbrace(-2.0)*0.2+1.0*(1-0.8),\quad 0.0*0.75+2.0*(1-0.75),\quad 4.0*0.3+3.0*(1-0.7)\rbrace$
+\end{itemize}
+\item Uzyskane potomstwo
+\begin{itemize}
+\item $Child_1 = \lbrace-1.4,1.5\, 3.7\rbrace$
+\item $Child_2 = \lbrace0.4, 0.5, 3.3\rbrace$
+\end{itemize}
+\end{enumerate}
+
+\section{Opis testowanych operatorów lokalnego przeszukania}
+\begin{itemize}
+\item wylistować wszystkie 5 operatorów, o każdym napisać 4-5 zdań kto je wymyslił, na czym polegają. Chyba nie ma sensu wdawać się w szczegóły
+\end{itemize}
 
 \section{Dobór parametrów części genetycznej algorytmu}
 
+\begin{itemize}
+\item przyjęte wartości prawdopodobieństw mutacji i krzyżowania
+\item liczba iteracji 
+\item rozmiar populacji
+\end{itemize}
 %\item opis krosowania i mutacji wybranego do testowania
 %\item opis testowanych operatorów lokalnego przeszukiwania
 
 \section{Dobór parametrów części memetycznej algorytmu}
+\begin{itemize}
+\item przyjęte wartości poptim, pressel
+\item znaczenie tych parametrów
+\end{itemize}
 
 \section{Dobór parametrów algorytmu PSO}
 
 \section{Badane scenariusze doboru parametrów algorytmów}
+\begin{itemize}
+\item opis koncepcji sprawdzania doboru parametrów algorytmów memetycznych
+\item że duża liczba parametrów algorytmu mocno zwiększa liczbę możliwych kombinacji przez co można spróbować dobierać wartości parametrów stopniowo
+\item przyjęte kryterium mówiące o lepszość danych parametrów nad innymi
+\end{itemize}

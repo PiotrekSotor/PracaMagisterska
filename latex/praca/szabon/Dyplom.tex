@@ -48,8 +48,10 @@
 %\usepackage{newtxmath,tgtermes} % można też połączyć czcionki do tekstu i czcionki do wzorów
 
 \usepackage{listings} % pakiet do prezentacji kodu. 
+\definecolor{light-gray}{gray}{0.5}
 %Wcześniej był problem z polskimi znakami w otoczeniu lstlisting, stąd pozostawiono w komentarzu zastosowane wtedy rozwiązanie: 
 \lstset{
+  %commentstyle=\color{dkgreen},
   breaklines=true,
   postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
   numbers=left,
@@ -65,7 +67,7 @@
   breaklines=true,
   framextopmargin=5pt,
   framexbottommargin=7pt,
-  commentstyle=\color{gray}\upshape
+  commentstyle=\color{light-gray}\upshape
 %  inputencoding=utf8x, 
   extendedchars=\true,
   literate={ą}{{\k{a}}}1
