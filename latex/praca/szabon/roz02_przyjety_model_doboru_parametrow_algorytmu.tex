@@ -15,7 +15,7 @@ Analiza kodu źródłowego pakietu \emph{GA} \cite{gaPackage} pozwoliła na zauw
 \par
 Proces krzyżowania osobników inicjowany jest przez losowanie ze zwracaniem z populacji par osobników mogących stać się przyszłymi rodzicami potomstwa. Szansa, że tak utworzona para przejdzie przez operację krzyżowania nazywana jest wspomnianym już wcześniej prawdopodobieństwem krosowania. 
 \par
-Analogicznie do wyżej opisanego operatora rozwiązana jest kwestia wyboru osobników do procesu mutacji. Każda z jednostek populacji ma równą szansę równą wartości parametru prawdopodobieństwa mutacji. Warto jednak zauważyć, że ów parametr określa częstość mutacji całego osobnika, a nie pojedynczego atrybutu. W takiej sytuacji wraz ze wzrostem wymiarowości rozwiązywanego problemu - zwiększeniem liczby atrybutów jednostek populacji - może maleć skuteczność operatora tak zdefiniowanego jak na listingu \ref{lst:gen_mutation_operator}. Takie, a nie inne podejście autora implementacji pakietu \emph{GA} można tłumaczyć chęcią obniżenia złożoności obliczeniowej algorytmu. Jednakże nic nie stoi na przeszkodzie, by w przypadkach, w których gęstość mutacji ma duże znaczenie dla jakości rezultatu wykorzystać własny operator mutacji połączony z standardowym \emph{prawdopodobieństwem mutacji} równym 1.
+Analogicznie do wyżej opisanego operatora rozwiązana jest kwestia wyboru osobników do procesu mutacji. Każda z jednostek populacji ma równą szansę równą wartości parametru prawdopodobieństwa mutacji. Warto jednak zauważyć, że ów parametr określa częstość mutacji całego osobnika, a nie pojedynczego atrybutu. W takiej sytuacji wraz ze wzrostem wymiarowości rozwiązywanego problemu - zwiększeniem liczby atrybutów jednostek populacji - może maleć skuteczność operatora tak zdefiniowanego jak na listingu \ref{lst:gen_mutation_operator}. Takie, a nie inne podejście autora implementacji pakietu \emph{GA} można tłumaczyć chęcią obniżenia złożoności obliczeniowej algorytmu. Jednakże nic nie stoi na przeszkodzie, by w przypadkach, w których gęstość mutacji ma duże znaczenie dla jakości rezultatu wykorzystać własny operator mutacji połączony z standardowym \emph{prawdopodobieństwem mutacji} równym $1$.
 
 
 \subsection{Operator mutacji}
@@ -84,14 +84,24 @@ Analogicznie do omawianego operatora mutacji proces wytwarzania osobników potom
 \end{enumerate}
 
 \section{Opis testowanych operatorów lokalnego przeszukania}
-\begin{itemize}
-\item wylistować wszystkie 5 operatorów, o każdym napisać 4-5 zdań kto je wymyslił, na czym polegają. Chyba nie ma sensu wdawać się w szczegóły
-\item BFGS - Broyden–Fletcher–Goldfarb–Shanno algorithm
-\item L-BFGS-B - taki jak BFGS, ale L-limited memory i B - boxed, czyli z możliwością określenia constraintów
-\item SANN - symulowane wyzarzanie
-\item Nelder-Mead opisany w \cite{Nash90a}
-\item CG - conjugate gradients opisany w \cite{Nash90a}
-\end{itemize}
+%\begin{itemize}
+%\item wylistować wszystkie 5 operatorów, o każdym napisać 4-5 zdań kto je wymyslił, na czym polegają. Chyba nie ma sensu wdawać się w szczegóły
+%\item SANN - symulowane wyzarzanie
+%\item Nelder-Mead opisany w \cite{Nash90a}
+%\item CG - conjugate gradients opisany w \cite{Nash90a}
+%\end{itemize}
+\par
+Heurystyczne algorytmy przeszukiwania lokalnego stanowią osobą grupę algorytmów realizujących problem optymalizacji rozwiązania. Opierają swoje działanie na doskonaleniu jednej instancji rozwiązania, zamiast wielu równolegle, jak ma to miejsce w przypadku algorytmów ewolucyjnych. Podobnie jak w przypadku wykorzystanych operatorów genetycznych wykorzystano już istniejące implementacje i na nich oparto badania. Algorytm genetyczny dostarczony w ramach pakietu \emph{GA} \cite{gaPackage} jest rozszerzany o cechy memetyczne wykorzystując metody optymalizacji zawarte w pakiecie \emph{stats}, a konkretnie różne warianty funkcji \emph{optim} \cite{statsPackage}. Każda z poniżej opisanych możliwych funkcji lokalnego przeszukiwania posiada specyficzny zestaw parametrów pozwalający na adaptację działania pod kątem optymalizacji konkretnego problemu, jednakże dla uproszczenia analizy wszystkie testy będą przyjmować domyślne wartości tych parametrów. Jednym z celów realizowanych celów pracy jest porównanie skuteczności narzędzi przygotowanych przez autorów pakietów języka \emph{R}.
+\par
+Wykorzystane metody przeszukania lokalnego zostaną opisane jedynie pobieżnie, ponieważ nie sama zasada ich działania nie jest przedmiotem niniejszej pracy. Po dokładne wyjaśnienie działania algorytmów odwołuję do konkretnych pozycji literatury.
+\par
+\textbf{\emph{BFGS}} oraz pochodny \textbf{\emph{L-BFGS-B}} są algorytmami zawierającymi się w ogólnie klasie technik optymalizacji \emph{wspinaczkowej} (\emph{ang. hill climbing}). Trzon nazwy stanowią nazwisk autorów:  \textbf{B}royden, \textbf{F}letcher, \textbf{G}oldfarb i \textbf{S}hanno. \emph{BFGS} jest algorytmem quasi-Newtonowskim opierającym mechanikę poprawy rozwiązania o gradient zmiany funkcji przystosowania w najbliższym otoczeniu bieżącego rozwiązania. Pochodna metoda \emph{L-BFGS-B} jest rozwinięciem założeń o nałożenie wymagań odnośnie dziedziny atrybutów rozwiązania (sufiks \emph{B - boxed}) oraz optymalizuje działanie algorytmu pod kątem wykorzystywanej pamięci (prefiks \emph{L - limited-memory}). Szczegółowy opis działania można znaleźć w książce Nocedala i Wrighta \cite{nocedal2006numerical}. 
+\par
+Metoda gradientu sprzężonego (\emph{ang. conjugate gradients}, w dalszej części pracy \emph{\textbf{CG}}) jest algorytmem iteracyjnym stosowanym oprócz optymalizacji do rozwiązywania układów równań różniczkowych cząstkowych. Podobnie jak \emph{BFGS} zasada działania opiera się, jak sama nazwa wskazuje, na gradiencie funkcji przystosowania wokół bieżącego rozwiązania. Podstawę matematyczną i opis działania algorytmu można znaleźć w \cite{fletcher1964function}, \cite{Nash90a} i \cite{nocedal2006numerical}.
+\par
+Symulowane wyżarzanie (\emph{ang. simulated annealing}, w dalszej części pracy \emph{\textbf{SANN}}) jest koncepcją zaczerpniętą z rzeczywistego zachowania się cząsteczek metali w procesie stygnięcia. Analogią wykorzystaną w algorytmie jest przełożenie spadającej ruchliwości cząsteczek wraz z obniżaniem temperatury na losowe poszukiwanie lepszego rozwiązania w coraz mniejszej odległości od dotychczas najlepszego. Tempo \emph{stygnięcia rozwiązania}, czyli intensywność zawężania kręgu poszukiwań wpływa na czas działania algorytmu i jakość znajdowanego rozwiązania. W przypadku wykorzystania algorytmu jako operatora lokalnego przeszukania stosuje się szybkie schładzanie rozwiązania. W odróżnieniu od wyżej opisanych metod opierających się o gradientowe poszukiwanie, symulowane wyżarzanie może być stosowane również dla nieróżniczkowalnych funkcji przystosowania. Autorzy pakietu \emph{stats} oparli implementację metody o publikację Claude'a Belisle \cite{belisle1992convergence} i tam należy szukać dokładnego opisu działania algorytmu.
+\par
+Ostatnim z algorytmów pełniących rolę operatorów przeszukiwania lokalnego w ramach  badań porównawczych jest metoda \emph{\textbf{Neldera-Meada}}. Podobnie jak \emph{SANN} może być wykorzystywana w przypadkach nieróżniczkowanej funkcji przystosowania. Autorzy pakietu \emph{stats} opisują tę metodę jako stosukowo wolną w działaniu, ale dającą \emph{solidne} efekty - miary \emph{solidności} nie podano \cite{statsPackage}. Matematyczne podstawy jak i dokładny opis algorytmu przedstawiono przez autorów w publikacji w \emph{The Computer Journal} \cite{nelderMead1965}.
 
 
 \section{Dobór parametrów części genetycznej algorytmu}
