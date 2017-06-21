@@ -36,7 +36,7 @@ gareal_raMutation <- function(object, parent, ...)
   return(mutate)
 }
 \end{lstlisting}
-Przykład działania przedstawionego na listingu \ref{lst:gen_mutation_operator} algorytmu można zaprezentować na poniżej przestawionym przykładzie. Zakładając, że osobnik reprezentowany jest przez 5 atrybutów $X=\lbrace-2.0,-1.0,0.0,1.0,2.0\rbrace$, a każdy z nich może przyjmować wartości z przedziału $[-5\quad5]$ rezultat działania może być następujący
+Przykład działania przedstawionego na listingu \ref{lst:gen_mutation_operator} algorytmu można zaprezentować na poniżej przestawionym przykładzie. Zakładając, że osobnik reprezentowany jest przez 5 atrybutów $X=\lbrace-2.0,-1.0,0.0,1.0,2.0\rbrace$, a każdy z nich może przyjmować wartości z~przedziału $[-5\quad5]$ rezultat działania może być następujący
 \begin{enumerate}
 \item $X_{przed}=\lbrace-2.0,-1.0,0.0,1.0,2.0\rbrace$
 \item Do mutacji wylosowano atrybut nr 2
@@ -52,7 +52,7 @@ Przykład działania przedstawionego na listingu \ref{lst:gen_mutation_operator}
 %\item przykład na konkretnych osobnikach
 %\end{itemize}
 \par
-Podobnie jak w przypadku operatora mutacji zdecydowano się na wykorzystanie domyślnej implementacji operatora krzyżowania. Metoda wykorzystana przez autora pakietu \emph{GA}~\cite{gaPackage} wylosowaniu z przedziału $[0\quad1]$ współczynników dla każdego z atrybutów z osobna. Otrzymane w ten sposób wartości określają procentowy wkład jednego z rodziców w wartość poszczególnych atrybutów potomstwa. Wkład drugiego z rodziców stanowi dopełnienie wylosowanej wartości do $1$. Drugi z generowanych potomków obliczany jest analogicznie z zamianą pozycji rodziców. 
+Podobnie jak w przypadku operatora mutacji zdecydowano się na wykorzystanie domyślnej implementacji operatora krzyżowania. Metoda wykorzystana przez autora pakietu \emph{GA}~\cite{gaPackage} wylosowaniu z przedziału $[0\quad1]$ współczynników dla każdego z atrybutów z~osobna. Otrzymane w ten sposób wartości określają procentowy wkład jednego z rodziców w wartość poszczególnych atrybutów potomstwa. Wkład drugiego z rodziców stanowi dopełnienie wylosowanej wartości do $1$. Drugi z generowanych potomków obliczany jest analogicznie z zamianą pozycji rodziców. 
 
 \begin{lstlisting}[caption=Zastosowany operator krzyżowania z pakietu \emph{GA} dla języka \emph{R}, label=lst:gen_crossover_operator, mathescape, breaklines=true, language=R]
 gareal_laCrossover <- function(object, parents, ...)
@@ -83,7 +83,8 @@ Analogicznie do omawianego operatora mutacji proces wytwarzania osobników potom
 \end{itemize}
 \end{enumerate}
 
-\section{Opis testowanych operatorów lokalnego przeszukania}
+\section{Opis testowanych operatorów lokalnego przeszukiwania}
+\label{sec:operatory_lokalnego_przeszukiwania}
 %\begin{itemize}
 %\item wylistować wszystkie 5 operatorów, o każdym napisać 4-5 zdań kto je wymyslił, na czym polegają. Chyba nie ma sensu wdawać się w szczegóły
 %\item SANN - symulowane wyzarzanie
@@ -99,30 +100,63 @@ Wykorzystane metody przeszukania lokalnego zostaną opisane jedynie pobieżnie, 
 \par
 Metoda gradientu sprzężonego (\emph{ang. conjugate gradients}, w dalszej części pracy \emph{\textbf{CG}}) jest algorytmem iteracyjnym stosowanym oprócz optymalizacji do rozwiązywania układów równań różniczkowych cząstkowych. Podobnie jak \emph{BFGS} zasada działania opiera się, jak sama nazwa wskazuje, na gradiencie funkcji przystosowania wokół bieżącego rozwiązania. Podstawę matematyczną i opis działania algorytmu można znaleźć w \cite{fletcher1964function}, \cite{Nash90a} i \cite{nocedal2006numerical}.
 \par
-Symulowane wyżarzanie (\emph{ang. simulated annealing}, w dalszej części pracy \emph{\textbf{SANN}}) jest koncepcją zaczerpniętą z rzeczywistego zachowania się cząsteczek metali w procesie stygnięcia. Analogią wykorzystaną w algorytmie jest przełożenie spadającej ruchliwości cząsteczek wraz z obniżaniem temperatury na losowe poszukiwanie lepszego rozwiązania w coraz mniejszej odległości od dotychczas najlepszego. Tempo \emph{stygnięcia rozwiązania}, czyli intensywność zawężania kręgu poszukiwań wpływa na czas działania algorytmu i jakość znajdowanego rozwiązania. W przypadku wykorzystania algorytmu jako operatora lokalnego przeszukania stosuje się szybkie schładzanie rozwiązania. W odróżnieniu od wyżej opisanych metod opierających się o gradientowe poszukiwanie, symulowane wyżarzanie może być stosowane również dla nieróżniczkowalnych funkcji przystosowania. Autorzy pakietu \emph{stats} oparli implementację metody o publikację Claude'a Belisle \cite{belisle1992convergence} i tam należy szukać dokładnego opisu działania algorytmu.
+Symulowane wyżarzanie (\emph{ang. simulated annealing}, w dalszej części pracy \emph{\textbf{SANN}}) jest koncepcją zaczerpniętą z rzeczywistego zachowania się cząsteczek metali w procesie stygnięcia. Analogią wykorzystaną w algorytmie jest przełożenie spadającej ruchliwości cząsteczek wraz z obniżaniem temperatury na losowe poszukiwanie lepszego rozwiązania w coraz mniejszej odległości od dotychczas najlepszego. Tempo \emph{stygnięcia rozwiązania}, czyli intensywność zawężania kręgu poszukiwań wpływa na czas działania algorytmu i~jakość znajdowanego rozwiązania. W przypadku wykorzystania algorytmu jako operatora lokalnego przeszukania stosuje się szybkie schładzanie rozwiązania. W odróżnieniu od wyżej opisanych metod opierających się o gradientowe poszukiwanie, symulowane wyżarzanie może być stosowane również dla nieróżniczkowalnych funkcji przystosowania. Autorzy pakietu \emph{stats} oparli implementację metody o publikację Claude'a Belisle \cite{belisle1992convergence} i~tam należy szukać dokładnego opisu działania algorytmu.
 \par
 Ostatnim z algorytmów pełniących rolę operatorów przeszukiwania lokalnego w ramach  badań porównawczych jest metoda \emph{\textbf{Neldera-Meada}}. Podobnie jak \emph{SANN} może być wykorzystywana w przypadkach nieróżniczkowanej funkcji przystosowania. Autorzy pakietu \emph{stats} opisują tę metodę jako stosukowo wolną w działaniu, ale dającą \emph{solidne} efekty - miary \emph{solidności} nie podano \cite{statsPackage}. Matematyczne podstawy jak i dokładny opis algorytmu przedstawiono przez autorów w publikacji w \emph{The Computer Journal} \cite{nelderMead1965}.
 
 
-\section{Dobór parametrów części genetycznej algorytmu}
+\section{Przyjęte parametry algorytmów}
+\par
+Mając na celu zbadanie efektywności algorytmów memetycznych wykorzystywanych do optymalizacji rozwiązań problemów rzeczywistoliczbowych konieczne jest przyjęcie pewnego zestawu parametrów każdego z porównywanych algorytmów. Przed przystąpieniem do porównywania należy zadbać o to, by analizowane były ich możliwie najlepsze konfiguracje. Procedura selekcji parametrów będzie wykorzystywała jedną z zdefiniowanych w podrozdziale \ref{sec:przyjete_miary_efektywnosci_algorytmow} miar efektywności. W zależności od algorytmu możliwe jest określenie różnej liczby parametrów. W przypadku algorytmu memetycznego, który będzie głównym obiektem badań, analizowane będzie 7 atrybutów konfiguracji.
+\subsection{Dobór parametrów części genetycznej algorytmu}
+%\begin{itemize}
+%\item przyjęte wartości prawdopodobieństw mutacji i krzyżowania
+%\item liczba iteracji - końcowo będzie dobrana na podstawie rezultatów po ustawieniu wszystkich pozostałych parametrów na taką wartość po której już nie obserwuje się poprawy
+%\item rozmiar populacji - 50 100 150
+%
+%\end{itemize}
+Na parametry części genetycznej algorytmu memetycznego składają się: prawdopodobieństwa mutacji i krzyżowania, rozmiar populacji oraz maksymalna liczba pokoleń. Ich znaczenie i interpretacja zostały już omówione w podrozdziale \ref{sec:algorytm_genetyczny}. W trakcie selekcji optymalnych nastaw algorytmu genetycznego i memetycznego sprawdzone zostaną następujące wartości parametrów:
+\[p_{mut} = \lbrace0.5, 0.6, 0.7, 0.8, 0.9, 1.0\rbrace\]
+\[p_{cros} = \lbrace0.5, 0.6, 0.7, 0.8, 0.9, 1.0\rbrace\]
+\[r_{pop}=\lbrace50, 100, 150, 200\rbrace\]
+gdzie:
+\[p_{mut} - prawdopodobieńwo\, mutacji\]
+\[p_{cros} - prawdopodobieńwo\, krzyżowania\]
+\[r_{pop} - rozmiar\, populacji\]
+\[l_{iter} - liczba\, pokoleń\]
 
+Wartość $l_{iter}$ zostanie dobrana na podstawie rezultatów uzyskanych przy wyselekcjonowanych wcześniej pozostałych wartościach parametru. 
+
+
+
+
+\subsection{Dobór parametrów części memetycznej algorytmu}
+%\begin{itemize}
+%\item przyjęte wartości poptim
+%\item pressel - parcie na localsearch lepszych osobników
+%\item operatory
+%\item znaczenie tych parametrów
+%\end{itemize}
+Na parametry określające już tylko charakterystyczne dla algorytmu memetycznego mechanizmy składają się: wybór operatora przeszukiwania lokalnego (zostały opisane w podrozdziale \ref{sec:operatory_lokalnego_przeszukiwania}), prawdopodobieństwo wystąpienia doskonalenia osobnika w pokoleniu oraz współczynnik promowania lepszych osobników do wzięcia udziału w lokalnym przeszukiwaniu. 
+\[p_{opt} = \lbrace0.5, 0.6, 0.7, 0.8, 0.9, 1.0\rbrace\]
+\[p_{sel} = \lbrace0.5, 0.6, 0.7, 0.8, 0.9, 1.0\rbrace\]
+gdzie:
+\[p_{opt} - prawdopodobieńwo\,zajścia\, doskonalenia\]
+\[p_{sel} - współczynnik\, promowania\, lepszych\, osobników\, do\, doskonalenia\]
+
+
+\subsection{Dobór parametrów algorytmu PSO}
+\textbf{TO DO}
 \begin{itemize}
-\item przyjęte wartości prawdopodobieństw mutacji i krzyżowania
-\item liczba iteracji 
-\item rozmiar populacji
+\item c1 - odpowiednik $\phi_1$
+\item c2 - odpowiednik $\phi_2$
+\item w - waga inercji
+\item num of particles - liczba cząstek
+\item max.loop - maksymalna liczba iteracji
 \end{itemize}
-%\item opis krosowania i mutacji wybranego do testowania
-%\item opis testowanych operatorów lokalnego przeszukiwania
-
-\section{Dobór parametrów części memetycznej algorytmu}
-\begin{itemize}
-\item przyjęte wartości poptim, pressel
-\item znaczenie tych parametrów
-\end{itemize}
-
-\section{Dobór parametrów algorytmu PSO}
 
 \section{Badane scenariusze doboru parametrów algorytmów}
+\textbf{TO DO}
 \begin{itemize}
 \item opis koncepcji sprawdzania doboru parametrów algorytmów memetycznych
 \item że duża liczba parametrów algorytmu mocno zwiększa liczbę możliwych kombinacji przez co można spróbować dobierać wartości parametrów stopniowo

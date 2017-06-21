@@ -20,6 +20,7 @@ Rozwinięciem koncepcji algorytmów ewolucyjnych jest pojęcie \emph{strategi ew
 W zależności od przyjętej koncepcji założenia działania omawianych algorytmów mogą się nieznacznie różnić. Ta praca została oparta na implementacji algorytmu memetycznego zaproponowanej przez Lucca Scruca w pakiecie dla języka \emph{R ''GA''}\cite{gaPackage}. Podobnie w przypadku algorytmu PSO została wykorzystana implementacja zawarta w pakiecie \emph{''PSO''} autorstwa Clausa Bendtsena\cite{psoPackage}. W przypadku wszystkich opisanych w tym rozdziale algorytmów za \emph{warunkiem stopu} można rozumieć wykonanie z góry określonej maksymalnej liczby iteracji pętli lub brak poprawy najlepszego rozwiązania w pewnej liczbie ostatnich przebiegów algorytmu. 
 
 \section{Algorytm genetyczny}
+\label{sec:algorytm_genetyczny}
 %\begin{itemize}
 %\item rys historyczny, kiedy pierwszy raz wykorzystywane
 %\item jak rozumieć materiał genetyczny w kontekście optymalizacji problemu
@@ -113,7 +114,7 @@ $\textbf{dopóki}$ warunek stopu
 W wzorach \ref{eq:pso_v} i \ref{eq:pso_x} zastosowano następujące oznaczenia:
 \begin{itemize}
 \item $\vec{U}(0,\phi_i)$ przedstawia wektor wartości wylosowanych z rozkładem jednostajnym z przedziału $[0, \phi_i]$, losowanie powtarzane jest dla każdej cząstki przy każdej iteracji,
-\item $\otimes$ oznacza mnożenie elementów wektorów przez siebie (\emph{eng. component-wise multiplication},
+\item $\otimes$ oznacza mnożenie elementów dwóch wektorów przez siebie (\emph{eng. component-wise multiplication},
 \item $\phi_1$ oraz $\phi_2$ opisują \emph{współczynniki przyspieszenia} w kierunku lokalnego i populacyjnego najlepszego znanego rozwiązania,
 \item $w$ oznacza \emph{wagę inercji}
 \end{itemize}
