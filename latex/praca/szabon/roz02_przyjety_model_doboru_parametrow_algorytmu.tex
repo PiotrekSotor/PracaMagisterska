@@ -105,10 +105,10 @@ Symulowane wyżarzanie (\emph{ang. simulated annealing}, w dalszej części prac
 Ostatnim z algorytmów pełniących rolę operatorów przeszukiwania lokalnego w ramach  badań porównawczych jest metoda \emph{\textbf{Neldera-Meada}}. Podobnie jak \emph{SANN} może być wykorzystywana w przypadkach nieróżniczkowanej funkcji przystosowania. Autorzy pakietu \emph{stats} opisują tę metodę jako stosukowo wolną w działaniu, ale dającą \emph{solidne} efekty - miary \emph{solidności} nie podano \cite{statsPackage}. Matematyczne podstawy jak i dokładny opis algorytmu przedstawiono przez autorów w publikacji w \emph{The Computer Journal} \cite{nelderMead1965}.
 
 
-\section{Przyjęte parametry algorytmów}
+\section{Parametry algorytmów}
 \par
 Mając na celu zbadanie efektywności algorytmów memetycznych wykorzystywanych do optymalizacji rozwiązań problemów rzeczywistoliczbowych konieczne jest przyjęcie pewnego zestawu parametrów każdego z porównywanych algorytmów. Przed przystąpieniem do porównywania należy zadbać o to, by analizowane były ich możliwie najlepsze konfiguracje. Procedura selekcji parametrów będzie wykorzystywała jedną z zdefiniowanych w podrozdziale \ref{sec:przyjete_miary_efektywnosci_algorytmow} miar efektywności. W zależności od algorytmu możliwe jest określenie różnej liczby parametrów. W przypadku algorytmu memetycznego, który będzie głównym obiektem badań, analizowane będzie 7 atrybutów konfiguracji.
-\subsection{Dobór parametrów części genetycznej algorytmu}
+\subsection{Zakres parametrów części genetycznej algorytmu}
 %\begin{itemize}
 %\item przyjęte wartości prawdopodobieństw mutacji i krzyżowania
 %\item liczba iteracji - końcowo będzie dobrana na podstawie rezultatów po ustawieniu wszystkich pozostałych parametrów na taką wartość po której już nie obserwuje się poprawy
@@ -125,12 +125,12 @@ gdzie:
 \[r_{pop} - rozmiar\, populacji\]
 \[l_{iter} - liczba\, pokoleń\]
 
-Wartość $l_{iter}$ zostanie dobrana na podstawie rezultatów uzyskanych przy wyselekcjonowanych wcześniej pozostałych wartościach parametru. 
+Dokładna wartość $l_{iter}$, która będzie wykorzystana do uzyskania rezultatów badań porównawczych algorytmów zostanie dobrana na podstawie rezultatów uzyskanych przy wyselekcjonowanych wcześniej pozostałych wartościach parametru. Wstępne próby wykazały, że robocze przyjęcie wartości $100$ na potrzeby selekcji pozostałych parametrów jest wystarczające.
 
 
 
 
-\subsection{Dobór parametrów części memetycznej algorytmu}
+\subsection{Zakres parametrów części memetycznej algorytmu}
 %\begin{itemize}
 %\item przyjęte wartości poptim
 %\item pressel - parcie na localsearch lepszych osobników
@@ -144,16 +144,30 @@ gdzie:
 \[p_{opt} - prawdopodobieńwo\,zajścia\, doskonalenia\]
 \[p_{sel} - współczynnik\, promowania\, lepszych\, osobników\, do\, doskonalenia\]
 
+\subsection{Zakres parametrów algorytmu PSO}
+%\begin{itemize}
+%\item c1 - odpowiednik $\phi_1$
+%\item c2 - odpowiednik $\phi_2$
+%\item w - waga inercji
+%\item num of particles - liczba cząstek
+%\item max.loop - maksymalna liczba iteracji
+%\end{itemize}
+\par
+Parametry algorytmu PSO można podzielić na dwie kategorie. Pierwsza z nich zawiera współczynniki określają siłę wpływu pozostałych osobników populacji na zmianę kierunku poruszania się osobnika w przestrzeni rozwiązań. Do tych parametrów zaliczyć można \emph{wagę inercji}, $\phi_1$ i $\phi_2$ nazywane odpowiednio współczynnikiem kognitywnym i socjalnym. W podrozdziale \ref{sec:pso} nazwane zostały przyspieszeniem w kierunku lokalnego i populacyjnego najlepszego rozwiązania. Drugą kategorią parametrów stanowią te ściśle związane z specyfiką algorytmów ewolucyjnych. Tworzą ją liczba cząstek-osobników oraz maksymalna liczba iteracji, a więc czas symulacji zachowania roju. W trakcie badań przyjęto następujące zbiory wartości parametrów.
+\[\phi_1 = \lbrace1.0, 1.3, 1.6 \rbrace\]
+\[\phi_2 = \lbrace2.5, 2.8, 3.1\rbrace\]
+\[w = \lbrace0.8, 0.9, 1.0, 1.1, 1.2, 1.3\rbrace\]
+\[r_{pop} = \lbrace50, 100, 150, 200\rbrace\]
+\[l_{iter}=\lbrace50, 100, 150\rbrace\]
 
-\subsection{Dobór parametrów algorytmu PSO}
-\textbf{TO DO}
-\begin{itemize}
-\item c1 - odpowiednik $\phi_1$
-\item c2 - odpowiednik $\phi_2$
-\item w - waga inercji
-\item num of particles - liczba cząstek
-\item max.loop - maksymalna liczba iteracji
-\end{itemize}
+gdzie:
+\[p_{opt} - prawdopodobieńwo\,zajścia\, doskonalenia\]
+\[p_{sel} - współczynnik\, promowania\, lepszych\, osobników\, do\, doskonalenia\]
+\[w - waga\, inercji\]
+\[r_{pop} - rozmiar\, populacji\]
+\[l_{iter} - liczba\, iteracji\]
+\par
+Zbiór wartości przyjęty dla parametrów $\phi_1$ i $\phi_2$ oparty został o wyniki uzyskane przez Anthonego Carlisle w swojej pracy doktorskiej \cite{carlisle2002applying}. Przyjął on, że suma wartości tych parametrów powinna równać się $4.1$, a najlepsze rezultaty uzyskał dla wartości $\phi_1=2.8$ i $\phi_2=1.3$. Przyjęty przez niego model algorytmu PSO nie parametru wagi inercji. Zbiór jej wartości przyjęto w oparciu o pracę Shi i Eberharta \cite{shi1998modified}, której jednym z wniosków, było stwierdzenie, że zakres $[0.9\quad1.2]$ pozwala na najlepsze rezultaty. Za rozmiar populacji roju przyjęto ten sam zakres wartości co w przypadku algorytmów genetycznych i memetycznych.
 
 \section{Badane scenariusze doboru parametrów algorytmów}
 \textbf{TO DO}
