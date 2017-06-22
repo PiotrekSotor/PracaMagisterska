@@ -11,21 +11,21 @@
 \par
 Jednymi z parametrów algorytmu genetycznego, a co za tym idzie i memetycznego, są prawdopodobieństwa zachodzenia krzyżowania i mutacji osobników w populacji. Dokładne zrozumienie zasady działania wykorzystanych operatorów oraz sposobu w jaki są wykorzystywane w implementacji wykorzystanej do badań porównawczych jest kluczowym zagadnieniem pozwalającym lepiej zrozumieć wartości parametrów prawdopodobieństwa z nimi związanych. 
 \par 
-Analiza kodu źródłowego pakietu \emph{GA} \cite{gaPackage} pozwoliła na zauważenie, że jakość osobników populacji wyrażona w poprzez ich dopasowanie nie jest brana pod uwagę w przypadku obu wspomnianych operacji. Drugą cechą specyficzną dla przyjętej implementacji algorytmu jest mutowanie i krzyżowanie \emph{w miejscu}, tj. powstałe w ten sposób osobniki nie tyle dołączają do istniejącej populacji, co zastępują jednostkę oryginalną (przy mutacji) lub rodziców (przy krzyżowaniu). Takie podejście może negatywnie wpływać na jakość uzyskiwanych rezultatów. Nie dość, że tak użyte operatory nie zwiększają różnorodności genetycznej w maksymalnym możliwym stopniu to dodatkowo mogą w ten sposób zostać nadpisane informacje o rozwiązaniach lepszych niż te kodowane przez nowo powstałe osobniki.
+Analiza kodu źródłowego pakietu \emph{GA} \cite{gaPackage} pozwoliła na zauważenie, że jakość osobników populacji wyrażona poprzez ich dopasowanie nie jest brana pod uwagę w przypadku obu wspomnianych operacji. Drugą cechą specyficzną dla przyjętej implementacji algorytmu jest mutowanie i krzyżowanie \emph{w miejscu}, tj. powstałe w ten sposób osobniki nie tyle dołączają do istniejącej populacji, co zastępują jednostkę oryginalną (przy mutacji) lub rodziców (przy krzyżowaniu). Takie podejście może negatywnie wpływać na jakość uzyskiwanych rezultatów. Nie dość, że tak użyte operatory nie zwiększają różnorodności genetycznej w maksymalnym możliwym stopniu to dodatkowo mogą w ten sposób zostać nadpisane informacje o rozwiązaniach lepszych niż te kodowane przez nowo powstałe osobniki.
 \par
 Proces krzyżowania osobników inicjowany jest przez losowanie ze zwracaniem z populacji par osobników mogących stać się przyszłymi rodzicami potomstwa. Szansa, że tak utworzona para przejdzie przez operację krzyżowania nazywana jest wspomnianym już wcześniej prawdopodobieństwem krosowania. 
 \par
 Analogicznie do wyżej opisanego operatora rozwiązana jest kwestia wyboru osobników do procesu mutacji. Każda z jednostek populacji ma równą szansę równą wartości parametru prawdopodobieństwa mutacji. Warto jednak zauważyć, że ów parametr określa częstość mutacji całego osobnika, a nie pojedynczego atrybutu. W takiej sytuacji wraz ze wzrostem wymiarowości rozwiązywanego problemu - zwiększeniem liczby atrybutów jednostek populacji - może maleć skuteczność operatora tak zdefiniowanego jak na listingu \ref{lst:gen_mutation_operator}. Takie, a nie inne podejście autora implementacji pakietu \emph{GA} można tłumaczyć chęcią obniżenia złożoności obliczeniowej algorytmu. Jednakże nic nie stoi na przeszkodzie, by w przypadkach, w których gęstość mutacji ma duże znaczenie dla jakości rezultatu wykorzystać własny operator mutacji połączony z standardowym \emph{prawdopodobieństwem mutacji} równym $1$.
 
 
-\subsection{Operator mutacji}
+%\subsection{Operator mutacji}
 %\begin{itemize}
 %\item pseudokod
 %\item słowny opis działania
 %\item przykład na konkrentych osobnikach
 %\end{itemize}
 \par
-Wykorzystany w trakcie badań porównawczych algorytmów operator mutacji jest domyślnym algorytmem realizującym tę operację według implementacji w ramach pakietu \emph{GA}~\cite{gaPackage}. Polega na zmianie losowo wybranego atrybutu osobnika na dowolną wartość zawierającą się w zdefiniowanej dla problemu dziedzinie wymiarów. 
+Wykorzystany w trakcie badań porównawczych algorytmów \textbf{operator mutacji} jest domyślnym algorytmem realizującym tę operację według implementacji w ramach pakietu \emph{GA}~\cite{gaPackage}. Polega na zmianie losowo wybranego atrybutu osobnika na dowolną wartość zawierającą się w zdefiniowanej dla problemu dziedzinie wymiarów. 
 \begin{lstlisting}[caption=Zastosowany operator mutacji z pakietu \emph{GA} dla języka \emph{R}, label=lst:gen_mutation_operator, mathescape, breaklines=true, language=R]
 gareal_raMutation <- function(object, parent, ...)
 {
@@ -45,14 +45,14 @@ Przykład działania przedstawionego na listingu \ref{lst:gen_mutation_operator}
 \end{enumerate}
 
 
-\subsection{Operator krzyżowania}
+%\subsection{Operator krzyżowania}
 %\begin{itemize}
 %\item pseudokod
 %\item słowny opis działania
 %\item przykład na konkretnych osobnikach
 %\end{itemize}
 \par
-Podobnie jak w przypadku operatora mutacji zdecydowano się na wykorzystanie domyślnej implementacji operatora krzyżowania. Metoda wykorzystana przez autora pakietu \emph{GA}~\cite{gaPackage} wylosowaniu z przedziału $[0\quad1]$ współczynników dla każdego z atrybutów z~osobna. Otrzymane w ten sposób wartości określają procentowy wkład jednego z rodziców w wartość poszczególnych atrybutów potomstwa. Wkład drugiego z rodziców stanowi dopełnienie wylosowanej wartości do $1$. Drugi z generowanych potomków obliczany jest analogicznie z zamianą pozycji rodziców. 
+Podobnie jak w przypadku operatora mutacji zdecydowano się na wykorzystanie domyślnej implementacji operatora \textbf{krzyżowania}. Metoda wykorzystana przez autora pakietu \emph{GA}~\cite{gaPackage} wylosowaniu z przedziału $[0\quad1]$ współczynników dla każdego z atrybutów z~osobna. Otrzymane w ten sposób wartości określają procentowy wkład jednego z rodziców w wartość poszczególnych atrybutów potomstwa. Wkład drugiego z rodziców stanowi dopełnienie wylosowanej wartości do $1$. Drugi z generowanych potomków obliczany jest analogicznie z zamianą pozycji rodziców. 
 
 \begin{lstlisting}[caption=Zastosowany operator krzyżowania z pakietu \emph{GA} dla języka \emph{R}, label=lst:gen_crossover_operator, mathescape, breaklines=true, language=R]
 gareal_laCrossover <- function(object, parents, ...)
@@ -67,7 +67,7 @@ gareal_laCrossover <- function(object, parents, ...)
   return(out)
 }
 \end{lstlisting}
-Analogicznie do omawianego operatora mutacji proces wytwarzania osobników potomnych poprzez krzyżowanie rodziców zostanie okraszony przykładem. Niech na wejściu algorytmu znajdą się rozwiązania $Parent_1 = \lbrace1.0, 2.0, 3.0\rbrace$ i $Parent_2 = \lbrace-2.0, 0.0, 4.0\rbrace$. Poniżej opisane kroki przedstawiają działanie algorytmu z listingu \ref{lst:gen_crossover_operator}:
+Analogicznie do omawianego operatora mutacji proces wytwarzania osobników potomnych poprzez krzyżowanie rodziców zostanie dodatkowo przedstawiony na przykładzie. Niech na wejściu algorytmu znajdą się rozwiązania $Parent_1 = \lbrace1.0, 2.0, 3.0\rbrace$ i $Parent_2 = \lbrace-2.0, 0.0, 4.0\rbrace$. Poniżej opisane kroki przedstawiają działanie algorytmu z listingu \ref{lst:gen_crossover_operator}:
 \begin{enumerate}
 \item Wylosuj współczynniki wkładu rodziców $A$
 \item $A=\lbrace0.2, 0.75, 0.3\rbrace$
@@ -94,9 +94,9 @@ Analogicznie do omawianego operatora mutacji proces wytwarzania osobników potom
 \par
 Heurystyczne algorytmy przeszukiwania lokalnego stanowią osobą grupę algorytmów realizujących problem optymalizacji rozwiązania. Opierają swoje działanie na doskonaleniu jednej instancji rozwiązania, zamiast wielu równolegle, jak ma to miejsce w przypadku algorytmów ewolucyjnych. Podobnie jak w przypadku wykorzystanych operatorów genetycznych wykorzystano już istniejące implementacje i na nich oparto badania. Algorytm genetyczny dostarczony w ramach pakietu \emph{GA} \cite{gaPackage} jest rozszerzany o cechy memetyczne wykorzystując metody optymalizacji zawarte w pakiecie \emph{stats}, a konkretnie różne warianty funkcji \emph{optim} \cite{statsPackage}. Każda z poniżej opisanych możliwych funkcji lokalnego przeszukiwania posiada specyficzny zestaw parametrów pozwalający na adaptację działania pod kątem optymalizacji konkretnego problemu, jednakże dla uproszczenia analizy wszystkie testy będą przyjmować domyślne wartości tych parametrów. Jednym z celów realizowanych celów pracy jest porównanie skuteczności narzędzi przygotowanych przez autorów pakietów języka \emph{R}.
 \par
-Wykorzystane metody przeszukania lokalnego zostaną opisane jedynie pobieżnie, ponieważ nie sama zasada ich działania nie jest przedmiotem niniejszej pracy. Po dokładne wyjaśnienie działania algorytmów odwołuję do konkretnych pozycji literatury.
+Wykorzystane metody przeszukania lokalnego zostaną opisane jedynie pobieżnie, ponieważ nie sama zasada ich działania nie jest przedmiotem niniejszej pracy. Szczegółowe opisy wykorzystanych metod można znaleźć w cytowanych poniżej pozycjach literaturowych.
 \par
-\textbf{\emph{BFGS}} oraz pochodny \textbf{\emph{L-BFGS-B}} są algorytmami zawierającymi się w ogólnie klasie technik optymalizacji \emph{wspinaczkowej} (\emph{ang. hill climbing}). Trzon nazwy stanowią nazwisk autorów:  \textbf{B}royden, \textbf{F}letcher, \textbf{G}oldfarb i \textbf{S}hanno. \emph{BFGS} jest algorytmem quasi-Newtonowskim opierającym mechanikę poprawy rozwiązania o gradient zmiany funkcji przystosowania w najbliższym otoczeniu bieżącego rozwiązania. Pochodna metoda \emph{L-BFGS-B} jest rozwinięciem założeń o nałożenie wymagań odnośnie dziedziny atrybutów rozwiązania (sufiks \emph{B - boxed}) oraz optymalizuje działanie algorytmu pod kątem wykorzystywanej pamięci (prefiks \emph{L - limited-memory}). Szczegółowy opis działania można znaleźć w książce Nocedala i Wrighta \cite{nocedal2006numerical}. 
+\textbf{\emph{BFGS}} oraz pochodny \textbf{\emph{L-BFGS-B}} są algorytmami zawierającymi się w ogólnie klasie technik optymalizacji \emph{wspinaczkowej} (\emph{ang. hill climbing}). Trzon nazwy stanowią nazwisk autorów:  \textbf{B}royden, \textbf{F}letcher, \textbf{G}oldfarb i \textbf{S}hanno. \emph{BFGS} jest algorytmem quasi-newtonowskim opierającym mechanikę poprawy rozwiązania o gradient zmiany funkcji przystosowania w najbliższym otoczeniu bieżącego rozwiązania. Pochodna metoda \emph{L-BFGS-B} jest rozwinięciem założeń o nałożenie wymagań odnośnie dziedziny atrybutów rozwiązania (sufiks \emph{B - boxed}) oraz optymalizuje działanie algorytmu pod kątem wykorzystywanej pamięci (prefiks \emph{L - limited-memory}). Szczegółowy opis działania można znaleźć w książce Nocedala i Wrighta \cite{nocedal2006numerical}. 
 \par
 Metoda gradientu sprzężonego (\emph{ang. conjugate gradients}, w dalszej części pracy \emph{\textbf{CG}}) jest algorytmem iteracyjnym stosowanym oprócz optymalizacji do rozwiązywania układów równań różniczkowych cząstkowych. Podobnie jak \emph{BFGS} zasada działania opiera się, jak sama nazwa wskazuje, na gradiencie funkcji przystosowania wokół bieżącego rozwiązania. Podstawę matematyczną i opis działania algorytmu można znaleźć w \cite{fletcher1964function}, \cite{Nash90a} i \cite{nocedal2006numerical}.
 \par
@@ -167,7 +167,7 @@ gdzie:
 \[r_{pop} - rozmiar\, populacji\]
 \[l_{iter} - liczba\, iteracji\]
 \par
-Zbiór wartości przyjęty dla parametrów $\phi_1$ i $\phi_2$ oparty został o wyniki uzyskane przez Anthonego Carlisle w swojej pracy doktorskiej \cite{carlisle2002applying}. Przyjął on, że suma wartości tych parametrów powinna równać się $4.1$, a najlepsze rezultaty uzyskał dla wartości $\phi_1=2.8$ i $\phi_2=1.3$. Przyjęty przez niego model algorytmu PSO nie parametru wagi inercji. Zbiór jej wartości przyjęto w oparciu o pracę Shi i Eberharta \cite{shi1998modified}, której jednym z wniosków, było stwierdzenie, że zakres $[0.9\quad1.2]$ pozwala na najlepsze rezultaty. Za rozmiar populacji roju przyjęto ten sam zakres wartości co w przypadku algorytmów genetycznych i memetycznych.
+Zbiór wartości przyjęty dla parametrów $\phi_1$ i $\phi_2$ oparty został o wyniki uzyskane przez Anthonego Carlisle w swojej pracy doktorskiej \cite{carlisle2002applying}. Przyjął on, że suma wartości tych parametrów powinna równać się $4.1$, a najlepsze rezultaty uzyskał dla wartości $\phi_1=2.8$ i $\phi_2=1.3$. Przyjęty przez niego model algorytmu PSO nie parametru wagi inercji. Zbiór jej wartości przyjęto w oparciu o pracę Shi i Eberharta \cite{shi1998modified}, której jednym z wniosków było stwierdzenie, że zakres $[0.9\quad1.2]$ pozwala na uzyskanie najlepszych rezultatów. Za rozmiar populacji roju przyjęto ten sam zakres wartości co w przypadku algorytmów genetycznych i memetycznych.
 
 \section{Badane scenariusze doboru parametrów algorytmów}
 \textbf{TO DO}
