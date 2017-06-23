@@ -106,6 +106,7 @@ Ostatnim z algorytmów pełniących rolę operatorów przeszukiwania lokalnego w
 
 
 \section{Parametry algorytmów}
+\label{sec:parametry_algorytmow}
 \par
 Mając na celu zbadanie efektywności algorytmów memetycznych wykorzystywanych do optymalizacji rozwiązań problemów rzeczywistoliczbowych konieczne jest przyjęcie pewnego zestawu parametrów każdego z porównywanych algorytmów. Przed przystąpieniem do porównywania należy zadbać o to, by analizowane były ich możliwie najlepsze konfiguracje. Procedura selekcji parametrów będzie wykorzystywała jedną z zdefiniowanych w podrozdziale \ref{sec:przyjete_miary_efektywnosci_algorytmow} miar efektywności. W zależności od algorytmu możliwe jest określenie różnej liczby parametrów. W przypadku algorytmu memetycznego, który będzie głównym obiektem badań, analizowane będzie 7 atrybutów konfiguracji.
 \subsection{Zakres parametrów części genetycznej algorytmu}
@@ -161,8 +162,8 @@ Parametry algorytmu PSO można podzielić na dwie kategorie. Pierwsza z nich zaw
 \[l_{iter}=\lbrace50, 100, 150\rbrace\]
 
 gdzie:
-\[p_{opt} - prawdopodobieńwo\,zajścia\, doskonalenia\]
-\[p_{sel} - współczynnik\, promowania\, lepszych\, osobników\, do\, doskonalenia\]
+\[\phi_1 - współczynnik\, kognitywny\]
+\[\phi_2 - współczynnik\, socjalny\]
 \[w - waga\, inercji\]
 \[r_{pop} - rozmiar\, populacji\]
 \[l_{iter} - liczba\, iteracji\]
@@ -170,9 +171,77 @@ gdzie:
 Zbiór wartości przyjęty dla parametrów $\phi_1$ i $\phi_2$ oparty został o wyniki uzyskane przez Anthonego Carlisle w swojej pracy doktorskiej \cite{carlisle2002applying}. Przyjął on, że suma wartości tych parametrów powinna równać się $4.1$, a najlepsze rezultaty uzyskał dla wartości $\phi_1=2.8$ i $\phi_2=1.3$. Przyjęty przez niego model algorytmu PSO nie parametru wagi inercji. Zbiór jej wartości przyjęto w oparciu o pracę Shi i Eberharta \cite{shi1998modified}, której jednym z wniosków było stwierdzenie, że zakres $[0.9\quad1.2]$ pozwala na uzyskanie najlepszych rezultatów. Za rozmiar populacji roju przyjęto ten sam zakres wartości co w przypadku algorytmów genetycznych i memetycznych.
 
 \section{Badane scenariusze doboru parametrów algorytmów}
-\textbf{TO DO}
+%\textbf{TO DO}
+%\begin{itemize}
+%\item opis koncepcji sprawdzania doboru parametrów algorytmów memetycznych
+%\item że duża liczba parametrów algorytmu mocno zwiększa liczbę możliwych kombinacji przez co można spróbować dobierać wartości parametrów stopniowo
+%\item przyjęte kryterium mówiące o lepszość danych parametrów nad innymi
+%\item
+%\end{itemize}
+%parametry memetycznego:
+%\begin{enumerate}
+%\item rozmiar populacji 
+%\item pmutacji 
+%\item pcrossover
+%\item pressel
+%\item poptim
+%\item operator
+%\end{enumerate}
+%wybrane konfiguracje:
+%\begin{itemize}
+%\item rozdzielenie parametrow czesci genetycznej i memetycznej
+%\begin{itemize}
+%\item 1-2-3, 4-5-6
+%\item 4-5-6, 1-2-3
+%\end{itemize}
+%\item dobranie parametrow w pary tematyczne (oprocz popsize i operatora bo zostały bez pary
+%\begin{itemize}
+%\item 2-3, 4-5, 1-6
+%\item 1-6, 2-3, 4-5
+%\item 4-5, 1-6, 2-3
+%\end{itemize}
+%\item randomowe inne 2-6, 3-5, 1-4 
+%\end{itemize}
+\par
+Zamiar przeprowadzenia wiarygodnych badań porównawczych algorytmów wymaga wybrania najlepszych ich konfiguracji. O ile w stosowanie przyjętych algorytmów genetycznego i PSO nie tworzy nazbyt wielkiego problemu związanego z przetestowaniem wszystkich kombinacji wartości parametrów, o tyle w przypadku algorytmu memetycznego złożoność czasowa takiego podejścia może stanowić już problem. Niniejsza praca oprócz analizy porównawczej różnych algorytmów proponuje metody doboru wartości ustawień działania algorytmu memetycznego. 
+\par
+Zaprezentowane w podrozdziale \ref{ch:przyjety_model_doboru_parametrow_algorytmu} zbiory przyjętych wartości parametrów generuje $25920$ kombinacji ich wyboru. Efektywny sposób ograniczenie tej liczby pozytywnie wpłynie na łatwość adaptacji algorytmu w konkretnym zastosowaniu. Testowanie jedynie części możliwych kombinacji może wpłynąć na uzyskaną jakość działania tak uzyskanej konfiguracji. Z tego powodu znaczenie może mieć kolejność w jakiej wartości parametrów są dobierane, co zostanie również sprawdzone. 
+\par
+Testowane scenariusze doboru wartości parametrów algorytmów porównane zostaną zarówno pod kątem najlepszego znalezionego rozwiązania, jak i czasu potrzebnego na przeprowadzenie selekcji w dany sposób. Do późniejszych badań porównawczych różnych algorytmów wykorzystana zostanie kombinacja parametrów, która uzyskała najlepsze rozwiązanie. 
+\par
+Proponowany w tej pracy model doboru konfiguracji działania algorytmu memetycznego opiera się na stopniowej selekcji wartości w obrębie podgrup parametrów tymczasowo przyjmując domyślne wartości pozostałych, jeszcze nie dobranych. Wybrano 6 scenariuszy różniących się zarówno kolejnością dobieranych atrybutów jak i ich liczbą dopieranych równocześnie. Proponowany mechanizm pozwoli na dobór wartości następujących parametrów:
+\begin{enumerate}
+\item prawdopodobieństwo mutacji
+\item prawdopodobieństwo krzyżowania
+\item rozmiar populacji
+\item prawdopodobieństwo zajścia doskonalenia
+\item współczynnik promowania lepszych osobników do doskonalenia
+\item operator lokalnego przeszukiwania
+\end{enumerate}
+Korzystając z powyższej numeracji atrybutów przyjęto następujący sposób opisu scenariusza: $[1-2,\; 3-4,\; 5-6]$, co w tym przypadku należy rozmieć następująco:
 \begin{itemize}
-\item opis koncepcji sprawdzania doboru parametrów algorytmów memetycznych
-\item że duża liczba parametrów algorytmu mocno zwiększa liczbę możliwych kombinacji przez co można spróbować dobierać wartości parametrów stopniowo
-\item przyjęte kryterium mówiące o lepszość danych parametrów nad innymi
+\item sprawdź wszystkie kombinacje wartości parametrów $1$ i $2$, 
+\item korzystając z dobranych wartości parametrów $1$ i $2$ sprawdź wszystkie kombinacje wartości parametrów $3$ i $4$, wybierz parę parametrów o najlepszym znalezionym rozwiązaniu
+\item korzystając z dobranych wartości parametrów $1$, $2$, $3$ i $4$ sprawdź wszystkie kombinacje wartości parametrów $5$ i $6$, wybierz parę parametrów o najlepszym znalezionym rozwiązaniu
 \end{itemize}
+\par
+W ramach badań porównano następujące scenariusze:
+\begin{itemize}
+\item rozdzielenie selekcji parametrów części genetycznej i memetycznej:
+\begin{itemize}
+\item $[1-2-3,\; 4-5-6]$
+\item $[4-5-6,\; 1-2-3]$
+\end{itemize}
+\item dobranie parametrów w pary na podstawie ich znaczenia:
+\begin{itemize}
+\item $[1-2,\; 4-5,\; 3-6]$
+\item $[3-6,\; 1-2,\; 4-5]$
+\item $[4-5,\; 3-6,\; 1-2]$
+\end{itemize}
+\item losowo wybrane inne grupowanie w pary parametrów:
+\begin{itemize}
+\item $[1-6,\; 2-4,\; 3-5]$
+\end{itemize}
+\end{itemize}
+Jak już wspomniano w podrozdziale \ref{sec:parametry_algorytmow} na tym etapie doboru konfiguracji algorytmu przyjęto $l_{iter}=100$. Ostateczna wartość $l_{iter}$ zostanie dobrana na podstawie szybkości zbieżności uzyskanej dla wyselekcjonowanych pozostałych parametrów.
+
