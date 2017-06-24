@@ -77,6 +77,12 @@ LM2n5 <- function(x){
 Paviani <- function(x){
   return (-goTest(x, "Paviani"))
 }
+PavianiBounds<-getDefaultBounds("Paviani")
+
+Zeldasine20 <- function(x){
+  return (-goTest(x, "Zeldasine20"))
+}
+Zeldasine20Bounds <- getDefaultBounds("Zeldasine20")
 
 
 
@@ -92,25 +98,25 @@ Paviani <- function(x){
 # list functions with n params
 # 
 # 
-# for (name in c("Ackleys", "AluffiPentini", "BeckerLago",
-#                "Bohachevsky1", "Bohachevsky2", "Branin",
-#                "Camel3", "Camel6", "CosMix2", "CosMix4",
-#                "DekkersAarts", "Easom", "EMichalewicz",
-#                "Expo", "GoldPrice", "Griewank", "Gulf",
-#                "Hartman3", "Hartman6", "Hosaki", "Kowalik",
-#                "LM1", "LM2n10", "LM2n5", "McCormic",
-#                "MeyerRoth", "MieleCantrell", "Modlangerman",
-#                "ModRosenbrock", "MultiGauss", "Neumaier2",
-#                "Neumaier3", "Paviani", "Periodic",
-#                "PowellQ", "PriceTransistor", "Rastrigin",
-#                "Rosenbrock", "Salomon", "Schaffer1",
-#                "Schaffer2", "Schubert", "Schwefel",
-#                "Shekel10", "Shekel5", "Shekel7",
-#                "Shekelfox5", "Wood", "Zeldasine10",
-#                "Zeldasine20")){
-#   if (getProblemDimen(name) > 2)
-#     cat(name, getProblemDimen(name),"\n")
-# }
+for (name in c("Ackleys", "AluffiPentini", "BeckerLago",
+               "Bohachevsky1", "Bohachevsky2", "Branin",
+               "Camel3", "Camel6", "CosMix2", "CosMix4",
+               "DekkersAarts", "Easom", "EMichalewicz",
+               "Expo", "GoldPrice", "Griewank", "Gulf",
+               "Hartman3", "Hartman6", "Hosaki", "Kowalik",
+               "LM1", "LM2n10", "LM2n5", "McCormic",
+               "MeyerRoth", "MieleCantrell", "Modlangerman",
+               "ModRosenbrock", "MultiGauss", "Neumaier2",
+               "Neumaier3", "Paviani", "Periodic",
+               "PowellQ", "PriceTransistor", "Rastrigin",
+               "Rosenbrock", "Salomon", "Schaffer1",
+               "Schaffer2", "Schubert", "Schwefel",
+               "Shekel10", "Shekel5", "Shekel7",
+               "Shekelfox5", "Wood", "Zeldasine10",
+               "Zeldasine20")){
+  if (getProblemDimen(name) > 2)
+    cat(name, getProblemDimen(name),"\n")
+}
 # globalOptTests funcje z 2 parametrami
 # AluffiPentini 
 # BeckerLago 

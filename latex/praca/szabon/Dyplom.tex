@@ -48,6 +48,7 @@
 %\usepackage{newtxmath,tgtermes} % można też połączyć czcionki do tekstu i czcionki do wzorów
 
 \usepackage{listings} % pakiet do prezentacji kodu. 
+\renewcommand{\lstlistingname}{Kod źródłowy}
 \definecolor{light-gray}{gray}{0.5}
 %Wcześniej był problem z polskimi znakami w otoczeniu lstlisting, stąd pozostawiono w komentarzu zastosowane wtedy rozwiązanie: 
 \lstset{
@@ -546,6 +547,8 @@ SPECJALNOŚĆ: & \@specjalnosc\\
 
 %\settypeoutlayoutunit{cm} % do debugowania
 %\typeoutstandardlayout    % wypisuje na stdout informacje o ustawieniach
+\newlistof{lstlistoflistings}{lol}{\lstlistlistingname}
+
 \maketitle
 
 \newpage
@@ -567,7 +570,7 @@ SPECJALNOŚĆ: & \@specjalnosc\\
 \listoftables*
 
 \newpage
-\lstlistoflistings
+\lstlistoflistings*
 
 \chapterstyle{default}
 
