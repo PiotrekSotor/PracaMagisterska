@@ -82,6 +82,13 @@ LM2n5 <- function(x){
 }
 
 Paviani <- function(x){
+  if (length(dim(x))>1){
+    result <- c()
+    for (i in 1:dim(x)[1]){
+      result <- c(result, (-goTest(x[i,], "Paviani")))
+    }
+    return (result)
+  }
   return (-goTest(x, "Paviani"))
 }
 PavianiBounds<-getDefaultBounds("Paviani")

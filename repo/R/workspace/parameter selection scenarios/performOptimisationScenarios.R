@@ -1,5 +1,5 @@
-definedFunction <- Schaffer1
-functionName <- "Schaffer1"
+definedFunction <- Paviani
+functionName <- "Paviani"
 definedBounds <- getDefaultBounds(functionName)
 
 # scenario $[1-2,\; 4-5,\; 3-6]
@@ -17,11 +17,11 @@ third_selection_12_45_36 <- selectTwoparameters(fun = definedFunction, lower_bou
 scenario_12_45_36_params <- c(first_selection_12_45_36$params, second_selection_12_45_36$params, third_selection_12_45_36$params)
 scenario_12_45_36_time <- c(first_selection_12_45_36$time, second_selection_12_45_36$time, third_selection_12_45_36$time)
 
-save(first_selection_12_45_36, file = paste("first_selection_12_45_36",functionName,sep = "_"))
-save(second_selection_12_45_36, file = paste("second_selection_12_45_36",functionName,sep = "_"))
-save(third_selection_12_45_36, file = paste("third_selection_12_45_36",functionName,sep = "_"))
-save(scenario_12_45_36_params, file = paste("scenario_12_45_36_params",functionName,sep = "_"))
-save(scenario_12_45_36_time, file = paste("scenario_12_45_36_time",functionName,sep = "_"))
+save(first_selection_12_45_36, file = paste("first_selection_12_45_36",functionName,".RData",sep = "_"))
+save(second_selection_12_45_36, file = paste("second_selection_12_45_36",functionName,".RData",sep = "_"))
+save(third_selection_12_45_36, file = paste("third_selection_12_45_36",functionName,".RData",sep = "_"))
+save(scenario_12_45_36_params, file = paste("scenario_12_45_36_params",functionName,".RData",sep = "_"))
+save(scenario_12_45_36_time, file = paste("scenario_12_45_36_time",functionName,".RData",sep = "_"))
 
 # scenario $[3-6,\; 1-2,\; 4-5]$
 
@@ -39,11 +39,11 @@ third_selection_36_12_45 <- selectTwoparameters(fun = definedFunction, lower_bou
 scenario_36_12_45_params <- c(first_selection_36_12_45$params, second_selection_36_12_45$params, third_selection_36_12_45$params)
 scenario_36_12_45_time <- c(first_selection_36_12_45$time, second_selection_36_12_45$time, third_selection_36_12_45$time)
 
-save(first_selection_36_12_45, file = paste("first_selection_36_12_45",functionName,sep = "_"))
-save(second_selection_36_12_45, file = paste("second_selection_36_12_45",functionName,sep = "_"))
-save(third_selection_36_12_45, file = paste("third_selection_36_12_45",functionName,sep = "_"))
-save(scenario_36_12_45_params, file = paste("scenario_36_12_45_params",functionName,sep = "_"))
-save(scenario_36_12_45_time, file = paste("scenario_36_12_45_time",functionName,sep = "_"))
+save(first_selection_36_12_45, file = paste("first_selection_36_12_45",functionName,".RData",sep = "_"))
+save(second_selection_36_12_45, file = paste("second_selection_36_12_45",functionName,".RData",sep = "_"))
+save(third_selection_36_12_45, file = paste("third_selection_36_12_45",functionName,".RData",sep = "_"))
+save(scenario_36_12_45_params, file = paste("scenario_36_12_45_params",functionName,".RData",sep = "_"))
+save(scenario_36_12_45_time, file = paste("scenario_36_12_45_time",functionName,".RData",sep = "_"))
 
 # scenario $[4-5,\; 3-6,\; 1-2]$
 
@@ -61,11 +61,11 @@ third_selection_45_36_12 <- selectTwoparameters(fun = definedFunction, lower_bou
 scenario_45_36_12_params <- c(first_selection_45_36_12$params, second_selection_45_36_12$params, third_selection_45_36_12$params)
 scenario_45_36_12_time <- c(first_selection_45_36_12$time, second_selection_45_36_12$time, third_selection_45_36_12$time)
 
-save(first_selection_45_36_12, file = paste("first_selection_45_36_12",functionName,sep = "_"))
-save(second_selection_45_36_12, file = paste("second_selection_45_36_12",functionName,sep = "_"))
-save(third_selection_45_36_12, file = paste("third_selection_45_36_12",functionName,sep = "_"))
-save(scenario_45_36_12_params, file = paste("scenario_45_36_12_params",functionName,sep = "_"))
-save(scenario_45_36_12_time, file = paste("scenario_45_36_12_time",functionName,sep = "_"))
+save(first_selection_45_36_12, file = paste("first_selection_45_36_12",functionName,".RData",sep = "_"))
+save(second_selection_45_36_12, file = paste("second_selection_45_36_12",functionName,".RData",sep = "_"))
+save(third_selection_45_36_12, file = paste("third_selection_45_36_12",functionName,".RData",sep = "_"))
+save(scenario_45_36_12_params, file = paste("scenario_45_36_12_params",functionName,".RData",sep = "_"))
+save(scenario_45_36_12_time, file = paste("scenario_45_36_12_time",functionName,".RData",sep = "_"))
 
 # scenario $[1-6,\; 2-4,\; 3-5]$
 
@@ -83,11 +83,11 @@ third_selection_16_24_35 <- selectTwoparameters(fun = definedFunction, lower_bou
 scenario_16_24_35_params <- c(first_selection_16_24_35$params, second_selection_16_24_35$params, third_selection_16_24_35$params)
 scenario_16_24_35_time <- c(first_selection_16_24_35$time, second_selection_16_24_35$time, third_selection_16_24_35$time)
 
-save(first_selection_16_24_35, file = paste("first_selection_16_24_35",functionName,sep = "_"))
-save(second_selection_16_24_35, file = paste("second_selection_16_24_35",functionName,sep = "_"))
-save(third_selection_16_24_35, file = paste("third_selection_16_24_35",functionName,sep = "_"))
-save(scenario_16_24_35_params, file = paste("scenario_16_24_35_params",functionName,sep = "_"))
-save(scenario_16_24_35_time, file = paste("scenario_16_24_35_time",functionName,sep = "_"))
+save(first_selection_16_24_35, file = paste("first_selection_16_24_35",functionName,".RData",sep = "_"))
+save(second_selection_16_24_35, file = paste("second_selection_16_24_35",,".RData",sep = "_"))
+save(third_selection_16_24_35, file = paste("third_selection_16_24_35",functionName,".RData",sep = "_"))
+save(scenario_16_24_35_params, file = paste("scenario_16_24_35_params",functionName,".RData",sep = "_"))
+save(scenario_16_24_35_time, file = paste("scenario_16_24_35_time",functionName,".RData",sep = "_"))
 
 
 # scenario\item $[1-2-3,\; 4-5-6]$
@@ -102,10 +102,10 @@ second_selection_123_456 <- select456parameters(fun = definedFunction, lower_bou
 scenario_123_456_params <- c(first_selection_123_456$params, second_selection_123_456$params)
 scenario_123_456_time <- c(first_selection_123_456$time, second_selection_123_456$time)
 
-save(first_selection_123_456, file = paste("first_selection_123_456",functionName,sep = "_"))
-save(second_selection_123_456, file = paste("second_selection_123_456",functionName,sep = "_"))
-save(scenario_123_456_params, file = paste("scenario_123_456_params",functionName,sep = "_"))
-save(scenario_123_456_time, file = paste("scenario_123_456_time",functionName,sep = "_"))
+save(first_selection_123_456, file = paste("first_selection_123_456",functionName,".RData",sep = "_"))
+save(second_selection_123_456, file = paste("second_selection_123_456",functionName,".RData",sep = "_"))
+save(scenario_123_456_params, file = paste("scenario_123_456_params",functionName,".RData",sep = "_"))
+save(scenario_123_456_time, file = paste("scenario_123_456_time",functionName,".RData",sep = "_"))
 
 
 
@@ -121,7 +121,7 @@ second_selection_465_123 <- select123parameters(fun = definedFunction, lower_bou
 scenario_465_123_params <- c(first_selection_465_123$params, second_selection_465_123$params)
 scenario_465_123_time <- c(first_selection_465_123$time, second_selection_465_123$time)
 
-save(first_selection_465_123, file = paste("first_selection_465_123",functionName,sep = "_"))
-save(second_selection_465_123, file = paste("second_selection_465_123",functionName,sep = "_"))
-save(scenario_465_123_params, file = paste("scenario_465_123_params",functionName,sep = "_"))
-save(scenario_465_123_time, file = paste("scenario_465_123_time",functionName,sep = "_"))
+save(first_selection_465_123, file = paste("first_selection_465_123",functionName,".RData",sep = "_"))
+save(second_selection_465_123, file = paste("second_selection_465_123",functionName,".RData",sep = "_"))
+save(scenario_465_123_params, file = paste("scenario_465_123_params",functionName,".RData",sep = "_"))
+save(scenario_465_123_time, file = paste("scenario_465_123_time",functionName,".RData",sep = "_"))

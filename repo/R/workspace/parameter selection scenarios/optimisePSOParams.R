@@ -33,7 +33,8 @@ selectParamsForPSO <- function(fun, lower_bounds, upper_bounds){
                             w = inertiaWeigth,
                             max.loop = 5,
                             c1 = phi,
-                            c2 = 4.1-phi)
+                            c2 = 4.1-phi,
+                            vmax = rep(4, length(lower_bounds)))
           # result <- psoptim(FUN=Schaffer1, xmin=c(-5,-5), xmax=c(5,5),anim = FALSE, seed = NULL,
           #                   n = num,
           #                   w = inertiaWeigth)
