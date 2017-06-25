@@ -43,7 +43,7 @@ select123parameters <- function(fun, lower_bounds, upper_bounds,
         }
         setupTimeEnd <- proc.time() - setupTimeStart
         result_pack[toString(par_1), toString(par_2), toString(par_3), "bestSolution"] = best_solution/num_of_tests
-        result_pack[toString(par_1), toString(par_2), toString(par_3), "meanTime"] = setupTimeEnd/num_of_tests
+        result_pack[toString(par_1), toString(par_2), toString(par_3), "meanTime"] = setupTimeEnd[1]/num_of_tests
       }
     }
   }
@@ -107,8 +107,8 @@ select456parameters <- function(fun, lower_bounds, upper_bounds,
           best_solution <- best_solution + (-result@fitnessValue)
         }
         setupTimeEnd <- proc.time() - setupTimeStart
-        result_pack[toString(par_1), toString(par_2), toString(par_3), "bestSolution"] = best_solution/num_of_tests
-        result_pack[toString(par_1), toString(par_2), toString(par_3), "meanTime"] =  setupTimeEnd[1]/num_of_tests
+        result_pack[toString(par_4), toString(par_5), toString(par_6), "bestSolution"] = best_solution/num_of_tests
+        result_pack[toString(par_4), toString(par_5), toString(par_6), "meanTime"] =  setupTimeEnd[1]/num_of_tests
       }
     }
   }
