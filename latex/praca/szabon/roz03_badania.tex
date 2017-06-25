@@ -1,15 +1,45 @@
 \newpage
 \chapter{Badania}
-\textbf{Przerzucone z wcześniejszych rozdziałów:}
-\begin{itemize}
-\item W przypadku wszystkich opisanych w tym rozdziale algorytmów za \emph{warunkiem stopu} można rozumieć wykonanie z góry określonej maksymalnej liczby iteracji pętli lub brak poprawy najlepszego rozwiązania w pewnej liczbie ostatnich przebiegów algorytmu. 
-\item Do ustawiana elitismu w genetycznym i memetycznym - Tak również postąpiono w trakcie przeprowadzania badań w ramach tej pracy - wykorzystano domyślny w pakiecie \emph{GA} rozmiar grupy chronionych osobników wynoszący 5\% populacji.
-\end{itemize}
+%\textbf{Przerzucone z wcześniejszych rozdziałów:}
+%\begin{itemize}
+%\item W przypadku wszystkich opisanych w tym rozdziale algorytmów za \emph{warunkiem stopu} można rozumieć wykonanie z góry określonej maksymalnej liczby iteracji pętli lub brak poprawy najlepszego rozwiązania w pewnej liczbie ostatnich przebiegów algorytmu. 
+%\item Do ustawiana elitismu w genetycznym i memetycznym - Tak również postąpiono w trakcie przeprowadzania badań w ramach tej pracy - wykorzystano domyślny w pakiecie \emph{GA} rozmiar grupy chronionych osobników wynoszący 5\% populacji.
+%\end{itemize}
 
 
 \section{Specyfikacja funkcji testowych}
+Znajdowanie coraz lepszych metod rozwiązywania problemów optymalizacyjnych oraz ich testowanie jest zagadnieniem na tyle powszechnym, że powstały w tym celu narzędzia to ułatwiające. Dzięki ujednoliceniu sposobu badań wydajności algorytmów możliwe jest porównywanie ich na płaszczyźnie tych samych problemów. Jednym z pakietów języka \emph{R} powstałym w tym celu jest \emph{globalOptTests} \cite{globalOptTestsPackage}. Stanowi go zbiór kilkunastu funkcji o różnej liczbie parametrów. Każda z nich dodatkowo opisana jest dziedziną wartości poszczególnych argumentów oraz wartością funkcji w ekstremum. Wszystkie problemy zawarte w pakiecie są zadaniami znalezienia \emph{minimum} globalnego.
+\par
+Na potrzeby przeprowadzenia badań porównawczych różnych algorytmów wybrano z pakiety \emph{globalOptTests} 3 funkcje, które zostaną opisane poniżej. Reprezentują one problemy  optymalizacyjne o różnej wymiarowości. 
+\subsection{Funkcja Schaffer1}
+\begin{itemize}
+\item wzor
+\item wykres, bo 2D
+\item dziedzina argumentow
+\item optimum: 0, w początku układu współrzędnych
+\item cechy: wiele ekstremow lokalnych zblizonych do optimum, ale odseparowanych. Większość dziedziny rozwiązań jest płaska jak stół 
+\end{itemize}
+\subsection{Funkcja Paviani}
+\begin{itemize}
+\item wzor
+\item dziedzina argumentow
+\item optimum: jakie i gdzie
+\item pewnie cos w necie ciekawego o nim jest
+\end{itemize}
 
 \section{Opis środowiska testowego}
+\begin{itemize}
+\item parametry maszyny testowej
+
+\end{itemize}
+
 
 \section{Przyjęte miary efektywności algorytmów}
 \label{sec:przyjete_miary_efektywnosci_algorytmow}
+wszstko dla tych samych liczby iteracji
+\begin{enumerate}
+\item najlepsze znalezione rozwiązanie kolejno w iteracjach
+\item średnie rozwiązanie populacji kolejno w iteracjach
+\item czas osiągnięcia rozwiązań 90, 95 i 99%
+
+\end{enumerate}
