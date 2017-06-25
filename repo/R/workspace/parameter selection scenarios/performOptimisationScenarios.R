@@ -1,31 +1,31 @@
-definedFuntion <- Paviani
-definedBounds <- PavianiBounds
+definedFunction <- Schaffer1
+definedBounds <- getDefaultBounds("Schaffer1")
 
 # scenario $[1-2,\; 4-5,\; 3-6]
-first_selection_12_45_36 <- selectTwoparameters(fun = defindedFunction, lower_bounds = definedBounds$lower+.0001, upper_bounds = definedBounds$upper-0.0001,
+first_selection_12_45_36 <- selectTwoparameters(fun = definedFunction, lower_bounds = definedBounds$lower+.0001, upper_bounds = definedBounds$upper-0.0001,
                     par_1 = NULL, par_2 = NULL)
 
-second_selection_12_45_36 <- selectTwoparameters(fun = defindedFunction, lower_bounds = definedBounds$lower+.0001, upper_bounds = definedBounds$upper-0.0001,
+second_selection_12_45_36 <- selectTwoparameters(fun = definedFunction, lower_bounds = definedBounds$lower+.0001, upper_bounds = definedBounds$upper-0.0001,
                                        par_1 = first_selection_12_45_36$params[1], par_2 = first_selection_12_45_36$params[2]
                                        , par_4 = NULL, par_5 = NULL)
 
-third_selection_12_45_36 <- selectTwoparameters(fun = defindedFunction, lower_bounds = definedBounds$lower+.0001, upper_bounds = definedBounds$upper-0.0001,
+third_selection_12_45_36 <- selectTwoparameters(fun = definedFunction, lower_bounds = definedBounds$lower+.0001, upper_bounds = definedBounds$upper-0.0001,
                                         par_1 = first_selection_12_45_36$params[1], par_2 = first_selection_12_45_36$params[2]
-                                       , par_4 = second_selectio_12_45_36n$params[1], par_5 = second_selection_12_45_36$params[2]
+                                       , par_4 = second_selection_12_45_36$params[1], par_5 = second_selection_12_45_36$params[2]
                                        , par_3 = NULL, par_6 = NULL)
-scenario_12_45_36_params <- c(first_selection$params, second_selection$params, third_selection$params)
+scenario_12_45_36_params <- c(first_selection_12_45_36$params, second_selection_12_45_36$params, third_selection_12_45_36$params)
 scenario_12_45_36_time <- c(first_selection_12_45_36$time, second_selection_12_45_36$time, third_selection_12_45_36$time)
 
 # scenario $[3-6,\; 1-2,\; 4-5]$
 
-first_selection_36_12_45 <- selectTwoparameters(fun = defindedFunction, lower_bounds = definedBounds$lower+.0001, upper_bounds = definedBounds$upper-0.0001,
+first_selection_36_12_45 <- selectTwoparameters(fun = definedFunction, lower_bounds = definedBounds$lower+.0001, upper_bounds = definedBounds$upper-0.0001,
                                        par_3 = NULL, par_6 = NULL)
 
-second_selection_36_12_45 <- selectTwoparameters(fun = defindedFunction, lower_bounds = definedBounds$lower+.0001, upper_bounds = definedBounds$upper-0.0001,
+second_selection_36_12_45 <- selectTwoparameters(fun = definedFunction, lower_bounds = definedBounds$lower+.0001, upper_bounds = definedBounds$upper-0.0001,
                                         par_3 = first_selection_36_12_45$params[1], par_6 = first_selection_36_12_45$params[2]
                                         , par_1 = NULL, par_2 = NULL)
 
-third_selection_36_12_45 <- selectTwoparameters(fun = defindedFunction, lower_bounds = definedBounds$lower+.0001, upper_bounds = definedBounds$upper-0.0001,
+third_selection_36_12_45 <- selectTwoparameters(fun = definedFunction, lower_bounds = definedBounds$lower+.0001, upper_bounds = definedBounds$upper-0.0001,
                                        par_3 = first_selection_36_12_45$params[1], par_6 = first_selection_36_12_45$params[2]
                                        , par_1 = second_selection_36_12_45$params[1], par_2 = second_selection_36_12_45$params[2]
                                        , par_4 = NULL, par_5 = NULL)
@@ -35,14 +35,14 @@ scenario_36_12_45_time <- c(first_selection_36_12_45$time, second_selection_36_1
 
 # scenario $[4-5,\; 3-6,\; 1-2]$
 
-first_selection_45_36_12 <- selectTwoparameters(fun = defindedFunction, lower_bounds = definedBounds$lower+.0001, upper_bounds = definedBounds$upper-0.0001,
+first_selection_45_36_12 <- selectTwoparameters(fun = definedFunction, lower_bounds = definedBounds$lower+.0001, upper_bounds = definedBounds$upper-0.0001,
                                        par_4 = NULL, par_5 = NULL)
 
-second_selection_45_36_12 <- selectTwoparameters(fun = defindedFunction, lower_bounds = definedBounds$lower+.0001, upper_bounds = definedBounds$upper-0.0001,
+second_selection_45_36_12 <- selectTwoparameters(fun = definedFunction, lower_bounds = definedBounds$lower+.0001, upper_bounds = definedBounds$upper-0.0001,
                                         par_4 = first_selection_45_36_12$params[1], par_5 = first_selection_45_36_12$params[2]
                                         , par_3 = NULL, par_6 = NULL)
 
-third_selection_45_36_12 <- selectTwoparameters(fun = defindedFunction, lower_bounds = definedBounds$lower+.0001, upper_bounds = definedBounds$upper-0.0001,
+third_selection_45_36_12 <- selectTwoparameters(fun = definedFunction, lower_bounds = definedBounds$lower+.0001, upper_bounds = definedBounds$upper-0.0001,
                                        par_4 = first_selection_45_36_12$params[1], par_5 = first_selection_45_36_12$params[2]
                                        , par_3 = second_selection_45_36_12$params[1], par_6 = second_selection_45_36_12$params[2]
                                        , par_1 = NULL, par_2 = NULL)
@@ -51,14 +51,14 @@ scenario_45_36_12_time <- c(first_selection_45_36_12$time, second_selection_45_3
 
 # scenario $[1-6,\; 2-4,\; 3-5]$
 
-first_selection_16_24_35 <- selectTwoparameters(fun = defindedFunction, lower_bounds = definedBounds$lower+.0001, upper_bounds = definedBounds$upper-0.0001,
+first_selection_16_24_35 <- selectTwoparameters(fun = definedFunction, lower_bounds = definedBounds$lower+.0001, upper_bounds = definedBounds$upper-0.0001,
                                        par_1 = NULL, par_6 = NULL)
 
-second_selection_16_24_35 <- selectTwoparameters(fun = defindedFunction, lower_bounds = definedBounds$lower+.0001, upper_bounds = definedBounds$upper-0.0001,
+second_selection_16_24_35 <- selectTwoparameters(fun = definedFunction, lower_bounds = definedBounds$lower+.0001, upper_bounds = definedBounds$upper-0.0001,
                                         par_1 = first_selection_16_24_35$params[1], par_6 = first_selection_16_24_35$params[2]
                                         , par_2 = NULL, par_4 = NULL)
 
-third_selection_16_24_35 <- selectTwoparameters(fun = defindedFunction, lower_bounds = definedBounds$lower+.0001, upper_bounds = definedBounds$upper-0.0001,
+third_selection_16_24_35 <- selectTwoparameters(fun = definedFunction, lower_bounds = definedBounds$lower+.0001, upper_bounds = definedBounds$upper-0.0001,
                                        par_1 = first_selection_16_24_35$params[1], par_6 = first_selection_16_24_35$params[2]
                                        , par_2 = second_selection_16_24_35$params[1], par_4 = second_selection_16_24_35$params[2]
                                        , par_3 = NULL, par_5 = NULL)
@@ -68,9 +68,9 @@ scenario_16_24_35_time <- c(first_selection_16_24_35$time, second_selection_16_2
 
 # scenario\item $[1-2-3,\; 4-5-6]$
 
-first_selection_123_456 <- select123parameters(fun=defindedFunction, lower_bounds = definedBounds$lower+.0001, upper_bounds = definedBounds$upper-.0001)
+first_selection_123_456 <- select123parameters(fun=definedFunction, lower_bounds = definedBounds$lower+.0001, upper_bounds = definedBounds$upper-.0001)
 
-second_selection_123_456 <- select456parameters(fun = defindedFunction, lower_bounds = definedBounds$lower+.0001, upper_bounds = definedBounds$upper-0.0001,
+second_selection_123_456 <- select456parameters(fun = definedFunction, lower_bounds = definedBounds$lower+.0001, upper_bounds = definedBounds$upper-0.0001,
                                                  par_1 = first_selection_123_456$params[1], 
                                                 par_2 = first_selection_123_456$params[2],
                                                 par_3 = first_selection_123_456$params[3])
@@ -81,12 +81,12 @@ scenario_123_456_time <- c(first_selection_123_456$time, second_selection_123_45
 
 # scenario  \item $[4-5-6,\; 1-2-3]$
 
-first_selection_465_123 <- select456parameters(fun=defindedFunction, lower_bounds = definedBounds$lower+.0001, upper_bounds = definedBounds$upper-.0001)
+first_selection_465_123 <- select456parameters(fun=definedFunction, lower_bounds = definedBounds$lower+.0001, upper_bounds = definedBounds$upper-.0001)
 
-second_selection_465_123 <- select123parameters(fun = defindedFunction, lower_bounds = definedBounds$lower+.0001, upper_bounds = definedBounds$upper-0.0001,
-                                                par_4 = first_selection_123_456$params[1], 
-                                                par_5 = first_selection_123_456$params[2],
-                                                par_6 = first_selection_123_456$params[3])
+second_selection_465_123 <- select123parameters(fun = definedFunction, lower_bounds = definedBounds$lower+.0001, upper_bounds = definedBounds$upper-0.0001,
+                                                par_4 = first_selection_465_123$params[1], 
+                                                par_5 = first_selection_465_123$params[2],
+                                                par_6 = first_selection_465_123$params[3])
 
 scenario_465_123_params <- c(first_selection_465_123$params, second_selection_465_123$params)
 scenario_465_123_time <- c(first_selection_465_123$time, second_selection_465_123$time)

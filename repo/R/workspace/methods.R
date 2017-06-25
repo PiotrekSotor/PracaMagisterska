@@ -1,5 +1,12 @@
 Schaffer1 <- function(x, y) {
   if (missing(y)){
+    if (length(dim(x))>1){
+      result <- c()
+      for (i in 1:dim(x)[1]){
+        result <- c(result, (-goTest(x[i,], "Schaffer1")))
+      }
+      return (result)
+    }
     return (-goTest(x, "Schaffer1"))
   }
   else{
