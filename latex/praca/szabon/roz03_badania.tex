@@ -19,6 +19,43 @@ Na potrzeby przeprowadzenia badań porównawczych różnych algorytmów wybrano 
 \item optimum: 0, w początku układu współrzędnych
 \item cechy: wiele ekstremow lokalnych zblizonych do optimum, ale odseparowanych. Większość dziedziny rozwiązań jest płaska jak stół 
 \end{itemize}
+%\begin{figure}[h!]
+%	\centering
+%	\includegraphics[scale=0.7]{img//roz03//Schaffer1_full_range.png}
+%	\caption{Czas wykonania algorytmu HALS w zależności od rzędu faktoryzacji, liczba iteracji wew. 8}
+%	\label{fig:HALStime}
+%\end{figure}
+%\begin{figure}[h!]
+%	\centering
+%	\includegraphics[scale=0.7]{img//roz03//Schaffer1_small_range.png}
+%	\caption{Czas wykonania algorytmu HALS w zależności od rzędu faktoryzacji, liczba iteracji wew. 8}
+%	\label{fig:HALStime}
+%\end{figure}
+
+\begin{equation} \label{eq:Schaffer1}
+f(x)=0.5+\frac{\sin^2(x_1^2-x_2^2)-0.5}{[1+0.001(x_1^2+x_2^2)]^2}
+\end{equation}
+
+
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{{img//roz03//Schaffer1_full_range.png}}
+  \caption{ Pełna dziedzina argumentów}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{img//roz03//Schaffer1_small_range.png}
+  \caption{Otoczenie ekstremum}
+  \label{fig:sub2}
+\end{subfigure}
+\caption{Przebieg funkcji Schaffer1}
+\label{fig:test}
+\end{figure}
+
+
 \subsection{Funkcja Paviani}
 \begin{itemize}
 \item wzor
@@ -26,7 +63,10 @@ Na potrzeby przeprowadzenia badań porównawczych różnych algorytmów wybrano 
 \item optimum: jakie i gdzie
 \item pewnie cos w necie ciekawego o nim jest
 \end{itemize}
-
+\begin{equation}\label{eq:Paviani}
+f(x)=\sum_{i=1}^{10} \bigg(\log^2(x_i-2) + \log^2(10-x_i)\bigg) - \left(
+\prod_{i=1}^{10} x_i\right)^{0.2}. 
+\end{equation}
 \section{Opis środowiska testowego}
 \begin{itemize}
 \item parametry maszyny testowej

@@ -84,7 +84,7 @@ scenario_16_24_35_params <- c(first_selection_16_24_35$params, second_selection_
 scenario_16_24_35_time <- c(first_selection_16_24_35$time, second_selection_16_24_35$time, third_selection_16_24_35$time)
 
 save(first_selection_16_24_35, file = paste("first_selection_16_24_35",functionName,".RData",sep = "_"))
-save(second_selection_16_24_35, file = paste("second_selection_16_24_35",,".RData",sep = "_"))
+save(second_selection_16_24_35, file = paste("second_selection_16_24_35",functionName,".RData",sep = "_"))
 save(third_selection_16_24_35, file = paste("third_selection_16_24_35",functionName,".RData",sep = "_"))
 save(scenario_16_24_35_params, file = paste("scenario_16_24_35_params",functionName,".RData",sep = "_"))
 save(scenario_16_24_35_time, file = paste("scenario_16_24_35_time",functionName,".RData",sep = "_"))
