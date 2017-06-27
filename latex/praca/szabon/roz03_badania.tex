@@ -61,7 +61,7 @@ Dokonując przeglądu funkcji dostępnych w ramach pakietu \emph{globalOptTests}
 %\item pewnie cos w necie ciekawego o nim jest
 %\end{itemize}
 \par
-Drugą funkcją wykorzystaną w badaniach porównawczych jest funkcja \emph{Paviani}, która opisana jest wzorem \ref{eq:Paviani}. Została zaprezentowana w roli testowego problemu poddawanemu optymalizacji rzeczywistoliczbowej w ramach książki Davida Himmelblau'a \emph{Applied Nonlinear Programming} \cite{himmelblau1972applied}. Przestrzeń rozwiązań stanowi dziesięciowymiara przestrzeń ograniczona w przedziałach \ref{eq:Paviani_range}. Podobnie jak \emph{Schaffer nr 2} jest ciągła i różniczkowalna w całej dziedzinie argumentów. Nietypowy zakres wartości parametrów jest konsekwencją zbieżności funkcji do nieskończoności dla wartości $x=2$ i $x=10$. Jedyne oszukiwane minimum funkcji osiągane jest dla wartości \ref{eq:Paviani_optim}.
+Drugą funkcją wykorzystaną w badaniach porównawczych jest funkcja \emph{Paviani}, która opisana jest wzorem \ref{eq:Paviani}. Została zaprezentowana w roli testowego problemu poddawanemu optymalizacji rzeczywistoliczbowej w ramach książki Davida Himmelblau'a \emph{Applied Nonlinear Programming} \cite{himmelblau1972applied}. Przestrzeń rozwiązań stanowi dziesięciowymiara przestrzeń ograniczona w przedziałach (\ref{eq:Paviani_range}). Podobnie jak \emph{Schaffer nr 2} jest ciągła i różniczkowalna w całej dziedzinie argumentów. Nietypowy zakres wartości parametrów jest konsekwencją zbieżności funkcji do nieskończoności dla wartości $x=2$ i $x=10$. Jedyne oszukiwane minimum funkcji osiągane jest dla wartości (\ref{eq:Paviani_optim}).
 \begin{equation}\label{eq:Paviani}
 f(x)=\sum_{i=1}^{10} \bigg(\log^2(x_i-2) + \log^2(10-x_i)\bigg) - \left(
 \prod_{i=1}^{10} x_i\right)^{0.2}
@@ -72,19 +72,29 @@ f(x)=-45.7784684040686 \Leftrightarrow x_i = 9.350266,\quad i = 1, ..., 10
 \begin{equation} \label{eq:Paviani_range}
 x_i\in[2.0001,9.9999], \quad i=1,...,10
 \end{equation}
-\section{Opis środowiska testowego}
-\begin{itemize}
-\item parametry maszyny testowej
 
-\end{itemize}
+\subsection{Funkcja ZeldaSine10}
+Jako trzecią funkcję do testów badań wybrano \emph{ZeldaSine10}. Wybrano ją, ponieważ wstępne próby wykazały, że algorytmy znajdują dobre rozwiązania dopiero po większej liczbie iteracji niż miało to miejsce w przypadku omawianych powyżej funkcji \emph{Schaffera nr 2} i \emph{Paviani}. Funkcja opisana jest wzorem \ref{eq:ZeldaSine10}, a szukane minimum ma wartość $3.5$ (\ref{eq:ZeldaSine10_optim}). Podobnie do \emph{Paviani} jest multimodalna, ciągła, różniczkowalna i opierająca się na dziesięciowymiarowej dziedzinie parametrów, które mogą przyjmować wartości z przedziału~(\ref{eq:ZeldaSine10_range}). 
+\begin{equation}\label{eq:ZeldaSine10}
+f(x)=-2.5\prod_{i=1}^{10} \sin\left(x_i-\frac{\pi}{6}\right) - \prod_{i=1}^{10} \sin\left(5\left(x_i-\frac{\pi}{6}\right)\right)
+\end{equation}
+\begin{equation} \label{eq:ZeldaSine10_optim}
+f(x)=-3.5 \Leftrightarrow x_i = \frac{2\pi}{3},\quad i = 1, ..., 10
+\end{equation}
+\begin{equation} \label{eq:ZeldaSine10_range}
+x_i\in[0,\pi], \quad i=1,...,10
+\end{equation}
+
+
 
 
 \section{Przyjęte miary efektywności algorytmów}
 \label{sec:przyjete_miary_efektywnosci_algorytmow}
-wszstko dla tych samych liczby iteracji
+wszystko dla tych samych liczby iteracji
 \begin{enumerate}
 \item najlepsze znalezione rozwiązanie kolejno w iteracjach
 \item średnie rozwiązanie populacji kolejno w iteracjach
-\item czas osiągnięcia rozwiązań 90, 95 i 99%
-
+\item czas osiągnięcia rozwiązań 90, 95 i 99\% danej konfiguracji, a nie globalnego optimum
 \end{enumerate}
+
+
