@@ -85,6 +85,54 @@ f(x)=-3.5 \Leftrightarrow x_i = \frac{2\pi}{3},\quad i = 1, ..., 10
 x_i\in[0,\pi], \quad i=1,...,10
 \end{equation}
 
+\section{Platforma testowa}
+%\begin{itemize}
+%\item wersja R 3.3.3
+%\item wersja GA 3.0.2
+%\item wersja psoptim 1.0
+%\item wersja rJava do komunikacji java-R 0.9-8
+%\item wersja java 
+%\item parametry techniczne komputera, co z parametrów może mieć wpływ na rezultaty oprócz: procesor i szybkość pamięci
+%\item że pomimo możliwości uruchomienia zrównoleglonych wersji algorytmów nie zrobiono tego dla dokladniejszego ich porownania
+%\item że testy przeprowadzono przy wykorzystaniu aplikacji powstałej na te potrzeby
+%\item że aplikacja jest tylko nakładką na R i nie ma żadnego wpływu na szybkość i skuteczność działania testowanych algorytmów
+%\item że dokładny opis aplikacji znajduje się w dodatku \ref{ch:dodatekA-aplikacja}
+%\end{itemize}
+\par
+Niniejsza praca magisterska ma na celu porównanie efektywności, a przez to użyteczności w praktycznym zastosowaniu, algorytmu memetycznego względem innych metod optymalizacji. Do przeprowadzenia badań wykorzystano skrypty języka R zawarte w dodatku \ref{ch:dodatekB-wykorzystane skrypty}. Aplikacja powstała w trakcie pracy, a dokładniej opisana w dodatku \ref{ch:dodatekA-aplikacja} stanowi narzędzie umożliwiające wykorzystanie części z wspomnianych skryptów do optymalizacji problemów definiowanych przez użytkownika.
+\par
+Na specyfikację platformy testowej składają się dwa aspekty: parametry techniczne komputera oraz wersje wykorzystanych narzędzi. Szczególnie drugi aspekt może mieć znaczenie w przypadku próby porównania otrzymanych rezultatów z wynikami badań przedstawionymi w literaturze. Różne wersje narzędzi mogą w odmienny sposób implementować ten sam mechanizm optymalizując działanie algorytmów lub poprawiając wydajność interpretera skryptów. Należy również zaznaczyć, że pakiet \emph{GA} umożliwia wykonanie analizowanych algorytmów w wersji zrównoleglonej, jednakże dla spójności porównania z PSO nie skorzystano z tej opcji.
+\begin{table}[hb]
+\label{tab:wykorzystane_narzedzia}
+\caption{Wersje i funkcje wykorzystanych narzędzi}
+\begin{tabularx}{\textwidth}{|l|c|X|}
+	\hline
+	Narzędzie & Wersja & Funkcja \\
+	\hline
+	R & 3.3.3 & Interpreter języka \\
+	Pakiet \emph{GA} & 3.0.2 & Zawiera implementacje m. in. algorytmu genetycznego i memetycznego \\
+	Pakiet \emph{psoptim} & 1.0 & Zawiera implementację algorytmu PSO \\
+	Pakiet \emph{rJava} & 0.9-8 & Interfejs komunikacyjny z językiem Java (wykorzystany w aplikacji) \\
+	JRE & 1.8.0\_111 & Środowisko uruchomieniowe aplikacji \\
+	\hline
+	\end{tabularx}
+\end{table}
+\par
+Podzespołami komputera mogącymi wpłynąć na uzyskiwane czasy wykonania algorytmów w głównej mierze są procesor i pamięć RAM. W przypadku rezygnacji z zrównoleglonej wersji algorytmów największe znaczenia ma wydajność pojedynczego rdzeni procesora. W przypadku pamięci RAM istotna jest nie jej pojemność, a szybkość dostępu, jednakże jej wpływ jest drugorzędny. Dokładna specyfikacja wykorzystanych podzespołów przedstawia tabela \ref{table:parametry_komputera}.
+\begin{table}[hb]
+\caption{Parametry sprzętowe maszyny testowej}
+\label{table:parametry_komputera}
+\begin{center}
+\begin{tabular}{|l|l|}
+	\hline
+	Podzespół & Opis \\
+	\hline
+	Procesor & Intel i7-3610QC 2.3GHz \\
+	Pamięć RAM & Kingstone DDR3 800MHz 11CL \\
+	\hline
+	\end{tabular}
+\end{center}
+\end{table}
 
 
 
@@ -95,6 +143,9 @@ wszystko dla tych samych liczby iteracji
 \item najlepsze znalezione rozwiązanie kolejno w iteracjach
 \item średnie rozwiązanie populacji kolejno w iteracjach
 \item czas osiągnięcia rozwiązań 90, 95 i 99\% danej konfiguracji, a nie globalnego optimum
+\item \% skuteczności, czyli ile procent wywołań znajduje rozwiązanie w ogległości 0.005*range.
 \end{enumerate}
+
+
 
 

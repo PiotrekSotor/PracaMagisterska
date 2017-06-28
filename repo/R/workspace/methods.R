@@ -99,6 +99,11 @@ Zeldasine20 <- function(x){
 Zeldasine20Bounds <- getDefaultBounds("Zeldasine20")
 
 
+Zeldasine10 <- function(x){
+  return (-goTest(x, "Zeldasine10"))
+}
+Zeldasine10Bounds <- getDefaultBounds("Zeldasine10")
+
 
 
 

@@ -15,7 +15,7 @@ Analiza kodu źródłowego pakietu \emph{GA} \cite{gaPackage} pozwoliła na zauw
 \par
 Proces krzyżowania osobników inicjowany jest przez losowanie ze zwracaniem z populacji par osobników mogących stać się przyszłymi rodzicami potomstwa. Szansa, że tak utworzona para przejdzie przez operację krzyżowania nazywana jest wspomnianym już wcześniej prawdopodobieństwem krosowania. 
 \par
-Analogicznie do wyżej opisanego operatora rozwiązana jest kwestia wyboru osobników do procesu mutacji. Każda z jednostek populacji ma równą szansę równą wartości parametru prawdopodobieństwa mutacji. Warto jednak zauważyć, że ów parametr określa częstość mutacji całego osobnika, a nie pojedynczego atrybutu. W takiej sytuacji wraz ze wzrostem wymiarowości rozwiązywanego problemu - zwiększeniem liczby atrybutów jednostek populacji - może maleć skuteczność operatora tak zdefiniowanego jak na listingu \ref{lst:gen_mutation_operator}. Takie, a nie inne podejście autora implementacji pakietu \emph{GA} można tłumaczyć chęcią obniżenia złożoności obliczeniowej algorytmu. Jednakże nic nie stoi na przeszkodzie, by w przypadkach, w których gęstość mutacji ma duże znaczenie dla jakości rezultatu wykorzystać własny operator mutacji połączony z standardowym \emph{prawdopodobieństwem mutacji} równym $1$.
+Analogicznie do wyżej opisanego operatora rozwiązana jest kwestia wyboru osobników do procesu mutacji. Każda z jednostek populacji ma równą szansę równą wartości parametru prawdopodobieństwa mutacji. Warto jednak zauważyć, że ów parametr określa częstość mutacji całego osobnika, a nie pojedynczego atrybutu. W takiej sytuacji wraz ze wzrostem wymiarowości rozwiązywanego problemu - zwiększeniem liczby atrybutów jednostek populacji - może maleć skuteczność operatora tak zdefiniowanego jak w kodzie źródłowym \ref{lst:gen_mutation_operator}. Takie, a nie inne podejście autora implementacji pakietu \emph{GA} można tłumaczyć chęcią obniżenia złożoności obliczeniowej algorytmu. Jednakże nic nie stoi na przeszkodzie, by w przypadkach, w których gęstość mutacji ma duże znaczenie dla jakości rezultatu wykorzystać własny operator mutacji połączony z standardowym \emph{prawdopodobieństwem mutacji} równym $1$.
 
 
 %\subsection{Operator mutacji}
@@ -25,8 +25,11 @@ Analogicznie do wyżej opisanego operatora rozwiązana jest kwestia wyboru osobn
 %\item przykład na konkrentych osobnikach
 %\end{itemize}
 \par
-Wykorzystany w trakcie badań porównawczych algorytmów \textbf{operator mutacji} jest domyślnym algorytmem realizującym tę operację według implementacji w ramach pakietu \emph{GA}~\cite{gaPackage}. Polega na zmianie losowo wybranego atrybutu osobnika na dowolną wartość zawierającą się w zdefiniowanej dla problemu dziedzinie wymiarów. 
-\begin{lstlisting}[caption=Zastosowany operator mutacji z pakietu \emph{GA} dla języka \emph{R}, label=lst:gen_mutation_operator, mathescape, breaklines=true, language=R]
+W trakcie badań porównawczych algorytmów wykorzystano i porównano efektywność wykorzystania dwóch \textbf{operatorów mutacji}. Pierwszy z nich (nazywany dalej \emph{mutDefault}) jest domyślnym algorytmem realizującym tę operację według implementacji w ramach pakietu \emph{GA}~\cite{gaPackage}. Drugim wykorzystanym operatorem mutacji (nazywany dalej \emph{mutGauss}) oparty został na podstawowej definicji tego operatora przedstawionej w popularnej pozycji literaturowej \emph{Wykłady z algorytmów ewolucyjnych} Jarosława Arabasa \cite{arabas2001wyklady}. 
+
+\par
+Operator \emph{mutDefault} polega na zmianie losowo wybranego atrybutu osobnika na dowolną wartość zawierającą się w zdefiniowanej dla problemu dziedzinie wymiarów. 
+\begin{lstlisting}[caption=Domyślny operator mutacji z pakietu \emph{GA} dla języka \emph{R}, label=lst:gen_mutation_operator, mathescape, breaklines=true, language=R]
 gareal_raMutation <- function(object, parent, ...)
 {
   mutate <- parent <- as.vector(object@population[parent,])
@@ -36,7 +39,8 @@ gareal_raMutation <- function(object, parent, ...)
   return(mutate)
 }
 \end{lstlisting}
-Przykład działania przedstawionego na listingu \ref{lst:gen_mutation_operator} algorytmu można zaprezentować na poniżej przestawionym przykładzie. Zakładając, że osobnik reprezentowany jest przez 5 atrybutów $X=\lbrace-2.0,-1.0,0.0,1.0,2.0\rbrace$, a każdy z nich może przyjmować wartości z~przedziału $[-5\quad5]$ rezultat działania może być następujący
+\par
+Przykład działania przedstawionego w kodzie źródłowym \ref{lst:gen_mutation_operator} algorytmu można zaprezentować na poniżej przestawionym przykładzie. Zakładając, że osobnik reprezentowany jest przez 5 atrybutów $X=\lbrace-2.0,-1.0,0.0,1.0,2.0\rbrace$, a każdy z nich może przyjmować wartości z~przedziału $[-5\quad5]$ rezultat działania może być następujący
 \begin{enumerate}
 \item $X_{przed}=\lbrace-2.0,-1.0,0.0,1.0,2.0\rbrace$
 \item Do mutacji wylosowano atrybut nr 2
@@ -44,6 +48,24 @@ Przykład działania przedstawionego na listingu \ref{lst:gen_mutation_operator}
 \item $X_{po}=\lbrace-2.0,-4.37,0.0,1.0,2.0\rbrace$
 \end{enumerate}
 
+\par
+Drugi operator mutacji - \emph{mutGauss} - w odróżnieniu do powyżej przedstawionego algorytmu dokonuje zmiany wartości parametrów nie w oparciu o losowanie z rozkładu jednorodnego z zakresu dziedziny atrybutu, a posługując się rozkładem normalnym o odchyleniu standardowym równym $\sigma=\frac{max - min}{50}$. Kod źródłowy implementujący ten operator przedstawiono w kodzie źródłowym \ref{lst:gen_mutation_operator_gauss}.
+\begin{lstlisting}[caption=Operator mutacji zmieniający wartości zgodnie z rozkładem normalnym, label=lst:gen_mutation_operator_gauss, mathescape, breaklines=true, language=R]
+gareal_gaussMutation <- function(object, parent, ...)
+{
+  mutate <- parent <- as.vector(object@population[parent,])
+  n <- length(parent)
+  j <- sample(1:n, size = 1)
+  sigma <-  (object@max[j] - object@min[j])/50
+  newValue <- rnorm(n = 1, mean = mutate[j], sd = sigma)
+  newValue <- max(object@min[j], newValue)
+  newValue <- min(object@max[j], newValue)
+  mutate[j] <- newValue
+  return(mutate)
+}
+\end{lstlisting}
+\par
+Oba operatory mutacji różnią się jedynie wykorzystanym mechanizmem losowania nowej wartości atrybutu dlatego przykład działania \emph{mutDefault} jest również poprawny w przypadku \emph{mutGauss} z dokładnością do możliwej wartości wylosowanej w kroku nr 2. Implementacja  drugiego operatora jest nieznacznie bardziej złożona z uwagi na konieczność zapewnienia zgodności nowej wartości z dziedziną atrybutów.
 
 %\subsection{Operator krzyżowania}
 %\begin{itemize}
@@ -52,7 +74,7 @@ Przykład działania przedstawionego na listingu \ref{lst:gen_mutation_operator}
 %\item przykład na konkretnych osobnikach
 %\end{itemize}
 \par
-Podobnie jak w przypadku operatora mutacji zdecydowano się na wykorzystanie domyślnej implementacji operatora \textbf{krzyżowania}. Metoda wykorzystana przez autora pakietu \emph{GA}~\cite{gaPackage} wylosowaniu z przedziału $[0\quad1]$ współczynników dla każdego z atrybutów z~osobna. Otrzymane w ten sposób wartości określają procentowy wkład jednego z rodziców w wartość poszczególnych atrybutów potomstwa. Wkład drugiego z rodziców stanowi dopełnienie wylosowanej wartości do $1$. Drugi z generowanych potomków obliczany jest analogicznie z zamianą pozycji rodziców. 
+Podobnie jak w przypadku operatora mutacji zdecydowano się na wykorzystanie domyślnej implementacji operatora \textbf{krzyżowania}. Metoda wykorzystana przez autora pakietu \emph{GA}~\cite{gaPackage} polega na wylosowaniu z przedziału $[0\quad1]$ współczynników dla każdego z atrybutów z~osobna. Otrzymane w ten sposób wartości określają procentowy wkład jednego z rodziców w wartość poszczególnych atrybutów potomstwa. Wkład drugiego z rodziców stanowi dopełnienie wylosowanej wartości do $1$. Drugi z generowanych potomków obliczany jest analogicznie z zamianą pozycji rodziców. 
 
 \begin{lstlisting}[caption=Zastosowany operator krzyżowania z pakietu \emph{GA} dla języka \emph{R}, label=lst:gen_crossover_operator, mathescape, breaklines=true, language=R]
 gareal_laCrossover <- function(object, parents, ...)
@@ -67,7 +89,7 @@ gareal_laCrossover <- function(object, parents, ...)
   return(out)
 }
 \end{lstlisting}
-Analogicznie do omawianego operatora mutacji proces wytwarzania osobników potomnych poprzez krzyżowanie rodziców zostanie dodatkowo przedstawiony na przykładzie. Niech na wejściu algorytmu znajdą się rozwiązania $Parent_1 = \lbrace1.0, 2.0, 3.0\rbrace$ i $Parent_2 = \lbrace-2.0, 0.0, 4.0\rbrace$. Poniżej opisane kroki przedstawiają działanie algorytmu z listingu \ref{lst:gen_crossover_operator}:
+Analogicznie do omawianego operatora mutacji proces wytwarzania osobników potomnych poprzez krzyżowanie rodziców zostanie dodatkowo przedstawiony na przykładzie. Niech na wejściu algorytmu znajdą się rozwiązania $Parent_1 = \lbrace1.0, 2.0, 3.0\rbrace$ i $Parent_2 = \lbrace-2.0, 0.0, 4.0\rbrace$. Poniżej opisane kroki przedstawiają działanie algorytmu, którego implementację przedstawiono w kodzie źródłowym \ref{lst:gen_crossover_operator}:
 \begin{enumerate}
 \item Wylosuj współczynniki wkładu rodziców $A$
 \item $A=\lbrace0.2, 0.75, 0.3\rbrace$
