@@ -198,6 +198,7 @@ gdzie:
 Zbiór wartości przyjęty dla parametrów $\phi_1$ i $\phi_2$ oparty został o wyniki uzyskane przez Anthonego Carlisle w swojej pracy doktorskiej \cite{carlisle2002applying}. Przyjął on, że suma wartości tych parametrów powinna równać się $4.1$, a najlepsze rezultaty uzyskał dla wartości $\phi_1=2.8$ i $\phi_2=1.3$. Przyjęty przez niego model algorytmu PSO nie parametru wagi inercji. Zbiór jej wartości przyjęto w oparciu o pracę Shi i Eberharta \cite{shi1998modified}, której jednym z wniosków było stwierdzenie, że zakres $[0.9\quad1.2]$ pozwala na uzyskanie najlepszych rezultatów. Za rozmiar populacji roju przyjęto ten sam zakres wartości co w przypadku algorytmów genetycznych i memetycznych. Tak samo postąpiono z $l_{iter}$ - dla wyraźniejszego porównania zestawów parametrów selekcję przeprowadzono przy wykorzystaniu wartości $l_{iter}=5$.
 
 \section{Badane scenariusze doboru parametrów algorytmów}
+\label{sec:badane_scenariusze_doboru_parametrow}
 %\textbf{TO DO}
 %\begin{itemize}
 %\item opis koncepcji sprawdzania doboru parametrów algorytmów memetycznych
@@ -232,7 +233,7 @@ Zbiór wartości przyjęty dla parametrów $\phi_1$ i $\phi_2$ oparty został o 
 \par
 Zamiar przeprowadzenia wiarygodnych badań porównawczych algorytmów wymaga wybrania najlepszych ich konfiguracji. O ile w stosowanie przyjętych algorytmów genetycznego i PSO nie tworzy nazbyt wielkiego problemu związanego z przetestowaniem wszystkich kombinacji wartości parametrów, o tyle w przypadku algorytmu memetycznego złożoność czasowa takiego podejścia może stanowić już problem. Niniejsza praca oprócz analizy porównawczej różnych algorytmów proponuje metody doboru wartości ustawień działania algorytmu memetycznego. 
 \par
-Zaprezentowane w podrozdziale \ref{ch:przyjety_model_doboru_parametrow_algorytmu} zbiory przyjętych wartości parametrów generuje $25920$ kombinacji ich wyboru. Efektywny sposób ograniczenie tej liczby pozytywnie wpłynie na łatwość adaptacji algorytmu w konkretnym zastosowaniu. Testowanie jedynie części możliwych kombinacji może wpłynąć na uzyskaną jakość działania tak uzyskanej konfiguracji. Z tego powodu znaczenie może mieć kolejność w jakiej wartości parametrów są dobierane, co zostanie również sprawdzone. 
+Zaprezentowane w podrozdziale \ref{ch:przyjety_model_doboru_parametrow_algorytmu} zbiory przyjętych wartości parametrów generują $25920$ kombinacji ich wyboru. Efektywny sposób ograniczenie tej liczby pozytywnie wpłynie na łatwość adaptacji algorytmu w konkretnym zastosowaniu. Testowanie jedynie części możliwych kombinacji może wpłynąć na uzyskaną jakość działania tak uzyskanej konfiguracji. Z tego powodu znaczenie może mieć kolejność w jakiej wartości parametrów są dobierane, co zostanie również sprawdzone. 
 \par
 Testowane scenariusze doboru wartości parametrów algorytmów porównane zostaną zarówno pod kątem najlepszego znalezionego rozwiązania, jak i czasu potrzebnego na przeprowadzenie selekcji w dany sposób. Do późniejszych badań porównawczych różnych algorytmów wykorzystana zostanie kombinacja parametrów, która uzyskała najlepsze rozwiązanie. 
 \par

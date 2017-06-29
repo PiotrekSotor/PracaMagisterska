@@ -138,14 +138,55 @@ Podzespołami komputera mogącymi wpłynąć na uzyskiwane czasy wykonania algor
 
 \section{Przyjęte miary efektywności algorytmów}
 \label{sec:przyjete_miary_efektywnosci_algorytmow}
-wszystko dla tych samych liczby iteracji
-\begin{enumerate}
-\item najlepsze znalezione rozwiązanie kolejno w iteracjach
-\item średnie rozwiązanie populacji kolejno w iteracjach
-\item czas osiągnięcia rozwiązań 90, 95 i 99\% danej konfiguracji, a nie globalnego optimum
-\item \% skuteczności, czyli ile procent wywołań znajduje rozwiązanie w ogległości 0.005*range.
-\end{enumerate}
+%wszystko dla tych samych liczby iteracji
+%\begin{enumerate}
+%\item najlepsze znalezione rozwiązanie kolejno w iteracjach
+%\item średnie rozwiązanie populacji kolejno w iteracjach
+%\item czas osiągnięcia rozwiązań 90, 95 i 99\% danej konfiguracji, a nie globalnego optimum
+%\item \% skuteczności, czyli ile procent wywołań znajduje rozwiązanie w ogległości 0.005*range.
+%\end{enumerate}
 
+\par
+W tym podrozdziale zostaną omówione miary przyjęte w trakcie porównywania różnych algorytmów ze sobą. Kryterium decydującym w trakcie doboru parametrów algorytmów opisanego w rozdziale \ref{ch:przyjety_model_doboru_parametrow_algorytmu} była pierwsza z poniżej opisanych ocen - \emph{kryterium nr 1}. Aspekty algorytmów brane pod uwagę w porównaniach są odpowiednio zaadaptowanymi kryteriami porównawczymi z innych prac badawczych powstałych wokół tego tematu. Starano dobrać się je w taki sposób, by jak najlepiej opisywały zarówno jakość znajdowanego rozwiązania (\emph{kryterium nr 1}) jak i szybkość dochodzenia do satysfakcjonującego rezultatu (\emph{kryterium nr 2}). Osobnym aspektem branym pod uwagę jest również powtarzalność skutecznego działania algorytmu (\emph{kryterium nr 3}) oraz to, jak wykorzystanie poszczególnych algorytmów wpływa na różnorodność i charakterystykę całej populacji (\emph{kryterium nr 4}).
+
+\par 
+Najprostszym i zarazem najbardziej intuicyjnym sposobem zdefiniowania efektywności algorytmu jest jakość znajdowanego rozwiązania. Za jakość rozumiana jest tutaj bliskość względem poszukiwanego minimum w kontekście wartości funkcji celu, a nie odległości znalezionego wektora parametrów od rozwiązania optymalnego w wielowymiarowej przestrzeni rozwiązań. \emph{Kryterium nr 1} może być uważane za najważniejsze w przypadku zamiaru wykorzystania algorytmu w sytuacji, w której priorytetem jest dokładność znalezionego rozwiązania, a nie czas potrzebny na jej znalezienie. 
+\par
+Badania prowadzone pod kątem \emph{kryterium nr 1} będą polegać na wykonywaniu się pętli algorytmów aż do momentu uzyskania zbieżności rozwiązań. Przyjętym symptomem takiej sytuacji jest brak poprawy znajdowanego rezultatu w ciągu ostatnich 10 iteracjach. Rezultaty zostaną porównane zarówno pod kątem najlepszych uzyskanych rozwiązań w populacji, ale i liczby iteracji potrzebnych do ich uzyskania. Analogiczne kryterium porównawcze efektywności algorytmów wykorzystano w pozycjach literaturowych \cite{boyabatli2004parameter}, \cite{elbeltagi2005comparison} i \cite{ong2006classification}
+%(najlpesze znalezione rozwiazacanie, wstepnie $l_iter=25$ skoro dla 5 wyniki już były całkiem całkiem)
+
+\par
+%(czas osiagniecia 90, 95, 99% dokladnosci rozwiazan, dla przynajmniej takiej liczby iteracji pozwalającej na uzyskanie sukcesu)
+Drugą przyjętą miarą efektywności algorytmów - \emph{kryterium nr 2} - jest czas potrzebny na osiągnięcie rozwiązania o określonej dokładności. Porównanie oparte zostanie na trzech progowych wartościach dokładności rozwiązań: 90\%, 95\% i 99\%. Dokładność rezultatu określana jest na podstawie wzoru \ref{eq:kryterium_2_dokladnosc}. 
+\par
+Oczywistym jest, że dodatnie dodatkowych mechanizmów do prostego schematu realizowanego przez algorytm genetyczny opisany w rozdziale \ref{ch:charakterystyka_algorytmow_ewolucyjnych} spowoduje ograniczenie szybkości przetwarzania kolejnych pokoleń symulacji ewolucji. Przedstawienie wyników badań w dziedzinie rzeczywistego czasu wykonania algorytmu pozwoli określić, czy wolniejsze wykonanie algorytmu skutkować będzie lepszą jakością rozwiązań w populacji. W tym miejscu należy również pamiętać o specyfice przyjętego modelu algorytmu memetycznego, a mianowicie o przeprowadzaniu dodatkowego doskonalenia najlepszego osobnika po spełnieniu warunku stopu. Wstępne próby wykazały, że to ostanie przeszukanie lokalne może w znacznym stopniu poprawić jakość rozwiązania. Monitorując rezultaty w trakcie działania algorytmu nie będzie możliwości uwzględnienia tej ostatniej optymalizacji osobnika. Fakt ten może ujawniać się w uzyskanych rezultatach badań tym, że jakość rozwiązań obserwowanych w czasie działania algorytmu będzie znacznie gorsza, od tych uzyskanych dla \emph{kryterium nr 1} przy porównywalnej liczbie iteracji. Podobną miarę efektywności przyjęto w publikacjach \cite{elbeltagi2005comparison} i \cite{mullen2014continuous}.
+\begin{equation} \label{eq:kryterium_2_dokladnosc}
+dokładność = \left(1-\frac{r_{best}-r_{opt}}{r_{ref}-r_{opt}}\right)*100\%
+\end{equation}
+gdzie:
+\[r_{opt} - szukane\; minimum\; funkcji\; przystosowania\]
+\[r_{best} - średnie\; najlepsze\; rozwiązanie\; populacji\; w\; danej\; chwili\]
+\[r_{ref} - rozwiązanie\; odniesienia - średnie\; rozwiązanie\; losowo\; wygenerowanej\; populacji\]
+
+
+\par 
+%\cite{mullen2014continuous} \cite{elbeltagi2005comparison}
+Kolejną przyjętą miarą efektywności algorytmów - \emph{kryterium nr 3} - stanowi powtarzalność osiągania satysfakcjonującego rozwiązania, za które przyjęto takie spełniające warunek opisany wzorem \ref{eq:kryterium_3_warunek}. W odróżnieniu od pozostały pozostałych kryteriów analizowana jest tutaj nie uzyskana wartość funkcji dopasowania znalezionego rozwiązania, a jego położenie w przestrzeni rozwiązań poprzez odległość euklidesowa od rozwiązania optymalnego.
+\par 
+W przypadku tego kryterium porównywane algorytmy uruchamiane zostaną z taką samą maksymalną liczbą iteracji będącą warunkiem stopu. O ile w pozostałych kryteriach wszystkie rezultaty są wartościami uśrednionymi z pełnej puli wywołań optymalizacji, o tyle w tym przypadku rozpatrywane i zliczane zostaną kolejne wywołania z osobna. Wykorzystana w tym miejscu maksymalna liczba iteracji zostanie określona na etapie doboru parametrów algorytmów zgodnie z scenariuszami przedstawionymi w rozdziale \ref{sec:badane_scenariusze_doboru_parametrow} dla każdej z wykorzystanych funkcji testowych z osobna. W przypadku, gdy preferowane przez algorytmy liczby iteracji będą różne wybrana zostanie wartość najmniejsza z nich. Ta miara efektywności zaczerpnięta została z publikacji \cite{elbeltagi2005comparison} i \cite{mullen2014continuous}. 
+\begin{equation} \label{eq:kryterium_3_warunek}
+\sum_{i=1}^{n}\left(opt_i-r_i\right)^2 < 0.005*\sum_{i=1}^{n}\left(max_i-min_i\right)^2
+\end{equation}
+gdzie:
+\[opt - wektor\; atrybutów\; szukanego\; rozwiązania\; optymalnego\]
+\[r - wektor\; atrybutów\; najlepszego\; znalezionego\; rozwiązania\]
+\[min - wektor\; dolnych\; ograniczeń\; dziedziny\; rozwiązań\]
+\[max - wektor\; górnych\; ograniczeń\; dziedziny\; rozwiązań\]
+%(\% skuteczności dla tej samej liczby iteracji, wstepnie $l_iter=25$)
+
+\par 
+%(średnie rozwiazanie populacji dla tej samej liczby iteracji, wstepnie $l_iter=25$)
+Ostatnim przyjętym kryterium porównawczym - \emph{kryterium nr 4} - jest ogólna jakość populacji określana poprzez wartość średniego przystosowania osobników. Im mniejsza różnica pomiędzy najlepszym znalezionym rozwiązaniem, a średnim rozwiązaniem populacji tym większa jej zbieżność, a więc koncentracja wokół najlepszego osobnika. Taka sytuacja może mieć negatywne skutki w przypadku zdominowania populacji przez jednostki skoncentrowane w pobliżu jednego z lokalnych ekstremów co zmniejsza zdolności poznawcze ogółu populacji, zmniejsza jej różnorodność genetyczną oraz zmniejsza szanse znalezienia rozwiązania optymalnego. To kryterium zostało oparte o analogiczne przedstawione w publikacji \cite{ong2006classification}.
 
 
 
