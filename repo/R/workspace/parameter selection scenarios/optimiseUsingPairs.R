@@ -1,6 +1,6 @@
 selectTwoparameters <- function(fun, lower_bounds, upper_bounds, 
                                 par_1 = 0.1, par_2 = 0.8, par_3 = 50, par_4 = 0.05, par_5 = 0.5, par_6 = "L-BFGS-B", 
-                                memetic_enabled=TRUE){
+                                memetic_enabled=TRUE, gaussMutation=FALSE){
   
   num_of_tests <- 30
   
@@ -87,10 +87,12 @@ selectTwoparameters <- function(fun, lower_bounds, upper_bounds,
                              pcrossover = par_2,
                              popSize = par_3,
                              optim = memetic_enabled,
+                             mutation = ifelse(test = isTRUE(gaussMutation), yes = "gareal_gaussMutation", no = gaControl("real-valued")$mutation),
                              optimArgs = list(poptim=par_4,
                                               pressel=par_5,
                                               method=par_6,
                                               control=list(fnscale=-1, maxit=2)))
+                
                 
                 best_solution <- best_solution + (-result@fitnessValue)
               }

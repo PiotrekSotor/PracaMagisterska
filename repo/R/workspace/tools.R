@@ -9,3 +9,10 @@ getIndexesOfOptim <- function(matrix, maxSearch=TRUE){
   indexX <- searchIndex%%dim(matrix)[1]+1
   return (c(indexX, indexY))
 }
+
+loadResults <- function(path){
+  files <- list.files(path = path)
+  for (file in files){
+    load(file, envir = .GlobalEnv)
+  }
+}
