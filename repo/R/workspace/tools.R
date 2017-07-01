@@ -11,8 +11,11 @@ getIndexesOfOptim <- function(matrix, maxSearch=TRUE){
 }
 
 loadResults <- function(path){
-  files <- list.files(path = path)
+  currwd<-getwd()
+  setwd(path)
+  files <- list.files()
   for (file in files){
     load(file, envir = .GlobalEnv)
   }
+  setwd(currwd)
 }

@@ -98,10 +98,18 @@ Zeldasine20 <- function(x){
 }
 Zeldasine20Bounds <- getDefaultBounds("Zeldasine20")
 
-
 Zeldasine10 <- function(x){
+  if (length(dim(x))>1){
+    result <- c()
+    for (i in 1:dim(x)[1]){
+      result <- c(result, (-goTest(x[i,], "Zeldasine10")))
+    }
+    return (result)
+  }
   return (-goTest(x, "Zeldasine10"))
 }
+
+
 Zeldasine10Bounds <- getDefaultBounds("Zeldasine10")
 
 

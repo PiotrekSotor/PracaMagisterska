@@ -93,8 +93,8 @@ nameOfBestScenario_default <- names(bestResultOfScenario_gauss)[which.min(bestRe
 timeComparisonOfAllSelections <- list(memetic_gauss = timeOfScenarioSums_gauss[nameOfBestScenario_gauss],
                                       memetic_default = timeOfScenarioSums_default[nameOfBestScenario_gauss],
                                       genetic_gauss = selection_GEN_results_gauss$time,
-                                      genetic_default = selection_GEN_results_default$time,
-                                      pso = selection_PSO_params$time
+                                      genetic_default = selection_GEN_results_default$time[1],
+                                      pso = selection_PSO_params$time[1]
                                       )
 
 
