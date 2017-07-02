@@ -1,5 +1,8 @@
 iter<-100
-dirName <- "Paviani30-06-2017_01-20-56"
+#dirName <- "Schaffer130-06-2017_06-17-42"
+dirName <- "Zeldasine1030-06-2017_13-57-40"
+#dirName <- "Paviani30-06-2017_01-20-56"
+
 #########################################################
 
 loadResults(paste("parameter selection scenarios/results/",dirName,"/defaultMutation/",sep=""))
