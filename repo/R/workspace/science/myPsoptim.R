@@ -1,6 +1,9 @@
 myPsoptim <- function (FUN, n = 100, max.loop = 100, w = 0.9, c1 = 0.2, c2 = 0.2, 
           xmin, xmax, vmax = c(4, 4), seed = 10, anim = TRUE, timeMeasure=FALSE) 
 {
+  vectorOfBests<-c()
+  vectorOfMeans<-c()
+  
   g1 <- function(x, y) {
     FUN(cbind(x, y))
   }
@@ -44,13 +47,16 @@ myPsoptim <- function (FUN, n = 100, max.loop = 100, w = 0.9, c1 = 0.2, c2 = 0.2
           x[i, j] <- x_prev
       }
     }
+    vectorOfBests<-c(vectorOfBests, g.best[loop])
+    vectorOfMeans<-c(vectorOfMeans, g.mean)
+    
     if (timeMeasure){
       my_pso_monitor(g.best[loop], g.mean)
     }
     loop <- loop + 1
   }
   
-  res <- list(sol = x.best.roju, val = g.best)
+  res <- list(sol = x.best.roju, val = g.best, maxes = vectorOfBests, means = vectorOfMeans)
   return(res)
 }
 

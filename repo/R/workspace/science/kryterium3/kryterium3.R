@@ -6,12 +6,6 @@ MEMETIC_params_gauss
 GEN_params_gauss
 PSO_params
 
-fun <- Zeldasine10
-funName <- "Zeldasine10"
-bounds<-getDefaultBounds(funName)
-optimSolution <- Zeldasine10OptimSolution()
-
-
 
 krytResult_mem_def   <- performKryt3_ga(params = MEMETIC_params_default, fun = fun, lowerbounds = bounds$lower+.0001, upperbounds = bounds$upper-.0001, optimSolution=optimSolution)
 krytResult_mem_gauss <- performKryt3_ga(params = MEMETIC_params_gauss,   fun = fun, lowerbounds = bounds$lower+.0001, upperbounds = bounds$upper-.0001, optimSolution=optimSolution)
@@ -22,29 +16,17 @@ krytResult_pso       <- performKryt3_pso(params = PSO_params,            fun = f
 
 #################################################################################
 
-numOfGenerationMatrix<-matrix(c(unlist(krytResult_mem_def),#$meanNumOfGeneration,  
-                                unlist(krytResult_mem_gauss),#$meanNumOfGeneration,
-                                unlist(krytResult_gen_def),#$meanNumOfGeneration,  
-                                unlist(krytResult_gen_gauss),#$meanNumOfGeneration,
-                                unlist(krytResult_pso)),#$meanNumOfGeneration),      
-                              5, 5, dimnames = list(c("Próg 50%","Próg 75%","Próg 90%","Próg 95%","Próg 99%"),
+accuracyMatrix<-matrix(c(unlist(krytResult_mem_def), 
+                         unlist(krytResult_mem_gauss),
+                         unlist(krytResult_gen_def),
+                         unlist(krytResult_gen_gauss),
+                         unlist(krytResult_pso)),
+                              3, 5, dimnames = list(c("0.005%", "0.1", "0.015"),
                                                     c("Memetyczny - mutDefault", 
                                                       "Memetyczny - mutGauss",
                                                       "Genetyczny - mutDefault",
                                                       "Genetyczny - mutGauss",
                                                       "PSO")))
 
-bestFitnessMatrix<-matrix(c(krytResult_mem_def$meanFitness,  
-                            krytResult_mem_gauss$meanFitness,
-                            krytResult_gen_def$meanFitness,  
-                            krytResult_gen_gauss$meanFitness,
-                            krytResult_pso$meanFitness),      
-                          1, 5, dimnames = list(c("meanFitness"),
-                                                c("Memetyczny - mutDefault", 
-                                                  "Memetyczny - mutGauss",
-                                                  "Genetyczny - mutDefault",
-                                                  "Genetyczny - mutGauss",
-                                                  "PSO")))
-
-barplot(numOfGenerationMatrix)
-barplot(bestFitnessMatrix)
+save(krytResult_mem_def,krytResult_mem_gauss,krytResult_gen_def,krytResult_gen_gauss,krytResult_pso, accuracyMatrix, list = paste("kryterium3_",funName,".RData", sep = ""))
+barplot(accuracyMatrix)

@@ -4,8 +4,7 @@ MEMETIC_params_gauss
 GEN_params_gauss
 PSO_params
 
-fun <- Zeldasine10
-bounds<-getDefaultBounds("Zeldasine10")
+
 
 krytResult_mem_def   <- performKryt1_ga(params = MEMETIC_params_default, fun = fun, lowerbounds = bounds$lower+.0001, upperbounds = bounds$upper-.0001)
 krytResult_mem_gauss <- performKryt1_ga(params = MEMETIC_params_gauss,   fun = fun, lowerbounds = bounds$lower+.0001, upperbounds = bounds$upper-.0001)
@@ -39,6 +38,8 @@ bestFitnessMatrix<-matrix(c(krytResult_mem_def$meanFitness,
                                                       "Genetyczny - mutDefault",
                                                       "Genetyczny - mutGauss",
                                                       "PSO")))
+
+save(krytResult_mem_def,krytResult_mem_gauss,krytResult_gen_def,krytResult_gen_gauss,krytResult_pso, bestFitnessMatrix,numOfGenerationMatrix, list = paste("kryterium1_",funName,".RData", sep = ""))
 
 barplot(numOfGenerationMatrix)
 barplot(bestFitnessMatrix)
