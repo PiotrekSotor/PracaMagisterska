@@ -13,73 +13,10 @@ Schaffer1 <- function(x, y) {
     return (-goTest(c(x,y), "Schaffer1"))
   }
 }
-
-McCormic <- function(x, y) {
-  if (missing(y)){
-    return (-goTest(x, "McCormic"))
-  }
-  else{
-    return (-goTest(c(x,y), "McCormic"))
-  }
+Schaffer1OptimSolution <- function(){
+  return (c(0,0))
 }
 
-ModRosenbrock <- function(x, y) {
-  if (missing(y)){
-    return (-goTest(x, "ModRosenbrock"))
-  }
-  else{
-    return (-goTest(c(x,y), "ModRosenbrock"))
-  }
-}
-
-GoldPrice <- function(x, y) {
-  if (missing(y)){
-    return (-goTest(x, "GoldPrice"))
-  }
-  else{
-    return (-goTest(c(x,y), "GoldPrice"))
-  }
-}
-
-cec2013_9 <- function(x, y) {
-  if (missing(y)){
-    return (cec2013(9,x))
-  }
-  else{
-    return (cec2013(9,c(x,y)))
-  }
-}
-
-cec2013_11 <- function(x, y) {
-  if (missing(y)){
-    return (cec2013(11,x))
-  }
-  else{
-    return (cec2013(11,c(x,y)))
-  }
-}
-
-cec2013_14 <- function(x, y) {
-  if (missing(y)){
-    return (cec2013(14,x))
-  }
-  else{
-    return (cec2013(14,c(x,y)))
-  }
-}
-
-cec2013_23 <- function(x, y) {
-  if (missing(y)){
-    return (cec2013(23,x))
-  }
-  else{
-    return (cec2013(23,c(x,y)))
-  }
-}
-
-LM2n5 <- function(x){
-  return (-goTest(x, "LM2n5"))
-}
 
 Paviani <- function(x){
   if (length(dim(x))>1){
@@ -93,10 +30,9 @@ Paviani <- function(x){
 }
 PavianiBounds<-getDefaultBounds("Paviani")
 
-Zeldasine20 <- function(x){
-  return (-goTest(x, "Zeldasine20"))
+PavianiOptimSolution <- function(){
+  return (rep(9.350266,10))
 }
-Zeldasine20Bounds <- getDefaultBounds("Zeldasine20")
 
 Zeldasine10 <- function(x){
   if (length(dim(x))>1){
@@ -108,7 +44,9 @@ Zeldasine10 <- function(x){
   }
   return (-goTest(x, "Zeldasine10"))
 }
-
+Zeldasine10OptimSolution <- function(){
+  return (rep(2*pi/3 ,10))
+}
 
 Zeldasine10Bounds <- getDefaultBounds("Zeldasine10")
 

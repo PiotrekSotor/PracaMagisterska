@@ -1,3 +1,3 @@
-possibleTimes <- seq(0,20, by=0.1)
+possibleTimes <- seq(0,30, by=0.05)
 collectedValues <- c("bestSolution", "meanSolution")
 counter<-1

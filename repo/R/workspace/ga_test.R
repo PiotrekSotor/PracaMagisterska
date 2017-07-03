@@ -2,7 +2,11 @@ my_gaMonitor <- function(object, digits = getOption("digits"), ...){
   iterationsSoFar <<- iterationsSoFar+1
   progress <- as.double(iterationsSoFar/allIterationNumber)
   endTime<-proc.time()
-  elapsed<-toString(  round( x = ((endTime-startTime)["elapsed"]) , digits = 1)  )
+  
+  x<-((endTime-startTime)["elapsed"]) * 100
+  x<- x-x%%5
+  
+  elapsed<-toString(  round( x = x/100 , digits = 2))
   
   fitness <- na.exclude(object@fitness)
   cat(numberOfRun,elapsed)
@@ -20,11 +24,15 @@ my_gaMonitor <- function(object, digits = getOption("digits"), ...){
 }
 
 
-testWithTimeMeasurment <- function (memetic=TRUE, fun, numOfRuns = 10, iters=100, popSize=100, poptim=0.05, pressel=.5, optimiseForMinimal = TRUE, lowerBounds, upperBounds, optimMethod="L-BFGS-B"){
+testWithTimeMeasurment <- function (fun, numOfRuns = 3, iters=50, popSize=100, poptim=0.05, pressel=.5, 
+                                    pcrossover,
+                                    pmutation,
+                                    gaussMutation,
+                                    memeticEnabled,
+                                    optimiseForMinimal = TRUE, lowerBounds, upperBounds, optimMethod="L-BFGS-B"){
   iterationsSoFar<<-0
   allIterationNumber<<-iters*numOfRuns
-  if (optimMethod == "NONE")
-    memetic = FALSE
+  
   numberOfRun <- seq(1,numOfRuns, by=1)
   
   resultsInTime<<- array(dimnames = list(numberOfRun = numberOfRun, time=possibleTimes, values=collectedValues),
@@ -44,13 +52,14 @@ testWithTimeMeasurment <- function (memetic=TRUE, fun, numOfRuns = 10, iters=100
                    min = lowerBounds, max=upperBounds,
                    monitor = my_gaMonitor, 
                    maxiter = iters,
-       popSize = popSize,
+                 mutation = ifelse(test = isTRUE(gaussMutation), yes = "gareal_gaussMutation", no = gaControl("real-valued")$mutation),
+                 popSize = popSize,
                    optimArgs = list(method=optimMethod,
                                     poptim=poptim,
                                     pressel = pressel,
-                                    control=list(fnscale=ifelse(isTRUE(optimiseForMinimal),-1,1))
+                                    control=list(fnscale=ifelse(isTRUE(optimiseForMinimal),-1,1), maxit=2)
                                     ),
-                   optim = memetic
+                   optim = memeticEnabled
        )
   }
   

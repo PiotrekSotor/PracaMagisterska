@@ -1,7 +1,8 @@
 performKryt1_ga <- function(fun, lowerbounds, upperbounds, params){
   
   numOfTests <- 30
-  
+  sumOfGenerationNumbers<-0
+  sumOfFitness <- 0
   for (i in 1:numOfTests){
     result <- ga(fitness = fun, type = "real-valued", 
                  min = lowerbounds, 
@@ -17,9 +18,29 @@ performKryt1_ga <- function(fun, lowerbounds, upperbounds, params){
                                   method=params$method,
                                   control=list(fnscale=-1, maxit=2))
     )
+    bests<- result@summary[,1]
+    counter<-1
+    generationOfLastChange<-1
+    lastValue <- bests[1]
+    for (i in 1:length(bests)){
+      if (lastValue != bests[i]){
+        counter <- 1
+        lastValue <- bests[i]
+        generationOfLastChange <- i
+      }
+      else{
+        counter <- counter + 1
+      }
+      if (counter == 50){
+        break
+      }
+    }
+    sumOfGenerationNumbers <- sumOfGenerationNumbers + generationOfLastChange
+    sumOfFitness <- sumOfFitness + bests[generationOfLastChange]
     
   }
   
+  return (list(meanNumOfGeneration = sumOfGenerationNumbers/numOfTests, meanFitness = sumOfFitness/numOfTests))
   
   
 }
