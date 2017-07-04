@@ -1,5 +1,5 @@
 performKryt4_ga <- function(fun, lowerbounds, upperbounds, params, optimSolution){
-  numOfTests <- 3
+  numOfTests <- 30
   iters = 100
   sumDifference <- rep(0,iters)
   sumMaxes <- rep(0,iters)

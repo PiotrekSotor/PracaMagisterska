@@ -1,7 +1,7 @@
 performKryt2_pso <- function(fun, lowerbounds, upperbounds, params, optimum, referenceValue){ 
   
   iters <- 500
-  numOfRuns <- 3
+  numOfRuns <- 30
   iterationsSoFar<<-0
   allIterationNumber<<-iters*numOfRuns
   

@@ -33,19 +33,20 @@ numOfGenerationMatrix<-matrix(c(unlist(krytResult_mem_def),#$meanNumOfGeneration
                                                       "Genetyczny - mutGauss",
                                                       "PSO")))
 
-bestFitnessMatrix<-matrix(c(krytResult_mem_def$meanFitness,  
-                            krytResult_mem_gauss$meanFitness,
-                            krytResult_gen_def$meanFitness,  
-                            krytResult_gen_gauss$meanFitness,
-                            krytResult_pso$meanFitness),      
-                          1, 5, dimnames = list(c("meanFitness"),
-                                                c("Memetyczny - mutDefault", 
-                                                  "Memetyczny - mutGauss",
-                                                  "Genetyczny - mutDefault",
-                                                  "Genetyczny - mutGauss",
-                                                  "PSO")))
+# bestFitnessMatrix<-matrix(c(krytResult_mem_def$meanFitness,  
+#                             krytResult_mem_gauss$meanFitness,
+#                             krytResult_gen_def$meanFitness,  
+#                             krytResult_gen_gauss$meanFitness,
+#                             krytResult_pso$meanFitness),      
+#                           1, 5, dimnames = list(c("meanFitness"),
+#                                                 c("Memetyczny - mutDefault", 
+#                                                   "Memetyczny - mutGauss",
+#                                                   "Genetyczny - mutDefault",
+#                                                   "Genetyczny - mutGauss",
+#                                                   "PSO")))
 
-save(krytResult_mem_def,krytResult_mem_gauss,krytResult_gen_def,krytResult_gen_gauss,krytResult_pso, bestFitnessMatrix,numOfGenerationMatrix, list = paste("kryterium2_",funName,".RData", sep = ""))
+save(krytResult_mem_def,krytResult_mem_gauss,krytResult_gen_def,krytResult_gen_gauss,krytResult_pso, numOfGenerationMatrix, file = paste("kryterium2_",funName,".RData", sep = ""))
+# save(krytResult_mem_def,krytResult_mem_gauss,krytResult_gen_def,krytResult_gen_gauss,krytResult_pso, bestFitnessMatrix,numOfGenerationMatrix, file = paste("kryterium2_",funName,".RData", sep = ""))
 
 barplot(numOfGenerationMatrix)
 barplot(bestFitnessMatrix)

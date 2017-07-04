@@ -28,5 +28,5 @@ accuracyMatrix<-matrix(c(unlist(krytResult_mem_def),
                                                       "Genetyczny - mutGauss",
                                                       "PSO")))
 
-save(krytResult_mem_def,krytResult_mem_gauss,krytResult_gen_def,krytResult_gen_gauss,krytResult_pso, accuracyMatrix, list = paste("kryterium3_",funName,".RData", sep = ""))
+save(krytResult_mem_def,krytResult_mem_gauss,krytResult_gen_def,krytResult_gen_gauss,krytResult_pso, accuracyMatrix, file = paste("kryterium3_",funName,".RData", sep = ""))
 barplot(accuracyMatrix)

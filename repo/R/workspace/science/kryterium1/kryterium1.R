@@ -39,7 +39,7 @@ bestFitnessMatrix<-matrix(c(krytResult_mem_def$meanFitness,
                                                       "Genetyczny - mutGauss",
                                                       "PSO")))
 
-save(krytResult_mem_def,krytResult_mem_gauss,krytResult_gen_def,krytResult_gen_gauss,krytResult_pso, bestFitnessMatrix,numOfGenerationMatrix, list = paste("kryterium1_",funName,".RData", sep = ""))
+save(krytResult_mem_def,krytResult_mem_gauss,krytResult_gen_def,krytResult_gen_gauss,krytResult_pso, bestFitnessMatrix,numOfGenerationMatrix, file = paste("kryterium1_",funName,".RData", sep = ""))
 
 barplot(numOfGenerationMatrix)
 barplot(bestFitnessMatrix)
