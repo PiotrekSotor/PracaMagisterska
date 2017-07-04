@@ -6,6 +6,7 @@ source("science/setParameters.R")
 fun <- Schaffer1
 funName <- "Schaffer1"
 bounds<-getDefaultBounds(funName)
+optimum <- getGlobalOpt(funName)
 optimSolution <- Schaffer1OptimSolution()
 
 
@@ -25,6 +26,7 @@ source("science/setParameters.R")
 fun <- Zeldasine10
 funName <- "Zeldasine10"
 bounds<-getDefaultBounds(funName)
+optimum <- getGlobalOpt(funName)
 optimSolution <- Zeldasine10OptimSolution()
 
 
@@ -44,6 +46,7 @@ source("science/setParameters.R")
 fun <- Paviani
 funName <- "Paviani"
 bounds<-getDefaultBounds(funName)
+optimum <- getGlobalOpt(funName)
 optimSolution <- PavianiOptimSolution()
 
 

@@ -1,6 +1,6 @@
 performKryt4_pso <-  function(fun, lowerbounds, upperbounds, params, optimSolution){
   iters = 100
-  numOfTests <- 3
+  numOfTests <- 30
   sumDifference <- rep(0,iters)
   sumMaxes <- rep(0,iters)
   sumMeans <- rep(0,iters)
@@ -36,5 +36,5 @@ performKryt4_pso <-  function(fun, lowerbounds, upperbounds, params, optimSoluti
     
   }
   
-  return (list(meanDifference = sumDifference/numOfTests, meanMaxes = sumMaxes/numOfTests, meanMeans = sumMeans/numOfTests))
+  return (list(meanDifference = sumDifference/numOfTests, meanMaxes = drop(sumMaxes)/numOfTests, meanMeans = drop(sumMeans)/numOfTests))
 }

@@ -15,5 +15,5 @@ krytResult_pso       <- performKryt4_pso(params = PSO_params,            fun = f
 
 
 
-save(krytResult_mem_def,krytResult_mem_gauss,krytResult_gen_def,krytResult_gen_gauss,krytResult_pso, list = paste("kryterium4_",funName,".RData", sep = ""))
-barplot(accuracyMatrix)
+save(krytResult_mem_def,krytResult_mem_gauss,krytResult_gen_def,krytResult_gen_gauss,krytResult_pso, file = paste("kryterium4_",funName,".RData", sep = ""))
+

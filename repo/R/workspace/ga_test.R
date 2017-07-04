@@ -24,7 +24,7 @@ my_gaMonitor <- function(object, digits = getOption("digits"), ...){
 }
 
 
-testWithTimeMeasurment <- function (fun, numOfRuns = 3, iters=50, popSize=100, poptim=0.05, pressel=.5, 
+testWithTimeMeasurment <- function (fun, numOfRuns = 30, iters=500, popSize=100, poptim=0.05, pressel=.5, 
                                     pcrossover,
                                     pmutation,
                                     gaussMutation,
