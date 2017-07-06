@@ -1,34 +1,16 @@
 \chapter{Rezultaty}
 \section{Dobór parametrów algorytmu}
-\begin{itemize}
-\item tabelki z wyselekcjonowanymi parametrami, takie jak w excelu
-%\item wykres dla Schaffer1 bestfitness_calych_scenariuszy_Schaffer1 
-%\item fitness_etapow_scenariuszymutDefault_Schaffer1
-%\item fitness_etapow_scenariuszymutGauss_Schaffer1
-\end{itemize}
+%\begin{itemize}
+%\item tabelki z wyselekcjonowanymi parametrami, takie jak w excelu
+%%\item wykres dla Schaffer1 bestfitness_calych_scenariuszy_Schaffer1 
+%%\item fitness_etapow_scenariuszymutDefault_Schaffer1
+%%\item fitness_etapow_scenariuszymutGauss_Schaffer1
+%\end{itemize}
+Przed przystąpieniem do badań porównujących efektywność badanych algorytmów konieczne jest określenie najlepszych ich konfiguracji. Dobór wartości parametrów algorytmów oparto na procedurze opisanej w podrozdziale \ref{sec:badane_scenariusze_doboru_parametrow}. Zdecydowano się na osobną selekcję parametrów dla każdej z wykorzystanych funkcji testowych co w rezultacie pozwoliło na uzyskanie konfiguracji przedstawionych w tabelach \ref{table:selekcja_Schaffer_parametry}, \ref{table:selekcja_Paviani_parametry} i \ref{table:selekcja_Zeldasine_parametry}. Analizując tabele pierwszym spostrzeżeniem będącym potwierdzeniem intuicji jest fakt uzyskiwania lepszych rezultatów przez algorytmy oparte na większych populacjach. Dlatego w większości przypadków przyjęta konfiguracja składa się z maksymalnej rozpatrywanej liczby osobników. Zdominowanie parametru metody przeszukiwania lokalnego w algorytmach memetycznych przez metodę \emph{L-BFGS-B}, która jest domyślną wartością w implementacji pakietu \emph{GA} może być konsekwencja przyjętej miary porównawczej konfiguracji algorytmów. Już na poziomie dokumentacji pakietu pojawia się uwaga mówiąca, że \emph{L-BFGS-B} najczęściej uzyskuje najlepsze rezultaty, jednakże nie jest najszybszym z operatorów. Uwzględnienie czasu wykonania algorytmu jako współkryterium dla uzyskiwanego rozwiązania w procedurze selekcji parametrów algorytmów mogłoby w rezultacie zmienić przyjmowaną metodę przeszukania lokalnego.
 
-\begin{table}[hb]
-\label{tab:selekcja_Schaffer_czasy}
-\caption{Czasy i najlepsze rozwiązanie znalezione w trakcie selekcji parametrów algorytmów dla funkcji Schaffer nr 2}
-\begin{center}
-\begin{tabular}{|c|c|c|c|c|}
-	\hline
-	Algorytm & Mutacja & Najlepsze rozwiązanie & Czas selekcji [s] & Scenariusz \\
-	\hline
-	Memetyczny & \emph{mutDefault} & 0.03788 & 540.74 & $[1-2-3,\; 4-5-6]$\\
-	Memetyczny & \emph{mutGauss} & 0.02769 & 584.67 & $[1-2-3,\; 4-5-6]$ \\
-	Genetyczny & \emph{mutDefault} & 0.06609 & 171.79 & - \\
-	Genetyczny & \emph{mutGauss} & 0.04549 & 186.90 & - \\
-	PSO	& - & 0.09882 & 282.22 & -\\
-
-	\hline
-	\end{tabular}
-\end{center}
-\end{table}
-
-\begin{table}[hb]
-\label{tab:selekcja_Schaffer_parametry}
+\begin{table}[ht]
 \caption{Dobrane wartości parametrów algorytmów dla funkcji Schaffer nr 2}
+\label{table:selekcja_Schaffer_parametry}
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|c|c|}
 	\hline
@@ -50,29 +32,10 @@
 \end{tabular}
 \end{center}
 \end{table}
-              
-\begin{table}[hb]
-\label{tab:selekcja_Paviani_czasy}
-\caption{Czasy i najlepsze rozwiązanie znalezione w trakcie selekcji parametrów algorytmów dla funkcji Paviani}
-\begin{center}
-\begin{tabular}{|c|c|c|c|c|}
-	\hline
-	Algorytm & Mutacja & Najlepsze rozwiązanie & Czas selekcji [s] & Scenariusz \\
-	\hline
-	Memetyczny & \emph{mutDefault} & -45.77847 & 849.00 & $[4-5-6,\; 1-2-3]$\\
-	Memetyczny & \emph{mutGauss} & -45.77847 & 841.99 & $[4-5-6,\; 1-2-3]$ \\
-	Genetyczny & \emph{mutDefault} & -24.71857 & 212.64 & - \\
-	Genetyczny & \emph{mutGauss} & -23.36381 & 218.80 & - \\
-	PSO	& - & -37.78442 & 412.75 & -\\
-
-	\hline
-	\end{tabular}
-\end{center}
-\end{table}
-
-\begin{table}[hb]
-\label{tab:selekcja_Paviani_parametry}
+  
+\begin{table}[ht]
 \caption{Dobrane wartości parametrów algorytmów dla funkcji Paviani}
+\label{table:selekcja_Paviani_parametry}
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|c|c|}
 	\hline
@@ -95,28 +58,9 @@
 \end{center}
 \end{table}
 
-\begin{table}[hb]
-\label{tab:selekcja_Zeldasine_czasy}
-\caption{Czasy i najlepsze rozwiązanie znalezione w trakcie selekcji parametrów algorytmów dla funkcji ZeldaSine10}
-\begin{center}
-\begin{tabular}{|c|c|c|c|c|}
-	\hline
-	Algorytm & Mutacja & Najlepsze rozwiązanie & Czas selekcji [s] & Scenariusz \\
-	\hline
-	Memetyczny & \emph{mutDefault} & -3.5 & 243.22 & $[4-5,\;3-6,\;1-2]$\\
-	Memetyczny & \emph{mutGauss} & -3.5 & 190.31 & $[4-5,\;3-6,\;1-2]$ \\
-	Genetyczny & \emph{mutDefault} & -1.69261 & 206.83 & - \\
-	Genetyczny & \emph{mutGauss} & -1.81252 & 214.95 & - \\
-	PSO	& - & -0.91760 & 36.15 & -\\
-
-	\hline
-	\end{tabular}
-\end{center}
-\end{table}
-
-\begin{table}[hb]
-\label{tab:selekcja_Zeldasine_parametry}
+\begin{table}[ht]
 \caption{Dobrane wartości parametrów algorytmów dla funkcji ZeldaSine10}
+\label{table:selekcja_Zeldasine_parametry}
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|c|c|}
 	\hline
@@ -139,7 +83,77 @@
 \end{center}
 \end{table}
 
-\begin{figure} 
+\par
+W tabelach \ref{table:selekcja_Schaffer_czasy}, \ref{table:selekcja_Paviani_czasy} i \ref{table:selekcja_Zeldasine_czasy} zaprezentowano uśrednione najlepsze rozwiązanie znajdowane przy wykorzystaniu wyselekcjonowanych konfiguracji algorytmów w ramach selekcji, tj. przy wykorzystaniu zaledwie 5 pierwszych pokoleń. W przypadku algorytmów memetycznych przedstawiono również który z omówionych w podrozdziale \ref{sec:badane_scenariusze_doboru_parametrow} scenariuszy ostatecznie uzyskał najlepsze rezultaty. W  tym miejscu można zauważyć zależność pomiędzy trudnością funkcji testowe i kompletnością zwycięskiego scenariusza. Dokładna analiza wykonania algorytmu memetycznego dla funkcji \emph{Zeldasine10} wykazała, że wykorzystany operator \emph{L-BFGS-B} bardzo szybko znajduje optymalne rozwiązanie. W takiej sytuacji, gdzie wiele scenariuszy uzyskuje pozwala na osiąganie optimum funkcji kluczowym parametrem wyboru scenariusza staje się czas jego wykonania. 
+
+\begin{table}[ht]
+\caption{Czasy i najlepsze rozwiązanie znalezione w trakcie selekcji parametrów algorytmów dla funkcji Schaffer nr 2}
+\label{table:selekcja_Schaffer_czasy}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+	\hline
+	Algorytm & Mutacja & Najlepsze rozwiązanie & Czas selekcji [s] & Scenariusz \\
+	\hline
+	Memetyczny & \emph{mutDefault} & 0.03788 & 540.74 & $[1-2-3,\; 4-5-6]$\\
+	Memetyczny & \emph{mutGauss} & 0.02769 & 584.67 & $[1-2-3,\; 4-5-6]$ \\
+	Genetyczny & \emph{mutDefault} & 0.06609 & 171.79 & - \\
+	Genetyczny & \emph{mutGauss} & 0.04549 & 186.90 & - \\
+	PSO	& - & 0.09882 & 282.22 & -\\
+
+	\hline
+	\end{tabular}
+\end{center}
+\end{table}            
+
+\begin{table}[ht]
+\caption{Czasy i najlepsze rozwiązanie znalezione w trakcie selekcji parametrów algorytmów dla funkcji Paviani}
+\label{table:selekcja_Paviani_czasy}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+	\hline
+	Algorytm & Mutacja & Najlepsze rozwiązanie & Czas selekcji [s] & Scenariusz \\
+	\hline
+	Memetyczny & \emph{mutDefault} & -45.77847 & 849.00 & $[4-5-6,\; 1-2-3]$\\
+	Memetyczny & \emph{mutGauss} & -45.77847 & 841.99 & $[4-5-6,\; 1-2-3]$ \\
+	Genetyczny & \emph{mutDefault} & -24.71857 & 212.64 & - \\
+	Genetyczny & \emph{mutGauss} & -23.36381 & 218.80 & - \\
+	PSO	& - & -37.78442 & 412.75 & -\\
+
+	\hline
+	\end{tabular}
+\end{center}
+\end{table}
+
+
+
+
+\begin{table}[ht]
+\caption{Czasy i najlepsze rozwiązanie znalezione w trakcie selekcji parametrów algorytmów dla funkcji ZeldaSine10}
+\label{table:selekcja_Zeldasine_czasy}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+	\hline
+	Algorytm & Mutacja & Najlepsze rozwiązanie & Czas selekcji [s] & Scenariusz \\
+	\hline
+	Memetyczny & \emph{mutDefault} & -3.5 & 243.22 & $[4-5,\;3-6,\;1-2]$\\
+	Memetyczny & \emph{mutGauss} & -3.5 & 190.31 & $[4-5,\;3-6,\;1-2]$ \\
+	Genetyczny & \emph{mutDefault} & -1.69261 & 206.83 & - \\
+	Genetyczny & \emph{mutGauss} & -1.81252 & 214.95 & - \\
+	PSO	& - & -0.91760 & 36.15 & -\\
+
+	\hline
+	\end{tabular}
+\end{center}
+\end{table}
+
+Jednym z celów realizowanej pracy było sprawdzenie skuteczności zaproponowanych w rozdziale \ref{ch:przyjety_model_doboru_parametrow_algorytmu} scenariuszy doboru kolejnych wartości parametrów algorytmów memetycznych w celu ograniczenia liczby sprawdzanych kombinacji bez znaczącej straty jakości przyjętej konfiguracji. Z powodu ograniczeń technicznych nie zdecydowano się na porównawcze wykonanie pełnego przeglądu wszystkich możliwych kombinacji, więc scenariusze porównane zostaną jedynie między sobą pod kątem uzyskanych rezultatów i czasu wykonania. W tym miejscu na wykresach \ref{fig:parameter_selection_fitness_overall}, \ref{fig:parameter_selection_fitness_in_phases}, \ref{fig:parameter_selection_time_overall} i \ref{fig:parameter_selection_time_in_phases} przedstawione zostało jedynie porównanie dla funkcji \emph{Schaffer nr 2}. Analogiczne wykresy dla pozostałych przyjętych funkcji testowych zamieszczono w dodatku \ref{ch:dodatekC-wykresy}.
+\par
+Jak przedstawiono na wykresie \ref{fig:parameter_selection_fitness_overall} konfiguracja uzyskana poprzez zastosowanie scenariusza $[1-2-3,\,4-5-6]$ pozwala na uzyskanie najlepszych rezulatów, jednakże scenariusz $[3-6,\,1-2,\,4-5]$ jest tylko nieznacznie gorszy w tym aspekcie. Dodatkowo porównując wspomniane dwa scenariusze na podstawie wykresu \ref{fig:parameter_selection_time_overall} można stwierdzić, że uzyskanie nieznacznie lepszego rozwiązania wymagało aż trzykrotnie dłuższych obliczeń. Zestawiając ze sobą te dwa wyróżniające się pod kątem jakości uzyskanej konfiguracji scenariusze stwierdzić, że oba z nich są równie użyteczne, ale w odniesieniu do różnych potrzeb wykorzystania. Jeśli priorytetem będzie maksymalna możliwa jakość parametrów algorytmów to lepszym będzie scenariusz $[1-2-3,\,4-5-6]$, natomiast jeśli ważniejszy będzie czas selekcji parametrów to $[3-6,\,1-2,\,4-5]$. Zdecydowanie się na szybszy scenariusz może pozwolić na zwiększenie zbiorów sprawdzanych wartości parametrów, a przez to zwiększenie jakości uzyskanej konfiguracji algorytmu. Należy jednak po raz kolejny zaznaczyć, że skuteczność scenariuszy bezpośrednio zależy od trudności optymalizowanej funkcji.
+\par
+Analizując wykres \ref{fig:parameter_selection_fitness_in_phases} przedstawiający jakie uzyskiwano rezultaty w kolejnych etapach selekcji można zauważyć niespodziewane wyniki dla scenariusza $[4-5,\,3-6,\,1-2]$ z operatorem \emph{mutDefault} oraz $[1-2-3,\,4-5-6]$ z \emph{mutGauss} wskazujące na to, że przeprowadzony kolejny etap selekcji pogorszył otrzymywane rozwiązanie. Może to wskazywać na to, że przy danej kombinacji pozostałych parametrów tymczasowo przyjęte domyślne wartości parametrów pozwalają na uzyskanie lepszych rezultatów niż którakolwiek z testowanych kombinacji danego etapu selekcji. Gdyby taka sytuacja była obserwowana w większej liczbie scenariuszy lub rozwiązanie w kolejnych etapach pogarszałoby się w znaczący sposób należałoby zmienić zakres testowanych wartości parametrów w stronę domyślnych zaimplementowanych w pakiecie \emph{GA}.
+\par
+W sytuacji, gdy jakość konfiguracji uzyskana najlepszym pod tym kątem scenariuszem nie jest wystarczająca można posłużyć się danymi przedstawionymi na wykresie \ref{fig:parameter_selection_time_in_phases}. Przedstawia on czas wykonania kolejnych etapów selekcji. Na tej podstawie można zdecydować o tym, któremu z parametrów można rozszerzyć zbiór sprawdzanych wartości bez diametralnego wydłużenia czasu wykonania całego scenariusza. Z drugiej strony, jeśli celem jest skrócenie czasu wykonania scenariusza wykres ten wskaże, zbiory których parametrów należy ograniczyć.
+\begin{figure}[h] 
 \centering
   \includegraphics[width=\linewidth]{{img//roz04//parameterSelection//bestfitness_calych_scenariuszy_Schaffer1.png}}
 \caption{Porównanie najlepszego rozwiązania dla różnych scenariuszy dla funkcji Schaffer nr 2}
@@ -147,7 +161,7 @@
 \end{figure}
 
 
-\begin{figure} 
+\begin{figure}[ht] 
 \centering
 \begin{subfigure}{\textwidth}
   \centering
@@ -164,15 +178,33 @@
 \caption{Najlepsze znajdywane rozwiązanie kolejno w etapach selekcji dla funkcji Schaffer nr 2}
 \label{fig:parameter_selection_fitness_in_phases}
 \end{figure}
-Pozostałe wykresy przedstawiono w dodatku...
+
+\begin{figure}[h] 
+\centering
+  \includegraphics[width=\linewidth]{{img//roz04//parameterSelection//czas_calych_scenariuszy_Schaffer1.png}}
+\caption{Czas wykonania różnych scenariuszy dla funkcji Schaffer nr 2}
+\label{fig:parameter_selection_time_overall}
+\end{figure}
 
 
-\subsection{Algorytm memetyczny}
-\begin{itemize}
-\item porownanie skutecznosci scenariuszy
-\item porownanie czasu wykonania scenariuszy
-\end{itemize}
-\subsection{Algorytm genetyczny i PSO}
+\begin{figure}[ht] 
+\centering
+\begin{subfigure}{\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{{img//roz04//parameterSelection//czas_etapow_scenariuszymutDefault_Schaffer1.png}}
+  \caption{\emph{mutDefault}}
+\end{subfigure}
+\begin{subfigure}{\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{img//roz04//parameterSelection//czas_etapow_scenariuszymutGauss_Schaffer1.png}
+  \caption{\emph{mutGauss}}
+\end{subfigure}
+\caption{Czas wykonania kolejnych etapów selekcji dla funkcji Schaffer nr 2}
+\label{fig:parameter_selection_time_in_phases}
+\end{figure}
+
+\clearpage
+
 \section{Miary efektywności}
 \subsection{Kryterium nr 1 - najlepsze rozwiązanie}
 \subsection{Kryterium nr 2 - szybkość osiągania rozwiązania}

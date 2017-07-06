@@ -7,12 +7,12 @@ source("parameter selection scenarios/results/plotParameters.R")
 
 load("parameter selection scenarios/results/Schaffer_scenario_partial_comparison.RData")
 
-timeOfEachPhaseMatrixDefaultSchaffer<-matrix(c(timeOfEachSelectionPhase_gauss$scenario_123_456,0,
-                                               timeOfEachSelectionPhase_gauss$scenario_456_123,0,
-                                               timeOfEachSelectionPhase_gauss$scenario_12_45_36,
-                                               timeOfEachSelectionPhase_gauss$scenario_45_36_12,
-                                               timeOfEachSelectionPhase_gauss$scenario_36_12_45,
-                                               timeOfEachSelectionPhase_gauss$scenario_16_24_35
+timeOfEachPhaseMatrixDefaultSchaffer<-matrix(c(timeOfEachSelectionPhase_default$scenario_123_456,0,
+                                               timeOfEachSelectionPhase_default$scenario_456_123,0,
+                                               timeOfEachSelectionPhase_default$scenario_12_45_36,
+                                               timeOfEachSelectionPhase_default$scenario_45_36_12,
+                                               timeOfEachSelectionPhase_default$scenario_36_12_45,
+                                               timeOfEachSelectionPhase_default$scenario_16_24_35
                                         ),
                                         3,6, dimnames = list(c("Etap I", "Etap II", "Etap III"),
                                                              c("[1-2-3, 4-5-6]", 
@@ -59,12 +59,12 @@ dev.off()
 
 load("parameter selection scenarios/results/Paviani_scenario_partial_comparison.RData")
 
-timeOfEachPhaseMatrixDefaultPaviani<-matrix(c(timeOfEachSelectionPhase_gauss$scenario_123_456,0,
-                                              timeOfEachSelectionPhase_gauss$scenario_456_123,0,
-                                              timeOfEachSelectionPhase_gauss$scenario_12_45_36,
-                                              timeOfEachSelectionPhase_gauss$scenario_45_36_12,
-                                              timeOfEachSelectionPhase_gauss$scenario_36_12_45,
-                                              timeOfEachSelectionPhase_gauss$scenario_16_24_35
+timeOfEachPhaseMatrixDefaultPaviani<-matrix(c(timeOfEachSelectionPhase_default$scenario_123_456,0,
+                                              timeOfEachSelectionPhase_default$scenario_456_123,0,
+                                              timeOfEachSelectionPhase_default$scenario_12_45_36,
+                                              timeOfEachSelectionPhase_default$scenario_45_36_12,
+                                              timeOfEachSelectionPhase_default$scenario_36_12_45,
+                                              timeOfEachSelectionPhase_default$scenario_16_24_35
 ),
 3,6, dimnames = list(c("Etap I", "Etap II", "Etap III"),
                      c("[1-2-3, 4-5-6]", 
@@ -109,12 +109,12 @@ dev.off()
 
 load("parameter selection scenarios/results/Zeldasine_scenario_partial_comparison.RData")
 
-timeOfEachPhaseMatrixDefaultZeldaSine10<-matrix(c(timeOfEachSelectionPhase_gauss$scenario_123_456,0,
-                                                  timeOfEachSelectionPhase_gauss$scenario_456_123,0,
-                                                  timeOfEachSelectionPhase_gauss$scenario_12_45_36,
-                                                  timeOfEachSelectionPhase_gauss$scenario_45_36_12,
-                                                  timeOfEachSelectionPhase_gauss$scenario_36_12_45,
-                                                  timeOfEachSelectionPhase_gauss$scenario_16_24_35
+timeOfEachPhaseMatrixDefaultZeldaSine10<-matrix(c(timeOfEachSelectionPhase_default$scenario_123_456,0,
+                                                  timeOfEachSelectionPhase_default$scenario_456_123,0,
+                                                  timeOfEachSelectionPhase_default$scenario_12_45_36,
+                                                  timeOfEachSelectionPhase_default$scenario_45_36_12,
+                                                  timeOfEachSelectionPhase_default$scenario_36_12_45,
+                                                  timeOfEachSelectionPhase_default$scenario_16_24_35
 ),
 3,6, dimnames = list(c("Etap I", "Etap II", "Etap III"),
                      c("[1-2-3, 4-5-6]", 
