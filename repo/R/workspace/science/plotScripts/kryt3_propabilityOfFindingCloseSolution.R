@@ -4,49 +4,44 @@ source("science/plotParameters.R")
 ################
 ###  Schaffer ##
 ################
-load("science/proba4-final/kryterium3_Schaffer1.RData")
+load(paste(resultsDir,"kryterium3_Schaffer1.RData", sep="/"))
+
+rownames(accuracyMatrix)[1] <- "0.005"
+rownames(accuracyMatrix)[2] <- "0.01"
+rownames(accuracyMatrix)[3] <- "0.015"
 
 accuracyMatrix
-png(filename = "kryt2_czas_uzyskania_poziomu_dokladnosci_Schaffer.png", width = width, height = height)
-mybarplotForScience(t(accuracyMatrix),   x_lab = "Dok³adnoœæ", y_lab = "Czas wykonania [s]", title = "Czas uzyskania ¿¹danego poziomu dok³adnoœci rozwi¹zania - Schaffer nr 2",
-                    legendPosition = "bottomright")
+png(filename = "kryt3_czas_uzyskania_poziomu_dokladnosci_Schaffer.png", width = width, height = height)
+mybarplotForScience(t(100*accuracyMatrix),   x_lab = "Poziom dok³adnoœci", y_lab = "Powtarzalnoœæ uzyskania poziomu rozwi¹zania [%]", title = "Powtarzalnoœæ uzyskania rozwi¹zania o danej odleg³oœci od optimum - Schaffer nr 2",
+                    legendPosition = "bottomright", legendOutsidePlot = TRUE, insetOfLegend = c(-.3,0), legentTitle = "Algorytm")
 dev.off()
 
-numOfGenerationMatrix <- numOfGenerationMatrix[,-5]
-png(filename = "kryt2_czas_uzyskania_poziomu_dokladnosci_bez_PSO_Schaffer.png", width = width, height = height)
-mybarplotForScience(t(numOfGenerationMatrix),   x_lab = "Dok³adnoœæ", y_lab = "Czas wykonania [s]", title = "Czas uzyskania ¿¹danego poziomu dok³adnoœci rozwi¹zania - Schaffer nr 2",
-                    legendPosition = "topleft")
-dev.off()
 
 ################
 ###  Paviani ##
 ################
-load("science/proba4-final/kryterium2_Paviani.RData")
+load(paste(resultsDir,"kryterium3_Paviani.RData", sep="/"))
 
-png(filename = "kryt2_czas_uzyskania_poziomu_dokladnosci_Paviani.png", width = width, height = height)
-mybarplotForScience(t(numOfGenerationMatrix),   x_lab = "Dok³adnoœæ", y_lab = "Czas wykonania [s]", title = "Czas uzyskania ¿¹danego poziomu dok³adnoœci rozwi¹zania - Paviani",
-                    legendPosition = "topleft")
-dev.off()
+rownames(accuracyMatrix)[1] <- "0.005"
+rownames(accuracyMatrix)[2] <- "0.01"
+rownames(accuracyMatrix)[3] <- "0.015"
 
-numOfGenerationMatrix <- numOfGenerationMatrix[,-5]
-png(filename = "kryt2_czas_uzyskania_poziomu_dokladnosci_bez_PSO_Paviani.png", width = width, height = height)
-mybarplotForScience(t(numOfGenerationMatrix),   x_lab = "Dok³adnoœci", y_lab = "Czas wykonania [s]", title = "Czas uzyskania ¿¹danego poziomu dok³adnoœci rozwi¹zania - Paviani",
-                    legendPosition = "topleft")
+png(filename = "kryt3_czas_uzyskania_poziomu_dokladnosci_Paviani.png", width = width, height = height)
+mybarplotForScience(t(100*accuracyMatrix),   x_lab = "Poziom dok³adnoœci", y_lab = "Powtarzalnoœæ uzyskania poziomu rozwi¹zania [%]", title = "Powtarzalnoœæ uzyskania rozwi¹zania o danej odleg³oœci od optimum - Paviani",
+                    legendPosition = "bottomright", legendOutsidePlot = TRUE, insetOfLegend = c(-.3,0), legentTitle = "Algorytm")
 dev.off()
 
 
 ################
 ###  Zeldasine ##
 ################
-load("science/proba4-final/kryterium2_Zeldasine10.RData")
+load(paste(resultsDir,"kryterium3_Zeldasine10.RData", sep="/"))
 
-png(filename = "kryt2_czas_uzyskania_poziomu_dokladnosci_Zeldasine.png", width = width, height = height)
-mybarplotForScience(t(numOfGenerationMatrix),   x_lab = "Dok³adnoœæ", y_lab = "Czas wykonania [s]", title = "Czas uzyskania ¿¹danego poziomu dok³adnoœci rozwi¹zania - ZeldaSine10",
-                    legendPosition = "topleft")
-dev.off()
+rownames(accuracyMatrix)[1] <- "0.005"
+rownames(accuracyMatrix)[2] <- "0.01"
+rownames(accuracyMatrix)[3] <- "0.015"
 
-numOfGenerationMatrix <- numOfGenerationMatrix[,-5]
-png(filename = "kryt2_czas_uzyskania_poziomu_dokladnosci_bez_PSO_Zeldasine.png", width = width, height = height)
-mybarplotForScience(t(numOfGenerationMatrix),   x_lab = "Dok³adnoœæ", y_lab = "Czas wykonania [s]", title = "Czas uzyskania ¿¹danego poziomu dok³adnoœci rozwi¹zania - ZeldaSine10",
-                    legendPosition = "topleft")
+png(filename = "kryt3_czas_uzyskania_poziomu_dokladnosci_Zeldasine.png", width = width, height = height)
+mybarplotForScience(t(100*accuracyMatrix),   x_lab = "Poziom dok³adnoœci", y_lab = "Powtarzalnoœæ uzyskania poziomu rozwi¹zania %]", title = "Powtarzalnoœæ uzyskania rozwi¹zania o danej odleg³oœci od optimum - ZeldaSine10",
+                    legendPosition = "bottomright", legendOutsidePlot = TRUE, insetOfLegend = c(-.3,0), legentTitle = "Algorytm")
 dev.off()

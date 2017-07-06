@@ -4,7 +4,7 @@ source("science/plotParameters.R")
 ################
 ###  Schaffer ##
 ################
-load("science/proba4-final/kryterium1_Schaffer1.RData")
+load(paste(resultsDir,"kryterium1_Schaffer1.RData", sep="/"))
 
 numGenerationOfStagnation<-matrix(c(unlist(numOfGenerationMatrix),0
 ),
@@ -26,7 +26,7 @@ dev.off()
 ################
 ###  Paviani ##
 ################
-load("science/proba4-final/kryterium1_Paviani.RData")
+load(paste(resultsDir,"kryterium1_Paviani.RData", sep="/"))
 
 numGenerationOfStagnation<-matrix(c(unlist(numOfGenerationMatrix),0
 ),
@@ -48,7 +48,7 @@ dev.off()
 ################
 ###  Zeldasine ##
 ################
-load("science/proba4-final/kryterium1_Zeldasine10.RData")
+load(paste(resultsDir,"kryterium1_Zeldasine10.RData", sep="/"))
 
 numGenerationOfStagnation<-matrix(c(unlist(numOfGenerationMatrix),0
 ),

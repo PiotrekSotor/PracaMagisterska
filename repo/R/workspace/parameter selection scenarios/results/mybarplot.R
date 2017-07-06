@@ -5,7 +5,7 @@ source("parameter selection scenarios/results/plotParameters.R")
 mybarplot <- function(matrix, x_lab, y_lab, title, ylim=NULL, offset = 0, legentTitle="Operator mutacji"){
   
   colors <- used_colors(dim(matrix)[1])
-  barplot(matrix, xlab = x_lab, ylab = y_lab, ylim = ylim, beside = TRUE, main = title, col = colors, xpd = FALSE)
+  barplot(matrix, xlab = x_lab, ylab = y_lab, ylim = ylim, beside = TRUE, main = ifelse(test = isTRUE(titleShouldBePloted), yes = title, no=""), col = colors, xpd = FALSE)
 
   legend("topright", "(x,y)", names(matrix[,1]), title=legentTitle, fill=colors)
   
