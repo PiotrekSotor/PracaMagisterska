@@ -20,7 +20,7 @@ colorsForPlot <- c(colorsForLegend[c(1,2,1,2,4,4)])
 
 png(filename = "kryt1_bestFitness_Schaffer.png", width = width, height = height)
 mybarplotForScience(bestFitnesses,   x_lab = "Algorytm", y_lab = "Wartoœæ funkcji", title = "Najlepsze rozwi¹zanie uzyskane do stagnacji ewolucji - Schaffer nr 2",
-                    colors = colorsForPlot, colorsForLegend = colorsForLegend)
+                    colors = colorsForPlot, colorsForLegend = colorsForLegend, legendOutsidePlot = FALSE, legendPosition = "top", insetOfLegend = c(0,-.2), legendHorizontal = TRUE)
 dev.off()
 
 ################
@@ -42,7 +42,7 @@ colorsForPlot <- c(colorsForLegend[c(1,2,1,2,4,4)])
 
 png(filename = "kryt1_bestFitness_Paviani.png", width = width, height = height)
 mybarplotForScience(bestFitnesses,ylim = c(-46,-40),   x_lab = "Algorytm", y_lab = "Wartoœæ funkcji", title = "Najlepsze rozwi¹zanie uzyskane do stagnacji ewolucji - Paviani",
-                    colors = colorsForPlot, colorsForLegend = colorsForLegend)
+                    colors = colorsForPlot, colorsForLegend = colorsForLegend, legendOutsidePlot = FALSE, legendPosition = "top", insetOfLegend = c(0,-.2), legendHorizontal = TRUE)
 dev.off()
 
 ################
@@ -64,5 +64,5 @@ colorsForPlot <- c(colorsForLegend[c(1,2,1,2,4,4)])
 
 png(filename = "kryt1_bestFitness_Zeldasine.png", width = width, height = height)
 mybarplotForScience(bestFitnesses,   x_lab = "Algorytm", y_lab = "Wartoœæ funkcji", title = "Najlepsze rozwi¹zanie uzyskane do stagnacji ewolucji - ZeldaSine10",
-                    colors = colorsForPlot, colorsForLegend = colorsForLegend)
+                    colors = colorsForPlot, colorsForLegend = colorsForLegend, legendOutsidePlot = FALSE, legendPosition = "top", insetOfLegend = c(0,-.2), legendHorizontal = TRUE)
 dev.off()

@@ -9,7 +9,7 @@
 Przed przystąpieniem do badań porównujących efektywność badanych algorytmów konieczne jest określenie najlepszych ich konfiguracji. Dobór wartości parametrów algorytmów oparto na procedurze opisanej w podrozdziale \ref{sec:badane_scenariusze_doboru_parametrow}. Zdecydowano się na osobną selekcję parametrów dla każdej z wykorzystanych funkcji testowych co w rezultacie pozwoliło na uzyskanie konfiguracji przedstawionych w tabelach \ref{table:selekcja_Schaffer_parametry}, \ref{table:selekcja_Paviani_parametry} i \ref{table:selekcja_Zeldasine_parametry}. Analizując tabele pierwszym spostrzeżeniem będącym potwierdzeniem intuicji jest fakt uzyskiwania lepszych rezultatów przez algorytmy oparte na większych populacjach. Dlatego w większości przypadków przyjęta konfiguracja składa się z maksymalnej rozpatrywanej liczby osobników. Zdominowanie parametru metody przeszukiwania lokalnego w algorytmach memetycznych przez metodę \emph{L-BFGS-B}, która jest domyślną wartością w implementacji pakietu \emph{GA} może być konsekwencja przyjętej miary porównawczej konfiguracji algorytmów. Już na poziomie dokumentacji pakietu pojawia się uwaga mówiąca, że \emph{L-BFGS-B} najczęściej uzyskuje najlepsze rezultaty, jednakże nie jest najszybszym z operatorów. Uwzględnienie czasu wykonania algorytmu jako współkryterium dla uzyskiwanego rozwiązania w procedurze selekcji parametrów algorytmów mogłoby w rezultacie zmienić przyjmowaną metodę przeszukania lokalnego.
 
 \begin{table}[ht]
-\caption{Dobrane wartości parametrów algorytmów dla funkcji Schaffer nr 2}
+\caption{Dobrane wartości parametrów algorytmów dla funkcji \emph{Schaffer nr 2}}
 \label{table:selekcja_Schaffer_parametry}
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|c|c|}
@@ -34,7 +34,7 @@ Przed przystąpieniem do badań porównujących efektywność badanych algorytm�
 \end{table}
   
 \begin{table}[ht]
-\caption{Dobrane wartości parametrów algorytmów dla funkcji Paviani}
+\caption{Dobrane wartości parametrów algorytmów dla funkcji \emph{Paviani}}
 \label{table:selekcja_Paviani_parametry}
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|c|c|}
@@ -59,7 +59,7 @@ Przed przystąpieniem do badań porównujących efektywność badanych algorytm�
 \end{table}
 
 \begin{table}[ht]
-\caption{Dobrane wartości parametrów algorytmów dla funkcji ZeldaSine10}
+\caption{Dobrane wartości parametrów algorytmów dla funkcji \emph{ZeldaSine10}}
 \label{table:selekcja_Zeldasine_parametry}
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|c|c|}
@@ -87,7 +87,7 @@ Przed przystąpieniem do badań porównujących efektywność badanych algorytm�
 W tabelach \ref{table:selekcja_Schaffer_czasy}, \ref{table:selekcja_Paviani_czasy} i \ref{table:selekcja_Zeldasine_czasy} zaprezentowano uśrednione najlepsze rozwiązanie znajdowane przy wykorzystaniu wyselekcjonowanych konfiguracji algorytmów w ramach selekcji, tj. przy wykorzystaniu zaledwie 5 pierwszych pokoleń. W przypadku algorytmów memetycznych przedstawiono również który z omówionych w podrozdziale \ref{sec:badane_scenariusze_doboru_parametrow} scenariuszy ostatecznie uzyskał najlepsze rezultaty. W  tym miejscu można zauważyć zależność pomiędzy trudnością funkcji testowe i kompletnością zwycięskiego scenariusza. Dokładna analiza wykonania algorytmu memetycznego dla funkcji \emph{Zeldasine10} wykazała, że wykorzystany operator \emph{L-BFGS-B} bardzo szybko znajduje optymalne rozwiązanie. W takiej sytuacji, gdzie wiele scenariuszy uzyskuje pozwala na osiąganie optimum funkcji kluczowym parametrem wyboru scenariusza staje się czas jego wykonania. 
 
 \begin{table}[ht]
-\caption{Czasy i najlepsze rozwiązanie znalezione w trakcie selekcji parametrów algorytmów dla funkcji Schaffer nr 2}
+\caption{Czasy i najlepsze rozwiązanie znalezione w trakcie selekcji parametrów algorytmów dla funkcji \emph{Schaffer nr 2}}
 \label{table:selekcja_Schaffer_czasy}
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|}
@@ -106,7 +106,7 @@ W tabelach \ref{table:selekcja_Schaffer_czasy}, \ref{table:selekcja_Paviani_czas
 \end{table}            
 
 \begin{table}[ht]
-\caption{Czasy i najlepsze rozwiązanie znalezione w trakcie selekcji parametrów algorytmów dla funkcji Paviani}
+\caption{Czasy i najlepsze rozwiązanie znalezione w trakcie selekcji parametrów algorytmów dla funkcji \emph{Paviani}}
 \label{table:selekcja_Paviani_czasy}
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|}
@@ -128,7 +128,7 @@ W tabelach \ref{table:selekcja_Schaffer_czasy}, \ref{table:selekcja_Paviani_czas
 
 
 \begin{table}[ht]
-\caption{Czasy i najlepsze rozwiązanie znalezione w trakcie selekcji parametrów algorytmów dla funkcji ZeldaSine10}
+\caption{Czasy i najlepsze rozwiązanie znalezione w trakcie selekcji parametrów algorytmów dla funkcji \emph{ZeldaSine10}}
 \label{table:selekcja_Zeldasine_czasy}
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|}
@@ -156,7 +156,7 @@ W sytuacji, gdy jakość konfiguracji uzyskana najlepszym pod tym kątem scenari
 \begin{figure}[h] 
 \centering
   \includegraphics[width=\linewidth]{{img//roz04//parameterSelection//bestfitness_calych_scenariuszy_Schaffer1.png}}
-\caption{Porównanie najlepszego rozwiązania dla różnych scenariuszy dla funkcji Schaffer nr 2}
+\caption{Porównanie najlepszego rozwiązania dla różnych scenariuszy dla funkcji \emph{Schaffer nr 2}}
 \label{fig:parameter_selection_fitness_overall}
 \end{figure}
 
@@ -175,14 +175,14 @@ W sytuacji, gdy jakość konfiguracji uzyskana najlepszym pod tym kątem scenari
   \caption{\emph{mutGauss}}
   %\label{fig:sub2}
 \end{subfigure}
-\caption{Najlepsze znajdywane rozwiązanie kolejno w etapach selekcji dla funkcji Schaffer nr 2}
+\caption{Najlepsze znajdywane rozwiązanie kolejno w etapach selekcji dla funkcji \emph{Schaffer nr 2}}
 \label{fig:parameter_selection_fitness_in_phases}
 \end{figure}
 
 \begin{figure}[h] 
 \centering
   \includegraphics[width=\linewidth]{{img//roz04//parameterSelection//czas_calych_scenariuszy_Schaffer1.png}}
-\caption{Czas wykonania różnych scenariuszy dla funkcji Schaffer nr 2}
+\caption{Czas wykonania różnych scenariuszy dla funkcji \emph{Schaffer nr 2}}
 \label{fig:parameter_selection_time_overall}
 \end{figure}
 
@@ -199,7 +199,7 @@ W sytuacji, gdy jakość konfiguracji uzyskana najlepszym pod tym kątem scenari
   \includegraphics[width=\linewidth]{img//roz04//parameterSelection//czas_etapow_scenariuszymutGauss_Schaffer1.png}
   \caption{\emph{mutGauss}}
 \end{subfigure}
-\caption{Czas wykonania kolejnych etapów selekcji dla funkcji Schaffer nr 2}
+\caption{Czas wykonania kolejnych etapów selekcji dla funkcji \emph{Schaffer nr 2}}
 \label{fig:parameter_selection_time_in_phases}
 \end{figure}
 
@@ -207,6 +207,178 @@ W sytuacji, gdy jakość konfiguracji uzyskana najlepszym pod tym kątem scenari
 
 \section{Miary efektywności}
 \subsection{Kryterium nr 1 - najlepsze rozwiązanie}
+\begin{figure}[ht]
+\begin{subfigure}{.5\textwidth}
+  \includegraphics[width=\linewidth]{{img//roz04//kryt1//kryt1_bestFitness_Schaffer.png}}
+  \caption{Rozwiązanie stagnacji populacji}
+  \label{fig:kryt1_Schaffer_fitness}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \includegraphics[width=\linewidth]{img//roz04//kryt1//kryt1_nr_generacji_stagnacji_Schaffer.png}
+  \caption{Numer pokolenia stagnacji}
+  \label{fig:kryt1_Schaffer_stagnation}
+\end{subfigure}
+\caption{Określenie momentu stagnacji optymalizacji - \emph{Schaffer nr 2}}
+\label{fig:kryt1_Schaffer}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[ht]
+\begin{subfigure}{.5\textwidth}
+  \includegraphics[width=\linewidth]{{img//roz04//kryt1//kryt1_bestFitness_Paviani.png}}
+  \caption{Rozwiązanie stagnacji populacji}
+  \label{fig:kryt1_Paviani_fitness}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \includegraphics[width=\linewidth]{img//roz04//kryt1//kryt1_nr_generacji_stagnacji_Paviani.png}
+  \caption{Numer pokolenia stagnacji}
+  \label{fig:kryt1_Paviani_stagnation}
+\end{subfigure}
+\caption{Określenie momentu stagnacji optymalizacji - \emph{Paviani}}
+\label{fig:kryt1_Paviani}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[ht] 
+\begin{subfigure}{.5\textwidth}
+  \includegraphics[width=\linewidth]{{img//roz04//kryt1//kryt1_bestFitness_Zeldasine.png}}
+  \caption{Rozwiązanie stagnacji populacji}
+  \label{fig:kryt1_Zeldasine_fitness}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \includegraphics[width=\linewidth]{img//roz04//kryt1//kryt1_nr_generacji_stagnacji_Zeldasine.png}
+  \caption{Numer pokolenia stagnacji}
+  \label{fig:kryt1_Zeldasine_stagnation}
+\end{subfigure} 
+\caption{Określenie momentu stagnacji optymalizacji - \emph{ZeldaSine10}}
+\label{fig:kryt1_Zeldasine}
+\end{figure}
+
+
+
+
+\clearpage
+
 \subsection{Kryterium nr 2 - szybkość osiągania rozwiązania}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht] 
+\centering
+\begin{subfigure}{\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{{img//roz04//kryt2//kryt2_czas_uzyskania_poziomu_dokladnosci_Schaffer.png}}
+  \caption{Wszystkie algorytmy i progi dokładności}
+\end{subfigure} 
+\begin{subfigure}{\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{img//roz04//kryt2//kryt2_czas_uzyskania_poziomu_dokladnosci_bez_PSO_Schaffer.png}
+  \caption{Wszystkie algorytmy i progi dokładności z wyłączeniem PSO i progu 99\%}
+\end{subfigure} 
+\caption{Czas osiągnięcia rozwiązania o zadanej dokładności - \emph{Schaffer nr 2}}
+\label{fig:kryt2_Schaffer}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht] 
+\centering
+\begin{subfigure}{\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{{img//roz04//kryt2//kryt2_czas_uzyskania_poziomu_dokladnosci_Paviani.png}}
+  \caption{Wszystkie algorytmy i progi dokładności}
+\end{subfigure}
+\begin{subfigure}{\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{img//roz04//kryt2//kryt2_czas_uzyskania_poziomu_dokladnosci_bez_PSO_Paviani.png}
+  \caption{Wszystkie algorytmy i progi dokładności z wyłączeniem PSO i progu 99\%}
+\end{subfigure}
+\caption{Czas osiągnięcia rozwiązania o zadanej dokładności - \emph{Paviani}}
+\label{fig:kryt2_Paviani}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht] 
+\centering
+\begin{subfigure}{\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{{img//roz04//kryt2//kryt2_czas_uzyskania_poziomu_dokladnosci_Zeldasine.png}}
+  \caption{Wszystkie algorytmy i progi dokładności}
+\end{subfigure} 
+\begin{subfigure}{\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{img//roz04//kryt2//kryt2_czas_uzyskania_poziomu_dokladnosci_bez_PSO_Zeldasine.png}
+  \caption{Wszystkie algorytmy i progi dokładności z wyłączeniem PSO i progu 99\%}
+\end{subfigure} 
+\caption{Czas osiągnięcia rozwiązania o zadanej dokładności - \emph{ZeldaSine10}}
+\label{fig:kryt2_Zeldasine}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\clearpage
 \subsection{Kryterium nr 3 - powtarzalność skutecznej optymalizacji}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht] 
+\centering
+  \includegraphics[width=\linewidth]{{img//roz04//kryt3//kryt3_czas_uzyskania_poziomu_dokladnosci_Schaffer.png}}
+\caption{Powtarzalność uzyskania rozwiązania o danej dokładności - \emph{Schaffer~nr~2}}
+\label{fig:kryt3_Schaffer}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht] 
+\centering
+  \includegraphics[width=\linewidth]{{img//roz04//kryt3//kryt3_czas_uzyskania_poziomu_dokladnosci_Paviani.png}}
+\caption{Powtarzalność uzyskania rozwiązania o danej dokładności - \emph{Paviani}}
+\label{fig:kryt3_Paviani}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht] 
+\centering
+  \includegraphics[width=\linewidth]{{img//roz04//kryt3//kryt3_czas_uzyskania_poziomu_dokladnosci_Paviani.png}}
+\caption{Powtarzalność uzyskania rozwiązania o danej dokładności - \emph{ZeldaSine10}}
+\label{fig:kryt3_Zeldasine}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\clearpage
 \subsection{Kryterium nr 4 - ogólna charakterystyka populacji}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht] 
+\centering
+  \includegraphics[width=\linewidth]{{img//roz04//kryt4//kryt4_czas_uzyskania_poziomu_dokladnosci_Schaffer.png}}
+\caption{Różnica pomiędzy średnim i najlepszym rozwiązaniem populacji w kolejnych iteracjach algorytmu - \emph{Schaffer~nr~2}}
+\label{fig:kryt4_Schaffer}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht] 
+\centering
+  \includegraphics[width=\linewidth]{{img//roz04//kryt4//kryt4_czas_uzyskania_poziomu_dokladnosci_Paviani.png}}
+\caption{Różnica pomiędzy średnim i najlepszym rozwiązaniem populacji w kolejnych iteracjach algorytmu  - \emph{Paviani}}
+\label{fig:kryt4_Paviani}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht] 
+\centering
+  \includegraphics[width=\linewidth]{{img//roz04//kryt4//kryt4_czas_uzyskania_poziomu_dokladnosci_Zeldasine.png}}
+\caption{Różnica pomiędzy średnim i najlepszym rozwiązaniem populacji w kolejnych iteracjach algorytmu  - \emph{ZeldaSine10}}
+\label{fig:kryt4_Zeldasine}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

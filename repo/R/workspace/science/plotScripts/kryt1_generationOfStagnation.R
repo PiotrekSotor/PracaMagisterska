@@ -20,7 +20,7 @@ colorsForPlot <- c(colorsForLegend[c(1,2,1,2,4,4)])
 
 png(filename = "kryt1_nr_generacji_stagnacji_Schaffer.png", width = width, height = height)
 mybarplotForScience(numGenerationOfStagnation,   x_lab = "Algorytm", y_lab = "Numer pokolenia", title = "Numer pokolenia ostatniego polepszenia rozwi¹zania - Schaffer nr 2",
-                    colors = colorsForPlot, colorsForLegend = colorsForLegend)
+                    colors = colorsForPlot, colorsForLegend = colorsForLegend, legendOutsidePlot = FALSE, legendPosition = "top", insetOfLegend = c(0,-.2), legendHorizontal = TRUE)
 dev.off()
 
 ################
@@ -42,7 +42,7 @@ colorsForPlot <- c(colorsForLegend[c(1,2,1,2,4,4)])
 
 png(filename = "kryt1_nr_generacji_stagnacji_Paviani.png", width = width, height = height)
 mybarplotForScience(numGenerationOfStagnation,   x_lab = "Algorytm", y_lab = "Numer pokolenia", title = "Numer pokolenia ostatniego polepszenia rozwi¹zania - Paviani",
-                    colors = colorsForPlot, colorsForLegend = colorsForLegend)
+                    colors = colorsForPlot, colorsForLegend = colorsForLegend, legendOutsidePlot = FALSE, legendPosition = "top", insetOfLegend = c(0,-.2), legendHorizontal = TRUE)
 dev.off()
 
 ################
@@ -64,5 +64,5 @@ colorsForPlot <- c(colorsForLegend[c(1,2,1,2,4,4)])
 
 png(filename = "kryt1_nr_generacji_stagnacji_Zeldasine.png", width = width, height = height)
 mybarplotForScience(numGenerationOfStagnation,   x_lab = "Algorytm", y_lab = "Numer pokolenia", title = "Numer pokolenia ostatniego polepszenia rozwi¹zania - ZeldaSine10",
-                    colors = colorsForPlot, colorsForLegend = colorsForLegend)
+                    colors = colorsForPlot, colorsForLegend = colorsForLegend, legendOutsidePlot = FALSE, legendPosition = "top", insetOfLegend = c(0,-.2), legendHorizontal = TRUE)
 dev.off()

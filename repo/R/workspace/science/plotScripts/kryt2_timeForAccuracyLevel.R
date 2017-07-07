@@ -13,6 +13,7 @@ mybarplotForScience(t(numOfGenerationMatrix),   x_lab = "Dok³adnoœæ", y_lab = "C
 dev.off()
 
 numOfGenerationMatrix <- numOfGenerationMatrix[,-5]
+numOfGenerationMatrix <- numOfGenerationMatrix[-5,]
 png(filename = "kryt2_czas_uzyskania_poziomu_dokladnosci_bez_PSO_Schaffer.png", width = width, height = height)
 mybarplotForScience(t(numOfGenerationMatrix),   x_lab = "Dok³adnoœæ", y_lab = "Czas wykonania [s]", title = "Czas uzyskania ¿¹danego poziomu dok³adnoœci rozwi¹zania - Schaffer nr 2",
                     legendPosition = "topleft", legentTitle="Algorytm")
@@ -29,6 +30,7 @@ mybarplotForScience(t(numOfGenerationMatrix),   x_lab = "Dok³adnoœæ", y_lab = "C
 dev.off()
 
 numOfGenerationMatrix <- numOfGenerationMatrix[,-5]
+numOfGenerationMatrix <- numOfGenerationMatrix[-5,]
 png(filename = "kryt2_czas_uzyskania_poziomu_dokladnosci_bez_PSO_Paviani.png", width = width, height = height)
 mybarplotForScience(t(numOfGenerationMatrix),   x_lab = "Dok³adnoœci", y_lab = "Czas wykonania [s]", title = "Czas uzyskania ¿¹danego poziomu dok³adnoœci rozwi¹zania - Paviani",
                     legendPosition = "topleft", legentTitle="Algorytm")
@@ -46,6 +48,7 @@ mybarplotForScience(t(numOfGenerationMatrix),   x_lab = "Dok³adnoœæ", y_lab = "C
 dev.off()
 
 numOfGenerationMatrix <- numOfGenerationMatrix[,-5]
+numOfGenerationMatrix <- numOfGenerationMatrix[-5,]
 png(filename = "kryt2_czas_uzyskania_poziomu_dokladnosci_bez_PSO_Zeldasine.png", width = width, height = height)
 mybarplotForScience(t(numOfGenerationMatrix),   x_lab = "Dok³adnoœæ", y_lab = "Czas wykonania [s]", title = "Czas uzyskania ¿¹danego poziomu dok³adnoœci rozwi¹zania - ZeldaSine10",
                     legendPosition = "topleft", legentTitle="Algorytm")
