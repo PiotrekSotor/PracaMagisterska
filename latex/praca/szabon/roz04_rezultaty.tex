@@ -207,6 +207,13 @@ W sytuacji, gdy jakość konfiguracji uzyskana najlepszym pod tym kątem scenari
 
 \section{Miary efektywności}
 \subsection{Kryterium nr 1 - najlepsze rozwiązanie}
+
+\begin{itemize}
+\item we wszystich przypadkach PSO wyszło najgorzej
+\item dla Schaffera mutGauss cał zauwazalnie lepsze rezultaty, bo pozniej osiągał zbieżność
+\item tam, gdzie nie było problemem znalezienie optymalnego rozwiazania mutGauss osiągał zbieżność wcześniej, a więc szybciej znajdował rozwiązanie
+\end{itemize}
+
 \begin{figure}[ht]
 \begin{subfigure}{.5\textwidth}
   \includegraphics[width=\linewidth]{{img//roz04//kryt1//kryt1_bestFitness_Schaffer.png}}
@@ -239,6 +246,31 @@ W sytuacji, gdy jakość konfiguracji uzyskana najlepszym pod tym kątem scenari
 \label{fig:kryt1_Paviani}
 \end{figure}
 
+W Pavianim algorytm genetyczny nie uzyskiwał wartości optymalnej, a inne lokalne optimum o bardzo bliskiej wartości. 
+
+\begin{table}[ht]
+\caption{Rozwiązania dla funkcji Paviani}
+\label{table:kryt1_Paviani_best_fitness}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+	\hline
+	\multirow{2}{*}{Funkcja}& \multicolumn{2}{c|}{Operator mutacji} \\
+	\cline{2-6}
+	{} & mutDefault & mutGauss \\
+	\hline
+	\emph{Memetyczny} & -45.77847 & -45.77847\\
+	\emph{Genetyczny} & -45.53228 & -45.77498\\
+	\emph{PSO} & \multicolumn{2}{c|}{-40.45703}\\
+	\hline
+	\end{tabular}
+\end{center}
+\end{table}
+
+           mutDefaulf  mutGauss
+memetyczny  -45.77847 -45.77847
+genetyczny  -45.53228 -45.77498
+PSO         -40.35703   0.00000
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -263,6 +295,35 @@ W sytuacji, gdy jakość konfiguracji uzyskana najlepszym pod tym kątem scenari
 \clearpage
 
 \subsection{Kryterium nr 2 - szybkość osiągania rozwiązania}
+
+\begin{itemize}
+\item z uwagi na dużo dłuższe czasy dla PSO i progu 99\% zamieszczono dwa wykresy dla każdej funkcji
+\item nieosiągnięcie przez algorytm danego progu w ciągu 30 sekund prezentowane jest jako wartość -0.1
+\item nietypowym rezultatem jest nieosiągnięcie przez algorytm memetyczny-mutDefault dla Schaffera progu 99\%
+\item najlepsze rezultaty uzyskano algorytmem memetycznym, a w szczególności z wykorzystaniem mutGauss
+\item ewidentnie PSO ma problem z optymalizacją Zeldasine, nawet nie uzyskał progu 50\%
+\end{itemize}
+
+
+
+\begin{table}[ht]
+\caption{Wartości kolejnych progów dokładności rozwiązania}
+\label{table:kryt2_wartosci_progow}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+	\hline
+	\multirow{2}{*}{Funkcja}& \multicolumn{5}{c|}{Próg} \\
+	\cline{2-6}
+	{} & 50\% & 75\% & 90\% & 95\% & 99\% \\
+	\hline
+	\emph{Schaffer nr 2} & 0.25227 & 0.12614 & 0.05045 & 0.02523 & 0.00504\\
+	\emph{Paviani} & -22.42884 & -34.10365 & -41.10854 & -43.44351 & -45.31148\\
+	\emph{ZeldaSine10} & -1.92663 & -2.71331 & -3.18532 & 3.34266 & 3.46853\\
+	\hline
+	\end{tabular}
+\end{center}
+\end{table}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[ht] 
@@ -323,6 +384,12 @@ W sytuacji, gdy jakość konfiguracji uzyskana najlepszym pod tym kątem scenari
 \clearpage
 \subsection{Kryterium nr 3 - powtarzalność skutecznej optymalizacji}
 
+\begin{itemize}
+\item operator mutDefault w porównaniu do mutGauss dla Schaffera wypadł bardzo słabo, dla poziomu 0.01 nawet PSO uzyskało wyższą powtarzalność uzyskania rozwiązania danej dokładności niz algorytmu z mutDefault
+\item w Pavianim 
+\end{itemize}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[ht] 
 \centering
@@ -345,7 +412,7 @@ W sytuacji, gdy jakość konfiguracji uzyskana najlepszym pod tym kątem scenari
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[ht] 
 \centering
-  \includegraphics[width=\linewidth]{{img//roz04//kryt3//kryt3_czas_uzyskania_poziomu_dokladnosci_Paviani.png}}
+  \includegraphics[width=\linewidth]{{img//roz04//kryt3//kryt3_czas_uzyskania_poziomu_dokladnosci_Zeldasine.png}}
 \caption{Powtarzalność uzyskania rozwiązania o danej dokładności - \emph{ZeldaSine10}}
 \label{fig:kryt3_Zeldasine}
 \end{figure}
