@@ -150,7 +150,7 @@ Jednym z celów realizowanej pracy było sprawdzenie skuteczności zaproponowany
 \par
 Jak przedstawiono na wykresie \ref{fig:parameter_selection_fitness_overall} konfiguracja uzyskana poprzez zastosowanie scenariusza $[1-2-3,\,4-5-6]$ pozwala na uzyskanie najlepszych rezulatów, jednakże scenariusz $[3-6,\,1-2,\,4-5]$ jest tylko nieznacznie gorszy w tym aspekcie. Dodatkowo porównując wspomniane dwa scenariusze na podstawie wykresu \ref{fig:parameter_selection_time_overall} można stwierdzić, że uzyskanie nieznacznie lepszego rozwiązania wymagało aż trzykrotnie dłuższych obliczeń. Zestawiając ze sobą te dwa wyróżniające się pod kątem jakości uzyskanej konfiguracji scenariusze stwierdzić, że oba z nich są równie użyteczne, ale w odniesieniu do różnych potrzeb wykorzystania. Jeśli priorytetem będzie maksymalna możliwa jakość parametrów algorytmów to lepszym będzie scenariusz $[1-2-3,\,4-5-6]$, natomiast jeśli ważniejszy będzie czas selekcji parametrów to $[3-6,\,1-2,\,4-5]$. Zdecydowanie się na szybszy scenariusz może pozwolić na zwiększenie zbiorów sprawdzanych wartości parametrów, a przez to zwiększenie jakości uzyskanej konfiguracji algorytmu. Należy jednak po raz kolejny zaznaczyć, że skuteczność scenariuszy bezpośrednio zależy od trudności optymalizowanej funkcji.
 \par
-Analizując wykres \ref{fig:parameter_selection_fitness_in_phases} przedstawiający rezultaty uzyskane w kolejnych etapach selekcji można zauważyć niespodziewane wyniki dla scenariusza $[4-5,\,3-6,\,1-2]$ z operatorem \emph{mutDefault} oraz $[1-2-3,\,4-5-6]$ z \emph{mutGauss} wskazujące na to, że przeprowadzony kolejny etap selekcji pogorszył otrzymywane rozwiązanie. Może to wskazywać na sytuację, w której przy danej kombinacji pozostałych parametrów tymczasowo przyjęte domyślne wartości parametrów pozwalają na uzyskanie lepszych rezultatów niż którakolwiek z testowanych kombinacji danego etapu selekcji. Gdyby taka sytuacja była obserwowana w większej liczbie scenariuszy lub rozwiązanie w kolejnych etapach pogarszałoby się w znaczący sposób należałoby zmienić zakres testowanych wartości parametrów w stronę domyślnych zaimplementowanych w pakiecie \emph{GA}.
+Analizując wykres \ref{fig:parameter_selection_fitness_in_phases} przedstawiający rezultaty uzyskane w kolejnych etapach selekcji można zauważyć niespodziewane wyniki dla scenariusza $[4-5,\,3-6,\,1-2]$ z operatorem \emph{mutDefault} oraz $[1-2-3,\,4-5-6]$ z \emph{mutGauss} wskazujące na to, że przeprowadzony kolejny etap selekcji pogorszył otrzymywane rozwiązanie. Może to wskazywać na sytuację, w której przy danej kombinacji pozostadd łych parametrów tymczasowo przyjęte domyślne wartości parametrów pozwalają na uzyskanie lepszych rezultatów niż którakolwiek z testowanych kombinacji danego etapu selekcji. Gdyby taka sytuacja była obserwowana w większej liczbie scenariuszy lub rozwiązanie w kolejnych etapach pogarszałoby się w znaczący sposób należałoby zmienić zakres testowanych wartości parametrów w stronę domyślnych zaimplementowanych w pakiecie \emph{GA}.
 \par
 W sytuacji, gdy jakość konfiguracji uzyskana najlepszym pod tym kątem scenariuszem nie jest wystarczająca można posłużyć się danymi czasu wykonania kolejnych etapów selekcji przedstawionymi na wykresie \ref{fig:parameter_selection_time_in_phases}. Przedstawia on czas wykonania kolejnych etapów selekcji. Na tej podstawie można zdecydować, któremu z parametrów można rozszerzyć zbiór sprawdzanych wartości bez diametralnego wydłużenia czasu wykonania całego scenariusza. Z drugiej strony, jeśli celem jest skrócenie czasu wykonania scenariusza na podstawie wykresu można określić, zbiory których parametrów należy ograniczyć.
 \begin{figure}[h] 
@@ -252,11 +252,11 @@ W Pavianim algorytm genetyczny nie uzyskiwał wartości optymalnej, a inne lokal
 \caption{Rozwiązania dla funkcji Paviani}
 \label{table:kryt1_Paviani_best_fitness}
 \begin{center}
-\begin{tabular}{|c|c|c|c|c|c|}
+\begin{tabular}{|c|c|c|}
 	\hline
 	\multirow{2}{*}{Funkcja}& \multicolumn{2}{c|}{Operator mutacji} \\
-	\cline{2-6}
-	{} & mutDefault & mutGauss \\
+	\cline{2-3}
+	{} & \emph{mutDefault} & \emph{mutGauss} \\
 	\hline
 	\emph{Memetyczny} & -45.77847 & -45.77847\\
 	\emph{Genetyczny} & -45.53228 & -45.77498\\
@@ -265,11 +265,6 @@ W Pavianim algorytm genetyczny nie uzyskiwał wartości optymalnej, a inne lokal
 	\end{tabular}
 \end{center}
 \end{table}
-
-           mutDefaulf  mutGauss
-memetyczny  -45.77847 -45.77847
-genetyczny  -45.53228 -45.77498
-PSO         -40.35703   0.00000
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -386,7 +381,11 @@ PSO         -40.35703   0.00000
 
 \begin{itemize}
 \item operator mutDefault w porównaniu do mutGauss dla Schaffera wypadł bardzo słabo, dla poziomu 0.01 nawet PSO uzyskało wyższą powtarzalność uzyskania rozwiązania danej dokładności niz algorytmu z mutDefault
-\item w Pavianim 
+\item ogólnie dla tego kryterium memetyczny wypada najlepiej
+\item w Pavianim zerowe wyniki są konsekwencją znajdowania innego minimum lokalnego o wartości bliskiej optimum. patrz \ref{table:kryt1_Paviani_best_fitness}. 
+\item zeldasine - dziwne ze dla memetycznego mutgauss wyszedl gorzej niz mutdefault
+\item zeldasine - ale dla genetycznego już znacznie lepiej wyszedl mutgauss
+\item PSO bliskie optimum znajduje tylko dla Schaffer, a dla pozostałych nie radzi wcale
 \end{itemize}
 
 
@@ -421,7 +420,12 @@ PSO         -40.35703   0.00000
 \clearpage
 \subsection{Kryterium nr 4 - ogólna charakterystyka populacji}
 
-
+\begin{itemize}
+\item dla Schaffera wszystkie algorytmy zachowują się bardzo podobnie - ogół populacji rozklada sie w szerokiej plaskiej czesci przebiegu funkcji, a najlepsze osobniki już w 10 iteracjach zblizają się do optimum
+\item dla Paviani - różnica w 10 iteracja szybko spada, co oznacza, że i
+\item dla Paviani - mutgauss osiaga nizsze roznice zarowno dla memetycznego i genetcznego niz mutdefault
+\item dla Zeldasine - mutDefault osiaga wyzsze roznice niz mutGauss
+\end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[ht] 
 \centering
