@@ -208,11 +208,17 @@ W sytuacji, gdy jakość konfiguracji uzyskana najlepszym pod tym kątem scenari
 \section{Miary efektywności}
 \subsection{Kryterium nr 1 - najlepsze rozwiązanie}
 
-\begin{itemize}
-\item we wszystich przypadkach PSO wyszło najgorzej
-\item dla Schaffera mutGauss cał zauwazalnie lepsze rezultaty, bo pozniej osiągał zbieżność
-\item tam, gdzie nie było problemem znalezienie optymalnego rozwiazania mutGauss osiągał zbieżność wcześniej, a więc szybciej znajdował rozwiązanie
-\end{itemize}
+%\begin{itemize}
+%\item we wszystich przypadkach PSO wyszło najgorzej
+%\item dla Schaffera mutGauss cał zauwazalnie lepsze rezultaty, bo pozniej osiągał zbieżność
+%\item tam, gdzie nie było problemem znalezienie optymalnego rozwiazania mutGauss osiągał zbieżność wcześniej, a więc szybciej znajdował rozwiązanie
+%\end{itemize}
+\par
+Badania porównawcze według tego kryterium opierały się na określeniu średniego najlepszego rozwiązania znajdowanego do osiągnięcia zbieżności populacji. Za oznakę zbieżności przyjęto brak polepszenia rezultatu przez 50 iteracji algorytmu. Oprócz porównania ze sobą rożnych algorytmów poniższe wykresy uwidaczniają różnicę pomiędzy wykorzystanymi operatorami mutacji. 
+\par
+W przypadku każdej z użytych funkcji testowych algorytm \emph{PSO} można podsumować w ten sam sposób. We wszystkich przypadkach osiąga zbieżność w nieznacznie większej liczbie iteracji niż algorytm memetyczny, jednakże rozwiązania przez niego uzyskiwane są znacznie gorsze niż dla pozostałych metod optymalizacji. 
+\par 
+Zgodnie z tym co zauważono już na etapie doboru parametrów algorytmów  najtrudniejszą, z punktu widzenia znalezienia optimum, funkcją okazał \emph{Schaffer nr 2}. Wykres \ref{fig:kryt1_Schaffer} można rozumieć w taki sposób, że algorytm genetyczny i memetyczny z operatorem \emph{mutDefault} osiągają bardzo zbliżone rezultaty, jednakże memetyczny osiąga zbieżność w znacznie mniejszej liczbie iteracji. Operator \emph{mutGauss} pozwolił na uzyskanie lepszych rozwiązań niż \emph{mutDefault}, choć rożnie wpłyną na szybkość uzyskania zbieżności - w memetycznym zwiększył liczbę potrzebnych iteracji, a w genetycznym zmniejszył. 
 
 \begin{figure}[ht]
 \begin{subfigure}{.5\textwidth}
@@ -231,6 +237,29 @@ W sytuacji, gdy jakość konfiguracji uzyskana najlepszym pod tym kątem scenari
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\par
+W przypadku funkcji \emph{Paviani} tylko algorytm memetyczny zdołał osiągnąć, rozwiązanie optymalne. Genetyczny uzyskiwał rezultaty bardzo bliskie optimum i ich dokładne wartości przedstawiono w tabeli \ref{table:kryt1_Paviani_best_fitness}. Podobnie jak w przypadku \emph{Schaffer nr 2} operator \emph{mutDefault} opóźnił zbieżność algorytmu memetycznego, a przyspieszył genetycznego. Ponownie mutacja gaussowska pozwoliła na znalezienie lepszego rozwiązania niż domyślna w pakiecie \emph{GA}. Porównanie algorytmów według tego kryterium  dla \emph{Paviani} przedstawiono na wykresie \ref{fig:kryt1_Paviani}.
+
+
+\begin{table}[hbt]
+\caption{Rozwiązania dla funkcji Paviani}
+\label{table:kryt1_Paviani_best_fitness}
+\begin{center}
+\begin{tabular}{|c|c|c|}
+	\hline
+	\multirow{2}{*}{Algorytm}& \multicolumn{2}{c|}{Operator mutacji} \\
+	\cline{2-3}
+	{} & \emph{mutDefault} & \emph{mutGauss} \\
+	\hline
+	\emph{Memetyczny} & -45.77847 & -45.77847\\
+	\emph{Genetyczny} & -45.53228 & -45.77498\\
+	\hline
+	\emph{PSO} & \multicolumn{2}{c|}{-40.45703}\\
+	\hline
+	\end{tabular}
+\end{center}
+\end{table}
+
 \begin{figure}[ht]
 \begin{subfigure}{.5\textwidth}
   \includegraphics[width=\linewidth]{{img//roz04//kryt1//kryt1_bestFitness_Paviani.png}}
@@ -246,28 +275,9 @@ W sytuacji, gdy jakość konfiguracji uzyskana najlepszym pod tym kątem scenari
 \label{fig:kryt1_Paviani}
 \end{figure}
 
-W Pavianim algorytm genetyczny nie uzyskiwał wartości optymalnej, a inne lokalne optimum o bardzo bliskiej wartości. 
-
-\begin{table}[ht]
-\caption{Rozwiązania dla funkcji Paviani}
-\label{table:kryt1_Paviani_best_fitness}
-\begin{center}
-\begin{tabular}{|c|c|c|}
-	\hline
-	\multirow{2}{*}{Funkcja}& \multicolumn{2}{c|}{Operator mutacji} \\
-	\cline{2-3}
-	{} & \emph{mutDefault} & \emph{mutGauss} \\
-	\hline
-	\emph{Memetyczny} & -45.77847 & -45.77847\\
-	\emph{Genetyczny} & -45.53228 & -45.77498\\
-	\emph{PSO} & \multicolumn{2}{c|}{-40.45703}\\
-	\hline
-	\end{tabular}
-\end{center}
-\end{table}
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\par
+W pzypadku \emph{ZeldaSine10} w przeciwieństwie do pozostałych funkcji testowych algorytm memetyczny z operatorem \emph{mutGauss} uzyskał gorsze rozwiązania od wersji z \emph{mutDefault}, ale i również od obu wariantów genetycznego. Podobnie jak dla \emph{Schaffer nr 2} i \emph{Paviani} \emph{mutGauss} opóźnił stagnację optymalizacji algorytmem memetycznym, i przyspieszył w genetycznym. Na wykresie \ref{fig:kryt1_Zeldasine} przedstawiono rezultaty wskazujące na około piętnastokrotną różnicę w szybkości osiągania stagnacji optymalizacji pomiędzy memetyczną i genetyczną metoda rozwiązywania problemów optymalizacyjnych. 
 
 \begin{figure}[ht] 
 \begin{subfigure}{.5\textwidth}
@@ -284,10 +294,12 @@ W Pavianim algorytm genetyczny nie uzyskiwał wartości optymalnej, a inne lokal
 \label{fig:kryt1_Zeldasine}
 \end{figure}
 
-
-
-
 \clearpage
+
+
+\par
+Końcowym wnioskiem podsumowującym porównanie algorytmów według \emph{kryterium nr 1} jest niepodważalna przewaga algorytmu memetycznego jeśli chodzi o liczbę koniecznych iteracji mechanizmu do uzyskania rozwiązania optymalnego lub mu bliskiego. W większości przypadków operator \emph{mutGauss} okazuje się uzyskiwać lepsze rezultaty niż \emph{mutDefault}, jednakże różnie wpływa na szybkość stagnacji procesu optymalizacji. Jak wspomniano już wyżej algorytm \emph{PSO} kończył optymalizację w nieznacznie większej iteracji niż memetyzny, jednakże najgorsze rozwiązania.
+
 
 \subsection{Kryterium nr 2 - szybkość osiągania rozwiązania}
 
