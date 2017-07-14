@@ -424,7 +424,7 @@ Analizując wyniki badań porównawczych dla funkcji \emph{Schaffer nr 2} przeds
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[ht] 
+\begin{figure}[htb] 
 \centering
   \includegraphics[width=\linewidth]{{img//roz04//kryt3//kryt3_czas_uzyskania_poziomu_dokladnosci_Schaffer.png}}
 \caption{Powtarzalność uzyskania rozwiązania o danej dokładności - \emph{Schaffer~nr~2}}
@@ -433,10 +433,10 @@ Analizując wyniki badań porównawczych dla funkcji \emph{Schaffer nr 2} przeds
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \par
-Rezultaty dla tego kryterium dla funkcji \emph{Paviani} przedstawiono na wykresie \ref{fig:kryt3_Paviani}. 
+Rezultaty dla tego kryterium dla funkcji \emph{Paviani} przedstawiono na wykresie \ref{fig:kryt3_Paviani}. Zerowe wyniki dla algorytmów innych niż memetyczny można tłumaczyć wynikami uzyskanymi również w badaniach porównawczych wykorzystujących \emph{kryterium nr 1}. W tabeli \ref{table:kryt1_Paviani_best_fitness} przedstawiono dokładne wartości najlepszych znalezionych rozwiązań, z których wynika, że jedynie algorytm memetyczny uzyskał optimum, a algorytm genetyczny inne z lokalnych ekstremów. Bezbłędną skuteczność algorytmu memetycznego w obu wersjach mutacji potwierdza wysoką skuteczność zastosowanej metody lokalnego przeszukania. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[ht] 
+\begin{figure}[hbt] 
 \centering
   \includegraphics[width=\linewidth]{{img//roz04//kryt3//kryt3_czas_uzyskania_poziomu_dokladnosci_Paviani.png}}
 \caption{Powtarzalność uzyskania rozwiązania o danej dokładności - \emph{Paviani}}
@@ -444,9 +444,11 @@ Rezultaty dla tego kryterium dla funkcji \emph{Paviani} przedstawiono na wykresi
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\par
+W przypadku ostatniej z testowych funkcji bardzo wysoką skuteczność uzyskał algorytm memetyczny w obu wersjach. Wykorzystując \emph{mutGauss} jedynie w dwóch z trzydziestu próbach nie uzyskano rozwiązania bliskiego opitmum. Algorytm genetyczny uzyskiwał kolejne poziomy dokładności znacznie rzadziej. Dla tego mechanizmu widoczna jest znaczna przewaga \emph{mutGauss} nad \emph{mutDefault}. Podobnie jak w przypadku \emph{krytetium nr 2} \emph{PSO} nie uzyskał w żadnej z prób rozwiązania wystarczająco bliskiego by zaliczać się choćby do najniższej badanej dokładności. Dokładne wyniki dla \emph{ZeldaSine10} przedstawiono na wykresie \ref{fig:kryt3_Zeldasine}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[ht] 
+\begin{figure}[hbt] 
 \centering
   \includegraphics[width=\linewidth]{{img//roz04//kryt3//kryt3_czas_uzyskania_poziomu_dokladnosci_Zeldasine.png}}
 \caption{Powtarzalność uzyskania rozwiązania o danej dokładności - \emph{ZeldaSine10}}
