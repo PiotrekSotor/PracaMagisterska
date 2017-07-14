@@ -203,7 +203,7 @@ W sytuacji, gdy jakość konfiguracji uzyskana najlepszym pod tym kątem scenari
 \label{fig:parameter_selection_time_in_phases}
 \end{figure}
 
-\clearpage
+\FloatBarrier
 
 \section{Miary efektywności}
 \subsection{Kryterium nr 1 - najlepsze rozwiązanie}
@@ -294,23 +294,26 @@ W pzypadku \emph{ZeldaSine10} w przeciwieństwie do pozostałych funkcji testowy
 \label{fig:kryt1_Zeldasine}
 \end{figure}
 
-\clearpage
-
+\FloatBarrier
 
 \par
 Końcowym wnioskiem podsumowującym porównanie algorytmów według \emph{kryterium nr 1} jest niepodważalna przewaga algorytmu memetycznego jeśli chodzi o liczbę koniecznych iteracji mechanizmu do uzyskania rozwiązania optymalnego lub mu bliskiego. W większości przypadków operator \emph{mutGauss} okazuje się uzyskiwać lepsze rezultaty niż \emph{mutDefault}, jednakże różnie wpływa na szybkość stagnacji procesu optymalizacji. Jak wspomniano już wyżej algorytm \emph{PSO} kończył optymalizację w nieznacznie większej iteracji niż memetyzny, jednakże najgorsze rozwiązania.
 
 
 \subsection{Kryterium nr 2 - szybkość osiągania rozwiązania}
+%
+%\begin{itemize}
+%\item z uwagi na dużo dłuższe czasy dla PSO i progu 99\% zamieszczono dwa wykresy dla każdej funkcji
+%\item nieosiągnięcie przez algorytm danego progu w ciągu 30 sekund prezentowane jest jako wartość -0.1
+%\item nietypowym rezultatem jest nieosiągnięcie przez algorytm memetyczny-mutDefault dla Schaffera progu 99\%
+%\item najlepsze rezultaty uzyskano algorytmem memetycznym, a w szczególności z wykorzystaniem mutGauss
+%\item ewidentnie PSO ma problem z optymalizacją Zeldasine, nawet nie uzyskał progu 50\%
+%\end{itemize}
 
-\begin{itemize}
-\item z uwagi na dużo dłuższe czasy dla PSO i progu 99\% zamieszczono dwa wykresy dla każdej funkcji
-\item nieosiągnięcie przez algorytm danego progu w ciągu 30 sekund prezentowane jest jako wartość -0.1
-\item nietypowym rezultatem jest nieosiągnięcie przez algorytm memetyczny-mutDefault dla Schaffera progu 99\%
-\item najlepsze rezultaty uzyskano algorytmem memetycznym, a w szczególności z wykorzystaniem mutGauss
-\item ewidentnie PSO ma problem z optymalizacją Zeldasine, nawet nie uzyskał progu 50\%
-\end{itemize}
-
+\par
+\emph{Kryterium nr 2} pozwala porównać szybkość osiągania określonych rezultatów w zależności od czasu wykonania algorytmu, a nie liczby potrzebnych iteracji. W tabeli \ref{table:kryt2_wartosci_progow} przedstawiono jakie wartości funkcji dopasowania odpowiadają kolejnym przyjętym progom jakości otrzymanego rozwiązania. Bardzo wąski ogólny zakres wartości funkcji \emph{Schaffer nr 2} wpłynął na stopień trudności osiągnięcia najwyższych zdefiniowanych progów. Granicznym czasem wykonania algorytmu jest \emph{30 sekund}. Przypadek nieosiągnięcia danego progu w żadnej z 30 prób pomiarowych oznaczany na wykresach \ref{fig:kryt2_Schaffer}, \ref{fig:kryt2_Paviani} i \ref{fig:kryt2_Zeldasine} wartością $-0.1$. Wszystkie pomiary zostały przeprowadzone po przyjęciu dokładności pomiaru równej $50 ms$. Czasy uzyskane przez algorytm \emph{PSO} oraz progu $99\%$ okazały się znacznie dłuższe niż w pozostałych przypadkach, więc zdecydowano się na przedstawienie rezultatów na dwóch wykresach dla każdej z funkcji - pierwszy z nich opisuje wszystkie rezultaty dla funkcji testowej, a drugi nie zawiera \emph{PSO} i progu $99\%$.
+\par
+Podobnie jak w przypadku \emph{kryterium nr 1} algorytm \emph{PSO} okazał się najgorszym z badanych metod optymalizacji dla wszystkich trzech funkcji testowych. Osiągał kolejne progi w około pięciokrotnie dłuższym czasie lub nie osiągał ich w założonym maksymalnym okresie. 
 
 
 \begin{table}[ht]
@@ -325,11 +328,14 @@ Końcowym wnioskiem podsumowującym porównanie algorytmów według \emph{kryter
 	\hline
 	\emph{Schaffer nr 2} & 0.25227 & 0.12614 & 0.05045 & 0.02523 & 0.00504\\
 	\emph{Paviani} & -22.42884 & -34.10365 & -41.10854 & -43.44351 & -45.31148\\
-	\emph{ZeldaSine10} & -1.92663 & -2.71331 & -3.18532 & 3.34266 & 3.46853\\
+	\emph{ZeldaSine10} & -1.92663 & -2.71331 & -3.18532 & -3.34266 & -3.46853\\
 	\hline
 	\end{tabular}
 \end{center}
 \end{table}
+
+\par
+W przypadku funkcji \emph{Schaffer nr 2}, dla której rezultaty przedstawiono na wykresie \ref{fig:kryt2_Schaffer} najlepszą z testowanych metod okazuje się algorytm memetyczny z wykorzystaniem mutacji gaussowskiej. Uzyskał on najniższy czas osiągnięcia progu $99\%$, mimo iż próg $95\%$ szybciej uzyskano algorytmem genetycznym, co widać na wykresie \ref{fig:kryt2_Schaffer_restricted}. Żadna z badanych metod nie miał trudności z osiągnięciem progu $95\%$. Ciekawie wygląda zestawienie wyników dla dwóch najwyższych progów. Dla algorytmu memetycznego operator \emph{mutGauss} dla obu poziomów dokładności uzyskiwał lepsze rezultaty niż \emph{mutDefault}, zaś dla genetycznego w przypadku progu $99\%$ domyślny operator osiągał rozwiązanie z krótszym czasie. Dla progu $95\%$ nieznaczną przewagę czasową posiadał algorytm genetyczny, jednakże dla ostatniego progu uzyskał znacznie gorsze rezultaty  rezultaty niż memetyczny z \emph{mutGauss}. Niespodziewanie algorytm memetyczny z \emph{mutDefault} nie osiągnął progu $99\%$ w żadnej z prób testowych. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -344,12 +350,16 @@ Końcowym wnioskiem podsumowującym porównanie algorytmów według \emph{kryter
   \centering
   \includegraphics[width=\linewidth]{img//roz04//kryt2//kryt2_czas_uzyskania_poziomu_dokladnosci_bez_PSO_Schaffer.png}
   \caption{Wszystkie algorytmy i progi dokładności z wyłączeniem PSO i progu 99\%}
+ \label{fig:kryt2_Schaffer_restricted}
 \end{subfigure} 
 \caption{Czas osiągnięcia rozwiązania o zadanej dokładności - \emph{Schaffer nr 2}}
 \label{fig:kryt2_Schaffer}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
+\FloatBarrier
+\par
+Badania dla tego kryterium z wykorzystaniem funkcji \emph{Paviani} jednoznacznie wskazuje na przewagę algorytmu memetycznego nad pozostałymi. Wyniki przedstawiono na wykresie \ref{fig:kryt2_Paviani}. Niezależnie od wykorzystanego operatora mutacji osiągnął kolejne progi w najniższym możliwym czasie. Może to być efektem tego, że wykorzystany metoda \emph{L-BFGS-B} bardzo dobrze radzi sobie z funkcjami podobnymi \emph{Paviani} w przebiegu wartości. W przypadku genetycznego możliwe jest już porównanie operatorów ze sobą - dla wszystkich progów poza $99\%$ \emph{mutDefault} uzyskiwał niższe czasy niż  mutacja gaussowska. Dla ostatniego progu relacja uległa odwróceniu - czas potrzebny algorytmowi genetycznemu opartemu o \emph{mutGauss} jest dwukrotnie niższy niż dla \emph{mutDefault}. Co więcej - różnica w czasie pomiędzy progiem $95\%$ i $99\%$ dla \emph{mutGauss} wynosi około $25\%$ , a dla \emph{mutDefualt} około $150\%$. 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[ht] 
 \centering
@@ -367,7 +377,9 @@ Końcowym wnioskiem podsumowującym porównanie algorytmów według \emph{kryter
 \label{fig:kryt2_Paviani}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
+\FloatBarrier
+\par
+W przypadku ostatniej z wykorzystanej funkcji testowych otrzymane rezultaty wydają się sprzeczne z intuicją. Na wykresie \ref{fig:kryt2_Zeldasine} przedstawiono wyniki wskazujące na to,że ostatnie dwa progi dokładności rozwiązania nie są osiągane przez algorytm memetyczny z \emph{mutDefault}, pomimo że genetyczny z tym samym operatorem mutacji osiąga je w czasie $2.15$ sekundy. Porównując skuteczność mechanizmów mutacji ze sobą ponownie uzyskuje się wniosek wskazujący na przewagę \emph{mutGauss} nad \emph{mutDefault}. Funkcja \emph{ZeldaSine10} z jakiegoś powodu sprawa duże problemy algorytmowi \emph{PSO} przez co nie jest on w stanie uzyskać rozwiązania lepszego niż próg $50\%$. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[ht] 
 \centering
@@ -388,17 +400,27 @@ Końcowym wnioskiem podsumowującym porównanie algorytmów według \emph{kryter
 
 
 
-\clearpage
-\subsection{Kryterium nr 3 - powtarzalność skutecznej optymalizacji}
+\FloatBarrier
+\par
+Podsumowując analizę porównawczą w oparciu o \emph{kryterium nr 2} wnioski pozostają bardzo zbliżone do tych odnośnie \emph{kryterium nr 1}. Mechanizmem uzyskujący bardzo dokładnej rozwiązanie w najkrótszym czasie zdecydowanie jest algorytm memetyczny. Porównując operatory mutacji ze sobą w większości przypadków lepsze rezultaty uzyskano wykorzystując \emph{mutGauss} niż \emph{mutDefault}. \emph{PSO} po raz kolejny okazał się najgorszym z badanych algorytmów. 
 
-\begin{itemize}
-\item operator mutDefault w porównaniu do mutGauss dla Schaffera wypadł bardzo słabo, dla poziomu 0.01 nawet PSO uzyskało wyższą powtarzalność uzyskania rozwiązania danej dokładności niz algorytmu z mutDefault
-\item ogólnie dla tego kryterium memetyczny wypada najlepiej
-\item w Pavianim zerowe wyniki są konsekwencją znajdowania innego minimum lokalnego o wartości bliskiej optimum. patrz \ref{table:kryt1_Paviani_best_fitness}. 
-\item zeldasine - dziwne ze dla memetycznego mutgauss wyszedl gorzej niz mutdefault
-\item zeldasine - ale dla genetycznego już znacznie lepiej wyszedl mutgauss
-\item PSO bliskie optimum znajduje tylko dla Schaffer, a dla pozostałych nie radzi wcale
-\end{itemize}
+\subsection{Kryterium nr 3 - powtarzalność skutecznej optymalizacji}
+%
+%\begin{itemize}
+%\item operator mutDefault w porównaniu do mutGauss dla Schaffera wypadł bardzo słabo, dla poziomu 0.01 nawet PSO uzyskało wyższą powtarzalność uzyskania rozwiązania danej dokładności niz algorytmu z mutDefault
+%\item ogólnie dla tego kryterium memetyczny wypada najlepiej
+%\item w Pavianim zerowe wyniki są konsekwencją znajdowania innego minimum lokalnego o wartości bliskiej optimum. patrz \ref{table:kryt1_Paviani_best_fitness}. 
+%\item zeldasine - dziwne ze dla memetycznego mutgauss wyszedl gorzej niz mutdefault
+%\item zeldasine - ale dla genetycznego już znacznie lepiej wyszedl mutgauss
+%\item PSO bliskie optimum znajduje tylko dla Schaffer, a dla pozostałych nie radzi wcale
+%\end{itemize}
+
+
+\par 
+\emph{Kryterium nr 3} porównuje algorytmy optymalizacji na podstawie powtarzalności uzyskiwania rozwiązania bliskiemu optymalnego - nie pod kątem jego wartości, ale euklidesowej odległości w przestrzeni dziedziny możliwych rozwiązań. W przypadku optymalizacji wielomodalnych funkcji to kryterium pozwala określić podatność mechanizmów na utknięcie populacji w lokalnym ekstremum o zbliżonej do optimum wartości.
+
+\par
+Analizując wyniki badań porównawczych dla funkcji \emph{Schaffer nr 2} przedstawionych na wykresie \ref{fig:kryt3_Schaffer} ujawnia się przewaga operatora \emph{mutGauss} nad domyślną mutacją. Gaussowska wersja algorytmu memetycznego uzyskała powtarzalność znajdowania rozwiązania o najniższej odległości od optimum na poziomie ponad $60\%$. Następnym pod tym kątem mechanizmem okazał się algorytm genetyczny również wykorzystujący \emph{mutGauss}. W przypadku funkcji \emph{Schaffer nr 2} operator \emph{mutDefault} osiągał gorsze rezulaty nawet od \emph{PSO}, aż do poziomu dokładności $0.01$. Najniższy z badanych poziomów dokładności - $0.015$ - został został osiągnięty przez obie wersje algorytmów memetycznych i genetycznych w prawie wszystkich podjętych próbach. Powtarzalność $97\%$ oznacza, że dla 30 prób testowych tylko raz nie uzyskano rozwiązania o takiej bliskości względem optimum.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -409,6 +431,9 @@ Końcowym wnioskiem podsumowującym porównanie algorytmów według \emph{kryter
 \label{fig:kryt3_Schaffer}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\par
+Rezultaty dla tego kryterium dla funkcji \emph{Paviani} przedstawiono na wykresie \ref{fig:kryt3_Paviani}. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[ht] 
@@ -429,7 +454,9 @@ Końcowym wnioskiem podsumowującym porównanie algorytmów według \emph{kryter
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\clearpage
+\FloatBarrier
+
+
 \subsection{Kryterium nr 4 - ogólna charakterystyka populacji}
 
 \begin{itemize}
