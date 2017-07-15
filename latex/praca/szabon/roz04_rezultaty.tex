@@ -461,14 +461,19 @@ W przypadku ostatniej z testowych funkcji bardzo wysoką skuteczność uzyskał 
 
 \subsection{Kryterium nr 4 - ogólna charakterystyka populacji}
 
-\begin{itemize}
-\item dla Schaffera wszystkie algorytmy zachowują się bardzo podobnie - ogół populacji rozklada sie w szerokiej plaskiej czesci przebiegu funkcji, a najlepsze osobniki już w 10 iteracjach zblizają się do optimum
-\item dla Paviani - różnica w 10 iteracja szybko spada, co oznacza, że i
-\item dla Paviani - mutgauss osiaga nizsze roznice zarowno dla memetycznego i genetcznego niz mutdefault
-\item dla Zeldasine - mutDefault osiaga wyzsze roznice niz mutGauss
-\end{itemize}
+\par
+Ostatnie z przyjętych w analizie porównawczej kryteriów opisuje jak zmienia się różnorodność populacji. Opisywana jest poprzez różnicę między najlepszym i średnim rozwiązaniem danej iteracji wszystkich osobników. Wartość średniego rozwiązania populacji może się różnie zmieniać w zależności od specyfiki rozpatrywanego problemu. W przypadku funkcji \emph{Schaffer nr 2} w przyjętym okresie 100 iteracji algorytmów utrzymuje się na stałym poziomie około $0.5$ co jest konsekwencją faktu, że większość dziedziny rozwiązań koduje wartości bliskie $0.5$, a większe różnice znajdują się jedynie w wąskim sąsiedztwie poszukiwanego optimum. Pozostałe funkcje posiadają bardziej zróżnicowany przebieg, przez co średnie rozwiązanie populacji stopniowo zbliża się do wartości optymalnej. Zgodną cechą dla wszystkich algorytmów i funkcji testowych jest największa dynamika zmian różnic w pierwszych 20 iteracjach. Pokrywa się to z obserwacją najefektywniejszej optymalizacji na początku działania mechanizmów. 
+\par
+W przypadku funkcji \emph{Schaffer nr 2} wszystkie algorytmy uzyskały bardzo zbliżone rezultaty dla tego kryterium. Pokrywa się to z obserwacją dla \emph{kryterium nr 1}, gdzie każdy algorytm uzyskiwał rezultaty bardzo bliskie wartości optymalnej. Jak wspomniano wyżej - płaski przebieg wykorzystanej funkcji powoduje niezmienność średniego rozwiązania populacji w trakcie działania algorytmu. Na wykresie \ref{fig:kryt4_Schaffer} przedstawiono komplet uzyskanych wyników badań porównawczych. 
+%
+%\begin{itemize}
+%\item dla Schaffera wszystkie algorytmy zachowują się bardzo podobnie - ogół populacji rozklada sie w szerokiej plaskiej czesci przebiegu funkcji, a najlepsze osobniki już w 10 iteracjach zblizają się do optimum
+%\item dla Paviani - różnica w 10 iteracja szybko spada, co oznacza, że i
+%\item dla Paviani - mutgauss osiaga nizsze roznice zarowno dla memetycznego i genetcznego niz mutdefault
+%\item dla Zeldasine - mutDefault osiaga wyzsze roznice niz mutGauss
+%\end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[ht] 
+\begin{figure}[hbt] 
 \centering
   \includegraphics[width=\linewidth]{{img//roz04//kryt4//kryt4_czas_uzyskania_poziomu_dokladnosci_Schaffer.png}}
 \caption{Różnica pomiędzy średnim i najlepszym rozwiązaniem populacji w kolejnych iteracjach algorytmu - \emph{Schaffer~nr~2}}
@@ -476,8 +481,11 @@ W przypadku ostatniej z testowych funkcji bardzo wysoką skuteczność uzyskał 
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\par
+W przypadku funkcji \emph{Paviani} uwidacznia się różnica pomiędzy zastosowanymi operatorami mutacji. Zarówno algorytm memetyczny jak i genetyczny wykorzystujący \emph{mutGauss} po około 20 iteracjach doprowadza średnie rozwiązania populacji prawie do poziomu obecnie najlepszego osobnika. Porównując mechanizmy wykorzystujące \emph{mutDefault} niższą różnicę osiąga memetyczny. Ostatni algorytm - \emph{PSO} - po początkowych dynamicznych zmianach różnicy stabilizuje się na poziomie podobnym do genetycznego z domyślną mutacją. Przebieg zmian różnic dla wszystkich algorytmów przedsstawiono na wykresie \ref{fig:kryt4_Paviani}.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[ht] 
+\begin{figure}[hbt] 
 \centering
   \includegraphics[width=\linewidth]{{img//roz04//kryt4//kryt4_czas_uzyskania_poziomu_dokladnosci_Paviani.png}}
 \caption{Różnica pomiędzy średnim i najlepszym rozwiązaniem populacji w kolejnych iteracjach algorytmu  - \emph{Paviani}}
@@ -485,12 +493,17 @@ W przypadku ostatniej z testowych funkcji bardzo wysoką skuteczność uzyskał 
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+Wyniki badań dla \emph{kryterium nr 4} dla ostatniej funkcji testowej przedstawiono na wykresie \ref{fig:kryt4_Zeldasine}. Podobnie jak w przypadku \emph{Paviani} algorytmy wykorzystujące gaussowską mutację po około 20 iteracjach uzyskują średnie rozwiąznie bliskie najlepszemu. Mechanizmy oparte na \emph{mutDefault} w trakcie działania stabilizują różnicę na tym samym poziomie, nawet pomimo tego, że początkowo ich przebiegi znacznie się różnią. W przypadku algorytmu \emph{PSO} dystans pomiędzy średnim i najlepszym rozwiązaniem mieści się pomiędzy rezultatami dla \emph{mutDefulat} i \emph{mutGauss}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[ht] 
+\begin{figure}[hbt]
 \centering
   \includegraphics[width=\linewidth]{{img//roz04//kryt4//kryt4_czas_uzyskania_poziomu_dokladnosci_Zeldasine.png}}
 \caption{Różnica pomiędzy średnim i najlepszym rozwiązaniem populacji w kolejnych iteracjach algorytmu  - \emph{ZeldaSine10}}
 \label{fig:kryt4_Zeldasine}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\FloatBarrier
+
+\par
+Podsumowując wyniki uzyskane w badaniach dla tego kryterium największy wpływ na różnorodność populacji ma zastosowany operator mutacji. Jest to konsekwencją logiki ich działania - \emph{mutDefault} losuje nową wartość atrybutu z pełnego zakresu jego dziedziny, zaś mutacja gaussowska znajduje nową wartość w najbliższym otoczeniu dotychczasowej wartości. Algorytm \emph{PSO} osiąga niższą różnicę między najlepszym i średnim rozwiązaniem, jednakże należy zaznaczyć, że dla funkcji \emph{Paviani} i \emph{ZeldaSine10} mechanizm ten nie jest w stanie znaleźć rozwiązania bliskiemu optymalnego. 
