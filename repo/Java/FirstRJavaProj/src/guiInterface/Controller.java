@@ -13,6 +13,7 @@ import interfaces.REngineService;
 import main.Context;
 import panels.ExecutionConditionPanel;
 import panels.PlotPanel;
+import panels.RCodePanel;
 import panels.RConsoleLogPanel;
 import params.PlotFunctionParameters;
 
@@ -20,6 +21,15 @@ public class Controller implements ViewInteraction {
 
     private PlotPanel plotPanel;
     private ExecutionConditionPanel ecp;
+    private RCodePanel rcp;
+
+    public RCodePanel getRcp() {
+        return rcp;
+    }
+
+    public void setRcp(RCodePanel rcp) {
+        this.rcp = rcp;
+    }
 
     private List<String> images;
 
@@ -132,6 +142,16 @@ public class Controller implements ViewInteraction {
     public void setExecutionConditionPanel(ExecutionConditionPanel ecp) {
         this.ecp = ecp;
 
+    }
+
+    @Override
+    public void removeParameter(int index) {
+        rcp.removeParameter(index);
+    }
+
+    @Override
+    public void addParameter() {
+        rcp.addParameter();
     }
 
 }

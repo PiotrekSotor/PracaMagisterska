@@ -62,7 +62,7 @@ public class Context {
     }
 
     public String getRScriptsPath() {
-        return "P:/PWr_projects/PracaMagisterska/PracaMagisterska/repo/R/workspace/javaEntryPoints";
+        return "P:/PWr_projects/PracaMagisterska_2/PracaMagisterska/repo/R/workspace/javaEntryPoints";
 
     }
 

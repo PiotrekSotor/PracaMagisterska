@@ -18,4 +18,8 @@ public interface ViewInteraction {
 
     void resetConstraintBounds(Integer numOfParams);
 
+    void removeParameter(int index);
+
+    void addParameter();
+
 }

@@ -77,7 +77,8 @@ public class PlotFunctionParameters implements PanelParameters {
 
     @Override
     public void setParameter(ParameterEnum parameterEnum, Object value, Integer index) {
-        Double paramDouble = (Double) value;
+        Float val = (Float) value;
+        Double paramDouble = val.doubleValue();
         switch (parameterEnum) {
         case XMIN:
             setxMin(paramDouble);
