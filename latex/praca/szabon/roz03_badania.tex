@@ -10,7 +10,7 @@
 \section{Specyfikacja funkcji testowych}
 Znajdowanie coraz lepszych metod rozwiązywania problemów optymalizacyjnych oraz ich testowanie jest zagadnieniem na tyle powszechnym, że powstały w tym celu narzędzia ułatwiające to zadanie. Dzięki ujednoliceniu sposobu badań wydajności algorytmów możliwe jest porównywanie ich na płaszczyźnie tych samych problemów. Jednym z pakietów języka \emph{R} powstałym w tym celu jest \emph{globalOptTests} \cite{globalOptTestsPackage}. Stanowi go zbiór kilkunastu funkcji o różnej liczbie parametrów. Każda z nich dodatkowo opisana jest dziedziną wartości poszczególnych argumentów oraz wartością funkcji w ekstremum. Wszystkie problemy zawarte w pakiecie są zadaniami znalezienia \emph{minimum} globalnego.
 \par
-Na potrzeby przeprowadzenia badań porównawczych różnych algorytmów wybrano z pakiety \emph{globalOptTests} trzy funkcje, które zostaną opisane poniżej. Reprezentują one problemy  optymalizacyjne o różnej wymiarowości. 
+Na potrzeby przeprowadzenia badań porównawczych różnych algorytmów wybrano z pakietu \emph{globalOptTests} trzy funkcje, które zostaną opisane poniżej. Reprezentują one problemy  optymalizacyjne o różnej wymiarowości. 
 \subsection{Funkcja Schaffer nr 2}
 %\begin{itemize}
 %\item wzor
@@ -61,7 +61,7 @@ Dokonując przeglądu funkcji dostępnych w ramach pakietu \emph{globalOptTests}
 %\item pewnie cos w necie ciekawego o nim jest
 %\end{itemize}
 \par
-Drugą funkcją wykorzystaną w badaniach porównawczych jest funkcja \emph{Paviani}, która opisana jest wzorem \ref{eq:Paviani}. Została zaproponowana w roli testowego problemu poddawanemu optymalizacji rzeczywistoliczbowej w \cite{himmelblau1972applied}. Przestrzeń rozwiązań stanowi dziesięciowymiarową przestrzeń ograniczona w przedziałach (\ref{eq:Paviani_range}). Podobnie jak \emph{Schaffer nr 2} jest ciągła i różniczkowalna w całej dziedzinie argumentów. Nietypowy zakres wartości parametrów jest konsekwencją zbieżności funkcji do nieskończoności dla wartości $x=2$ i $x=10$. Jedyne oszukiwane minimum funkcji osiągane jest dla wartości (\ref{eq:Paviani_optim}).
+Drugą funkcją wykorzystaną w badaniach porównawczych jest funkcja \emph{Paviani}, która opisana jest wzorem \ref{eq:Paviani}. Została zaproponowana w roli testowego problemu poddawanemu optymalizacji rzeczywistoliczbowej w \cite{himmelblau1972applied}. Przestrzeń rozwiązań stanowi dziesięciowymiarową przestrzeń ograniczona w przedziałach (\ref{eq:Paviani_range}). Podobnie jak \emph{Schaffer nr 2} jest ciągła i różniczkowalna w całej dziedzinie argumentów. Nietypowy zakres wartości parametrów jest konsekwencją zbieżności funkcji do nieskończoności dla wartości $x=2$ i $x=10$. Jedyne poszukiwane minimum funkcji osiągane jest dla wartości (\ref{eq:Paviani_optim}).
 \begin{equation}\label{eq:Paviani}
 f(x)=\sum_{i=1}^{10} \bigg(\log^2(x_i-2) + \log^2(10-x_i)\bigg) - \left(
 \prod_{i=1}^{10} x_i\right)^{0.2}
@@ -74,7 +74,7 @@ x_i\in[2.0001,9.9999], \quad i=1,...,10
 \end{equation}
 
 \subsection{Funkcja ZeldaSine10}
-Jako trzecią funkcję do testów badań wybrano \emph{ZeldaSine10}, ponieważ wstępne próby wykazały, że algorytmy znajdują dobre rozwiązania dopiero po większej liczbie iteracji niż miało to miejsce w przypadku omawianych powyżej funkcji \emph{Schaffera nr 2} i \emph{Paviani}. Funkcja opisana jest wzorem \ref{eq:ZeldaSine10}, a szukane minimum ma wartość (\ref{eq:ZeldaSine10_optim}). Podobnie do \emph{Paviani} funckaj jest multimodalna, ciągła, różniczkowalna i zawierajaca się nwdziesięciowymiarowej dziedzinie parametrów, które mogą przyjmować wartości z przedziału~(\ref{eq:ZeldaSine10_range}). 
+Jako trzecią funkcję do testów badań wybrano \emph{ZeldaSine10}, ponieważ wstępne próby wykazały, że algorytmy znajdują dobre rozwiązania dopiero po większej liczbie iteracji niż miało to miejsce w przypadku omawianych powyżej funkcji \emph{Schaffera nr 2} i \emph{Paviani}. Funkcja opisana jest wzorem \ref{eq:ZeldaSine10}, a szukane minimum ma wartość (\ref{eq:ZeldaSine10_optim}). Podobnie do \emph{Paviani} funckja jest multimodalna, ciągła, różniczkowalna i zawierajaca się w dziesięciowymiarowej dziedzinie parametrów, które mogą przyjmować wartości z przedziału~(\ref{eq:ZeldaSine10_range}). 
 \begin{equation}\label{eq:ZeldaSine10}
 f(x)=-2.5\prod_{i=1}^{10} \sin\left(x_i-\frac{\pi}{6}\right) - \prod_{i=1}^{10} \sin\left(5\left(x_i-\frac{\pi}{6}\right)\right)
 \end{equation}
@@ -118,7 +118,7 @@ Na specyfikację platformy testowej składają się dwa aspekty: parametry techn
 	\end{tabularx}
 \end{table}
 \par
-Podzespołami komputera mogącymi wpłynąć na uzyskiwane czasy wykonania algorytmów w głównej mierze są procesor i pamięć RAM. W przypadku rezygnacji z zrównoleglonej wersji algorytmów największe znaczenia ma wydajność pojedynczego rdzeni procesora. W przypadku pamięci RAM istotna jest nie jej pojemność, a szybkość dostępu, jednakże jej wpływ jest drugorzędny. Dokładna specyfikacja wykorzystanych podzespołów przedstawia tabela \ref{table:parametry_komputera}.
+Podzespołami komputera mogącymi wpłynąć na uzyskiwane czasy wykonania algorytmów w głównej mierze są procesor i pamięć RAM. W przypadku rezygnacji ze zrównoleglonej wersji algorytmów największe znaczenie ma wydajność pojedynczego rdzenia procesora. W przypadku pamięci RAM istotna jest nie jej pojemność, a szybkość dostępu, jednakże jej wpływ jest drugorzędny. Dokładna specyfikacja wykorzystanych podzespołów przedstawia tabela \ref{table:parametry_komputera}.
 \begin{table}[hb]
 \caption{Parametry sprzętowe maszyny testowej}
 \label{table:parametry_komputera}
@@ -147,7 +147,7 @@ Podzespołami komputera mogącymi wpłynąć na uzyskiwane czasy wykonania algor
 %\end{enumerate}
 
 \par
-W podrozdziale zostaną omówione miary przyjęte w trakcie porównywania różnych algorytmów ze sobą. Kryterium decydującym w trakcie doboru parametrów algorytmów opisanego w rozdziale \ref{ch:przyjety_model_doboru_parametrow_algorytmu} była pierwsza z poniżej opisanych ocen - \emph{kryterium nr 1}. Aspekty algorytmów brane pod uwagę w porównaniach są odpowiednio zaadaptowanymi kryteriami porównawczymi z innych prac badawczych powstałych wokół tego tematu. Starano dobrać się je w taki sposób, by jak najlepiej opisywały zarówno jakość znajdowanego rozwiązania (\emph{kryterium nr 1}) jak i szybkość dochodzenia do satysfakcjonującego rezultatu (\emph{kryterium nr 2}). Osobnym aspektem branym pod uwagę jest również powtarzalność skutecznego działania algorytmu (\emph{kryterium nr 3}) oraz to, jak wykorzystanie poszczególnych algorytmów wpływa na różnorodność i charakterystykę całej populacji (\emph{kryterium nr 4}). ub odpowiednio współczynnikiem kognitywnym i socjalnym.
+W podrozdziale zostaną omówione miary przyjęte w trakcie porównywania różnych algorytmów ze sobą. Kryterium decydującym w trakcie doboru parametrów algorytmów opisanego w rozdziale \ref{ch:przyjety_model_doboru_parametrow_algorytmu} była pierwsza z poniżej opisanych ocen - \emph{kryterium nr 1}. Aspekty algorytmów brane pod uwagę w porównaniach są odpowiednio zaadaptowanymi kryteriami porównawczymi z innych prac badawczych powstałych wokół tego tematu. Starano dobrać się je w taki sposób, by jak najlepiej opisywały zarówno jakość znajdowanego rozwiązania (\emph{kryterium nr 1}) jak i szybkość dochodzenia do satysfakcjonującego rezultatu (\emph{kryterium nr 2}). Osobnym aspektem branym pod uwagę jest również powtarzalność skutecznego działania algorytmu (\emph{kryterium nr 3}) oraz to, jak wykorzystanie poszczególnych algorytmów wpływa na różnorodność i charakterystykę całej populacji (\emph{kryterium nr 4}).
 
 \par 
 Najprostszym i zarazem najbardziej intuicyjnym sposobem zdefiniowania efektywności algorytmu jest jakość znajdowanego rozwiązania. Za jakość rozumiana jest tutaj bliskość względem poszukiwanego minimum w kontekście wartości funkcji celu, a nie odległości znalezionego wektora parametrów od rozwiązania optymalnego w wielowymiarowej przestrzeni rozwiązań. \emph{Kryterium nr 1} może być uważane za najważniejsze w przypadku zamiaru wykorzystania algorytmu w sytuacji, w której priorytetem jest dokładność znalezionego rozwiązania, a nie czas potrzebny na jej znalezienie. 
@@ -172,7 +172,7 @@ Oczywistym jest, że dodatnie dodatkowych mechanizmów do prostego schematu real
 
 \par 
 %\cite{mullen2014continuous} \cite{elbeltagi2005comparison}
-Kolejną przyjętą miarą efektywności algorytmów - \emph{kryterium nr 3} - stanowi powtarzalność osiągania satysfakcjonującego rozwiązania, za które przyjęto takie spełniające warunek opisany wzorem \ref{eq:kryterium_3_warunek}. W odróżnieniu od pozostały pozostałych kryteriów analizowana jest tutaj nie uzyskana wartość funkcji dopasowania znalezionego rozwiązania, a jego położenie w przestrzeni rozwiązań poprzez odległość euklidesowa od rozwiązania optymalnego.
+Kolejną przyjętą miarą efektywności algorytmów - \emph{kryterium nr 3} - stanowi powtarzalność osiągania satysfakcjonującego rozwiązania, za które przyjęto takie spełniające warunek opisany wzorem \ref{eq:kryterium_3_warunek}. W odróżnieniu od pozostały pozostałych kryteriów analizowana jest tutaj nie uzyskana wartość funkcji dopasowania znalezionego rozwiązania, a jego położenie w przestrzeni rozwiązań poprzez odległość euklidesową od rozwiązania optymalnego.
 \par 
 W przypadku tego kryterium porównywane algorytmy uruchamiane zostaną z taką samą maksymalną liczbą iteracji będącą warunkiem stopu. O ile w pozostałych kryteriach wszystkie rezultaty są wartościami uśrednionymi z pełnej puli wywołań optymalizacji, o tyle w tym przypadku rozpatrywane i zliczane zostaną kolejne wywołania z osobna. Wykorzystana w tym miejscu maksymalna liczba iteracji zostanie określona na etapie doboru parametrów algorytmów zgodnie z scenariuszami przedstawionymi w rozdziale \ref{sec:badane_scenariusze_doboru_parametrow} dla każdej z wykorzystanych funkcji testowych z osobna. W przypadku, gdy preferowane przez algorytmy liczby iteracji będą różne wybrana zostanie wartość najmniejsza z nich. Ta miara efektywności zaczerpnięta została z publikacji \cite{elbeltagi2005comparison} i \cite{mullen2014continuous}. 
 \begin{equation} \label{eq:kryterium_3_warunek}

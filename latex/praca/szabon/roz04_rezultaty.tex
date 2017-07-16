@@ -6,7 +6,7 @@
 %%\item fitness_etapow_scenariuszymutDefault_Schaffer1
 %%\item fitness_etapow_scenariuszymutGauss_Schaffer1
 %\end{itemize}
-Przed przystąpieniem do badań porównujących efektywność badanych algorytmów konieczne jest określenie najlepszych ich konfiguracji. Dobór wartości parametrów algorytmów oparto na procedurze opisanej w podrozdziale \ref{sec:badane_scenariusze_doboru_parametrow}. Zdecydowano się na osobną selekcję parametrów dla każdej z wykorzystanych funkcji testowych co w rezultacie pozwoliło na uzyskanie konfiguracji przedstawionych w tabelach \ref{table:selekcja_Schaffer_parametry}, \ref{table:selekcja_Paviani_parametry} i \ref{table:selekcja_Zeldasine_parametry}. Analizując tabele pierwszym spostrzeżeniem będącym potwierdzeniem intuicji jest fakt uzyskiwania lepszych rezultatów przez algorytmy oparte na większych populacjach. Dlatego w większości przypadków przyjęta konfiguracja składa się z maksymalnej rozpatrywanej liczby osobników. Zdominowanie parametru metody przeszukiwania lokalnego w algorytmach memetycznych przez metodę \emph{L-BFGS-B}, która jest domyślną wartością w implementacji pakietu \emph{GA} może być konsekwencja przyjętej miary porównawczej konfiguracji algorytmów. Już na poziomie dokumentacji pakietu pojawia się uwaga mówiąca, że \emph{L-BFGS-B} najczęściej uzyskuje najlepsze rezultaty, jednakże nie jest najszybszym z operatorów. Uwzględnienie czasu wykonania algorytmu jako współkryterium dla uzyskiwanego rozwiązania w procedurze selekcji parametrów algorytmów mogłoby w rezultacie przynieść potrzebę zmiany przyjmowaną metodę przeszukania lokalnego.
+Przed przystąpieniem do badań porównujących efektywność badanych algorytmów konieczne jest określenie najlepszych konfiguracji ich parametrów. Dobór wartości parametrów algorytmów oparto na procedurze opisanej w podrozdziale \ref{sec:badane_scenariusze_doboru_parametrow}. Zdecydowano się na osobną selekcję parametrów dla każdej z wykorzystanych funkcji testowych, co w rezultacie pozwoliło na uzyskanie konfiguracji przedstawionych w tabelach \ref{table:selekcja_Schaffer_parametry}, \ref{table:selekcja_Paviani_parametry} i \ref{table:selekcja_Zeldasine_parametry}. Analizując tabele, pierwszym spostrzeżeniem (będącym potwierdzeniem intuicji) jest fakt uzyskiwania lepszych rezultatów przez algorytmy oparte na większych populacjach. Dlatego w większości przypadków przyjęta konfiguracja składa się z maksymalnej rozpatrywanej liczby osobników. Zdominowanie parametru metody przeszukiwania lokalnego w algorytmach memetycznych przez metodę \emph{L-BFGS-B}, która jest domyślną wartością w implementacji pakietu \emph{GA} może być konsekwencja przyjętej miary porównawczej konfiguracji algorytmów. Już na poziomie dokumentacji pakietu pojawia się uwaga mówiąca, że \emph{L-BFGS-B} najczęściej uzyskuje najlepsze rezultaty, jednakże nie jest najszybszym z operatorów. Uwzględnienie czasu wykonania algorytmu jako współkryterium dla uzyskiwanego rozwiązania w procedurze selekcji parametrów algorytmów mogłoby w rezultacie przynieść potrzebę zmiany przyjmowaną metodę przeszukania lokalnego.
 
 \begin{table}[ht]
 \caption{Dobrane wartości parametrów algorytmów dla funkcji \emph{Schaffer nr 2}}
@@ -84,7 +84,7 @@ Przed przystąpieniem do badań porównujących efektywność badanych algorytm�
 \end{table}
 
 \par
-W tabelach \ref{table:selekcja_Schaffer_czasy}, \ref{table:selekcja_Paviani_czasy} i \ref{table:selekcja_Zeldasine_czasy} zaprezentowano uśrednione najlepsze rozwiązanie znajdowane przy wykorzystaniu wyselekcjonowanych konfiguracji algorytmów w ramach selekcji, tj. przy wykorzystaniu zaledwie 5 pierwszych pokoleń. W przypadku algorytmów memetycznych przedstawiono również który z omówionych w podrozdziale \ref{sec:badane_scenariusze_doboru_parametrow} scenariuszy ostatecznie uzyskał najlepsze rezultaty. W  tym miejscu można zauważyć zależność pomiędzy trudnością funkcji testowe i kompletnością zwycięskiego scenariusza. Dokładna analiza wykonania algorytmu memetycznego dla funkcji \emph{Zeldasine10} wykazała, że wykorzystany operator \emph{L-BFGS-B} bardzo szybko znajduje optymalne rozwiązanie. W takiej sytuacji, gdzie wiele scenariuszy pozwala na osiąganie optimum funkcji kluczowym parametrem wyboru scenariusza staje się czas jego wykonania. 
+W tabelach \ref{table:selekcja_Schaffer_czasy}, \ref{table:selekcja_Paviani_czasy} i \ref{table:selekcja_Zeldasine_czasy} zaprezentowano uśrednione najlepsze rozwiązania znajdowane przy wykorzystaniu wyselekcjonowanych konfiguracji algorytmów w ramach selekcji, tj. przy wykorzystaniu zaledwie 5 pierwszych pokoleń. W przypadku algorytmów memetycznych przedstawiono również, który z omówionych w podrozdziale \ref{sec:badane_scenariusze_doboru_parametrow} scenariuszy ostatecznie uzyskał najlepsze rezultaty. W  tym miejscu można zauważyć zależność pomiędzy trudnością funkcji testowych i kompletnością zwycięskiego scenariusza. Dokładna analiza wykonania algorytmu memetycznego dla funkcji \emph{Zeldasine10} wykazała, że wykorzystany operator \emph{L-BFGS-B} bardzo szybko znajduje optymalne rozwiązanie. W takiej sytuacji, gdzie wiele scenariuszy pozwala na osiąganie optimum funkcji kluczowym parametrem wyboru scenariusza staje się czas jego wykonania. 
 
 \begin{table}[ht]
 \caption{Czasy i najlepsze rozwiązanie znalezione w trakcie selekcji parametrów algorytmów dla funkcji \emph{Schaffer nr 2}}
@@ -146,11 +146,12 @@ W tabelach \ref{table:selekcja_Schaffer_czasy}, \ref{table:selekcja_Paviani_czas
 \end{center}
 \end{table}
 
-Jednym z celów realizowanej pracy było sprawdzenie skuteczności zaproponowanych w rozdziale \ref{ch:przyjety_model_doboru_parametrow_algorytmu} scenariuszy doboru kolejnych wartości parametrów algorytmów memetycznych w celu ograniczenia liczby sprawdzanych kombinacji bez znaczącej straty jakości przyjętej konfiguracji. Z powodu ograniczeń technicznych nie zdecydowano się na porównawcze wykonanie pełnego przeglądu wszystkich możliwych kombinacji, więc scenariusze porównane zostaną jedynie między sobą pod kątem uzyskanych rezultatów i czasu wykonania. W tym miejscu na wykresach \ref{fig:parameter_selection_fitness_overall}, \ref{fig:parameter_selection_fitness_in_phases}, \ref{fig:parameter_selection_time_overall} i \ref{fig:parameter_selection_time_in_phases} przedstawione zostało jedynie porównanie dla funkcji \emph{Schaffer nr 2}. Analogiczne wykresy dla pozostałych przyjętych funkcji testowych zamieszczono w dodatku \ref{ch:dodatekC-wykresy}.
+Jednym z celów realizowanej pracy było sprawdzenie skuteczności zaproponowanych w rozdziale \ref{ch:przyjety_model_doboru_parametrow_algorytmu} scenariuszy doboru kolejnych wartości parametrów algorytmów memetycznych w celu ograniczenia liczby sprawdzanych kombinacji bez znaczącej straty jakości przyjętej konfiguracji. Z powodu ograniczeń technicznych nie zdecydowano się na porównawcze wykonanie pełnego przeglądu wszystkich możliwych kombinacji, więc scenariusze porównane zostaną jedynie między sobą pod kątem uzyskanych rezultatów i czasu wykonania. Na wykresach \ref{fig:parameter_selection_fitness_overall}, \ref{fig:parameter_selection_fitness_in_phases}, \ref{fig:parameter_selection_time_overall} i \ref{fig:parameter_selection_time_in_phases} przedstawione zostało porównanie dla funkcji \emph{Schaffer nr 2}. Analogiczne wykresy dla pozostałych przyjętych funkcji testowych zamieszczono w dodatku \ref{ch:dodatekC-wykresy}.
+
 \par
-Jak przedstawiono na wykresie \ref{fig:parameter_selection_fitness_overall} konfiguracja uzyskana poprzez zastosowanie scenariusza $[1-2-3,\,4-5-6]$ pozwala na uzyskanie najlepszych rezulatów, jednakże scenariusz $[3-6,\,1-2,\,4-5]$ jest tylko nieznacznie gorszy w tym aspekcie. Dodatkowo porównując wspomniane dwa scenariusze na podstawie wykresu \ref{fig:parameter_selection_time_overall} można stwierdzić, że uzyskanie nieznacznie lepszego rozwiązania wymagało aż trzykrotnie dłuższych obliczeń. Zestawiając ze sobą te dwa wyróżniające się pod kątem jakości uzyskanej konfiguracji scenariusze stwierdzić, że oba z nich są równie użyteczne, ale w odniesieniu do różnych potrzeb wykorzystania. Jeśli priorytetem będzie maksymalna możliwa jakość parametrów algorytmów to lepszym będzie scenariusz $[1-2-3,\,4-5-6]$, natomiast jeśli ważniejszy będzie czas selekcji parametrów to $[3-6,\,1-2,\,4-5]$. Zdecydowanie się na szybszy scenariusz może pozwolić na zwiększenie zbiorów sprawdzanych wartości parametrów, a przez to zwiększenie jakości uzyskanej konfiguracji algorytmu. Należy jednak po raz kolejny zaznaczyć, że skuteczność scenariuszy bezpośrednio zależy od trudności optymalizowanej funkcji.
+Jak przedstawiono na wykresie \ref{fig:parameter_selection_fitness_overall}, konfiguracja uzyskana poprzez zastosowanie scenariusza $[1-2-3,\,4-5-6]$ pozwala na uzyskanie najlepszych rezulatów, jednakże scenariusz $[3-6,\,1-2,\,4-5]$ jest tylko nieznacznie gorszy. Dodatkowo, porównując wspomniane dwa scenariusze na podstawie wykresu \ref{fig:parameter_selection_time_overall} można stwierdzić, że uzyskanie nieznacznie lepszego rozwiązania wymagało aż trzykrotnie dłuższych obliczeń. Zestawiając ze sobą te dwa wyróżniające się pod kątem jakości uzyskanej konfiguracji scenariusze można stwierdzić, że oba z nich są równie użyteczne, ale w odniesieniu do różnych potrzeb wykorzystania. Jeśli priorytetem będzie maksymalna możliwa jakość parametrów algorytmów to lepszym będzie scenariusz $[1-2-3,\,4-5-6]$, natomiast jeśli ważniejszy będzie czas selekcji parametrów to $[3-6,\,1-2,\,4-5]$. Zdecydowanie się na szybszy scenariusz może pozwolić na zwiększenie zbiorów sprawdzanych wartości parametrów, a przez to zwiększenie jakości uzyskanej konfiguracji algorytmu. Należy jednak po raz kolejny zaznaczyć, że skuteczność scenariuszy bezpośrednio zależy od trudności optymalizowanej funkcji.
 \par
-Analizując wykres \ref{fig:parameter_selection_fitness_in_phases} przedstawiający rezultaty uzyskane w kolejnych etapach selekcji można zauważyć niespodziewane wyniki dla scenariusza $[4-5,\,3-6,\,1-2]$ z operatorem \emph{mutDefault} oraz $[1-2-3,\,4-5-6]$ z \emph{mutGauss} wskazujące na to, że przeprowadzony kolejny etap selekcji pogorszył otrzymywane rozwiązanie. Może to wskazywać na sytuację, w której przy danej kombinacji pozostadd łych parametrów tymczasowo przyjęte domyślne wartości parametrów pozwalają na uzyskanie lepszych rezultatów niż którakolwiek z testowanych kombinacji danego etapu selekcji. Gdyby taka sytuacja była obserwowana w większej liczbie scenariuszy lub rozwiązanie w kolejnych etapach pogarszałoby się w znaczący sposób należałoby zmienić zakres testowanych wartości parametrów w stronę domyślnych zaimplementowanych w pakiecie \emph{GA}.
+Analizując wykres \ref{fig:parameter_selection_fitness_in_phases} przedstawiający rezultaty uzyskane w kolejnych etapach selekcji można zauważyć niespodziewane wyniki dla scenariusza $[4-5,\,3-6,\,1-2]$ z operatorem \emph{mutDefault} oraz $[1-2-3,\,4-5-6]$ z \emph{mutGauss} wskazujące na to, że przeprowadzony kolejny etap selekcji pogorszył otrzymywane rozwiązanie. Może to wskazywać na sytuację, w której przy danej kombinacji pozostałych parametrów tymczasowo przyjęte domyślne wartości parametrów pozwalają na uzyskanie lepszych rezultatów niż którakolwiek z testowanych kombinacji danego etapu selekcji. Gdyby taka sytuacja była obserwowana w większej liczbie scenariuszy lub rozwiązanie w kolejnych etapach pogarszałoby się w znaczący sposób, należałoby zmienić zakres testowanych wartości parametrów w stronę domyślnych zaimplementowanych w pakiecie \emph{GA}.
 \par
 W sytuacji, gdy jakość konfiguracji uzyskana najlepszym pod tym kątem scenariuszem nie jest wystarczająca można posłużyć się danymi czasu wykonania kolejnych etapów selekcji przedstawionymi na wykresie \ref{fig:parameter_selection_time_in_phases}. Przedstawia on czas wykonania kolejnych etapów selekcji. Na tej podstawie można zdecydować, któremu z parametrów można rozszerzyć zbiór sprawdzanych wartości bez diametralnego wydłużenia czasu wykonania całego scenariusza. Z drugiej strony, jeśli celem jest skrócenie czasu wykonania scenariusza na podstawie wykresu można określić, zbiory których parametrów należy ograniczyć.
 \begin{figure}[h] 
@@ -205,7 +206,7 @@ W sytuacji, gdy jakość konfiguracji uzyskana najlepszym pod tym kątem scenari
 
 \FloatBarrier
 
-\section{Miary efektywności}
+\section{Wyniki względem miar efektywności}
 \subsection{Kryterium nr 1 - najlepsze rozwiązanie}
 
 %\begin{itemize}
@@ -214,21 +215,21 @@ W sytuacji, gdy jakość konfiguracji uzyskana najlepszym pod tym kątem scenari
 %\item tam, gdzie nie było problemem znalezienie optymalnego rozwiazania mutGauss osiągał zbieżność wcześniej, a więc szybciej znajdował rozwiązanie
 %\end{itemize}
 \par
-Badania porównawcze według tego kryterium opierały się na określeniu średniego najlepszego rozwiązania znajdowanego do osiągnięcia zbieżności populacji. Za oznakę zbieżności przyjęto brak polepszenia rezultatu przez 50 iteracji algorytmu. Oprócz porównania ze sobą rożnych algorytmów poniższe wykresy uwidaczniają różnicę pomiędzy wykorzystanymi operatorami mutacji. 
+Badania porównawcze według tego kryterium opierały się na określeniu średniego najlepszego rozwiązania znajdowanego do osiągnięcia zbieżności populacji. Za oznakę zbieżności przyjęto brak polepszenia rezultatu przez 50 iteracji algorytmu. Oprócz porównania ze sobą rożnych algorytmów wykresy uwidaczniają różnicę pomiędzy wykorzystanymi operatorami mutacji. 
 \par
 W przypadku każdej z użytych funkcji testowych algorytm \emph{PSO} można podsumować w ten sam sposób. We wszystkich przypadkach osiąga zbieżność w nieznacznie większej liczbie iteracji niż algorytm memetyczny, jednakże rozwiązania przez niego uzyskiwane są znacznie gorsze niż dla pozostałych metod optymalizacji. 
 \par 
-Zgodnie z tym co zauważono już na etapie doboru parametrów algorytmów  najtrudniejszą, z punktu widzenia znalezienia optimum, funkcją okazał \emph{Schaffer nr 2}. Wykres \ref{fig:kryt1_Schaffer} można rozumieć w taki sposób, że algorytm genetyczny i memetyczny z operatorem \emph{mutDefault} osiągają bardzo zbliżone rezultaty, jednakże memetyczny osiąga zbieżność w znacznie mniejszej liczbie iteracji. Operator \emph{mutGauss} pozwolił na uzyskanie lepszych rozwiązań niż \emph{mutDefault}, choć rożnie wpłyną na szybkość uzyskania zbieżności - w memetycznym zwiększył liczbę potrzebnych iteracji, a w genetycznym zmniejszył. 
+Zgodnie z tym, co zauważono już na etapie doboru parametrów algorytmów  najtrudniejszą, z punktu widzenia znalezienia optimum, funkcją okazał \emph{Schaffer nr 2}. Wykres \ref{fig:kryt1_Schaffer} można rozumieć w taki sposób, że algorytm genetyczny i memetyczny z operatorem \emph{mutDefault} osiągają bardzo zbliżone rezultaty, jednakże memetyczny osiąga zbieżność w znacznie mniejszej liczbie iteracji. Operator \emph{mutGauss} pozwolił na uzyskanie lepszych rozwiązań niż \emph{mutDefault}, choć rożnie wpłyną na szybkość uzyskania zbieżności - w memetycznym zwiększył liczbę potrzebnych iteracji, a w genetycznym zmniejszył. 
 
 \begin{figure}[ht]
 \begin{subfigure}{.5\textwidth}
   \includegraphics[width=\linewidth]{{img//roz04//kryt1//kryt1_bestFitness_Schaffer.png}}
-  \caption{Rozwiązanie stagnacji populacji}
+  \caption{Rozwiązanie}
   \label{fig:kryt1_Schaffer_fitness}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \includegraphics[width=\linewidth]{img//roz04//kryt1//kryt1_nr_generacji_stagnacji_Schaffer.png}
-  \caption{Numer pokolenia stagnacji}
+  \caption{Numer pokolenia}
   \label{fig:kryt1_Schaffer_stagnation}
 \end{subfigure}
 \caption{Określenie momentu stagnacji optymalizacji - \emph{Schaffer nr 2}}
@@ -238,7 +239,7 @@ Zgodnie z tym co zauważono już na etapie doboru parametrów algorytmów  najtr
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \par
-W przypadku funkcji \emph{Paviani} tylko algorytm memetyczny zdołał osiągnąć, rozwiązanie optymalne. Genetyczny uzyskiwał rezultaty bardzo bliskie optimum i ich dokładne wartości przedstawiono w tabeli \ref{table:kryt1_Paviani_best_fitness}. Podobnie jak w przypadku \emph{Schaffer nr 2} operator \emph{mutDefault} opóźnił zbieżność algorytmu memetycznego, a przyspieszył genetycznego. Ponownie mutacja gaussowska pozwoliła na znalezienie lepszego rozwiązania niż domyślna w pakiecie \emph{GA}. Porównanie algorytmów według tego kryterium  dla \emph{Paviani} przedstawiono na wykresie \ref{fig:kryt1_Paviani}.
+W przypadku funkcji \emph{Paviani} tylko algorytm memetyczny zdołał osiągnąć rozwiązanie optymalne. Algorytm genetyczny uzyskiwał rezultaty bardzo bliskie optimum i ich dokładne wartości przedstawiono w tabeli \ref{table:kryt1_Paviani_best_fitness}. Podobnie jak w przypadku \emph{Schaffer nr 2} operator \emph{mutDefault} opóźnił zbieżność algorytmu memetycznego, a przyspieszył genetycznego. Ponownie mutacja gaussowska pozwoliła na znalezienie lepszego rozwiązania niż domyślna w pakiecie \emph{GA}. Porównanie algorytmów według tego kryterium  dla \emph{Paviani} przedstawiono na wykresie \ref{fig:kryt1_Paviani}.
 
 
 \begin{table}[hbt]
@@ -263,12 +264,12 @@ W przypadku funkcji \emph{Paviani} tylko algorytm memetyczny zdołał osiągną�
 \begin{figure}[ht]
 \begin{subfigure}{.5\textwidth}
   \includegraphics[width=\linewidth]{{img//roz04//kryt1//kryt1_bestFitness_Paviani.png}}
-  \caption{Rozwiązanie stagnacji populacji}
+  \caption{Rozwiązanie}
   \label{fig:kryt1_Paviani_fitness}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \includegraphics[width=\linewidth]{img//roz04//kryt1//kryt1_nr_generacji_stagnacji_Paviani.png}
-  \caption{Numer pokolenia stagnacji}
+  \caption{Numer pokolenia}
   \label{fig:kryt1_Paviani_stagnation}
 \end{subfigure}
 \caption{Określenie momentu stagnacji optymalizacji - \emph{Paviani}}
@@ -277,17 +278,17 @@ W przypadku funkcji \emph{Paviani} tylko algorytm memetyczny zdołał osiągną�
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \par
-W pzypadku \emph{ZeldaSine10} w przeciwieństwie do pozostałych funkcji testowych algorytm memetyczny z operatorem \emph{mutGauss} uzyskał gorsze rozwiązania od wersji z \emph{mutDefault}, ale i również od obu wariantów genetycznego. Podobnie jak dla \emph{Schaffer nr 2} i \emph{Paviani} \emph{mutGauss} opóźnił stagnację optymalizacji algorytmem memetycznym, i przyspieszył w genetycznym. Na wykresie \ref{fig:kryt1_Zeldasine} przedstawiono rezultaty wskazujące na około piętnastokrotną różnicę w szybkości osiągania stagnacji optymalizacji pomiędzy memetyczną i genetyczną metoda rozwiązywania problemów optymalizacyjnych. 
+W pzypadku \emph{ZeldaSine10}, w przeciwieństwie do pozostałych funkcji testowych, algorytm memetyczny z operatorem \emph{mutGauss} uzyskał gorsze rozwiązania od wersji z \emph{mutDefault}, ale i również od obu wariantów genetycznego. Podobnie jak dla \emph{Schaffer nr 2} i \emph{Paviani} \emph{mutGauss} opóźnił stagnację optymalizacji algorytmem memetycznym, i przyspieszył w genetycznym. Na wykresie \ref{fig:kryt1_Zeldasine} przedstawiono rezultaty wskazujące na około piętnastokrotną różnicę w szybkości osiągania stagnacji optymalizacji pomiędzy memetyczną i genetyczną metoda rozwiązywania problemów optymalizacyjnych. 
 
 \begin{figure}[ht] 
 \begin{subfigure}{.5\textwidth}
   \includegraphics[width=\linewidth]{{img//roz04//kryt1//kryt1_bestFitness_Zeldasine.png}}
-  \caption{Rozwiązanie stagnacji populacji}
+  \caption{Rozwiązanie}
   \label{fig:kryt1_Zeldasine_fitness}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \includegraphics[width=\linewidth]{img//roz04//kryt1//kryt1_nr_generacji_stagnacji_Zeldasine.png}
-  \caption{Numer pokolenia stagnacji}
+  \caption{Numer pokolenia}
   \label{fig:kryt1_Zeldasine_stagnation}
 \end{subfigure} 
 \caption{Określenie momentu stagnacji optymalizacji - \emph{ZeldaSine10}}
@@ -297,7 +298,7 @@ W pzypadku \emph{ZeldaSine10} w przeciwieństwie do pozostałych funkcji testowy
 \FloatBarrier
 
 \par
-Końcowym wnioskiem podsumowującym porównanie algorytmów według \emph{kryterium nr 1} jest niepodważalna przewaga algorytmu memetycznego jeśli chodzi o liczbę koniecznych iteracji mechanizmu do uzyskania rozwiązania optymalnego lub mu bliskiego. W większości przypadków operator \emph{mutGauss} okazuje się uzyskiwać lepsze rezultaty niż \emph{mutDefault}, jednakże różnie wpływa na szybkość stagnacji procesu optymalizacji. Jak wspomniano już wyżej algorytm \emph{PSO} kończył optymalizację w nieznacznie większej iteracji niż memetyzny, jednakże najgorsze rozwiązania.
+Końcowym wnioskiem podsumowującym porównanie algorytmów według \emph{kryterium nr 1} jest niepodważalna przewaga algorytmu memetycznego jeśli chodzi o liczbę koniecznych iteracji do uzyskania rozwiązania optymalnego lub mu bliskiego. W większości przypadków operator \emph{mutGauss} okazuje się uzyskiwać lepsze rezultaty niż \emph{mutDefault}, jednakże różnie wpływa na szybkość stagnacji procesu optymalizacji. Jak wspomniano już wyżej algorytm \emph{PSO} kończył optymalizację w nieznacznie większej iteracji niż memetyzny, jednakże uzyskiwał najgorsze rozwiązania.
 
 
 \subsection{Kryterium nr 2 - szybkość osiągania rozwiązania}
@@ -311,7 +312,7 @@ Końcowym wnioskiem podsumowującym porównanie algorytmów według \emph{kryter
 %\end{itemize}
 
 \par
-\emph{Kryterium nr 2} pozwala porównać szybkość osiągania określonych rezultatów w zależności od czasu wykonania algorytmu, a nie liczby potrzebnych iteracji. W tabeli \ref{table:kryt2_wartosci_progow} przedstawiono jakie wartości funkcji dopasowania odpowiadają kolejnym przyjętym progom jakości otrzymanego rozwiązania. Bardzo wąski ogólny zakres wartości funkcji \emph{Schaffer nr 2} wpłynął na stopień trudności osiągnięcia najwyższych zdefiniowanych progów. Granicznym czasem wykonania algorytmu jest \emph{30 sekund}. Przypadek nieosiągnięcia danego progu w żadnej z 30 prób pomiarowych oznaczany na wykresach \ref{fig:kryt2_Schaffer}, \ref{fig:kryt2_Paviani} i \ref{fig:kryt2_Zeldasine} wartością $-0.1$. Wszystkie pomiary zostały przeprowadzone po przyjęciu dokładności pomiaru równej $50 ms$. Czasy uzyskane przez algorytm \emph{PSO} oraz progu $99\%$ okazały się znacznie dłuższe niż w pozostałych przypadkach, więc zdecydowano się na przedstawienie rezultatów na dwóch wykresach dla każdej z funkcji - pierwszy z nich opisuje wszystkie rezultaty dla funkcji testowej, a drugi nie zawiera \emph{PSO} i progu $99\%$.
+\emph{Kryterium nr 2} pozwala porównać szybkość osiągania określonych rezultatów w zależności od czasu wykonania algorytmu, a nie liczby potrzebnych iteracji. W tabeli \ref{table:kryt2_wartosci_progow} przedstawiono jakie wartości funkcji dopasowania odpowiadają kolejnym przyjętym progom jakości otrzymanego rozwiązania. Bardzo wąski ogólny zakres wartości funkcji \emph{Schaffer nr 2} wpłynął na stopień trudności osiągnięcia najwyższych zdefiniowanych progów. Granicznym czasem wykonania algorytmu jest \emph{30 sekund}. Przypadek nieosiągnięcia danego progu w żadnej z 30 prób pomiarowych oznaczany jest na wykresach \ref{fig:kryt2_Schaffer}, \ref{fig:kryt2_Paviani} i \ref{fig:kryt2_Zeldasine} wartością $-0.1$. Wszystkie pomiary zostały przeprowadzone po przyjęciu dokładności pomiaru równej $50 ms$. Czasy uzyskane przez algorytm \emph{PSO} oraz progu $99\%$ okazały się znacznie dłuższe niż w pozostałych przypadkach, więc zdecydowano się na przedstawienie rezultatów na dwóch wykresach dla każdej z funkcji - pierwszy z nich opisuje wszystkie rezultaty dla funkcji testowej, a drugi nie zawiera \emph{PSO} i progu $99\%$.
 \par
 Podobnie jak w przypadku \emph{kryterium nr 1} algorytm \emph{PSO} okazał się najgorszym z badanych metod optymalizacji dla wszystkich trzech funkcji testowych. Osiągał kolejne progi w około pięciokrotnie dłuższym czasie lub nie osiągał ich w założonym maksymalnym okresie. 
 
@@ -358,7 +359,7 @@ W przypadku funkcji \emph{Schaffer nr 2}, dla której rezultaty przedstawiono na
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \FloatBarrier
 \par
-Badania dla tego kryterium z wykorzystaniem funkcji \emph{Paviani} jednoznacznie wskazuje na przewagę algorytmu memetycznego nad pozostałymi. Wyniki przedstawiono na wykresie \ref{fig:kryt2_Paviani}. Niezależnie od wykorzystanego operatora mutacji osiągnął kolejne progi w najniższym możliwym czasie. Może to być efektem tego, że wykorzystany metoda \emph{L-BFGS-B} bardzo dobrze radzi sobie z funkcjami podobnymi \emph{Paviani} w przebiegu wartości. W przypadku genetycznego możliwe jest już porównanie operatorów ze sobą - dla wszystkich progów poza $99\%$ \emph{mutDefault} uzyskiwał niższe czasy niż  mutacja gaussowska. Dla ostatniego progu relacja uległa odwróceniu - czas potrzebny algorytmowi genetycznemu opartemu o \emph{mutGauss} jest dwukrotnie niższy niż dla \emph{mutDefault}. Co więcej - różnica w czasie pomiędzy progiem $95\%$ i $99\%$ dla \emph{mutGauss} wynosi około $25\%$ , a dla \emph{mutDefualt} około $150\%$. 
+Badania dla tego kryterium z wykorzystaniem funkcji \emph{Paviani} jednoznacznie wskazują na przewagę algorytmu memetycznego nad pozostałymi. Wyniki przedstawiono na wykresie \ref{fig:kryt2_Paviani}. Niezależnie od wykorzystanego operatora mutacji osiągnął on kolejne progi w najniższym możliwym czasie. Może to być efektem tego, że wykorzystana metoda \emph{L-BFGS-B} bardzo dobrze radzi sobie z funkcjami podobnymi do \emph{Paviani}. W przypadku algorytmu genetycznego możliwe jest już porównanie operatorów ze sobą - dla wszystkich progów poza $99\%$ \emph{mutDefault} uzyskiwał niższe czasy niż  mutacja gaussowska. Dla ostatniego progu relacja uległa odwróceniu - czas potrzebny algorytmowi genetycznemu opartemu o \emph{mutGauss} jest dwukrotnie niższy niż dla \emph{mutDefault}. Co więcej - różnica w czasie pomiędzy progiem $95\%$ i $99\%$ dla \emph{mutGauss} wynosi około $25\%$ , a dla \emph{mutDefualt} około $150\%$. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[ht] 
@@ -379,7 +380,7 @@ Badania dla tego kryterium z wykorzystaniem funkcji \emph{Paviani} jednoznacznie
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \FloatBarrier
 \par
-W przypadku ostatniej z wykorzystanej funkcji testowych otrzymane rezultaty wydają się sprzeczne z intuicją. Na wykresie \ref{fig:kryt2_Zeldasine} przedstawiono wyniki wskazujące na to,że ostatnie dwa progi dokładności rozwiązania nie są osiągane przez algorytm memetyczny z \emph{mutDefault}, pomimo że genetyczny z tym samym operatorem mutacji osiąga je w czasie $2.15$ sekundy. Porównując skuteczność mechanizmów mutacji ze sobą ponownie uzyskuje się wniosek wskazujący na przewagę \emph{mutGauss} nad \emph{mutDefault}. Funkcja \emph{ZeldaSine10} z jakiegoś powodu sprawa duże problemy algorytmowi \emph{PSO} przez co nie jest on w stanie uzyskać rozwiązania lepszego niż próg $50\%$. 
+W przypadku ostatniej z wykorzystanej funkcji testowych otrzymane rezultaty wydają się sprzeczne z intuicją. Na wykresie \ref{fig:kryt2_Zeldasine} przedstawiono wyniki wskazujące na to, że ostatnie dwa progi dokładności rozwiązania nie są osiągane przez algorytm memetyczny z \emph{mutDefault}, pomimo , że algorytm genetyczny z tym samym operatorem mutacji osiąga je w czasie $2.15$ sekundy. Porównując skuteczność mechanizmów mutacji ze sobą ponownie można zauważyć przewagę \emph{mutGauss} nad \emph{mutDefault}. Funkcja \emph{ZeldaSine10} z jakiegoś powodu sprawa duże problemy algorytmowi \emph{PSO} przez co nie jest on w stanie uzyskać rozwiązania lepszego niż próg $50\%$. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[ht] 
 \centering
@@ -402,7 +403,7 @@ W przypadku ostatniej z wykorzystanej funkcji testowych otrzymane rezultaty wyda
 
 \FloatBarrier
 \par
-Podsumowując analizę porównawczą w oparciu o \emph{kryterium nr 2} wnioski pozostają bardzo zbliżone do tych odnośnie \emph{kryterium nr 1}. Mechanizmem uzyskujący bardzo dokładnej rozwiązanie w najkrótszym czasie zdecydowanie jest algorytm memetyczny. Porównując operatory mutacji ze sobą w większości przypadków lepsze rezultaty uzyskano wykorzystując \emph{mutGauss} niż \emph{mutDefault}. \emph{PSO} po raz kolejny okazał się najgorszym z badanych algorytmów. 
+Podsumowując analizę porównawczą w oparciu o \emph{kryterium nr 2} wnioski pozostają bardzo zbliżone do tych odnośnie \emph{kryterium nr 1}. Mechanizmem uzyskującym bardzo dokładne rozwiązanie w najkrótszym czasie zdecydowanie jest algorytm memetyczny. Porównując operatory mutacji ze sobą w większości przypadków lepsze rezultaty uzyskano wykorzystując \emph{mutGauss} niż \emph{mutDefault}. \emph{PSO} po raz kolejny okazał się najgorszym z badanych algorytmów. 
 
 \subsection{Kryterium nr 3 - powtarzalność skutecznej optymalizacji}
 %
@@ -445,7 +446,7 @@ Rezultaty dla tego kryterium dla funkcji \emph{Paviani} przedstawiono na wykresi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \par
-W przypadku ostatniej z testowych funkcji bardzo wysoką skuteczność uzyskał algorytm memetyczny w obu wersjach. Wykorzystując \emph{mutGauss} jedynie w dwóch z trzydziestu próbach nie uzyskano rozwiązania bliskiego opitmum. Algorytm genetyczny uzyskiwał kolejne poziomy dokładności znacznie rzadziej. Dla tego mechanizmu widoczna jest znaczna przewaga \emph{mutGauss} nad \emph{mutDefault}. Podobnie jak w przypadku \emph{krytetium nr 2} \emph{PSO} nie uzyskał w żadnej z prób rozwiązania wystarczająco bliskiego by zaliczać się choćby do najniższej badanej dokładności. Dokładne wyniki dla \emph{ZeldaSine10} przedstawiono na wykresie \ref{fig:kryt3_Zeldasine}.
+W przypadku ostatniej z testowych funkcji bardzo wysoką skuteczność uzyskał algorytm memetyczny w obu wersjach. Wykorzystując \emph{mutGauss} jedynie w dwóch z trzydziestu prób nie uzyskano rozwiązania bliskiego opitmum. Algorytm genetyczny uzyskiwał kolejne poziomy dokładności znacznie rzadziej. Dla tego mechanizmu widoczna jest znaczna przewaga \emph{mutGauss} nad \emph{mutDefault}. Podobnie jak w przypadku \emph{krytetium nr 2} \emph{PSO} nie uzyskał w żadnej z prób rozwiązania wystarczająco bliskiego by zaliczać się choćby do najniższej badanej dokładności. Dokładne wyniki dla \emph{ZeldaSine10} przedstawiono na wykresie \ref{fig:kryt3_Zeldasine}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[hbt] 
@@ -462,7 +463,7 @@ W przypadku ostatniej z testowych funkcji bardzo wysoką skuteczność uzyskał 
 \subsection{Kryterium nr 4 - ogólna charakterystyka populacji}
 
 \par
-Ostatnie z przyjętych w analizie porównawczej kryteriów opisuje jak zmienia się różnorodność populacji. Opisywana jest poprzez różnicę między najlepszym i średnim rozwiązaniem danej iteracji wszystkich osobników. Wartość średniego rozwiązania populacji może się różnie zmieniać w zależności od specyfiki rozpatrywanego problemu. W przypadku funkcji \emph{Schaffer nr 2} w przyjętym okresie 100 iteracji algorytmów utrzymuje się na stałym poziomie około $0.5$ co jest konsekwencją faktu, że większość dziedziny rozwiązań koduje wartości bliskie $0.5$, a większe różnice znajdują się jedynie w wąskim sąsiedztwie poszukiwanego optimum. Pozostałe funkcje posiadają bardziej zróżnicowany przebieg, przez co średnie rozwiązanie populacji stopniowo zbliża się do wartości optymalnej. Zgodną cechą dla wszystkich algorytmów i funkcji testowych jest największa dynamika zmian różnic w pierwszych 20 iteracjach. Pokrywa się to z obserwacją najefektywniejszej optymalizacji na początku działania mechanizmów. 
+Ostatnie z przyjętych w analizie porównawczej kryteriów opisuje jak zmienia się różnorodność populacji opisywana poprzez różnicę między najlepszym i średnim rozwiązaniem danej iteracji wszystkich osobników. Wartość średniego rozwiązania populacji może się różnie zmieniać w zależności od specyfiki rozpatrywanego problemu. W przypadku funkcji \emph{Schaffer nr 2} w przyjętym okresie 100 iteracji algorytmów utrzymuje się na stałym poziomie około $0.5$ co jest konsekwencją faktu, że większość dziedziny rozwiązań koduje wartości bliskie $0.5$, a większe różnice znajdują się jedynie w wąskim sąsiedztwie poszukiwanego optimum. Pozostałe funkcje posiadają bardziej zróżnicowany przebieg, przez co średnie rozwiązanie populacji stopniowo zbliża się do wartości optymalnej. Zgodną cechą dla wszystkich algorytmów i funkcji testowych jest największa dynamika zmian różnic w pierwszych 20 iteracjach. Pokrywa się to z obserwacją najefektywniejszej optymalizacji na początku działania algorytmów. 
 \par
 W przypadku funkcji \emph{Schaffer nr 2} wszystkie algorytmy uzyskały bardzo zbliżone rezultaty dla tego kryterium. Pokrywa się to z obserwacją dla \emph{kryterium nr 1}, gdzie każdy algorytm uzyskiwał rezultaty bardzo bliskie wartości optymalnej. Jak wspomniano wyżej - płaski przebieg wykorzystanej funkcji powoduje niezmienność średniego rozwiązania populacji w trakcie działania algorytmu. Na wykresie \ref{fig:kryt4_Schaffer} przedstawiono komplet uzyskanych wyników badań porównawczych. 
 %
@@ -482,7 +483,7 @@ W przypadku funkcji \emph{Schaffer nr 2} wszystkie algorytmy uzyskały bardzo zb
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \par
-W przypadku funkcji \emph{Paviani} uwidacznia się różnica pomiędzy zastosowanymi operatorami mutacji. Zarówno algorytm memetyczny jak i genetyczny wykorzystujący \emph{mutGauss} po około 20 iteracjach doprowadza średnie rozwiązania populacji prawie do poziomu obecnie najlepszego osobnika. Porównując mechanizmy wykorzystujące \emph{mutDefault} niższą różnicę osiąga memetyczny. Ostatni algorytm - \emph{PSO} - po początkowych dynamicznych zmianach różnicy stabilizuje się na poziomie podobnym do genetycznego z domyślną mutacją. Przebieg zmian różnic dla wszystkich algorytmów przedsstawiono na wykresie \ref{fig:kryt4_Paviani}.
+W przypadku funkcji \emph{Paviani} uwidacznia się różnica pomiędzy zastosowanymi operatorami mutacji. Zarówno algorytm memetyczny jak i genetyczny wykorzystujący \emph{mutGauss} po około 20 iteracjach doprowadza średnie rozwiązania populacji prawie do poziomu obecnie najlepszego osobnika. Porównując mechanizmy wykorzystujące \emph{mutDefault} niższą różnicę osiąga memetyczny. Ostatni algorytm - \emph{PSO} - po początkowych dynamicznych zmianach różnicy stabilizuje się na poziomie podobnym do genetycznego z domyślną mutacją. Przebieg zmian różnic dla wszystkich algorytmów przedstawiono na wykresie \ref{fig:kryt4_Paviani}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[hbt] 
@@ -493,7 +494,7 @@ W przypadku funkcji \emph{Paviani} uwidacznia się różnica pomiędzy zastosowa
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Wyniki badań dla \emph{kryterium nr 4} dla ostatniej funkcji testowej przedstawiono na wykresie \ref{fig:kryt4_Zeldasine}. Podobnie jak w przypadku \emph{Paviani} algorytmy wykorzystujące gaussowską mutację po około 20 iteracjach uzyskują średnie rozwiąznie bliskie najlepszemu. Mechanizmy oparte na \emph{mutDefault} w trakcie działania stabilizują różnicę na tym samym poziomie, nawet pomimo tego, że początkowo ich przebiegi znacznie się różnią. W przypadku algorytmu \emph{PSO} dystans pomiędzy średnim i najlepszym rozwiązaniem mieści się pomiędzy rezultatami dla \emph{mutDefulat} i \emph{mutGauss}.
+Wyniki badań \emph{kryterium nr 4} dla ostatniej funkcji testowej przedstawiono na wykresie \ref{fig:kryt4_Zeldasine}. Podobnie jak w przypadku \emph{Paviani} algorytmy wykorzystujące gaussowską mutację po około 20 iteracjach uzyskują średnie rozwiąznie bliskie najlepszemu. Mechanizmy oparte na \emph{mutDefault} w trakcie działania stabilizują różnicę na tym samym poziomie, nawet pomimo tego, że początkowo ich przebiegi znacznie się różnią. W przypadku algorytmu \emph{PSO} dystans pomiędzy średnim i najlepszym rozwiązaniem mieści się pomiędzy rezultatami dla \emph{mutDefulat} i \emph{mutGauss}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[hbt]
