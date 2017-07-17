@@ -1,48 +1,56 @@
 package main;
 
-import java.util.ArrayList;
+import java.awt.Dimension;
 import java.util.List;
 
-import enums.ApplicableFunction;
-import enums.PanelIdentifierEnum;
-import params.GeneticParameters;
-import params.MemeticParameters;
-import params.PanelParameters;
-import params.PlotFunctionParameters;
+import org.springframework.util.StringUtils;
+
+import guiInterface.ViewInteraction;
+import panels.Pair;
+import panels.SpecifiedParameter;
 
 public class Context {
 
     private static Context instance;
 
-    List<ApplicableFunction> applicableFunctions;
-    GeneticParameters geneticParameters;
-    MemeticParameters memeticParameters;
-    ApplicableFunction selectedFunction;
-    PlotFunctionParameters plotFunctionParameters;
+    String selectedCriterion;
+    String selectedFunction;
+    List<String> selectedScenarios;
 
-    private Context() {
-        applicableFunctions = new ArrayList<>();
-        applicableFunctions.add(ApplicableFunction.CEC2013_9);
-        applicableFunctions.add(ApplicableFunction.SCHAFFER);
+    private Dimension plotDimensions;
 
-        selectedFunction = ApplicableFunction.SCHAFFER;
+    private ViewInteraction vi;
 
-        geneticParameters = new GeneticParameters(selectedFunction);
-        memeticParameters = new MemeticParameters();
-        plotFunctionParameters = new PlotFunctionParameters();
-
+    public Dimension getPlotDimensions() {
+        return plotDimensions;
     }
 
-    public PlotFunctionParameters getPlotFunctionParameters() {
-        return plotFunctionParameters;
-    }
-
-    public ApplicableFunction getSelectedFunction() {
+    public String getSelectedFunction() {
         return selectedFunction;
     }
 
-    public void setSelectedFunction(ApplicableFunction selectedFunction) {
+    public void setSelectedFunction(String selectedFunction) {
         this.selectedFunction = selectedFunction;
+    }
+
+    public List<String> getSelectedScenarios() {
+        return selectedScenarios;
+    }
+
+    public void setSelectedScenarios(List<String> selectedScenarios) {
+        this.selectedScenarios = selectedScenarios;
+    }
+
+    public String getSelectedCriterion() {
+        return selectedCriterion;
+    }
+
+    public void setSelectedCriterion(String selectedCriterion) {
+        this.selectedCriterion = selectedCriterion;
+    }
+
+    private Context() {
+        selectedCriterion = "Criterion nr 1";
     }
 
     public static Context getInstance() {
@@ -52,37 +60,42 @@ public class Context {
         return instance;
     }
 
-    public void clearParameters() {
-        geneticParameters = null;
-        memeticParameters = null;
-    }
-
-    public List<ApplicableFunction> getApplicableFunctions() {
-        return applicableFunctions;
-    }
-
     public String getRScriptsPath() {
         return "P:/PWr_projects/PracaMagisterska_2/PracaMagisterska/repo/R/workspace/javaEntryPoints";
 
     }
 
-    public MemeticParameters getMemeticParameters() {
-        return memeticParameters;
+    public void setPlotDimensions(Dimension size) {
+        plotDimensions = size;
+
     }
 
-    public GeneticParameters getGeneticParameters() {
-        return geneticParameters;
-    }
-
-    public PanelParameters getParametersForPanel(PanelIdentifierEnum panelEnum) {
-        switch (panelEnum) {
-        case MEMETIC_PARAMS_PANEL:
-            return memeticParameters;
-        case GENETIC_PARAMS_PANEL:
-            return geneticParameters;
-        case PLOT_PARAMS_PANEL:
-            return plotFunctionParameters;
+    public Pair<Double, Double> getXRange() {
+        if (StringUtils.pathEquals(selectedFunction, "Schaffer nr 2")) {
+            return new Pair<Double, Double>(-120.0, 100.0);
+        } else if (StringUtils.pathEquals(selectedFunction, "fun")) {
+            SpecifiedParameter codeParameter = vi.getCodeParameters().get(0);
+            return new Pair<Double, Double>(codeParameter.getLowerBound(), codeParameter.getUpperBound());
         }
-        return null;
+        return new Pair<Double, Double>(0.0, 0.0);
     }
+
+    public Pair<Double, Double> getYRange() {
+        if (StringUtils.pathEquals(selectedFunction, "Schaffer nr 2")) {
+            return new Pair<Double, Double>(-120.0, 100.0);
+        } else if (StringUtils.pathEquals(selectedFunction, "fun")) {
+            SpecifiedParameter codeParameter = vi.getCodeParameters().get(1);
+            return new Pair<Double, Double>(codeParameter.getLowerBound(), codeParameter.getUpperBound());
+        }
+        return new Pair<Double, Double>(0.0, 0.0);
+    }
+
+    public ViewInteraction getViewInteraction() {
+        return vi;
+    }
+
+    public void setViewInteraction(ViewInteraction vi) {
+        this.vi = vi;
+    }
+
 }

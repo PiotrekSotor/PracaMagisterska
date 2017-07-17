@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.util.StringUtils;
+
 import SystemMessages.SystemMessageException;
 import interfaces.AbstractJavaInvoker;
 import interfaces.Java_plotFunction3DInvoker;
@@ -13,11 +15,11 @@ import interfaces.OnRCommandEndCallback;
 import interfaces.REngineService;
 import main.Context;
 import panels.ExecutionConditionPanel;
+import panels.Pair;
 import panels.PlotPanel;
 import panels.RCodePanel;
 import panels.RConsoleLogPanel;
 import panels.SpecifiedParameter;
-import params.PlotFunctionParameters;
 
 public class Controller implements ViewInteraction {
 
@@ -41,18 +43,24 @@ public class Controller implements ViewInteraction {
     public Controller(MainFrame mainFrame) {
         this.mainFrame = mainFrame;
         images = new ArrayList<>();
+        Context.getInstance().setViewInteraction(this);
     }
 
     @Override
     public void invokePlotFunction3D() {
-        String path = generateDestinationPath(Context.getInstance().getSelectedFunction().getrName());
+        if (StringUtils.pathEquals(Context.getInstance().getSelectedFunction(), "fun"))
+            invokeSourceFunction();
+        String path = generateDestinationPath(Context.getInstance().getSelectedFunction());
         Java_plotFunction3DInvoker invoker = new Java_plotFunction3DInvoker();
-        PlotFunctionParameters params = Context.getInstance().getPlotFunctionParameters();
-        invoker.withApplicableFunction(Context.getInstance().getSelectedFunction())
-                .withXRange(params.getxMin(), params.getxMax(), params.getResolution())
-                .withYRange(params.getyMin(), params.getyMax(), params.getResolution())
-                .withApplicableFunction(Context.getInstance().getSelectedFunction()).withDestinationPath(path)
-                .withDimensions(params.getHeight(), params.getWidth());
+        Pair<Double, Double> xRange = Context.getInstance().getXRange();
+        Pair<Double, Double> yRange = Context.getInstance().getYRange();
+
+        invoker.withFunction(toRNames(Context.getInstance().getSelectedFunction()))
+                .withXRange(xRange.getLeft(), xRange.getRight(), 1.0)
+                .withYRange(yRange.getLeft(), yRange.getRight(), 1.0)
+                .withDestinationPath(path)
+                .withDimensions(Context.getInstance().getPlotDimensions().getHeight(),
+                        Context.getInstance().getPlotDimensions().getWidth());
 
         REngineService engine = new REngineService();
         engine.invokeOnStaticInstance(invoker, new OnRCommandEndCallback() {
@@ -70,6 +78,16 @@ public class Controller implements ViewInteraction {
                 RConsoleLogPanel.appendLog("finished: " + invoker.getRCommand());
             }
         });
+    }
+
+    private String toRNames(String selectedFunction) {
+        if (StringUtils.pathEquals(selectedFunction, "Schaffer nr 2"))
+            return "Schaffer1";
+        else if (StringUtils.pathEquals(selectedFunction, "ZeldaSine10"))
+            return "Zeldasine10";
+        else
+            return selectedFunction;
+
     }
 
     public void invokeSourceFunction() {
@@ -94,7 +112,7 @@ public class Controller implements ViewInteraction {
 
             temp.delete();
         } catch (IOException e) {
-            path = Context.getInstance().getSelectedFunction().getrName() + Long.toString(System.nanoTime()) + ".png";
+            path = Context.getInstance().getSelectedFunction() + Long.toString(System.nanoTime()) + ".png";
         }
         System.out.println("plot file path: " + path);
         return path;
@@ -193,6 +211,18 @@ public class Controller implements ViewInteraction {
     @Override
     public void performCriteria() {
         // TODO Auto-gsenerated method stub
+
+    }
+
+    @Override
+    public void enablePerformCriteria(Boolean isSelected) {
+        ecp.enableCriteriaComparison(isSelected);
+
+    }
+
+    @Override
+    public void enablePerformSelection(Integer numOfScenarios) {
+        ecp.enableParameterSelection(numOfScenarios);
 
     }
 

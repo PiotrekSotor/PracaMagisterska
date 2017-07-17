@@ -17,7 +17,6 @@ import javax.swing.JButton;
 import SystemMessages.ErrorSystemMessage;
 import guiInterface.ViewInteraction;
 import main.Context;
-import params.PlotFunctionParameters;
 
 public class PlotPanel extends MainPanel {
 
@@ -80,8 +79,9 @@ public class PlotPanel extends MainPanel {
         @Override
         public void componentResized(ComponentEvent e) {
             Dimension size = e.getComponent().getSize();
-            PlotFunctionParameters plotFunctionParameters = Context.getInstance().getPlotFunctionParameters();
-            plotFunctionParameters.setDimensions(e.getComponent().getSize());
+            // PlotFunctionParameters plotFunctionParameters =
+            // Context.getInstance().getPlotFunctionParameters();
+            Context.getInstance().setPlotDimensions(e.getComponent().getSize());
 
             System.out.println("PlotPanel resized: " + e.getComponent().getSize().toString());
         }

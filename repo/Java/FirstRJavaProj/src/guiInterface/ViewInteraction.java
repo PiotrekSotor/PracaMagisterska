@@ -32,6 +32,10 @@ public interface ViewInteraction {
 
     void enableRCodeTab(boolean flag);
 
+    void enablePerformCriteria(Boolean isSelected);
+
+    void enablePerformSelection(Integer numOfScenarios);
+
     void performCriteria();
 
 }

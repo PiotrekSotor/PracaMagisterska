@@ -1,5 +1,6 @@
 #plot parameters
 used_colors <- grey.colors
-width <- 800
-height <- 300
-titleShouldBePloted<-FALSE
+width <- 795
+height <- 572
+
+titleShouldBePloted<-TRUE

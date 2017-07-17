@@ -7,7 +7,6 @@ import javax.swing.JTextField;
 
 import enums.PanelIdentifierEnum;
 import enums.ParameterEnum;
-import main.Context;
 
 public class ParameterListener implements FocusListener {
     JTextField field;
@@ -43,7 +42,8 @@ public class ParameterListener implements FocusListener {
             value = 0;
         }
 
-        Context.getInstance().getParametersForPanel(panelIdentifierEnum).setParameter(parameterEnum, value, index);
+        // Context.getInstance().getParametersForPanel(panelIdentifierEnum).setParameter(parameterEnum,
+        // value, index);
     }
 
 }

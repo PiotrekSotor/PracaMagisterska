@@ -37,7 +37,7 @@ public class ButtonsPanel extends MainPanel {
     }
 
     public void enableParameterSelection(Integer numOfScenario) {
-        performParameterSelection.setEnabled(numOfScenario > 1);
+        performParameterSelection.setEnabled(numOfScenario >= 1);
     }
 
     public void enableCriteriaComparison(boolean isSelected) {

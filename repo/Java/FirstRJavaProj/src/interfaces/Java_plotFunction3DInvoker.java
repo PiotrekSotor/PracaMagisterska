@@ -1,10 +1,8 @@
 package interfaces;
 
-import enums.ApplicableFunction;
-
 public class Java_plotFunction3DInvoker extends AbstractJavaInvoker {
 
-    ApplicableFunction function;
+    String function;
     String destinationPath;
     String xRange;
     String yRange;
@@ -31,14 +29,14 @@ public class Java_plotFunction3DInvoker extends AbstractJavaInvoker {
         return this;
     }
 
-    public Java_plotFunction3DInvoker withApplicableFunction(ApplicableFunction function) {
+    public Java_plotFunction3DInvoker withFunction(String function) {
         this.function = function;
         return this;
     }
 
-    public Java_plotFunction3DInvoker withDimensions(Integer height, Integer width) {
-        this.height = height;
-        this.width = width;
+    public Java_plotFunction3DInvoker withDimensions(double d, double e) {
+        this.height = (int) d;
+        this.width = (int) e;
 
         return this;
     }
@@ -62,7 +60,7 @@ public class Java_plotFunction3DInvoker extends AbstractJavaInvoker {
         sb.append("java_plotFunction3D(");
 
         sb.append("fun=");
-        sb.append(function.getrName());
+        sb.append(function);
 
         sb.append(", destinationPath=\"");
         sb.append(destinationPath);

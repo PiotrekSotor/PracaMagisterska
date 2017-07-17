@@ -14,9 +14,9 @@ import guiInterface.ViewInteraction;
 public class ExecutionConditionPanel extends MainPanel {
 
     private ButtonsPanel buttonsPanel;
-    private PlotParametersPanel plotParametersPanel;
-    private GeneticParametersPanel geneticParametersPanel;
-    private MemeticParametersPanel memeticParametersPanel;
+    private FunctionSelectionPanel plotParametersPanel;
+    private ScenarioSelectionPanel geneticParametersPanel;
+    private CriteriaSelectionPanel memeticParametersPanel;
 
     public static NumberFormatter fractalFormatter;
     public static NumberFormatter propabilityFormatter;
@@ -33,9 +33,9 @@ public class ExecutionConditionPanel extends MainPanel {
         setPreferredSize(new Dimension(800, 200));
 
         buttonsPanel = new ButtonsPanel(vi);
-        plotParametersPanel = new PlotParametersPanel(vi, fractalFormatter);
-        geneticParametersPanel = new GeneticParametersPanel(vi, fractalFormatter, integerFormatter);
-        memeticParametersPanel = new MemeticParametersPanel(vi, propabilityFormatter);
+        plotParametersPanel = new FunctionSelectionPanel(vi, fractalFormatter);
+        geneticParametersPanel = new ScenarioSelectionPanel(vi, fractalFormatter, integerFormatter);
+        memeticParametersPanel = new CriteriaSelectionPanel(vi, propabilityFormatter);
 
         add(wrapWithHorizontalPanel(plotParametersPanel, geneticParametersPanel));
         add(wrapWithHorizontalPanel(memeticParametersPanel, new ButtonsPanel(vi)));
@@ -98,6 +98,13 @@ public class ExecutionConditionPanel extends MainPanel {
 
     public void enablePlot3DButton(Integer numOfParams) {
         buttonsPanel.enablePlot3DButton(numOfParams);
+    }
 
+    public void enableParameterSelection(Integer numOfScenario) {
+        buttonsPanel.enableParameterSelection(numOfScenario);
+    }
+
+    public void enableCriteriaComparison(Boolean isSelected) {
+        buttonsPanel.enableCriteriaComparison(isSelected);
     }
 }
