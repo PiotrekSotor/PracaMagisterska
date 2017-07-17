@@ -16,9 +16,9 @@ public class ExecutionConditionPanel extends MainPanel {
     private GeneticParametersPanel geneticParametersPanel;
     private MemeticParametersPanel memeticParametersPanel;
 
-    private NumberFormatter fractalFormatter;
-    private NumberFormatter propabilityFormatter;
-    private NumberFormatter integerFormatter;
+    public static NumberFormatter fractalFormatter;
+    public static NumberFormatter propabilityFormatter;
+    public static NumberFormatter integerFormatter;
 
     public ExecutionConditionPanel(ViewInteraction vi) {
         super(vi);

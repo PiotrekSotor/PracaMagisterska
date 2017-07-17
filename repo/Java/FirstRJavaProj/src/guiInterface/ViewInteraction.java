@@ -1,5 +1,9 @@
 package guiInterface;
 
+import java.util.List;
+
+import panels.SpecifiedParameter;
+
 public interface ViewInteraction {
 
     void invokePlotFunction3D();
@@ -21,5 +25,9 @@ public interface ViewInteraction {
     void removeParameter(int index);
 
     void addParameter();
+
+    void generateCode();
+
+    List<SpecifiedParameter> getCodeParameters();
 
 }

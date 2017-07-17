@@ -7,11 +7,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JButton;
+import javax.swing.JFormattedTextField;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.text.DefaultCaret;
 
+import guiInterface.ComponentWithLabel;
+import guiInterface.RelativeLayout;
 import guiInterface.ViewInteraction;
 
 public class RCodePanel extends MainPanel {
@@ -25,10 +29,12 @@ public class RCodePanel extends MainPanel {
 
     static MainPanel parameterPane;
 
+    private GenerationButton codeGenerationButton;
+
     public RCodePanel(ViewInteraction vi) {
         super(vi);
         setPreferredSize(new Dimension(800, 600));
-        setLayout(new GridLayout(2, 2));
+        setLayout(new RelativeLayout(RelativeLayout.Y_AXIS, 5));
 
         codeArea = new JTextArea();
         codeArea.setEditable(true);
@@ -37,15 +43,20 @@ public class RCodePanel extends MainPanel {
         caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
         parameterList = new ArrayList<>();
         parameterPane = new MainPanel(vi);
+        parameterPane.setLayout(new GridLayout(0, 1));
+        // parameterPane.setPreferredSize(new Dimension(800, 150));
+        codeArea.setPreferredSize(new Dimension(800, 300));
+
         addButton = new AddButton();
+        codeGenerationButton = new GenerationButton();
 
         parameterScrollPane = new JScrollPane(parameterPane);
         codeScrollPane = new JScrollPane(codeArea);
 
         refreshParameterScrollPane();
 
-        add(parameterScrollPane);
-        add(codeScrollPane);
+        add(parameterScrollPane, new Float(1));
+        add(codeScrollPane, new Float(4));
 
     }
 
@@ -58,14 +69,53 @@ public class RCodePanel extends MainPanel {
         for (int i = 0; i < parameterList.size(); ++i) {
             Pair<ParameterDescription, RemoveButton> par = parameterList.get(i);
 
-            parameterPane.add(par.getLeft());
+            JPanel innerPanel = new JPanel();
+            innerPanel.setLayout(new RelativeLayout(RelativeLayout.X_AXIS));
+            innerPanel.add(par.getLeft(), new Float(5));
             RemoveButton removeButton = par.getRight();
             removeButton.setIndex(i);
-            parameterPane.add(removeButton);
+            innerPanel.add(removeButton, new Float(1));
+            innerPanel.setPreferredSize(new Dimension(800, 25));
+            innerPanel.setMaximumSize(new Dimension(800, 25));
+            parameterPane.add(innerPanel);
         }
-        parameterPane.add(addButton);
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setLayout(new GridLayout(1, 2));
+        buttonPanel.setPreferredSize(new Dimension(800, 25));
+        buttonPanel.setMaximumSize(new Dimension(800, 25));
+        buttonPanel.add(addButton);
+        buttonPanel.add(codeGenerationButton);
+
+        parameterPane.add(buttonPanel);
         parameterPane.repaint();
         parameterScrollPane.repaint();
+    }
+
+    public void generateStub() {
+        List<SpecifiedParameter> codeParameters = viewInteraction.getCodeParameters();
+        StringBuilder sb = new StringBuilder();
+        sb.append("fun <- function(");
+        for (int i = 0; i < codeParameters.size(); ++i) {
+            sb.append(codeParameters.get(i).getName());
+            if (i != codeParameters.size() - 1)
+                sb.append(", ");
+
+        }
+        sb.append(")\n{\n\n\n}");
+        codeArea.setText(sb.toString());
+    }
+
+    public List<SpecifiedParameter> retriveData() {
+        List<SpecifiedParameter> paramteres = new ArrayList<>();
+        for (Pair<ParameterDescription, RemoveButton> param : parameterList) {
+
+            SpecifiedParameter spec = new SpecifiedParameter();
+            spec.setName(param.getLeft().getName());
+            spec.setLowerBound(param.getLeft().getLowerBound());
+            spec.setUpperBound(param.getLeft().getUpperBound());
+            paramteres.add(spec);
+        }
+        return paramteres;
     }
 
     public void removeParameter(int index) {
@@ -85,25 +135,54 @@ public class RCodePanel extends MainPanel {
     }
 
     class ParameterDescription extends MainPanel {
-        JTextField name;
-        JTextField lowerBound;
-        JTextField upperBound;
+        ComponentWithLabel name;
+        ComponentWithLabel lowerBound;
+        ComponentWithLabel upperBound;
 
         public ParameterDescription() {
-            name = new JTextField();
-            lowerBound = new JTextField();
-            upperBound = new JTextField();
-            add(name);
-            add(lowerBound);
-            add(upperBound);
+            setLayout(new RelativeLayout(RelativeLayout.X_AXIS));
+
+            name = new ComponentWithLabel(createNameTextField(), "Name");
+            lowerBound = new ComponentWithLabel(createBoundTextField(), "Lower bound");
+            upperBound = new ComponentWithLabel(createBoundTextField(), "Upper bound");
+            add(name, new Float(1));
+            add(lowerBound, new Float(2));
+            add(upperBound, new Float(2));
         }
+
+        JTextField createBoundTextField() {
+            JFormattedTextField field = new JFormattedTextField(ExecutionConditionPanel.fractalFormatter);
+            field.setText("0.00");
+            field.setColumns(6);
+            return new JTextField();
+        }
+
+        JTextField createNameTextField() {
+            JTextField field = new JTextField();
+            field.setColumns(8);
+            return field;
+        }
+
+        @Override
+        public String getName() {
+            return name.getComponentText();
+        }
+
+        public Double getLowerBound() {
+            return Double.parseDouble(lowerBound.getComponentText());
+        }
+
+        public Double getUpperBound() {
+            return Double.parseDouble(upperBound.getComponentText());
+        }
+
     }
 
     class RemoveButton extends JButton {
         int index;
 
         public RemoveButton() {
-            super();
+            super("Remove");
             addActionListener(l -> viewInteraction.removeParameter(index));
         }
 
@@ -114,8 +193,15 @@ public class RCodePanel extends MainPanel {
 
     class AddButton extends JButton {
         public AddButton() {
-            super("add");
+            super("Add");
             addActionListener(l -> viewInteraction.addParameter());
+        }
+    }
+
+    class GenerationButton extends JButton {
+        public GenerationButton() {
+            super("Generate");
+            addActionListener(l -> viewInteraction.generateCode());
         }
     }
 
@@ -152,4 +238,5 @@ public class RCodePanel extends MainPanel {
         }
 
     }
+
 }

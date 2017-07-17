@@ -15,6 +15,7 @@ import panels.ExecutionConditionPanel;
 import panels.PlotPanel;
 import panels.RCodePanel;
 import panels.RConsoleLogPanel;
+import panels.SpecifiedParameter;
 import params.PlotFunctionParameters;
 
 public class Controller implements ViewInteraction {
@@ -152,6 +153,16 @@ public class Controller implements ViewInteraction {
     @Override
     public void addParameter() {
         rcp.addParameter();
+    }
+
+    @Override
+    public void generateCode() {
+        rcp.generateStub();
+    }
+
+    @Override
+    public List<SpecifiedParameter> getCodeParameters() {
+        return rcp.retriveData();
     }
 
 }
