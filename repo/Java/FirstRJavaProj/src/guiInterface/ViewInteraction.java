@@ -8,7 +8,7 @@ public interface ViewInteraction {
 
     void invokePlotFunction3D();
 
-    Object runAlgorithm();
+    Object performParameterSelection();
 
     void printPrevious();
 
@@ -29,5 +29,9 @@ public interface ViewInteraction {
     void generateCode();
 
     List<SpecifiedParameter> getCodeParameters();
+
+    void enableRCodeTab(boolean flag);
+
+    void performCriteria();
 
 }

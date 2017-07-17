@@ -2,11 +2,15 @@ package panels;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.util.List;
 
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
 import javax.swing.text.NumberFormatter;
+
+import org.springframework.util.StringUtils;
 
 import enums.ApplicableFunction;
 import enums.PanelIdentifierEnum;
@@ -17,6 +21,7 @@ import main.Context;
 
 public class PlotParametersPanel extends MainPanel {
 
+    private static final String CODE_LABEL = "(code)";
     private JComboBox<ApplicableFunction> functionSelector;
     private JTextField xMin;
     private JTextField xMax;
@@ -24,19 +29,38 @@ public class PlotParametersPanel extends MainPanel {
     private JTextField yMin;
     private JTextField yMax;
 
+    private java.awt.List functionsList;
+
     public PlotParametersPanel(ViewInteraction vi, NumberFormatter fractalFormatter) {
         super(vi);
 
         addSelectFunction();
-        addTextFields(fractalFormatter);
+        // addTextFields(fractalFormatter);
     }
 
     private void addSelectFunction() {
-        ApplicableFunction[] functions = listToArray(Context.getInstance().getApplicableFunctions());
-        functionSelector = new JComboBox<>(functions);
-        functionSelector.setSelectedItem(Context.getInstance().getSelectedFunction());
-        functionSelector.addActionListener(new FunctionSelectionListener());
-        add(new ComponentWithLabel(functionSelector, "Function"));
+        // ApplicableFunction[] functions =
+        // listToArray(Context.getInstance().getApplicableFunctions());
+        // functionSelector = new JComboBox<>(functions);
+        // functionSelector.setSelectedItem(Context.getInstance().getSelectedFunction());
+        // functionSelector.addActionListener(new FunctionSelectionListener());
+        // add(new ComponentWithLabel(functionSelector, "Function"));
+
+        functionsList = new java.awt.List();
+        functionsList.setMultipleMode(false);
+        functionsList.add("Schaffer nr 2");
+        functionsList.add("Paviani");
+        functionsList.add("ZeldaSine10");
+        functionsList.add(CODE_LABEL);
+        functionsList.addItemListener(new ItemListener() {
+
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                String selectedItem = ((java.awt.List) e.getSource()).getSelectedItem();
+                viewInteraction.enableRCodeTab(StringUtils.pathEquals(selectedItem, CODE_LABEL));
+            }
+        });
+        add(new ComponentWithLabel(functionsList, "Test function"));
     }
 
     private ApplicableFunction[] listToArray(List<ApplicableFunction> applicableFunctions) {

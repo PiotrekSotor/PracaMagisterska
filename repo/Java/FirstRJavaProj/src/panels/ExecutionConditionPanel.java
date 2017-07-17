@@ -1,10 +1,12 @@
 package panels;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.text.NumberFormat;
 
+import javax.swing.JPanel;
 import javax.swing.text.NumberFormatter;
 
 import guiInterface.ViewInteraction;
@@ -27,7 +29,7 @@ public class ExecutionConditionPanel extends MainPanel {
         setupIntegerNumberFormatter();
         setupPropabilityNumberFormatter();
 
-        setLayout(new GridLayout(0, 2));
+        setLayout(new GridLayout(0, 1));
         setPreferredSize(new Dimension(800, 200));
 
         buttonsPanel = new ButtonsPanel(vi);
@@ -35,13 +37,25 @@ public class ExecutionConditionPanel extends MainPanel {
         geneticParametersPanel = new GeneticParametersPanel(vi, fractalFormatter, integerFormatter);
         memeticParametersPanel = new MemeticParametersPanel(vi, propabilityFormatter);
 
-        add(plotParametersPanel);
-        add(geneticParametersPanel);
-        add(memeticParametersPanel);
-        add(new ButtonsPanel(vi));
+        add(wrapWithHorizontalPanel(plotParametersPanel, geneticParametersPanel));
+        add(wrapWithHorizontalPanel(memeticParametersPanel, new ButtonsPanel(vi)));
+
+        // add(plotParametersPanel);
+        // add(geneticParametersPanel);
+        // add(memeticParametersPanel);
+        // add(new ButtonsPanel(vi));
 
         setBackground(Color.blue);
 
+    }
+
+    private Component wrapWithHorizontalPanel(Component componene1,
+            Component component2) {
+        JPanel wrapper = new JPanel();
+        wrapper.setLayout(new GridLayout(1, 2));
+        wrapper.add(componene1);
+        wrapper.add(component2, wrapper);
+        return wrapper;
     }
 
     private void setupFractalNumberFormatter() {

@@ -8,6 +8,7 @@ import java.util.List;
 import SystemMessages.SystemMessageException;
 import interfaces.AbstractJavaInvoker;
 import interfaces.Java_plotFunction3DInvoker;
+import interfaces.Java_sourceDefinedFunction;
 import interfaces.OnRCommandEndCallback;
 import interfaces.REngineService;
 import main.Context;
@@ -23,6 +24,7 @@ public class Controller implements ViewInteraction {
     private PlotPanel plotPanel;
     private ExecutionConditionPanel ecp;
     private RCodePanel rcp;
+    private MainFrame mainFrame;
 
     public RCodePanel getRcp() {
         return rcp;
@@ -36,7 +38,8 @@ public class Controller implements ViewInteraction {
 
     private int currentImageIndex;
 
-    public Controller() {
+    public Controller(MainFrame mainFrame) {
+        this.mainFrame = mainFrame;
         images = new ArrayList<>();
     }
 
@@ -69,6 +72,18 @@ public class Controller implements ViewInteraction {
         });
     }
 
+    public void invokeSourceFunction() {
+        Java_sourceDefinedFunction invoker = new Java_sourceDefinedFunction();
+        invoker.withFunctionBody(rcp.getText());
+        REngineService engine = new REngineService();
+        engine.invokeOnStaticInstance(invoker, new OnRCommandEndCallback() {
+            @Override
+            public void onEnd(AbstractJavaInvoker invoker) {
+            }
+        });
+
+    }
+
     private String generateDestinationPath(String filename) {
         String path;
         try {
@@ -86,7 +101,7 @@ public class Controller implements ViewInteraction {
     }
 
     @Override
-    public Object runAlgorithm() {
+    public Object performParameterSelection() {
         // TODO Auto-generated method stub
         return null;
     }
@@ -157,12 +172,28 @@ public class Controller implements ViewInteraction {
 
     @Override
     public void generateCode() {
-        rcp.generateStub();
+        try {
+            rcp.generateStub();
+
+        } catch (SystemMessageException sme) {
+            sme.createPopup(rcp);
+        }
     }
 
     @Override
     public List<SpecifiedParameter> getCodeParameters() {
         return rcp.retriveData();
+    }
+
+    @Override
+    public void enableRCodeTab(boolean flag) {
+        mainFrame.enableRCodeTab(flag);
+    }
+
+    @Override
+    public void performCriteria() {
+        // TODO Auto-gsenerated method stub
+
     }
 
 }

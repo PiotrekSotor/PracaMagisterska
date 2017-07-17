@@ -4,7 +4,9 @@ import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
@@ -12,8 +14,10 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import javax.swing.text.DefaultCaret;
 
+import org.springframework.util.StringUtils;
+
+import SystemMessages.ErrorSystemMessage;
 import guiInterface.ComponentWithLabel;
 import guiInterface.RelativeLayout;
 import guiInterface.ViewInteraction;
@@ -39,13 +43,11 @@ public class RCodePanel extends MainPanel {
         codeArea = new JTextArea();
         codeArea.setEditable(true);
 
-        DefaultCaret caret = (DefaultCaret) codeArea.getCaret();
-        caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
         parameterList = new ArrayList<>();
         parameterPane = new MainPanel(vi);
         parameterPane.setLayout(new GridLayout(0, 1));
-        // parameterPane.setPreferredSize(new Dimension(800, 150));
-        codeArea.setPreferredSize(new Dimension(800, 300));
+
+        codeArea.setPreferredSize(new Dimension(780, 300));
 
         addButton = new AddButton();
         codeGenerationButton = new GenerationButton();
@@ -75,23 +77,28 @@ public class RCodePanel extends MainPanel {
             RemoveButton removeButton = par.getRight();
             removeButton.setIndex(i);
             innerPanel.add(removeButton, new Float(1));
-            innerPanel.setPreferredSize(new Dimension(800, 25));
+            innerPanel.setPreferredSize(new Dimension(750, 25));
             innerPanel.setMaximumSize(new Dimension(800, 25));
             parameterPane.add(innerPanel);
         }
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new GridLayout(1, 2));
-        buttonPanel.setPreferredSize(new Dimension(800, 25));
+        buttonPanel.setPreferredSize(new Dimension(750, 25));
         buttonPanel.setMaximumSize(new Dimension(800, 25));
         buttonPanel.add(addButton);
         buttonPanel.add(codeGenerationButton);
 
         parameterPane.add(buttonPanel);
-        parameterPane.repaint();
-        parameterScrollPane.repaint();
+        parameterPane.repaint(100);
+        parameterPane.repaint(100);
+        // parameterPane.repaint();
+        // parameterScrollPane.repaint();
+
+        viewInteraction.enablePlot3DButton(parameterList.size());
     }
 
     public void generateStub() {
+        validateParams();
         List<SpecifiedParameter> codeParameters = viewInteraction.getCodeParameters();
         StringBuilder sb = new StringBuilder();
         sb.append("fun <- function(");
@@ -101,7 +108,7 @@ public class RCodePanel extends MainPanel {
                 sb.append(", ");
 
         }
-        sb.append(")\n{\n\n\n}");
+        sb.append("){\n\n\n}");
         codeArea.setText(sb.toString());
     }
 
@@ -132,6 +139,73 @@ public class RCodePanel extends MainPanel {
 
     public String getText() {
         return codeArea.getText();
+    }
+
+    public void validateParams() {
+        StringBuilder message = new StringBuilder();
+        List<SpecifiedParameter> retriveData = retriveData();
+        Set<String> names = new HashSet<>();
+        for (int i = 0; i < retriveData.size(); ++i) {
+            SpecifiedParameter parameter = retriveData.get(i);
+            if (StringUtils.isEmpty(parameter.getName())) {
+                message.append(createEmptyNameText(i));
+            } else if (checkName(parameter.getName())) {
+                message.append(createInvalidNameText(i));
+            }
+            if (names.contains(parameter.getName())) {
+                message.append(createDuplicatedNamesText(i));
+            } else {
+                names.add(parameter.getName());
+            }
+
+            if (parameter.getLowerBound() == null) {
+                message.append(createEmptyLowerBoundText(i));
+            }
+            if (parameter.getUpperBound() == null) {
+                message.append(createEmptyUpperBoundText(i));
+            }
+            if (parameter.getLowerBound() != null &&
+                    parameter.getUpperBound() != null &&
+                    parameter.getLowerBound() >= parameter.getUpperBound()) {
+                message.append(createWrongBoundsText(i));
+            }
+
+        }
+
+        String errors = message.toString();
+        if (!StringUtils.isEmpty(errors))
+            throw new ErrorSystemMessage(message.toString());
+
+    }
+
+    private boolean checkName(String name) {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    private Object createDuplicatedNamesText(int parNum) {
+        return "Parameter " + Integer.toString(parNum + 1) + " has not unique name.\n";
+
+    }
+
+    private String createEmptyNameText(int parNum) {
+        return "Parameter " + Integer.toString(parNum + 1) + " does not contain name.\n";
+    }
+
+    private String createInvalidNameText(int parNum) {
+        return "Parameter " + Integer.toString(parNum + 1) + " has incorrect name.\n";
+    }
+
+    private String createEmptyLowerBoundText(int parNum) {
+        return "Parameter " + Integer.toString(parNum + 1) + " has not specified lower bound.\n";
+    }
+
+    private String createEmptyUpperBoundText(int parNum) {
+        return "Parameter " + Integer.toString(parNum + 1) + " has not specified upper bound.\n";
+    }
+
+    private String createWrongBoundsText(int parNum) {
+        return "Parameter " + Integer.toString(parNum + 1) + "has lower bound heigher than upper bound.\n";
     }
 
     class ParameterDescription extends MainPanel {
@@ -169,10 +243,16 @@ public class RCodePanel extends MainPanel {
         }
 
         public Double getLowerBound() {
+            if (StringUtils.isEmpty(lowerBound.getComponentText())) {
+                return null;
+            }
             return Double.parseDouble(lowerBound.getComponentText());
         }
 
         public Double getUpperBound() {
+            if (StringUtils.isEmpty(upperBound.getComponentText())) {
+                return null;
+            }
             return Double.parseDouble(upperBound.getComponentText());
         }
 

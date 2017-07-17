@@ -15,6 +15,7 @@ import panels.RConsoleLogPanel;
 public class MainFrame extends JFrame {
 
     JPanel panel;
+    JTabbedPane tabbedPanel;
 
     public MainFrame() {
         super("Memetic algorithm evaluation");
@@ -25,29 +26,35 @@ public class MainFrame extends JFrame {
         panel.setLayout(new FlowLayout(FlowLayout.CENTER));
         add(panel);
 
-        Controller controller = new Controller();
+        Controller controller = new Controller(this);
 
         ExecutionConditionPanel ecp = new ExecutionConditionPanel(controller);
+        controller.setExecutionConditionPanel(ecp);
         PlotPanel plotPanel = new PlotPanel(controller);
+        controller.setPlotPanel(plotPanel);
         RCodePanel rCodePanel = new RCodePanel(controller);
+        controller.setRcp(rCodePanel);
         RConsoleLogPanel rclp = new RConsoleLogPanel();
 
-        JTabbedPane tabbedPanel = new JTabbedPane();
+        tabbedPanel = new JTabbedPane();
         tabbedPanel.setPreferredSize(new Dimension(800, 600));
         tabbedPanel.addTab("plots", plotPanel);
         tabbedPanel.addTab("code", rCodePanel);
+        // tabbedPanel.setEnabledAt(1, false);
 
         panel.add(ecp);
         panel.add(tabbedPanel);
         // panel.add(plotPanel);
         panel.add(rclp);
 
-        controller.setPlotPanel(plotPanel);
-        controller.setExecutionConditionPanel(ecp);
-        controller.setRcp(rCodePanel);
-
         setResizable(false);
         setSize(new Dimension(820, 1010));
+    }
+
+    public void enableRCodeTab(boolean flag) {
+        tabbedPanel.setEnabledAt(1, flag);
+        tabbedPanel.setSelectedIndex(flag ? 1 : 0);
+
     }
 
 }
