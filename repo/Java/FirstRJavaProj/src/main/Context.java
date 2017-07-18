@@ -8,6 +8,9 @@ import org.springframework.util.StringUtils;
 import guiInterface.ViewInteraction;
 import panels.Pair;
 import panels.SpecifiedParameter;
+import params.GeneticParameters;
+import params.MemeticParameters;
+import params.PSOParameters;
 
 public class Context {
 
@@ -16,6 +19,12 @@ public class Context {
     String selectedCriterion;
     String selectedFunction;
     List<String> selectedScenarios;
+
+    MemeticParameters memeticGaussParameters;
+    MemeticParameters memeticDefaultParameters;
+    GeneticParameters geneticGaussParameters;
+    GeneticParameters geneticDefaultParameters;
+    PSOParameters psoParameters;
 
     private Dimension plotDimensions;
 
@@ -51,6 +60,12 @@ public class Context {
 
     private Context() {
         selectedCriterion = "Criterion nr 1";
+        memeticDefaultParameters = new MemeticParameters(100, 0.9, 0.5, "mutDefault", 0.8, 1.0, "L-BFGS-B");
+        memeticGaussParameters = new MemeticParameters(100, 0.9, 0.7, "mutGauss", 1.0, 0.6, "L-BFGS-B");
+        geneticDefaultParameters = new GeneticParameters(100, 0.9, 0.6, "mutDefault");
+        geneticGaussParameters = new GeneticParameters(100, 1.0, 0.5, "mutGauss");
+        psoParameters = new PSOParameters(1.0, 1.6, 100);
+
     }
 
     public static Context getInstance() {
@@ -61,6 +76,7 @@ public class Context {
     }
 
     public String getRScriptsPath() {
+        // return "../../R/workspace/javaEntryPoints";
         return "P:/PWr_projects/PracaMagisterska_2/PracaMagisterska/repo/R/workspace/javaEntryPoints";
 
     }
@@ -96,6 +112,46 @@ public class Context {
 
     public void setViewInteraction(ViewInteraction vi) {
         this.vi = vi;
+    }
+
+    public MemeticParameters getMemeticGaussParameters() {
+        return memeticGaussParameters;
+    }
+
+    public void setMemeticGaussParameters(MemeticParameters memeticGaussParameters) {
+        this.memeticGaussParameters = memeticGaussParameters;
+    }
+
+    public MemeticParameters getMemeticDefaultParameters() {
+        return memeticDefaultParameters;
+    }
+
+    public void setMemeticDefaultParameters(MemeticParameters memeticDefaultParameters) {
+        this.memeticDefaultParameters = memeticDefaultParameters;
+    }
+
+    public GeneticParameters getGeneticGaussParameters() {
+        return geneticGaussParameters;
+    }
+
+    public void setGeneticGaussParameters(GeneticParameters geneticGaussParameters) {
+        this.geneticGaussParameters = geneticGaussParameters;
+    }
+
+    public GeneticParameters getGeneticDefaultParameters() {
+        return geneticDefaultParameters;
+    }
+
+    public void setGeneticDefaultParameters(GeneticParameters geneticDefaultParameters) {
+        this.geneticDefaultParameters = geneticDefaultParameters;
+    }
+
+    public PSOParameters getPsoParameters() {
+        return psoParameters;
+    }
+
+    public void setPsoParameters(PSOParameters psoParameters) {
+        this.psoParameters = psoParameters;
     }
 
 }

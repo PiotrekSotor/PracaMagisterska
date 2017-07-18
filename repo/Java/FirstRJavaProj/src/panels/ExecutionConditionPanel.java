@@ -9,6 +9,7 @@ import java.text.NumberFormat;
 import javax.swing.JPanel;
 import javax.swing.text.NumberFormatter;
 
+import guiInterface.RelativeLayout;
 import guiInterface.ViewInteraction;
 
 public class ExecutionConditionPanel extends MainPanel {
@@ -17,6 +18,7 @@ public class ExecutionConditionPanel extends MainPanel {
     private FunctionSelectionPanel plotParametersPanel;
     private ScenarioSelectionPanel geneticParametersPanel;
     private CriteriaSelectionPanel memeticParametersPanel;
+    private ParametersPanel parameterPanel;
 
     public static NumberFormatter fractalFormatter;
     public static NumberFormatter propabilityFormatter;
@@ -29,21 +31,25 @@ public class ExecutionConditionPanel extends MainPanel {
         setupIntegerNumberFormatter();
         setupPropabilityNumberFormatter();
 
-        setLayout(new GridLayout(0, 1));
+        setLayout(new RelativeLayout(RelativeLayout.Y_AXIS));
         setPreferredSize(new Dimension(800, 200));
 
         buttonsPanel = new ButtonsPanel(vi);
         plotParametersPanel = new FunctionSelectionPanel(vi, fractalFormatter);
         geneticParametersPanel = new ScenarioSelectionPanel(vi, fractalFormatter, integerFormatter);
         memeticParametersPanel = new CriteriaSelectionPanel(vi, propabilityFormatter);
+        parameterPanel = new ParametersPanel(vi);
 
-        add(wrapWithHorizontalPanel(plotParametersPanel, geneticParametersPanel));
-        add(wrapWithHorizontalPanel(memeticParametersPanel, new ButtonsPanel(vi)));
+        buttonsPanel.setPreferredSize(new Dimension(400, 40));
+        plotParametersPanel.setPreferredSize(new Dimension(400, 40));
+        geneticParametersPanel.setPreferredSize(new Dimension(400, 40));
+        memeticParametersPanel.setPreferredSize(new Dimension(400, 40));
+        parameterPanel.setPreferredSize(new Dimension(800, 40));
 
-        // add(plotParametersPanel);
-        // add(geneticParametersPanel);
-        // add(memeticParametersPanel);
-        // add(new ButtonsPanel(vi));
+        add(wrapWithHorizontalPanel(plotParametersPanel, geneticParametersPanel), new Float(4));
+        add(wrapWithHorizontalPanel(memeticParametersPanel, new ButtonsPanel(vi)), new Float(4));
+
+        add(parameterPanel, new Float(3));
 
         setBackground(Color.blue);
 

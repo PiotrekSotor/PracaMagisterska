@@ -17,7 +17,7 @@ public class ButtonsPanel extends MainPanel {
         super(vi);
 
         setLayout(new GridLayout(3, 1));
-        setPreferredSize(new Dimension(600, 50));
+        setPreferredSize(new Dimension(300, 50));
 
         plot3DButton = new JButton("Plot 3D function");
         performParameterSelection = new JButton("Perform parameter selection");

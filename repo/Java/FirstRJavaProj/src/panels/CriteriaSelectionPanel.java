@@ -41,7 +41,7 @@ public class CriteriaSelectionPanel extends MainPanel {
         bg.add(crit4Button);
 
         JPanel buttons = new JPanel();
-        buttons.setLayout(new GridLayout(4, 1));
+        buttons.setLayout(new GridLayout(2, 2));
         buttons.add(crit1Button);
         buttons.add(crit2Button);
         buttons.add(crit3Button);

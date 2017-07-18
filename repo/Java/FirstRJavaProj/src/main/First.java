@@ -4,9 +4,10 @@ import guiInterface.MainFrame;
 
 public class First {
 
-	public static void main(String a[]) {
+    public static void main(String a[]) {
 
-		new MainFrame();
+        System.out.println(System.getProperty("user.dir"));
+        new MainFrame();
 
-	}
+    }
 }

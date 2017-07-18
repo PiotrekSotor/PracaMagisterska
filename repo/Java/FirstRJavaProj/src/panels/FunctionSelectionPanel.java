@@ -18,7 +18,6 @@ public class FunctionSelectionPanel extends MainPanel {
 
     public FunctionSelectionPanel(ViewInteraction vi, NumberFormatter fractalFormatter) {
         super(vi);
-
         addSelectFunction();
     }
 
