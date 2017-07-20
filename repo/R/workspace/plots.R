@@ -1,9 +1,9 @@
 # w³asna wersja funkcji outer do obliczenia wartoœci funkcji dla wykresu 
 myouter <- function(x, y, f) {
-  result <- matrix(ncol = length(x), nrow = length(y))
+  result <- matrix(ncol = length(y), nrow = length(x))
   for (par1 in 1:length(x)){
     for (par2 in 1:length(y)){
-      result[par2,par1] <- (f(x[par1],y[par2]))
+      result[par1,par2] <- (f(x[par1],y[par2]))
     }
   }
   return (result)

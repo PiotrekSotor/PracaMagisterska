@@ -56,8 +56,8 @@ public class Controller implements ViewInteraction {
         Pair<Double, Double> yRange = Context.getInstance().getYRange();
 
         invoker.withFunction(toRNames(Context.getInstance().getSelectedFunction()))
-                .withXRange(xRange.getLeft(), xRange.getRight(), 1.0)
-                .withYRange(yRange.getLeft(), yRange.getRight(), 1.0)
+                .withXRange(xRange.getLeft(), xRange.getRight(), (xRange.getRight() - xRange.getLeft()) / 100)
+                .withYRange(yRange.getLeft(), yRange.getRight(), (xRange.getRight() - xRange.getLeft()) / 100)
                 .withDestinationPath(path)
                 .withDimensions(Context.getInstance().getPlotDimensions().getHeight(),
                         Context.getInstance().getPlotDimensions().getWidth());

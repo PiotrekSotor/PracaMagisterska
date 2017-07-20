@@ -2,6 +2,7 @@ package panels;
 
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.text.DecimalFormat;
 
 import javax.swing.JLabel;
 
@@ -19,9 +20,13 @@ public class ParametersPanel extends MainPanel {
     JLabel geneticGauss;
     JLabel pso;
 
+    DecimalFormat df;
+
     public ParametersPanel(ViewInteraction vi) {
         super(vi);
         setLayout(new GridLayout(0, 1));
+
+        df = new DecimalFormat("####0.0");
 
         memeticDefault = new JLabel();
         memeticGauss = new JLabel();
@@ -57,16 +62,18 @@ public class ParametersPanel extends MainPanel {
     }
 
     private String createPSOLabel(PSOParameters psoParameters) {
+
         StringBuilder sb = new StringBuilder();
         sb.append("Algorytm PSO: ");
         sb.append("pSize=");
         sb.append(psoParameters.getPopsize());
         sb.append(", phi1=");
-        sb.append(psoParameters.getPhi1());
+        sb.append(df.format(psoParameters.getPhi1()));
+
         sb.append(", phi2=");
-        sb.append(psoParameters.getPhi2());
+        sb.append(df.format(psoParameters.getPhi2()));
         sb.append(", inertiaWeight=");
-        sb.append(psoParameters.getInertiaWeight());
+        sb.append(df.format(psoParameters.getInertiaWeight()));
         return sb.toString();
     }
 
@@ -80,9 +87,9 @@ public class ParametersPanel extends MainPanel {
         StringBuilder sb = new StringBuilder();
         createPart(memeticDefaultParameters, sb);
         sb.append(", poptim=");
-        sb.append(memeticDefaultParameters.getPoptim());
+        sb.append(df.format(memeticDefaultParameters.getPoptim()));
         sb.append(", pressel=");
-        sb.append(memeticDefaultParameters.getPressel());
+        sb.append(df.format(memeticDefaultParameters.getPressel()));
         sb.append(", method=");
         sb.append(memeticDefaultParameters.getMethod());
         return sb.toString();
@@ -98,9 +105,9 @@ public class ParametersPanel extends MainPanel {
         sb.append(": pSize=");
         sb.append(memeticDefaultParameters.getPopsize());
         sb.append(", pmut=");
-        sb.append(memeticDefaultParameters.getpMutation());
+        sb.append(df.format(memeticDefaultParameters.getpMutation()));
         sb.append(", pcross=");
-        sb.append(memeticDefaultParameters.getpCrossover());
+        sb.append(df.format(memeticDefaultParameters.getpCrossover()));
     }
 
 }
