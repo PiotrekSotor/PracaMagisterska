@@ -1,7 +1,74 @@
 \chapter{Aplikacja - symulator}
 \label{ch:dodatekA-aplikacja}
 \section{Założenia projektowe aplikacji}
+
+\par
+Aplikacja powstała w trakcie pracy miała umożliwić przeprowadzenie badań porównawczych algorytmu memetycznego z innymi algorytmami ewolucyjnymi. Zamiast udostępnienia możliwości ręcznego określenia konfiguracji algorytmów zdecydowano się na wykorzystanie opracowanych w pracy scenariuszy doboru atrybutów. 
+
+\par
+Przyjęte założenia projektowe aplikacji można podzielić na dwie kategorie:
+\begin{itemize}
+\item funkcjonalne:
+\begin{itemize}
+\item przeprowadzenie badań porównawczych w oparciu o cztery przyjęte kryteria,
+\item selekcja parametrów algorytmu z wykorzystaniem zaproponowanych w pracy scenariuszy,
+\item definiowanie własny funkcji testowych:
+\begin{itemize}
+\item określanie parametrów funkcji, ich nazw i zakresu,
+\item generowanie szablonu kodu źródłowego,
+\item zapisanie kodu źródłowego funkcji w języku \emph{R},
+\end{itemize}
+\item generowanie wykresów funkcji dwóch parametrów,
+
+
+\end{itemize}
+\item niefunkcjonalne:
+\begin{itemize}
+\item wykorzystanie implementacji algorytmów z popularnych pakietów języka \emph{R}
+\item a
+\item a
+\end{itemize}
+\end{itemize}
+
 \section{Instrukcja instalacyjna}
+
+\par
+Praca w całości została oparta o implementacje mechanizmów optymalizacji problemów rzeczywistoliczbowych dostępne w pakietach \emph{GA} i \emph{PSO} dla języka \emph{R}. Z tego powodu niezbędne do działania aplikacji jest instalacja interpretera języka \emph{R} oraz odpowiednia konfiguracja środowiska. Powstała aplikacja graficzna napisana została w języku \emph{Java} i jako interfejs \emph{Java}$\Leftrightarrow$\emph{R} wykorzystuje bibliotekę \emph{JRI} po jednej stronie oraz pakiet \emph{rJava}.
+
+\par
+Proces przygotowania środowiska do działania można podzielić na następujące kroki:
+\begin{enumerate}
+\item pobranie i instalacja interpretera języka \emph{R},
+\item uruchomienie interpretera i pobranie pakietu \emph{rJava} poleceniem \lstinline{install.packages("rJava")},
+\item dodanie do zmiennej systemowej \lstinline{PATH} ścieżek do zaintalowanego interpretera oraz lokalizacji pakieru \emph{rJava}, dla systemów \emph{Windows} domyślnie:
+\begin{itemize}
+\item \lstinline{%HOMEPATH%\Documents\R\win-library\3.3\rJava\jri\x64}
+\item \lstinline{C:\Program Files\R\R-3.3.3\bin\x64}
+\end{itemize}
+\item uruchomienie aplikacji i wywołanie najprostrzej operacji, np. generowanie wykresu \emph{Schaffer nr 2},
+\item zatwierdzenie prośby o pobranie brakujących dodatkowych pakietów (wymaga połączenia z internetem)
+\end{enumerate}
+Po wykonaniu powyższej instrukcji można swobodnie korzystać z aplikacji. Jedynym obostrzeniem nałożonym na środowisko jest względne położenie pliku wykonywalnego aplikacji i dołączonego folderu zawierającego wykorzystywane skrypty w języku \emph{R}. 
+
+
+\begin{table}[ht]
+\caption{Poprawna wzajemna lokalizacja aplikacji i katalogu skryptów}
+\label{table:app01-lokalizacja}
+\begin{center}
+\begin{tabular}{|l|}
+	\hline
+	{\lstinline[]$.\run.jar$} \\
+	{\lstinline[]$.\javaEntryPoints\*.R$} \\
+	\hline
+	\end{tabular}
+
+\end{center}
+\end{table}
+
+
+
+
+
 \section{Opis interfejsu graficznego}
 
 \par
