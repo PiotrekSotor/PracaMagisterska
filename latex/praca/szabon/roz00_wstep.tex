@@ -1,30 +1,42 @@
 \addcontentsline{toc}{chapter}{Wstęp}
 \chapter*{Wstęp}
-
-\begin{itemize}
-\item o tym czym jest optymalizacja
-\item że wybrano problemy rzeczywistoliczbowe
-\item dlaczego jest wazna, gdzie sie stosuje, w inzynieri itp
-\item o tym, że metody analitycznie czasem sie nie sprawdzaja
-\item o tym, że nie zawsze znany jest dokladny model matematyczny
-\item że jest wiele metod optymalizacji operujących nie na analitycznych własnościach funkcji, ale na przeszukiwaniu zbioru możliwych rozwiązań
-\item że jest to problem dla którego nie ma skutecznej metody rozwiązania w czasie wielomianowym
-\item przegląd zupełny ma wykładniczą złożoność od liczby parametrów
-\item sposobem na zmniejszenie czasu znajdowania rozwiazania jest rezygnacja z pewności znalezienia optimum
-\item badany algorytm memetyczny jest algorytmem heurystycznym, ewolucyjnym, opartym o przetwarzanie zbioru osobników reprezentujących potencjalne rozwiązanie
-\item porównany został z dwoma innymi ewolucyjnymi algorytmami
-\item genetycznym, który jest uboższą wersja memetycznego
-\item pso, który symuluje zachowanie rzeczywistego roju cząstek
-\item algorytmy porównano przy pomocy 4 kryteriów z literatury
-\item jako funkcje testowe wykorzystano funkcje do tego stworzone, z pakietu globalopttest
-\item o sprawdzanych scenariuszach doboru parametrów algorytmów
-\item o porównaniu dwóch operatorów mutacji
-
-\end{itemize}
+%
+%\begin{itemize}
+%\item o tym czym jest optymalizacja
+%\item że wybrano problemy rzeczywistoliczbowe
+%\item dlaczego jest wazna, gdzie sie stosuje, w inzynieri itp
+%\item o tym, że metody analitycznie czasem sie nie sprawdzaja
+%\item o tym, że nie zawsze znany jest dokladny model matematyczny
+%\item że jest wiele metod optymalizacji operujących nie na analitycznych własnościach funkcji, ale na przeszukiwaniu zbioru możliwych rozwiązań
+%\item że jest to problem dla którego nie ma skutecznej metody rozwiązania w czasie wielomianowym
+%\item przegląd zupełny ma wykładniczą złożoność od liczby parametrów
+%\item sposobem na zmniejszenie czasu znajdowania rozwiazania jest rezygnacja z pewności znalezienia optimum
+%\item badany algorytm memetyczny jest algorytmem heurystycznym, ewolucyjnym, opartym o przetwarzanie zbioru osobników reprezentujących potencjalne rozwiązanie
+%\item porównany został z dwoma innymi ewolucyjnymi algorytmami
+%\item genetycznym, który jest uboższą wersja memetycznego
+%\item pso, który symuluje zachowanie rzeczywistego roju cząstek
+%\item algorytmy porównano przy pomocy 4 kryteriów z literatury
+%\item jako funkcje testowe wykorzystano funkcje do tego stworzone, z pakietu globalopttest
+%\item o sprawdzanych scenariuszach doboru parametrów algorytmów
+%\item o porównaniu dwóch operatorów mutacji
+%
+%\end{itemize}
 
 \par
 Problem optymalizacji różnych aspektów życia znany jest ludzkości od samego początku. Jednym z pierwszych problemów podlegających temu procesowi z pewnością był dobór miejsc zasiedlania na podstawie dostępu do zasobów i przystosowania do obronności. Stąd wiele obecnych miast sytuuje się w okolicach rzek lub bogactwa surowców. Wraz z rozwojem matematyki oraz wiedzy o świecie i działaniu różnych procesów optymalizowano coraz to bardziej złożone zagadnienia - wszystko to działo się w idei polepszenia warunków życia, przyspieszenia produkcji lub poprawy jakości produktów. Obecnie można wyszczególnić trzy ogólne kategorie optymalizowanych zagadnie - problemy permutacyjne, kombinatoryczne i liczbowe. 
 \par
 W tej pracy badania efektywności algorytmów memetycznych oparto o wykorzystanie ich w optymalizacji ostatniej z wymienionych grup problemów - liczbowy, a dokładnie - rzeczywistoliczbowych. Najprościej można opisać ją w następujący sposób: dana jest funkcja wielu zmiennych będąca matematycznym modelem rzeczywistego (lub bliskiego rzeczywistemu) procesu i konieczne jest znalezienie jej ekstremum globalnego. Problemy tego typu są często spotykane w praktycznych zastosowaniach inżynieryjnych i projektowych, które szerzej opisane zostały w dalszej części pracy. Na ogół heurystyki stosowane są w przypadkach, gdy złożoność funkcjo opisującej zagadnienie uniemożliwia lub znacznie utrudnia znalezienie ekstremum na drodze analizy jej postaci matematycznej lub takowa nie jest znana. 
 \par
-Gdy matematyka zawodzi z pomocą przychodzą metody znajdowania ekstremów opierające się nie na analizie przebiegu modelu matematycznego
+Gdy matematyka zawodzi z pomocą przychodzą metody znajdowania ekstremów opierające się nie na analizie przebiegu modelu matematycznego, a na sukcesywnym przeszukiwaniu przestrzeni możliwych rozwiązań. Problem stanowi jednak złożoność czasowa podejścia sprawdzającego wszystkie możliwe wartości zmiennych. \emph{Przegląd zupełny} dla tego typu zagadnień ma złożoność wykładniczą od liczby parametrów. Jak dotąd nie opracowano również żadnego algorytmu umożliwiającego znalezienie ekstremum w wielomianowym czasie. Problem optymalizacji rzeczywistoliczbowej zaliczany jest do problemów NP-trudnych.
+\par
+Jeśli pewność znalezienia wartości optymalnej ma mniejsze znaczenie niż czas procesu optymalizacji należy zwrócić uwagę na algorytmy heurystyczne pozwalające na znalezienie rozwiązań nie zawsze dokładnych, ale bardzo często wystarczająco dobrych. Badany w tej pracy algorytm memetyczny jest ewolucyjną heurystyką opartą na przetwarzaniu zbioru osobników reprezentujących rozwiązania z dziedziny problemu. 
+\par
+Badanie efektywności algorytmu oparto o cztery kryteria zaczerpnięte z literatury. Pozwalają one opisać różne aspekty działania, skuteczności i czasu potrzebnego na znalezienie satysfakcjonującego rozwiązania. Jako punkt odniesienia podczas analizy rezultatów uzyskanych przy wykorzystaniu wspomnianych miar przyjęto wyniki, jakie osiągają \emph{algorytmy genetyczne}, będący \emph{de facto} uboższą wersją mechanizmu memetycznego i \emph{PSO}, którego działanie opiera się o model symulacji zachowania roju cząstek. Zaznaczyć należy również fakt wykorzystania standardowych implementacji tych algorytmów w języku \emph{R} w pakietach \emph{GA} i \emph{PSO}.
+\par
+Optymalizacja problemów rzeczywistoliczbowych jest tematem często poruszanym w środowisku naukowym. Powstały na tę potrzebę zbiory funkcji jedno- i wielomodalnych, charakteryzujących się różną trudnością pod kątem znajdowania ekstremum. Badając efektywność algorytmów posłużono się funkcjami z jednego z takich pakietów dostępnych dla języka \emph{R} - \emph{globalOptTest}.
+\par
+Mając na celu porównanie ze sobą różnych algorytmów konieczne jest najpierw określenie ich konfiguracji. O ile w przypadku przyjętej implementacji algorytmu genetycznego i PSO należy ustalić wartości zaledwie trzech atrybutów, o tyle dla algorytmu memetycznego jest ich już sześć. Tak duża liczba parametrów znacznie wydłuża proces przeglądu wszystkich możliwych konfiguracji dlatego zaproponowano wykorzystanie w tym celu autorskich scenariuszy kolejności doboru wartości parametrów. Procedura doboru konfiguracji algorytmów zostanie przeprowadzona osobno dla każdej z wykorzystanych funkcji testowych poddanych optymalizacji. 
+\par
+Początkowo badania miały zostać oparte całkowicie o standardowe implementacje z wspomnianych pakietów, jednakże przegląd literatury wykazał powszechność stosowania innego operatora mutacji niż ten użyty przez autora pakietu \emph{GA}. Z tego powodu rozpatrzone zostały dwie wersje algorytmów memetycznych i genetyczny - z mutacją domyślną i gaussowską. 
+
+
