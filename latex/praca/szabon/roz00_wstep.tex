@@ -1,7 +1,30 @@
 \addcontentsline{toc}{chapter}{Wstęp}
 \chapter*{Wstęp}
 
+\begin{itemize}
+\item o tym czym jest optymalizacja
+\item że wybrano problemy rzeczywistoliczbowe
+\item dlaczego jest wazna, gdzie sie stosuje, w inzynieri itp
+\item o tym, że metody analitycznie czasem sie nie sprawdzaja
+\item o tym, że nie zawsze znany jest dokladny model matematyczny
+\item że jest wiele metod optymalizacji operujących nie na analitycznych własnościach funkcji, ale na przeszukiwaniu zbioru możliwych rozwiązań
+\item że jest to problem dla którego nie ma skutecznej metody rozwiązania w czasie wielomianowym
+\item przegląd zupełny ma wykładniczą złożoność od liczby parametrów
+\item sposobem na zmniejszenie czasu znajdowania rozwiazania jest rezygnacja z pewności znalezienia optimum
+\item badany algorytm memetyczny jest algorytmem heurystycznym, ewolucyjnym, opartym o przetwarzanie zbioru osobników reprezentujących potencjalne rozwiązanie
+\item porównany został z dwoma innymi ewolucyjnymi algorytmami
+\item genetycznym, który jest uboższą wersja memetycznego
+\item pso, który symuluje zachowanie rzeczywistego roju cząstek
+\item algorytmy porównano przy pomocy 4 kryteriów z literatury
+\item jako funkcje testowe wykorzystano funkcje do tego stworzone, z pakietu globalopttest
+\item o sprawdzanych scenariuszach doboru parametrów algorytmów
+\item o porównaniu dwóch operatorów mutacji
 
-%Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, luctus et interdum adipiscing wisi. Aliquam erat ac ipsum. Integer aliquam purus. Quisque lorem tortor fringilla sed, vestibulum id, eleifend justo vel bibendum sapien massa ac turpis faucibus orci luctus non, consectetuer lobortis quis, varius in, purus. Integer ultrices posuere cubilia Curae, Nulla ipsum dolor lacus, suscipit adipiscing. Cum sociis natoque penatibus et ultrices volutpat. Nullam wisi ultricies a, gravida vitae, dapibus risus ante sodales lectus blandit eu, tempor diam pede cursus vitae, ultricies eu, faucibus quis, porttitor eros cursus lectus, pellentesque eget, bibendum a, gravida ullamcorper quam. Nullam viverra consectetuer. Quisque cursus et, porttitor risus. Aliquam sem. In hendrerit nulla quam nunc, accumsan congue. Lorem ipsum primis in nibh vel risus. Sed vel lectus. Ut sagittis, ipsum dolor quam.
-%
-%Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, luctus et interdum adipiscing wisi. Aliquam erat ac ipsum. Integer aliquam purus. Quisque lorem tortor fringilla sed, vestibulum id, eleifend justo vel bibendum sapien massa ac turpis faucibus orci luctus non, consectetuer lobortis quis, varius in, purus. Integer ultrices posuere cubilia Curae, Nulla ipsum dolor lacus, suscipit adipiscing. Cum sociis natoque penatibus et ultrices volutpat. Nullam wisi ultricies a, gravida vitae, dapibus risus ante sodales lectus blandit eu, tempor diam pede cursus vitae, ultricies eu, faucibus quis, porttitor eros cursus lectus, pellentesque eget, bibendum a, gravida ullamcorper quam. Nullam viverra consectetuer. Quisque cursus et, porttitor risus. Aliquam sem. In hendrerit nulla quam nunc, accumsan congue. Lorem ipsum primis in nibh vel risus. Sed vel lectus. Ut sagittis, ipsum dolor quam.
+\end{itemize}
+
+\par
+Problem optymalizacji różnych aspektów życia znany jest ludzkości od samego początku. Jednym z pierwszych problemów podlegających temu procesowi z pewnością był dobór miejsc zasiedlania na podstawie dostępu do zasobów i przystosowania do obronności. Stąd wiele obecnych miast sytuuje się w okolicach rzek lub bogactwa surowców. Wraz z rozwojem matematyki oraz wiedzy o świecie i działaniu różnych procesów optymalizowano coraz to bardziej złożone zagadnienia - wszystko to działo się w idei polepszenia warunków życia, przyspieszenia produkcji lub poprawy jakości produktów. Obecnie można wyszczególnić trzy ogólne kategorie optymalizowanych zagadnie - problemy permutacyjne, kombinatoryczne i liczbowe. 
+\par
+W tej pracy badania efektywności algorytmów memetycznych oparto o wykorzystanie ich w optymalizacji ostatniej z wymienionych grup problemów - liczbowy, a dokładnie - rzeczywistoliczbowych. Najprościej można opisać ją w następujący sposób: dana jest funkcja wielu zmiennych będąca matematycznym modelem rzeczywistego (lub bliskiego rzeczywistemu) procesu i konieczne jest znalezienie jej ekstremum globalnego. Problemy tego typu są często spotykane w praktycznych zastosowaniach inżynieryjnych i projektowych, które szerzej opisane zostały w dalszej części pracy. Na ogół heurystyki stosowane są w przypadkach, gdy złożoność funkcjo opisującej zagadnienie uniemożliwia lub znacznie utrudnia znalezienie ekstremum na drodze analizy jej postaci matematycznej lub takowa nie jest znana. 
+\par
+Gdy matematyka zawodzi z pomocą przychodzą metody znajdowania ekstremów opierające się nie na analizie przebiegu modelu matematycznego

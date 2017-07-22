@@ -12,28 +12,25 @@ Przyjęte założenia projektowe aplikacji można podzielić na dwie kategorie:
 \begin{itemize}
 \item przeprowadzenie badań porównawczych w oparciu o cztery przyjęte kryteria,
 \item selekcja parametrów algorytmu z wykorzystaniem zaproponowanych w pracy scenariuszy,
-\item definiowanie własny funkcji testowych:
+\item definiowanie własnych funkcji testowych:
 \begin{itemize}
-\item określanie parametrów funkcji, ich nazw i zakresu,
+\item określanie parametrów funkcji, ich nazw i zakresu wartości,
 \item generowanie szablonu kodu źródłowego,
 \item zapisanie kodu źródłowego funkcji w języku \emph{R},
 \end{itemize}
 \item generowanie wykresów funkcji dwóch parametrów,
-
-
 \end{itemize}
 \item niefunkcjonalne:
 \begin{itemize}
 \item wykorzystanie implementacji algorytmów z popularnych pakietów języka \emph{R}
-\item a
-\item a
+\item umożliwienie modyfikacji wykorzystanych w badaniach skryptów poprzez dostęp do nich.
 \end{itemize}
 \end{itemize}
 
 \section{Instrukcja instalacyjna}
 
 \par
-Praca w całości została oparta o implementacje mechanizmów optymalizacji problemów rzeczywistoliczbowych dostępne w pakietach \emph{GA} i \emph{PSO} dla języka \emph{R}. Z tego powodu niezbędne do działania aplikacji jest instalacja interpretera języka \emph{R} oraz odpowiednia konfiguracja środowiska. Powstała aplikacja graficzna napisana została w języku \emph{Java} i jako interfejs \emph{Java}$\Leftrightarrow$\emph{R} wykorzystuje bibliotekę \emph{JRI} po jednej stronie oraz pakiet \emph{rJava}.
+Praca w całości została oparta o implementacje mechanizmów optymalizacji problemów rzeczywistoliczbowych dostępne w pakietach \emph{GA} i \emph{PSO} dla języka \emph{R}. Z tego powodu niezbędne do działania aplikacji jest instalacja interpretera języka \emph{R} oraz odpowiednia konfiguracja środowiska. Powstała aplikacja graficzna napisana została w języku \emph{Java} i jako interfejs \emph{Java}$Leftrightarrow$\emph{R} wykorzystuje bibliotekę \emph{JRI} po jednej stronie oraz pakiet \emph{rJava}.
 
 \par
 Proces przygotowania środowiska do działania można podzielić na następujące kroki:
@@ -61,7 +58,6 @@ Po wykonaniu powyższej instrukcji można swobodnie korzystać z aplikacji. Jedy
 	{\lstinline[]$.\javaEntryPoints\*.R$} \\
 	\hline
 	\end{tabular}
-
 \end{center}
 \end{table}
 
@@ -76,7 +72,7 @@ Wygląd aplikacji przedstawiono na rysunku \ref{fig:app01-fullScreen}. Interfejs
 
 \par
 Sekcja \emph{A} pozwala na zdefiniowanie i wywołanie operacji. Możliwe jest uruchomienie zarówno procesu selekcji parametrów algorytmów jak i badań pod kątem jednego z kryteriów porównawczych użytych w pracy. Możliwy jest wybór spośród trzech funkcji testowych lub zdefiniowanej przez użytkownika - opcja \emph{(code)}. Lista z prawe strony panelu umożliwia na określenie, które z scenariuszy doboru parametrów powinny zostać użyte do selekcji. Możliwością dostępną jedynie w przypadku wykorzystania funkcji \emph{Schaffer nr 2} lub własnej funkcji z dwoma parametrami jest wygenerowanie jej wykresu w dziedzinie równej zakresowi poszczególnych atrybutów. 
-
+ 
 \par
 Panel oznaczony jako \emph{B} przedstawia bieżące konfiguracje algorytmów, które zostaną wykorzystane w przypadku uruchomienia badań porównawczych. Przy starcie aplikacji parametry wszystkich mechanizmów ustawiane są na te uzyskane w trakcie badań dla funkcji \emph{Schaffer nr 2}.
 
