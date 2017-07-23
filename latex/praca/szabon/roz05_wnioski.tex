@@ -1,6 +1,6 @@
 \newpage
 \chapter{Wnioski i podsumowanie}
-\begin{itemize}
+%\begin{itemize}
 %\item Analiza porównawcza:
 %\begin{itemize}
 %\item dla kryt nr 1 - algorytm memetyczny i genetyczny uzyskał bardzo podobne rozwiązania, ale memetyczny znacznie szybciej
@@ -17,22 +17,23 @@
 %
 %\item
 %\end{itemize} 
-\item Dobór parametrów:
-\begin{itemize}
-\item dla funkcji trudnooptymalizowanych najlepsze konfiguracje uzyskano scenariuszami dobierającymi trójkami
-\item nieznacznie gorsze okazał sie scenariusz [3-6, 1-2, 4-5]
-\item dobieranie dwójkami jest znacznie szybsze
-\item mutGauss uzyskuje lepsze rezultaty, ale proces selekcji jest wolniejszy
-\end{itemize}
-\item powstała aplikacja umożliwia powtórzenie i przeprowadzenie kolejnych badan
-\end{itemize}
+%\item Dobór parametrów:
+%\begin{itemize}
+%\item dla funkcji trudnooptymalizowanych najlepsze konfiguracje uzyskano scenariuszami dobierającymi trójkami
+%\item nieznacznie gorsze okazał sie scenariusz [3-6, 1-2, 4-5]
+%\item dobieranie dwójkami jest znacznie szybsze
+%\item mutGauss uzyskuje lepsze rezultaty, ale proces selekcji jest wolniejszy
+%\end{itemize}
+%\item powstała aplikacja umożliwia powtórzenie i przeprowadzenie kolejnych badan
+%\item
+%\end{itemize}
 
 \par
-Analizując wyniki uzyskane w trakcie badań porównawczych można dojść do wniosku, że algorytm memetyczny stanowi znacznie lepszą metodę rozwiązywania rzeczywistoliczbowych problemów optymalizacyjnych. Prawie dla każdego z wykorzystanych kryteriów uzyskał znacznie lepsze rezultaty niż pozostałe algorytmy wykorzystane do porównania. Ostateczne podsumowanie rezultatów uzyskanych dla użytych kryteriów rozpatrując głównie różnice pomiędzy wykorzystywanymi algorytmami przedstawia się następująco:
+Analizując wyniki uzyskane w trakcie badań porównawczych można dojść do wniosku, że algorytm memetyczny stanowi znacznie lepszą metodę rozwiązywania rzeczywistoliczbowych problemów optymalizacyjnych. Prawie dla każdego z wykorzystanych kryteriów uzyskał znacznie lepsze rezultaty niż pozostałe algorytmy użyte dla porównania. Ostateczne podsumowanie wyników uzyskanych dla użytych kryteriów rozpatrując głównie różnice pomiędzy wykorzystywanymi algorytmami przedstawia się następująco:
 \begin{itemize}
 \item kryterium nr 1 wykazało, że zarówno algorytm memetyczny jak i genetyczny uzyskuje bardzo podobne, bliskie optimum rozwiązania, ale memetyczny dokonuje tego szybciej, 
 \item kryterium nr 2 wykazało, że algorytm memetyczny wykorzystujący mutację \emph{mutGauss} najszybciej osiągnął kolejne progi jakości rozwiązania, 
-\item kryterium nr 3 wykazało przewagę w powtarzalności uzyskiwania rezultatów bliskich optimum nad algorytmem genetycznym i \emph{PSO},
+\item kryterium nr 3 wykazało przewagę w powtarzalności uzyskiwania rezultatów bliskich optimum algorytmu memetycznego nad genetycznym i \emph{PSO},
 \item kryterium nr 4 nie wykazało większej zależności pomiędzy użytym algorytmem, a różnicą pomiędzy najlepszym i średnim rozwiązaniem w populacji - wpływ na ten aspekt ma wykorzystany operator mutacji.
 \end{itemize}
 
@@ -40,13 +41,13 @@ Analizując wyniki uzyskane w trakcie badań porównawczych można dojść do wn
 Przeprowadzenie badań z wykorzystaniem dwóch wersji operatora mutacji pozwoliło na przeprowadzenie analizy różnicy w ich skuteczności. W ogólnym rozrachunku lepsze rezultaty uzyskano z wykorzystaniem \emph{mutGauss}. Kosztem uzyskania wyższych wyników przy wykorzystaniu tego operatora jest jednak dłuższy czas działania pojedynczej iteracji algorytmu. Może to być jednakże konsekwencja nieoptymalnej własnej implementacji spowodowanej niewystarczającą biegłością autora pracy w posługiwaniu się językiem \emph{R}. Zebranie wniosków dotyczących porównania dwóch wykorzystanych operatorów mutacji można opisano poniżej:
 \begin{itemize}
 \item kryterium nr 1 wskazało na to, że użycie \emph{mutGauss} przyspiesza stagnację populacji algorytmu memetycznego, ale opóźnia w przypadku algorytmu genetycznego,
-\item kryterium nr 2 wykazało zdecydowaną przewagę operatora \emph{mutGauss} nad \emph{mutDefault} jeśli chodzi o szybkość osiągania poszczególnych progów jakości rozwiązania
-\item kryterium nr 3 wskazało na to, że mutacja gaussowska umożliwie z większą powtarzalnością uzyskanie rozwiązania bliskiego optimum,
+\item kryterium nr 2 wykazało zdecydowaną przewagę operatora \emph{mutGauss} nad \emph{mutDefault} jeśli chodzi o szybkość osiągania poszczególnych progów jakości rozwiązania,
+\item kryterium nr 3 wskazało na to, że mutacja gaussowska umożliwia z większą powtarzalnością uzyskanie rozwiązania bliskiego optimum,
 \item kryterium nr 4 wykazało, że zastosowanie domyślnego operatora mutacji znacznie zwiększa różnorodność genetyczna populacji, czego oznaką jest większa różnica pomiędzy najlepszym i średnim rozwiązaniem populacji.
 \end{itemize}
 
 \par
-Pełne podsumowanie badań porównawczych przedstawiono w tabeli \ref{table:wnioski_zestawienie_wynikow}. Znakiem $+$ oznaczono tam, który z algorytmów i operatorów uzyskał najlepsze rezultaty dla danego kryterium i funkcji testowej. Oznaczenie dwóch algorytmów lub mechanizmów mutacji dla jednego kryterium jest konsekwencją uzyskania tych samych wyników przez więcej niż jedną badaną konfigurację. Ostatni wiersz tabeli przedstawiający sumę \emph{zwycięstw} poszczególnych opcji ostatecznie potwierdza przewagę algorytmu memetycznego nad pozostałymi wykorzystanymi w analizie porównawczej. Niewielka różnica w wynikach dla operatorów mutacji spowodowana jest faktem, że dla wielu kryteriów wyniki uzyskane obydwoma były takie same, przypadki zwycięstwa \emph{mutDefault} uzyskane zostały przy niewielkiej różnicy względem \emph{mutGauss}, zaś każda z sytuacji dominacji gaussowskiego mechanizmu mutowania osobników odznaczała się zdecydowaną przewagą nad domyślnym algorytmem pakietu \emph{GA}.
+Pełne podsumowanie badań porównawczych przedstawiono w tabeli \ref{table:wnioski_zestawienie_wynikow}. Znakiem ''$+$'' oznaczono tam, który z algorytmów i operatorów uzyskał najlepsze rezultaty dla danego kryterium i funkcji testowej. Oznaczenie dwóch algorytmów lub mechanizmów mutacji dla jednego kryterium jest konsekwencją uzyskania tych samych wyników przez więcej niż jedną badaną konfigurację. Ostatni wiersz tabeli przedstawiający sumę \emph{zwycięstw} poszczególnych opcji ostatecznie potwierdza przewagę algorytmu memetycznego nad pozostałymi wykorzystanymi w analizie porównawczej. Niewielka różnica w wynikach dla operatorów mutacji spowodowana jest faktem, że dla wielu kryteriów wyniki uzyskane obydwoma były takie same, przypadki zwycięstwa \emph{mutDefault} uzyskane zostały przy niewielkiej różnicy względem \emph{mutGauss}, zaś każda z sytuacji dominacji gaussowskiego mechanizmu mutowania osobników odznaczała się zdecydowaną przewagą nad domyślnym algorytmem pakietu \emph{GA}.
  
 
 \newcolumntype{?}{@{\hskip\tabcolsep\vrule width 1pt\hskip\tabcolsep}}
@@ -97,5 +98,15 @@ Pełne podsumowanie badań porównawczych przedstawiono w tabeli \ref{table:wnio
 \end{tabularwithnotes}
 \end{center}
 \end{table}
+
+\par
+Przy okazji pracy nad analizą efektywności algorytmów memetycznych sprawdzono autorską koncepcję sposobu doboru jego konfiguracji. Zaproponowano i przetestowano przy wykorzystaniu funkcji testowych scenariusze cechujące się znacznie krótszym czasem wykonania niż tradycyjne podejście sprawdzające wszystkie możliwe kombinacje wartości atrybutów. Uzyskane w ten sposób parametry algorytmów wystarczały, by wykazać zdecydowaną przewagę \emph{algorytmu genetycznego} i \emph{PSO} nawet pomimo faktu, że konfiguracje obu z nich dobierane były poprzez pełny przegląd wszystkich kombinacji. Analiza wyników procesu selekcji parametrów na płaszczyźnie wykorzystanego operatora mutacji potwierdza już przytoczoną obserwację dotyczącą negatywnego wpływu stosowania \emph{mutGauss} na czas wykonania algorytmu.
+\par
+Tworząc koncepcję scenariuszy doboru parametrów zdecydowano się na sprawdzenie dwóch podejść - selekcji dwóch lub trzech parametrów jednocześnie. Pierwszy z wariantów cechuje się bardzo niskim czasem wykonania, a jakość w ten sposób uzyskanych konfiguracji jest tylko w nieznacznym stopniu gorsza od drugiego podejścia. W przypadku funkcji łatwiejszych z punktu widzenia optymalizacji szybkie scenariusze selekcji parami okazują się być wystarczające, czego dowodem jest wybór scenariusza $[4-5,\;3-6,\;1-2]$ w przypadku funkcji \emph{ZeldaSine10}.
+\par
+Aplikacja powstała w trakcie pracy nad analizą efektywności algorytmów memetycznych umożliwia powtórzenie wszystkich przeprowadzonych badań dla innych, definiowanych przez użytkownika rzeczywistoliczbowych problemów optymalizacyjnych. Dodatkowo, poprzez modyfikację skryptów przez nią wykorzystywanych można manipulować procesem zarówno selekcji parametrów algorytmów, jak i szczegółami związanymi z kryteriami porównawczymi (np. zmiana dokładności pomiaru lub maksymalnego czasu wykonania dla \emph{kryterium nr 2}). 
+\par
+W trakcie pracy zrealizowano wszystkie założone cele. Wykazano, że algorytm memetyczny dostępny w ramach pakietu \emph{GA} dla języka \emph{R} stanowi bardziej efektywny mechanizm rozwiązywania rzeczywistoliczbowych problemów optymalizacyjnych niż pozostałe badane mechanizmy. Zaczerpnięty z literatury operator mutacji gaussowskiej okazał się znacznie lepszą metodą niż domyślnie wykorzystana przez autora pakietu. Zaproponowane podejście określania konfiguracji pracy algorytmu memetycznego można uznać za skuteczne, szczególnie jeśli ważniejszym aspektem jest czas doboru parametrów niż uzyskanie optymalnej jakości działania.
+
 
 
