@@ -278,7 +278,7 @@ W przypadku funkcji \emph{Paviani} tylko algorytm memetyczny zdołał osiągną�
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \par
-W pzypadku \emph{ZeldaSine10}, w przeciwieństwie do pozostałych funkcji testowych, algorytm memetyczny z operatorem \emph{mutGauss} uzyskał gorsze rozwiązania od wersji z \emph{mutDefault}, ale i również od obu wariantów genetycznego. Podobnie jak dla \emph{Schaffer nr 2} i \emph{Paviani} \emph{mutGauss} opóźnił stagnację optymalizacji algorytmem memetycznym, i przyspieszył w genetycznym. Na wykresie \ref{fig:kryt1_Zeldasine} przedstawiono rezultaty wskazujące na około piętnastokrotną różnicę w szybkości osiągania stagnacji optymalizacji pomiędzy memetyczną i genetyczną metoda rozwiązywania problemów optymalizacyjnych. 
+Dla \emph{ZeldaSine10}, w przeciwieństwie do pozostałych funkcji testowych, algorytm memetyczny z operatorem \emph{mutGauss} uzyskał gorsze rozwiązania od wersji z \emph{mutDefault}, ale i również od obu wariantów genetycznego. Podobnie jak dla \emph{Schaffer nr 2} i \emph{Paviani} \emph{mutGauss} opóźnił stagnację optymalizacji algorytmem memetycznym, i przyspieszył w genetycznym. Na wykresie \ref{fig:kryt1_Zeldasine} przedstawiono rezultaty wskazujące na około piętnastokrotną różnicę w szybkości osiągania stagnacji optymalizacji pomiędzy memetyczną i genetyczną metoda rozwiązywania problemów optymalizacyjnych. 
 
 \begin{figure}[ht] 
 \begin{subfigure}{.5\textwidth}
@@ -298,7 +298,7 @@ W pzypadku \emph{ZeldaSine10}, w przeciwieństwie do pozostałych funkcji testow
 \FloatBarrier
 
 \par
-Końcowym wnioskiem podsumowującym porównanie algorytmów według \emph{kryterium nr 1} jest niepodważalna przewaga algorytmu memetycznego jeśli chodzi o liczbę koniecznych iteracji do uzyskania rozwiązania optymalnego lub mu bliskiego. W większości przypadków operator \emph{mutGauss} okazuje się uzyskiwać lepsze rezultaty niż \emph{mutDefault}, jednakże różnie wpływa na szybkość stagnacji procesu optymalizacji. Jak wspomniano już wyżej algorytm \emph{PSO} kończył optymalizację w nieznacznie większej iteracji niż memetyzny, jednakże uzyskiwał najgorsze rozwiązania.
+Końcowym wnioskiem podsumowującym porównanie algorytmów według \emph{kryterium nr 1} jest niepodważalna przewaga algorytmu memetycznego jeśli chodzi o liczbę koniecznych iteracji do uzyskania rozwiązania optymalnego lub mu bliskiego. W większości przypadków operator \emph{mutGauss} okazuje się uzyskiwać lepsze rezultaty niż \emph{mutDefault}, jednakże różnie wpływa na szybkość stagnacji procesu optymalizacji. Jak wspomniano wyżej algorytm \emph{PSO} kończył optymalizację w nieznacznie większej iteracji niż memetyczny, jednakże uzyskiwał najgorsze rozwiązania.
 
 
 \subsection{Kryterium nr 2 - szybkość osiągania rozwiązania}
@@ -446,7 +446,7 @@ Rezultaty dla tego kryterium dla funkcji \emph{Paviani} przedstawiono na wykresi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \par
-W przypadku ostatniej z testowych funkcji bardzo wysoką skuteczność uzyskał algorytm memetyczny w obu wersjach. Wykorzystując \emph{mutGauss} jedynie w dwóch z trzydziestu prób nie uzyskano rozwiązania bliskiego opitmum. Algorytm genetyczny uzyskiwał kolejne poziomy dokładności znacznie rzadziej. Dla tego mechanizmu widoczna jest znaczna przewaga \emph{mutGauss} nad \emph{mutDefault}. Podobnie jak w przypadku \emph{krytetium nr 2} \emph{PSO} nie uzyskał w żadnej z prób rozwiązania wystarczająco bliskiego by zaliczać się choćby do najniższej badanej dokładności. Dokładne wyniki dla \emph{ZeldaSine10} przedstawiono na wykresie \ref{fig:kryt3_Zeldasine}.
+W przypadku ostatniej z testowych funkcji bardzo wysoką skuteczność uzyskał algorytm memetyczny w obu wersjach. Wykorzystując \emph{mutGauss} jedynie w dwóch z trzydziestu prób nie uzyskano rozwiązania bliskiego optimum. Algorytm genetyczny uzyskiwał kolejne poziomy dokładności znacznie rzadziej. Dla tego mechanizmu widoczna jest znaczna przewaga \emph{mutGauss} nad \emph{mutDefault}. Podobnie jak w przypadku \emph{krytetium nr 2} \emph{PSO} nie uzyskał w żadnej z prób rozwiązania wystarczająco bliskiego by zaliczać się choćby do najniższej badanej dokładności. Dokładne wyniki dla \emph{ZeldaSine10} przedstawiono na wykresie \ref{fig:kryt3_Zeldasine}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[hbt] 
@@ -507,4 +507,4 @@ Wyniki badań \emph{kryterium nr 4} dla ostatniej funkcji testowej przedstawiono
 \FloatBarrier
 
 \par
-Podsumowując wyniki uzyskane w badaniach dla tego kryterium największy wpływ na różnorodność populacji ma zastosowany operator mutacji. Jest to konsekwencją logiki ich działania - \emph{mutDefault} losuje nową wartość atrybutu z pełnego zakresu jego dziedziny, zaś mutacja gaussowska znajduje nową wartość w najbliższym otoczeniu dotychczasowej wartości. Algorytm \emph{PSO} osiąga niższą różnicę między najlepszym i średnim rozwiązaniem, jednakże należy zaznaczyć, że dla funkcji \emph{Paviani} i \emph{ZeldaSine10} mechanizm ten nie jest w stanie znaleźć rozwiązania bliskiemu optymalnego. 
+Podsumowując wyniki uzyskane w badaniach dla tego kryterium największy wpływ na różnorodność populacji ma zastosowany operator mutacji. Jest to konsekwencją logiki jego działania - \emph{mutDefault} losuje nową wartość atrybutu z pełnego zakresu jego dziedziny, zaś mutacja gaussowska znajduje nową wartość w najbliższym otoczeniu dotychczasowej wartości. Algorytm \emph{PSO} osiąga niższą różnicę między najlepszym i średnim rozwiązaniem, jednakże należy zaznaczyć, że dla funkcji \emph{Paviani} i \emph{ZeldaSine10} mechanizm ten nie jest w stanie znaleźć rozwiązania bliskiemu optymalnego. 

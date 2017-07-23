@@ -22,6 +22,32 @@
 \usepackage{afterpage}
 \usepackage{placeins}
 \usepackage{color,calc}
+\usepackage{tablefootnote}
+
+\usepackage{makecell}
+\usepackage{array}
+
+\usepackage{booktabs}
+\makeatletter
+\newsavebox{\@tabnotebox}
+\providecommand\tmark{} % so having ctable or not is irrelevant
+\providecommand\tnote{}
+\newenvironment{tabularwithnotes}[3][c]
+  {\long\def\@tabnotes{#3}%
+   \renewcommand\tmark[1][a]{\makebox[0pt][l]{\textsuperscript{\itshape##1}}}%
+   \renewcommand\tnote[2][a]{\textsuperscript{\itshape##1}\,##2\par}
+   \begin{lrbox}{\@tabnotebox}
+   \begin{tabular}{#2}}
+  {\end{tabular}\end{lrbox}%
+   \parbox{\wd\@tabnotebox}{
+     \usebox{\@tabnotebox}\par
+     \smallskip\@tabnotes
+   }%
+  }
+\makeatother
+
+
+
 %\usepackage{soul} % pakiet z komendami do podkreślania tekstu
 
 \usepackage{ebgaramond} % pakiet z czcionkami garamond, potrzebny tylko do strony tytułowej, musi wystąpić przed pakietem tgtermes
