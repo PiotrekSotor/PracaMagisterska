@@ -15,7 +15,7 @@ Cechą specyficzną dla przyjętej implementacji algorytmu jest mutowanie i krzy
 \par
 Proces krzyżowania osobników inicjowany jest przez losowanie ze zwracaniem z populacji par osobników mogących stać się przyszłymi rodzicami potomstwa. Szansa, że tak utworzona para przejdzie przez operację krzyżowania nazywana jest prawdopodobieństwem krosowania. 
 \par
-Analogicznie do wyżej opisanego operatora rozwiązana jest kwestia wyboru osobników do procesu mutacji. Każda z jednostek populacji ma równą szansę równą wartości parametru prawdopodobieństwa mutacji. Warto jednak zauważyć, że ów parametr określa częstość mutacji całego osobnika, a nie pojedynczego atrybutu. W takiej sytuacji wraz ze wzrostem wymiarowości rozwiązywanego problemu - zwiększeniem liczby atrybutów jednostek populacji - może maleć skuteczność operatora tak zdefiniowanego jak w kodzie źródłowym \ref{lst:gen_mutation_operator}. Takie, a nie inne podejście autora implementacji pakietu \emph{GA} można tłumaczyć chęcią obniżenia złożoności obliczeniowej algorytmu. Jednakże nic nie stoi na przeszkodzie, by w przypadkach, w których gęstość mutacji ma duże znaczenie dla jakości rezultatu wykorzystać własny operator mutacji połączony z \emph{prawdopodobieństwem mutacji} równym $1$.
+Analogicznie do wyżej opisanego operatora rozwiązana jest kwestia wyboru osobników do procesu mutacji. Każda z jednostek populacji ma szansę równą wartości parametru prawdopodobieństwa mutacji. Należy zauważyć, że analizowany w pracy parametr określa częstość mutacji całego osobnika, a nie pojedynczego atrybutu. W takiej sytuacji, wraz ze wzrostem wymiarowości rozwiązywanego problemu - zwiększeniem liczby atrybutów jednostek populacji - może maleć skuteczność operatora zdefiniowanego jak w kodzie źródłowym \ref{lst:gen_mutation_operator}. Takie, a nie inne podejście autora implementacji pakietu \emph{GA} można tłumaczyć chęcią obniżenia złożoności obliczeniowej algorytmu. Jednakże nic nie stoi na przeszkodzie, by w przypadkach, w których częstość mutacji ma duże znaczenie dla jakości rezultatu wykorzystać własny operator mutacji połączony z \emph{prawdopodobieństwem mutacji} równym $1$.
 
 
 %\subsection{Operator mutacji}
@@ -49,7 +49,7 @@ Przykład działania przedstawionego w kodzie źródłowym \ref{lst:gen_mutation
 \end{enumerate}
 
 \par
-Drugi operator mutacji - \emph{mutGauss} - w odróżnieniu do powyżej przedstawionego algorytmu dokonuje zmiany wartości parametrów nie w oparciu o losowanie z rozkładu jednorodnego z zakresu dziedziny atrybutu, a posługując się rozkładem normalnym o odchyleniu standardowym równym $\sigma=\frac{max - min}{50}$. Kod źródłowy implementujący ten operator przedstawiono w kodzie źródłowym \ref{lst:gen_mutation_operator_gauss}.
+Drugi operator mutacji - \emph{mutGauss} - dokonuje zmiany wartości parametrów nie w oparciu o losowanie z rozkładu jednorodnego z zakresu dziedziny atrybutu, a posługując się rozkładem normalnym o odchyleniu standardowym równym $\sigma=\frac{max - min}{50}$. Kod źródłowy implementujący ten operator przedstawiono w kodzie źródłowym \ref{lst:gen_mutation_operator_gauss}.
 \begin{lstlisting}[caption=Operator mutacji zmieniający wartości zgodnie z rozkładem normalnym, label=lst:gen_mutation_operator_gauss, mathescape, breaklines=true, language=R]
 gareal_gaussMutation <- function(object, parent, ...)
 {
@@ -65,7 +65,7 @@ gareal_gaussMutation <- function(object, parent, ...)
 }
 \end{lstlisting}
 \par
-Oba operatory mutacji różnią się jedynie wykorzystanym mechanizmem losowania nowej wartości atrybutu dlatego przykład działania \emph{mutDefault} jest również poprawny w przypadku \emph{mutGauss} z dokładnością do możliwej wartości wylosowanej w kroku nr 2. Implementacja  drugiego operatora jest nieznacznie bardziej złożona z uwagi na konieczność zapewnienia zgodności nowej wartości z dziedziną atrybutów.
+Oba operatory mutacji różnią się jedynie wykorzystanym mechanizmem losowania nowej wartości atrybutu dlatego przykład działania \emph{mutDefault} jest również poprawny w przypadku \emph{mutGauss} z dokładnością do możliwej wartości wylosowanej w kroku nr 3. Implementacja  drugiego operatora jest nieznacznie bardziej złożona z uwagi na konieczność zapewnienia zgodności nowej wartości z dziedziną atrybutów.
 
 %\subsection{Operator krzyżowania}
 %\begin{itemize}
@@ -74,7 +74,7 @@ Oba operatory mutacji różnią się jedynie wykorzystanym mechanizmem losowania
 %\item przykład na konkretnych osobnikach
 %\end{itemize}
 \par
-Podobnie jak w przypadku operatora mutacji zdecydowano się na wykorzystanie domyślnej implementacji operatora \textbf{krzyżowania}. Metoda wykorzystana przez autora pakietu \emph{GA}~\cite{gaPackage} polega na wylosowaniu z przedziału $[0\quad1]$ współczynników dla każdego z atrybutów z~osobna. Otrzymane w ten sposób wartości określają procentowy wkład jednego z rodziców w wartość poszczególnych atrybutów potomstwa. Wkład drugiego z rodziców stanowi dopełnienie wylosowanej wartości do $1$. Drugi z generowanych potomków obliczany jest analogicznie z zamianą pozycji rodziców. 
+Podobnie jak w przypadku operatora mutacji, zdecydowano się na wykorzystanie domyślnej implementacji operatora \textbf{krzyżowania}. Metoda wykorzystana przez autora pakietu \emph{GA}~\cite{gaPackage} polega na wylosowaniu z przedziału $[0\quad1]$ współczynników dla każdego z atrybutów z~osobna. Otrzymane w ten sposób wartości określają procentowy wkład jednego z rodziców w wartość poszczególnych atrybutów potomstwa. Wkład drugiego z rodziców stanowi dopełnienie wylosowanej wartości do $1$. Drugi z generowanych potomków obliczany jest analogicznie z zamianą pozycji rodziców. 
 
 \begin{lstlisting}[caption=Zastosowany operator krzyżowania z pakietu \emph{GA} dla języka \emph{R}, label=lst:gen_crossover_operator, mathescape, breaklines=true, language=R]
 gareal_laCrossover <- function(object, parents, ...)
@@ -89,7 +89,7 @@ gareal_laCrossover <- function(object, parents, ...)
   return(out)
 }
 \end{lstlisting}
-Analogicznie do omawianego operatora mutacji proces wytwarzania osobników potomnych poprzez krzyżowanie rodziców zostanie dodatkowo przedstawiony na przykładzie. Niech na wejściu algorytmu znajdą się rozwiązania $Parent_1 = \lbrace1.0, 2.0, 3.0\rbrace$ i $Parent_2 = \lbrace-2.0, 0.0, 4.0\rbrace$. Poniżej opisane kroki przedstawiają działanie algorytmu, którego implementację przedstawiono w kodzie źródłowym \ref{lst:gen_crossover_operator}:
+Analogicznie do omawianego operatora mutacji proces generowania osobników potomnych poprzez krzyżowanie rodziców zostanie przedstawiony na przykładzie. Niech na wejściu algorytmu znajdą się rozwiązania $Parent_1 = \lbrace1.0, 2.0, 3.0\rbrace$ i $Parent_2 = \lbrace-2.0, 0.0, 4.0\rbrace$. Poniżej opisane kroki przedstawiają działanie algorytmu, którego implementację przedstawiono w kodzie źródłowym \ref{lst:gen_crossover_operator}:
 \begin{enumerate}
 \item Wylosuj współczynniki wkładu rodziców $A$
 \item $A=\lbrace0.2, 0.75, 0.3\rbrace$
@@ -114,15 +114,15 @@ Analogicznie do omawianego operatora mutacji proces wytwarzania osobników potom
 %\item CG - conjugate gradients opisany w \cite{Nash90a}
 %\end{itemize}
 \par
-Heurystyczne algorytmy przeszukiwania lokalnego stanowią osobną grupę algorytmów realizujących problem optymalizacji rozwiązania. Opierają swoje działanie na doskonaleniu jednej instancji rozwiązania, zamiast wielu równolegle, jak ma to miejsce w przypadku algorytmów ewolucyjnych. Podobnie jak w przypadku operatorów genetycznych wykorzystano już istniejące implementacje i na nich oparto badania. Algorytm genetyczny dostarczony w ramach pakietu \emph{GA} \cite{gaPackage} jest rozszerzany o cechy memetyczne wykorzystując metody optymalizacji zawarte w pakiecie \emph{stats}, a konkretnie różne warianty funkcji \emph{optim} \cite{statsPackage}. Każda z poniżej opisanych możliwych funkcji lokalnego przeszukiwania posiada specyficzny zestaw parametrów pozwalający na adaptację działania pod kątem optymalizacji konkretnego problemu, jednakże dla uproszczenia analizy wszystkie testy będą przyjmować domyślne wartości tych parametrów. Jednym z celów realizowanych celów pracy jest porównanie skuteczności narzędzi przygotowanych przez autorów pakietów języka \emph{R}.
+Heurystyczne algorytmy przeszukiwania lokalnego stanowią osobną grupę algorytmów realizujących problem optymalizacji rozwiązania. Opierają swoje działanie na doskonaleniu jednej instancji rozwiązania, zamiast wielu równolegle, jak ma to miejsce w przypadku algorytmów ewolucyjnych. Podobnie, jak w przypadku operatorów genetycznych wykorzystano już istniejące implementacje i na nich oparto badania. Algorytm genetyczny dostarczony w ramach pakietu \emph{GA} \cite{gaPackage} jest rozszerzany o cechy memetyczne wykorzystując metody optymalizacji zawarte w pakiecie \emph{stats}, a konkretnie różne warianty funkcji \emph{optim} \cite{statsPackage}. Każda z poniżej opisanych możliwych funkcji lokalnego przeszukiwania posiada specyficzny zestaw parametrów pozwalający na adaptację działania pod kątem optymalizacji konkretnego problemu, jednakże dla uproszczenia analizy wszystkie testy będą przyjmować domyślne wartości tych parametrów. Jednym z realizowanych celów pracy jest porównanie skuteczności narzędzi przygotowanych przez autorów pakietów języka \emph{R}.
 \par
-Wykorzystane metody przeszukania lokalnego zostaną opisane jedynie pobieżnie, ponieważ nie sama zasada ich działania nie jest przedmiotem niniejszej pracy. Szczegółowe opisy wykorzystanych metod można znaleźć w cytowanych poniżej pozycjach literaturowych.
+Wykorzystane metody przeszukania lokalnego zostaną opisane jedynie pobieżnie, ponieważ sama zasada ich działania nie jest przedmiotem niniejszej pracy. Szczegółowe opisy wykorzystanych metod można znaleźć w cytowanych poniżej pozycjach literaturowych.
 \par
 \textbf{\emph{BFGS}} oraz pochodny \textbf{\emph{L-BFGS-B}} są algorytmami zawierającymi się w ogólnej klasie technik optymalizacji \emph{wspinaczkowej} (\emph{ang. hill climbing}). Trzon nazwy stanowią nazwisk autorów:  \textbf{B}royden, \textbf{F}letcher, \textbf{G}oldfarb i \textbf{S}hanno. \emph{BFGS} jest algorytmem quasi-newtonowskim opierającym mechanikę poprawy rozwiązania o gradient zmiany funkcji przystosowania w najbliższym otoczeniu bieżącego rozwiązania. Pochodna metoda \emph{L-BFGS-B} jest rozwinięciem założeń o nałożenie wymagań odnośnie dziedziny atrybutów rozwiązania (sufiks \emph{B - boxed}) oraz optymalizuje działanie algorytmu pod kątem wykorzystywanej pamięci (prefiks \emph{L - limited-memory}). Szczegółowy opis działania można znaleźć w \cite{nocedal2006numerical}. 
 \par
 Metoda gradientu sprzężonego (\emph{ang. conjugate gradients}, w dalszej części pracy \emph{\textbf{CG}}) jest algorytmem iteracyjnym stosowanym oprócz optymalizacji do rozwiązywania układów równań różniczkowych cząstkowych. Podobnie jak \emph{BFGS} zasada działania opiera się na gradiencie funkcji przystosowania wokół bieżącego rozwiązania. Podstawę matematyczną i opis działania algorytmu można znaleźć w \cite{fletcher1964function}, \cite{Nash90a} i \cite{nocedal2006numerical}.
 \par
-Symulowane wyżarzanie (\emph{ang. simulated annealing}, w dalszej części pracy \emph{\textbf{SANN}}) jest koncepcją zaczerpniętą z rzeczywistego zachowania się cząsteczek metali w procesie stygnięcia. Analogią wykorzystaną w algorytmie jest przełożenie spadającej ruchliwości cząsteczek wraz z obniżaniem temperatury na losowe poszukiwanie lepszego rozwiązania w coraz mniejszej odległości od dotychczas najlepszego. Tempo \emph{stygnięcia rozwiązania}, czyli intensywność zawężania kręgu poszukiwań wpływa na czas działania algorytmu i~jakość znajdowanego rozwiązania. W przypadku wykorzystania algorytmu jako operatora lokalnego przeszukania stosuje się szybkie schładzanie rozwiązania. W odróżnieniu od wyżej opisanych metod opierających się o gradientowe poszukiwanie, symulowane wyżarzanie może być stosowane również dla nieróżniczkowalnych funkcji przystosowania. Autorzy pakietu \emph{stats} oparli implementację metody o publikację \cite{belisle1992convergence} i~tam można znaleźć dokładny opisu działania algorytmu.
+Symulowane wyżarzanie (\emph{ang. simulated annealing}, w dalszej części pracy \emph{\textbf{SANN}}) jest koncepcją zaczerpniętą z rzeczywistego zachowania się cząsteczek metali w procesie stygnięcia. Analogią wykorzystaną w algorytmie jest przełożenie spadającej ruchliwości cząsteczek wraz z obniżaniem temperatury na losowe poszukiwanie lepszego rozwiązania w coraz mniejszej odległości od dotychczas najlepszego. Tempo \emph{stygnięcia rozwiązania}, czyli intensywność zawężania kręgu poszukiwań wpływa na czas działania algorytmu i~jakość znajdowanego rozwiązania. W przypadku wykorzystania algorytmu jako operatora lokalnego przeszukania stosuje się szybkie ''schładzanie'' rozwiązania. W odróżnieniu od wyżej opisanych metod opierających się o gradientowe poszukiwanie, symulowane wyżarzanie może być stosowane również dla nieróżniczkowalnych funkcji przystosowania. Autorzy pakietu \emph{stats} oparli implementację metody o publikację \cite{belisle1992convergence} i~tam można znaleźć dokładny opisu działania algorytmu.
 \par
 Ostatnim z algorytmów pełniących rolę operatorów przeszukiwania lokalnego w ramach  badań porównawczych jest metoda \emph{\textbf{Neldera-Meada}}. Podobnie jak \emph{SANN} może być wykorzystywana w przypadkach nieróżniczkowanej funkcji przystosowania. Autorzy pakietu \emph{stats} opisują tę metodę jako stosukowo wolną w działaniu, ale dającą \emph{solidne} efekty - miary \emph{solidności} nie podano \cite{statsPackage}. Matematyczne podstawy jak i dokładny opis algorytmu przedstawiono przez autorów w publikacji w \cite{nelderMead1965}.
 
@@ -130,7 +130,7 @@ Ostatnim z algorytmów pełniących rolę operatorów przeszukiwania lokalnego w
 \section{Parametry algorytmów}
 \label{sec:parametry_algorytmow}
 \par
-Mając na celu zbadanie efektywności algorytmów memetycznych wykorzystywanych do optymalizacji rozwiązań problemów rzeczywistoliczbowych konieczne jest przyjęcie pewnego zestawu parametrów każdego z porównywanych algorytmów. Przed przystąpieniem do porównywania należy zadbać o to, by analizowane były ich możliwie najlepsze konfiguracje. Procedura selekcji parametrów będzie wykorzystywała jedną z zdefiniowanych w podrozdziale \ref{sec:przyjete_miary_efektywnosci_algorytmow} miar efektywności. W zależności od algorytmu możliwe jest określenie różnej liczby parametrów. W przypadku algorytmu memetycznego, który będzie głównym obiektem badań, analizowane będzie 7 atrybutów konfiguracji.
+Mając na celu zbadanie efektywności algorytmów memetycznych wykorzystywanych do optymalizacji rozwiązań problemów rzeczywistoliczbowych konieczne jest przyjęcie pewnego zestawu parametrów każdego z porównywanych algorytmów. Przed przystąpieniem do porównywania, należy zadbać o to, by analizowane były ich możliwie najlepsze konfiguracje. Proponowana w pracy procedura selekcji parametrów będzie wykorzystywała jedną z zdefiniowanych w podrozdziale \ref{sec:przyjete_miary_efektywnosci_algorytmow} miar efektywności, a mianowicie porównanie najlepszego rozwiązania uzyskanego po określonej liczbie iteracji mechanizmu. W zależności od algorytmu możliwe jest określenie różnej liczby parametrów. W przypadku algorytmu memetycznego, który będzie głównym obiektem badań, analizowane będzie 7 atrybutów konfiguracji.
 \par
 Jedną z cech wspólnych algorytmów opisanych w rozdziale \ref{ch:charakterystyka_algorytmow_ewolucyjnych} jest wykonywanie operacji aż do spełnienia \emph{warunku stopu}. We wszystkich przypadkach warunkiem tym jest osiągnięcie z góry założonej liczby przebiegów pętli. 
 \subsection{Zakres parametrów części genetycznej algorytmu}
@@ -141,9 +141,9 @@ Jedną z cech wspólnych algorytmów opisanych w rozdziale \ref{ch:charakterysty
 %
 %\end{itemize}
 Na parametry części genetycznej algorytmu memetycznego składają się: prawdopodobieństwa mutacji $p_{mut}$ i krzyżowania $p_{cros}$, rozmiar populacji $r_{pop}$ oraz maksymalna liczba pokoleń $l_{iter}$. Ich znaczenie i interpretacja zostały omówione w podrozdziale \ref{sec:algorytm_genetyczny}. W trakcie selekcji optymalnych nastaw algorytmu genetycznego i memetycznego sprawdzone zostaną następujące wartości parametrów:
-\[p_{mut} = \lbrace0.5, 0.6, 0.7, 0.8, 0.9, 1.0\rbrace\]
-\[p_{cros} = \lbrace0.5, 0.6, 0.7, 0.8, 0.9, 1.0\rbrace\]
-\[r_{pop}=\lbrace25, 50, 75, 100\rbrace\]
+\[p_{mut} = \lbrace0.5, 0.6, 0.7, 0.8, 0.9, 1.0\rbrace,\]
+\[p_{cros} = \lbrace0.5, 0.6, 0.7, 0.8, 0.9, 1.0\rbrace,\]
+\[r_{pop}=\lbrace25, 50, 75, 100\rbrace.\]
 %gdzie:
 %\[p_{mut} - prawdopodobieńwo\, mutacji\]
 %\[p_{cros} - prawdopodobieńwo\, krzyżowania\]
@@ -164,9 +164,9 @@ Dokładna wartość $l_{iter}$, która będzie wykorzystana do uzyskania rezulta
 %\item operatory
 %\item znaczenie tych parametrów
 %\end{itemize}
-Na parametry określające mechanizmy charakterystyczne dla algorytmu memetycznego składają się: wybór operatora przeszukiwania lokalnego, prawdopodobieństwo wystąpienia doskonalenia osobnika w pokoleniu $p_{opt}$ oraz współczynnik promowania lepszych osobników do wzięcia udziału w lokalnym przeszukiwaniu $p_{sel}$. 
-\[p_{opt} = \lbrace0.5, 0.6, 0.7, 0.8, 0.9, 1.0\rbrace\]
-\[p_{sel} = \lbrace0.5, 0.6, 0.7, 0.8, 0.9, 1.0\rbrace\]
+Na parametry określające mechanizmy charakterystyczne dla algorytmu memetycznego składają się: wybór operatora przeszukiwania lokalnego, prawdopodobieństwo wystąpienia doskonalenia osobnika w pokoleniu $p_{opt}$ oraz współczynnik promowania lepszych osobników do wzięcia udziału w lokalnym przeszukiwaniu $p_{sel}$. Zaproponowano następujące wartości parametrów: 
+\[p_{opt} = \lbrace0.5, 0.6, 0.7, 0.8, 0.9, 1.0\rbrace,\]
+\[p_{sel} = \lbrace0.5, 0.6, 0.7, 0.8, 0.9, 1.0\rbrace.\]
 %gdzie:
 %\[p_{opt} - prawdopodobieńwo\,zajścia\, doskonalenia\]
 %\[p_{sel} - współczynnik\, promowania\, lepszych\, osobników\, do\, doskonalenia\]
@@ -181,11 +181,11 @@ Na parametry określające mechanizmy charakterystyczne dla algorytmu memetyczne
 %\item max.loop - maksymalna liczba iteracji
 %\end{itemize}
 \par
-Parametry algorytmu PSO można podzielić na dwie kategorie. Pierwsza z nich zawiera współczynniki określają siłę wpływu pozostałych osobników populacji na zmianę kierunku poruszania się osobnika w przestrzeni rozwiązań. Do tych parametrów zaliczyć można \emph{wagę inercji w}, $\phi_1$ i $\phi_2$ nazwane przyspieszeniem w kierunku lokalnego i populacyjnego najlepszego rozwiązania lub odpowiednio współczynnikiem kognitywnym i socjalnym. Drugą kategorią parametrów stanowią te ściśle związane z specyfiką algorytmów ewolucyjnych. Tworzą ją liczba cząstek-osobników oraz maksymalna liczba iteracji $l_{iter}$, a więc czas symulacji zachowania roju. W trakcie badań przyjęto następujące zbiory wartości parametrów.
-\[\phi_1 = \lbrace1.0, 1.3, 1.6 \rbrace\]
-\[\phi_2 = \lbrace2.5, 2.8, 3.1\rbrace\]
-\[w = \lbrace0.8, 0.9, 1.0, 1.1, 1.2, 1.3\rbrace\]
-\[r_{pop} = \lbrace50, 100, 150, 200\rbrace\]
+Parametry algorytmu PSO można podzielić na dwie kategorie. Pierwsza z nich zawiera współczynniki określające siłę wpływu pozostałych osobników populacji na zmianę kierunku poruszania się osobnika w przestrzeni rozwiązań. Do tych parametrów zaliczyć można \emph{wagę inercji w}, $\phi_1$ i $\phi_2$ nazwane przyspieszeniem w kierunku lokalnego i populacyjnego najlepszego rozwiązania lub odpowiednio współczynnikiem kognitywnym i socjalnym. Drugą kategorią parametrów stanowią te ściśle związane z specyfiką algorytmów ewolucyjnych. Tworzą ją liczba cząstek-osobników oraz maksymalna liczba iteracji $l_{iter}$, a więc czas symulacji zachowania roju. W trakcie badań przyjęto następujące zbiory wartości parametrów:
+\[\phi_1 = \lbrace1.0, 1.3, 1.6 \rbrace,\]
+\[\phi_2 = \lbrace2.5, 2.8, 3.1\rbrace,\]
+\[w = \lbrace0.8, 0.9, 1.0, 1.1, 1.2, 1.3\rbrace,\]
+\[r_{pop} = \lbrace50, 100, 150, 200\rbrace.\]
 %\[l_{iter}=\lbrace50, 100, 150\rbrace\]
 
 %gdzie:
@@ -195,7 +195,7 @@ Parametry algorytmu PSO można podzielić na dwie kategorie. Pierwsza z nich zaw
 %\[r_{pop} - rozmiar\, populacji\]
 %\[l_{iter} - liczba\, iteracji\]
 \par
-Zbiór wartości przyjęty dla parametrów $\phi_1$ i $\phi_2$ oparty został o wyniki uzyskane w pracy \cite{carlisle2002applying}. Przyjęto tam, że suma wartości tych parametrów powinna równać się $4.1$, a najlepsze rezultaty uzyskano dla wartości $\phi_1=2.8$ i $\phi_2=1.3$. Analizowany przez autora model algorytmu PSO nie testował wpływu parametru wagi inercji. Zbiór jej wartości przyjęto w oparciu o pracę \cite{shi1998modified}, której jednym z wniosków było stwierdzenie, że zakres $[0.9\quad1.2]$ pozwala na uzyskanie najlepszych rezultatów. Za rozmiar populacji roju przyjęto ten sam zakres wartości co w przypadku algorytmów genetycznych i memetycznych. Tak samo postąpiono z $l_{iter}$ - dla lepszego porównania zestawów parametrów selekcję przeprowadzono przy wykorzystaniu wartości $l_{iter}=5$.
+Zbiór wartości przyjęty dla parametrów $\phi_1$ i $\phi_2$ oparty został o wyniki uzyskane w pracy \cite{carlisle2002applying}. Przyjęto tam, że suma wartości tych parametrów powinna równać się $4.1$, a najlepsze rezultaty uzyskano dla wartości $\phi_1=2.8$ i $\phi_2=1.3$. Analizowany przez autora model algorytmu PSO nie testował wpływu parametru wagi inercji. Zbiór jej wartości przyjęto w oparciu o pracę \cite{shi1998modified}, której jednym z wniosków było stwierdzenie, że zakres $[0.9\quad1.2]$ pozwala na uzyskanie najlepszych rezultatów. Za rozmiar populacji roju przyjęto ten sam zakres wartości co w przypadku algorytmów genetycznych i memetycznych. Dla lepszego porównania zestawów parametrów selekcję przeprowadzono przy wykorzystaniu wartości $l_{iter}=5$.
 
 \section{Badane scenariusze doboru parametrów algorytmów}
 \label{sec:badane_scenariusze_doboru_parametrow}
@@ -231,46 +231,46 @@ Zbiór wartości przyjęty dla parametrów $\phi_1$ i $\phi_2$ oparty został o 
 %\item randomowe inne 2-6, 3-5, 1-4 
 %\end{itemize}
 \par
-Zamiar przeprowadzenia wiarygodnych badań porównawczych algorytmów wymaga wybrania najlepszych ich konfiguracji. O ile w przypadku przyjętych algorytmów genetycznego i PSO nie stanowi nazbyt wielkiego problemu przetestowanie wszystkich kombinacji wartości parametrów, o tyle w przypadku algorytmu memetycznego złożoność czasowa takiego podejścia może stanowić już problem. Niniejsza praca oprócz analizy porównawczej różnych algorytmów proponuje metody doboru wartości ustawień działania algorytmu memetycznego. 
+Przeprowadzenie wiarygodnych badań porównawczych algorytmów wymaga wybrania najlepszych ich konfiguracji. O ile w przypadku przyjętych algorytmów genetycznego i PSO nie stanowi nazbyt wielkiego problemu przetestowanie wszystkich kombinacji wartości parametrów, o tyle w przypadku algorytmu memetycznego złożoność czasowa takiego podejścia może stanowić już problem. Niniejsza praca, oprócz analizy porównawczej różnych algorytmów proponuje metody doboru wartości ustawień działania algorytmu memetycznego. 
 \par
-Zaprezentowane w podrozdziale \ref{ch:przyjety_model_doboru_parametrow_algorytmu} zbiory przyjętych wartości parametrów generują $25920$ kombinacji ich wyboru. Efektywny sposób ograniczenie tej liczby pozytywnie wpłynie na łatwość adaptacji algorytmu w konkretnym zastosowaniu. Testowanie jedynie części możliwych kombinacji może wpłynąć na jakość działania tak uzyskanej konfiguracji. Z tego powodu znaczenie może mieć kolejność w jakiej wartości parametrów są dobierane, co zostanie również sprawdzone. 
+Zaprezentowane w podrozdziale \ref{sec:parametry_algorytmow} zbiory przyjętych wartości parametrów generują $25920$ kombinacji ich wyboru. Efektywny sposób ograniczenie tej liczby pozytywnie wpłynie na łatwość adaptacji algorytmu w konkretnym zastosowaniu. Testowanie jedynie części możliwych kombinacji może pogorszyć na jakość działania tak uzyskanej konfiguracji. Z tego powodu znaczenie może mieć kolejność w jakiej wartości parametrów są dobierane, co zostanie również sprawdzone. 
 \par
 Testowane scenariusze doboru wartości parametrów algorytmów porównane zostaną zarówno pod kątem najlepszego znalezionego rozwiązania, jak i czasu potrzebnego na przeprowadzenie selekcji w dany sposób. Do późniejszych badań porównawczych różnych algorytmów wykorzystana zostanie kombinacja parametrów, która uzyskała najlepsze rozwiązanie. 
 \par
 Proponowany w tej pracy model doboru konfiguracji działania algorytmu memetycznego opiera się na stopniowej selekcji wartości w obrębie podgrup parametrów tymczasowo przyjmując domyślne wartości pozostałych, jeszcze nie dobranych. Wybrano 6 scenariuszy różniących się zarówno kolejnością dobieranych atrybutów jak i ich liczbą dopieranych równocześnie. Proponowany mechanizm pozwoli na dobór wartości następujących parametrów:
 \begin{enumerate}
-\item prawdopodobieństwo mutacji
-\item prawdopodobieństwo krzyżowania
-\item rozmiar populacji
-\item prawdopodobieństwo zajścia doskonalenia
-\item współczynnik promowania lepszych osobników do doskonalenia
-\item operator lokalnego przeszukiwania
+\item prawdopodobieństwo mutacji,
+\item prawdopodobieństwo krzyżowania,
+\item rozmiar populacji,
+\item prawdopodobieństwo zajścia doskonalenia,
+\item współczynnik promowania lepszych osobników do doskonalenia,
+\item operator lokalnego przeszukiwania.
 \end{enumerate}
 Korzystając z powyższej numeracji atrybutów przyjęto następujący sposób opisu scenariusza: $[1-2,\; 3-4,\; 5-6]$, co w tym przypadku należy rozmieć następująco:
 \begin{itemize}
 \item sprawdź wszystkie kombinacje wartości parametrów $1$ i $2$, 
-\item korzystając z dobranych wartości parametrów $1$ i $2$ sprawdź wszystkie kombinacje wartości parametrów $3$ i $4$, wybierz parę parametrów o najlepszym znalezionym rozwiązaniu
-\item korzystając z dobranych wartości parametrów $1$, $2$, $3$ i $4$ sprawdź wszystkie kombinacje wartości parametrów $5$ i $6$, wybierz parę parametrów o najlepszym znalezionym rozwiązaniu
+\item korzystając z dobranych wartości parametrów $1$ i $2$ sprawdź wszystkie kombinacje wartości parametrów $3$ i $4$, wybierz parę parametrów o najlepszym znalezionym rozwiązaniu,
+\item korzystając z dobranych wartości parametrów $1$, $2$, $3$ i $4$ sprawdź wszystkie kombinacje wartości parametrów $5$ i $6$, wybierz parę parametrów o najlepszym znalezionym rozwiązaniu.
 \end{itemize}
 \par
 W ramach badań porównano następujące scenariusze:
 \begin{itemize}
 \item rozdzielenie selekcji parametrów części genetycznej i memetycznej:
 \begin{itemize}
-\item $[1-2-3,\; 4-5-6]$
-\item $[4-5-6,\; 1-2-3]$
+\item $[1-2-3,\; 4-5-6]$,
+\item $[4-5-6,\; 1-2-3]$,
 \end{itemize}
 \item dobranie parametrów w pary na podstawie ich znaczenia:
 \begin{itemize}
-\item $[1-2,\; 4-5,\; 3-6]$
-\item $[3-6,\; 1-2,\; 4-5]$
-\item $[4-5,\; 3-6,\; 1-2]$
+\item $[1-2,\; 4-5,\; 3-6]$,
+\item $[3-6,\; 1-2,\; 4-5]$,
+\item $[4-5,\; 3-6,\; 1-2]$,
 \end{itemize}
 \item losowo wybrane inne grupowanie w pary parametrów:
 \begin{itemize}
-\item $[1-6,\; 2-4,\; 3-5]$
+\item $[1-6,\; 2-4,\; 3-5]$.
 \end{itemize}
 \end{itemize}
 \par
-Jak już wspomniano w podrozdziale \ref{sec:parametry_algorytmow} na tym etapie doboru konfiguracji algorytmu przyjęto $l_{iter}=5$. Ostateczna wartość $l_{iter}$ wykorzystana do testów porównawczych zostanie dobrana na podstawie szybkości zbieżności uzyskanej dla wyselekcjonowanych pozostałych parametrów.
+Jak już wspomniano w podrozdziale \ref{sec:parametry_algorytmow}, na tym etapie doboru konfiguracji algorytmu przyjęto $l_{iter}=5$. Ostateczna wartość $l_{iter}$ wykorzystana do testów porównawczych zostanie dobrana na podstawie szybkości zbieżności uzyskanej dla wyselekcjonowanych pozostałych parametrów.
 

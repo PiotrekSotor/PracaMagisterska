@@ -21,7 +21,7 @@ Na potrzeby przeprowadzenia badań porównawczych różnych algorytmów wybrano 
 %\end{itemize}
 
 \par
-Funkcja \emph{Schaffer nr 2} jest przedstawicielem rodziny funkcji multimodalnych dwuwymiarowych \cite{schaffer1985some}. Cechuje się ona posiadaniem wielu ekstremów lokalnych o podobnych wartościach do optimum. Przebieg funkcji opisanej wzorem \ref{eq:Schaffer1} zaprezentowano na rysunku \ref{fig:Schaffer1} i opisywana jest wzorem \ref{eq:Schaffer1}. Funkcja ta posiada minimum osiągane w początku układu współrzędnych przestrzeni rozwiązań \ref{eq:Schaffer1_optim}. Przeszukiwana przestrzeń rozwiązań stanowi płaszczyznę $\Re^2$ ograniczoną do przedziału \ref{eq:Schaffer1_range}.
+Funkcja \emph{Schaffer nr 2} jest przedstawicielem rodziny funkcji multimodalnych dwuwymiarowych \cite{schaffer1985some}. Cechuje się ona posiadaniem wielu ekstremów lokalnych o podobnych wartościach do optimum. Przebieg funkcji opisanej wzorem \ref{eq:Schaffer1} zaprezentowano na rysunku \ref{fig:Schaffer1}. Funkcja ta posiada minimum osiągane w początku układu współrzędnych przestrzeni rozwiązań \ref{eq:Schaffer1_optim}. Przeszukiwana przestrzeń rozwiązań stanowi płaszczyznę $\Re^2$ ograniczoną do przedziału \ref{eq:Schaffer1_range}.
 \begin{equation} \label{eq:Schaffer1}
 f(x)=0.5+\frac{\sin^2(x_1^2-x_2^2)-0.5}{[1+0.001(x_1^2+x_2^2)]^2}
 \end{equation}
@@ -74,7 +74,7 @@ x_i\in[2.0001,9.9999], \quad i=1,...,10
 \end{equation}
 
 \subsection{Funkcja ZeldaSine10}
-Jako trzecią funkcję do testów badań wybrano \emph{ZeldaSine10}, ponieważ wstępne próby wykazały, że algorytmy znajdują dobre rozwiązania dopiero po większej liczbie iteracji niż miało to miejsce w przypadku omawianych powyżej funkcji \emph{Schaffera nr 2} i \emph{Paviani}. Funkcja opisana jest wzorem \ref{eq:ZeldaSine10}, a szukane minimum ma wartość (\ref{eq:ZeldaSine10_optim}). Podobnie do \emph{Paviani} funckja jest multimodalna, ciągła, różniczkowalna i zawierajaca się w dziesięciowymiarowej dziedzinie parametrów, które mogą przyjmować wartości z przedziału~(\ref{eq:ZeldaSine10_range}). 
+Jako trzecią funkcję do testów badań wybrano \emph{ZeldaSine10}, ponieważ wstępne próby wykazały, że algorytmy znajdują dobre rozwiązania dopiero po większej liczbie iteracji niż miało to miejsce w przypadku omawianych powyżej funkcji \emph{Schaffera nr 2} i \emph{Paviani}. Funkcja opisana jest wzorem \ref{eq:ZeldaSine10}, a szukane minimum ma wartość (\ref{eq:ZeldaSine10_optim}). Podobnie do \emph{Paviani} funkcja jest multimodalna, ciągła, różniczkowalna i zawierajaca się w dziesięciowymiarowej dziedzinie parametrów, które mogą przyjmować wartości z przedziału~(\ref{eq:ZeldaSine10_range}). 
 \begin{equation}\label{eq:ZeldaSine10}
 f(x)=-2.5\prod_{i=1}^{10} \sin\left(x_i-\frac{\pi}{6}\right) - \prod_{i=1}^{10} \sin\left(5\left(x_i-\frac{\pi}{6}\right)\right)
 \end{equation}
@@ -162,33 +162,35 @@ Drugą przyjętą miarą efektywności algorytmów - \emph{kryterium nr 2} - jes
 dokładność = \left(1-\frac{r_{best}-r_{opt}}{r_{ref}-r_{opt}}\right)*100\%
 \end{equation}
 gdzie:
-\[r_{opt} - szukane\; minimum\; funkcji\; przystosowania\]
-\[r_{best} - średnie\; najlepsze\; rozwiązanie\; populacji\; w\; danej\; chwili\]
-\[r_{ref} - rozwiązanie\; odniesienia - średnie\; rozwiązanie\; losowo\; wygenerowanej\; populacji\]
+\[r_{opt} - szukane\; minimum\; funkcji\; przystosowania,\]
+\[r_{best} - średnie\; najlepsze\; rozwiązanie\; populacji\; w\; danej\; chwili,\]
+\[r_{ref} - rozwiązanie\; odniesienia - średnie\; rozwiązanie\; losowo\; wygenerowanej\; populacji.\]
 
 \par
-Oczywistym jest, że dodatnie dodatkowych mechanizmów do prostego schematu realizowanego przez algorytm genetyczny opisany w rozdziale \ref{ch:charakterystyka_algorytmow_ewolucyjnych} spowoduje ograniczenie szybkości przetwarzania kolejnych pokoleń symulacji ewolucji. Przedstawienie wyników badań w dziedzinie rzeczywistego czasu wykonania algorytmu pozwoli określić, czy wolniejsze wykonanie algorytmu skutkować będzie lepszą jakością rozwiązań w populacji. W tym miejscu należy również pamiętać o specyfice przyjętego modelu algorytmu memetycznego, a mianowicie o przeprowadzaniu dodatkowego doskonalenia najlepszego osobnika po spełnieniu warunku stopu. Wstępne próby wykazały, że to ostanie przeszukanie lokalne może w znacznym stopniu poprawić jakość rozwiązania. Monitorując rezultaty w trakcie działania algorytmu nie będzie możliwości uwzględnienia tej ostatniej optymalizacji osobnika. Fakt ten może ujawniać się w uzyskanych rezultatach badań tym, że jakość rozwiązań obserwowanych w czasie działania algorytmu będzie znacznie gorsza, od tych uzyskanych dla \emph{kryterium nr 1} przy porównywalnej liczbie iteracji. Podobną miarę efektywności przyjęto w publikacjach \cite{elbeltagi2005comparison} i \cite{mullen2014continuous}.
+Oczywistym jest, że dodatnie dodatkowych mechanizmów do prostego schematu realizowanego przez algorytm genetyczny opisany w rozdziale \ref{ch:charakterystyka_algorytmow_ewolucyjnych} spowoduje ograniczenie szybkości przetwarzania kolejnych pokoleń symulacji ewolucji. Przedstawienie wyników badań w dziedzinie rzeczywistego czasu wykonania algorytmu pozwoli określić, czy wolniejsze wykonanie algorytmu skutkować będzie lepszą jakością rozwiązań w populacji. Należy również pamiętać o specyfice przyjętego modelu algorytmu memetycznego, a mianowicie o przeprowadzaniu dodatkowego doskonalenia najlepszego osobnika po spełnieniu warunku stopu. Wstępne próby wykazały, że to ostanie przeszukanie lokalne może w znacznym stopniu poprawić jakość rozwiązania. Monitorując rezultaty w trakcie działania algorytmu nie będzie możliwości uwzględnienia tej ostatniej optymalizacji osobnika. Fakt ten może ujawniać się w uzyskanych rezultatach badań tym, że jakość rozwiązań obserwowanych w czasie działania algorytmu będzie znacznie gorsza, od tych uzyskanych dla \emph{kryterium nr 1} przy porównywalnej liczbie iteracji. Podobną miarę efektywności przyjęto w publikacjach \cite{elbeltagi2005comparison} i \cite{mullen2014continuous}.
 
 
 \par 
 %\cite{mullen2014continuous} \cite{elbeltagi2005comparison}
 Kolejną przyjętą miarą efektywności algorytmów - \emph{kryterium nr 3} - stanowi powtarzalność osiągania satysfakcjonującego rozwiązania, za które przyjęto takie spełniające warunek opisany wzorem \ref{eq:kryterium_3_warunek}. W odróżnieniu od pozostały pozostałych kryteriów analizowana jest tutaj nie uzyskana wartość funkcji dopasowania znalezionego rozwiązania, a jego położenie w przestrzeni rozwiązań poprzez odległość euklidesową od rozwiązania optymalnego.
-\par 
-W przypadku tego kryterium porównywane algorytmy uruchamiane zostaną z taką samą maksymalną liczbą iteracji będącą warunkiem stopu. O ile w pozostałych kryteriach wszystkie rezultaty są wartościami uśrednionymi z pełnej puli wywołań optymalizacji, o tyle w tym przypadku rozpatrywane i zliczane zostaną kolejne wywołania z osobna. Wykorzystana w tym miejscu maksymalna liczba iteracji zostanie określona na etapie doboru parametrów algorytmów zgodnie z scenariuszami przedstawionymi w rozdziale \ref{sec:badane_scenariusze_doboru_parametrow} dla każdej z wykorzystanych funkcji testowych z osobna. W przypadku, gdy preferowane przez algorytmy liczby iteracji będą różne wybrana zostanie wartość najmniejsza z nich. Ta miara efektywności zaczerpnięta została z publikacji \cite{elbeltagi2005comparison} i \cite{mullen2014continuous}. 
+
 \begin{equation} \label{eq:kryterium_3_warunek}
 \sum_{i=1}^{n}\left(opt_i-r_i\right)^2 < x*\sum_{i=1}^{n}\left(max_i-min_i\right)^2
 \end{equation}
 gdzie:
-\[opt - wektor\; atrybutów\; szukanego\; rozwiązania\; optymalnego\]
-\[r - wektor\; atrybutów\; najlepszego\; znalezionego\; rozwiązania\]
-\[min - wektor\; dolnych\; ograniczeń\; dziedziny\; rozwiązań\]
-\[max - wektor\; górnych\; ograniczeń\; dziedziny\; rozwiązań\]
-\[x \in \lbrace0.005, 0.01, 0.015\rbrace\]
+\[opt - wektor\; atrybutów\; szukanego\; rozwiązania\; optymalnego,\]
+\[r - wektor\; atrybutów\; najlepszego\; znalezionego\; rozwiązania,\]
+\[min - wektor\; dolnych\; ograniczeń\; dziedziny\; rozwiązań,\]
+\[max - wektor\; górnych\; ograniczeń\; dziedziny\; rozwiązań,\]
+\[x \in \lbrace0.005, 0.01, 0.015\rbrace.\]
+
+\par 
+W przypadku tego kryterium porównywane algorytmy uruchamiane zostaną z taką samą maksymalną liczbą iteracji będącą warunkiem stopu. O ile w pozostałych kryteriach wszystkie rezultaty są wartościami uśrednionymi z pełnej puli wywołań optymalizacji, o tyle w tym przypadku rozpatrywane i zliczane zostaną kolejne wywołania z osobna. Wykorzystana w tym miejscu maksymalna liczba iteracji zostanie określona na etapie doboru parametrów algorytmów zgodnie z scenariuszami przedstawionymi w rozdziale \ref{sec:badane_scenariusze_doboru_parametrow} dla każdej z wykorzystanych funkcji testowych z osobna. W przypadku, gdy preferowane przez algorytmy liczby iteracji będą różne, wybrana zostanie wartość najmniejsza z nich. Ta miara efektywności zaczerpnięta została z publikacji \cite{elbeltagi2005comparison} i \cite{mullen2014continuous}. 
 %(\% skuteczności dla tej samej liczby iteracji, wstepnie $l_iter=25$)
 
 \par 
 %(średnie rozwiazanie populacji dla tej samej liczby iteracji, wstepnie $l_iter=25$)
-Ostatnim przyjętym kryterium porównawczym - \emph{kryterium nr 4} - jest ogólna różnorodność genetyczna populacji określana poprzez różnicę wartości średniego przystosowania wszystkich osobników i najlepszego z nich. Im mniejsza ta różnica tym większa zbieżność kodowanych rozwiązań, a więc koncentracja wokół najlepszego osobnika. Taka sytuacja może mieć negatywne skutki w przypadku zdominowania populacji przez jednostki skoncentrowane w pobliżu jednego z lokalnych ekstremów co zmniejsza zdolności poznawcze ogółu populacji, zmniejsza jej różnorodność genetyczną co może zmniejszyć szansę znalezienia rozwiązania optymalnego. To kryterium zostało oparte o analogiczne przedstawione w publikacji \cite{ong2006classification}. W przypadku tego kryterium analizowana będzie zmienność opisanej wyżej różnorodności populacji na przestrzeni 100 pokoleń.
+Ostatnim przyjętym kryterium porównawczym - \emph{kryterium nr 4} - jest ogólna różnorodność genetyczna populacji określana poprzez różnicę wartości średniego przystosowania wszystkich osobników i najlepszego z nich. Im mniejsza ta różnica tym większa zbieżność kodowanych rozwiązań, a więc koncentracja wokół najlepszego osobnika. Taka sytuacja może mieć negatywne skutki w przypadku zdominowania populacji przez jednostki skoncentrowane w pobliżu jednego z lokalnych ekstremów, co zmniejsza zdolności poznawcze ogółu populacji, zmniejsza jej różnorodność genetyczną, co może zmniejszyć szansę znalezienia rozwiązania optymalnego. Kryterium zostało oparte o analogiczne przedstawione w publikacji \cite{ong2006classification}. W przypadku tego kryterium analizowana będzie zmienność opisanej wyżej różnorodności populacji na przestrzeni 100 pokoleń.
 
 
 
